@@ -1,0 +1,20 @@
+.loginMainWraper{
+    padding-top: 2rem;
+}
+.loginWraper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 30%;
+  padding-top: 2rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  margin: 5rem auto;
+  background-color: white;
+ padding: 2em;
+}
+.loginButtonWraper {
+  display: flex;
+  justify-content: space-between;
+}
