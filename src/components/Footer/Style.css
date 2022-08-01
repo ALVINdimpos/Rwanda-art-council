@@ -1,0 +1,53 @@
+.Box {
+  padding: 80px 60px;
+  background: white;
+  margin-top: 2rem;
+  bottom: 0;
+  width: 100%;
+}
+.Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  /* background: red; */
+}
+.Column {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 60px;
+}
+.Row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  grid-gap: 20px;
+}
+@media (max-width: 1000px) {
+  .Row {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+.FooterLink a {
+  color: black;
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-decoration: none;
+}
+a:hover {
+  color: green;
+  transition: 200ms ease-in;
+}
+.Heading p{
+  font-size: 24px;
+  color: black;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+@media (max-width: 1000px) {
+	.Box{
+       padding: 70px 30px; 
+    }
+    
+}

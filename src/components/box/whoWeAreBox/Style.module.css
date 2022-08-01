@@ -1,0 +1,59 @@
+.whoWeAreBox {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  border-radius: 10px;
+  background-color: white;
+  justify-self: center;
+  margin: 2rem auto;
+  padding: 2rem;
+  box-shadow: 0px 4px 4px 0px #00000040;
+
+}
+.whoWeArePhoto {
+  width: 30%;
+}
+.whoWeArePhoto img {
+  width: 100%;
+  object-fit: cover;
+}
+.whoWeAreContent {
+  padding-right: 2rem;
+  width: 70%;
+}
+.whoWeAreContent h1{
+  font-family: 'Bebas Neue';
+  font-size: 48px;
+  font-weight: 400;
+  color:#C5801A;
+  padding-bottom: 1rem;
+}
+.whoWeAreContent p{
+  font-family: 'EB Garamond';
+  padding-bottom: 1rem;
+}
+.whoWeAreContent h2{
+  font-family: 'Bebas Neue';
+  font-size: 30px;
+  font-weight: 400;
+  padding-bottom: 1rem;
+}
+@media screen and (max-width: 482px) {
+  .whoWeAreBox {
+    flex-direction: column-reverse;
+  }
+  .whoWeAreContent {
+    width: 100%;
+    padding: 0;
+    padding-top: 2rem;
+  }
+  .whoWeArePhoto {
+    width: 30%;
+  }
+  .whoWeArePhoto {
+    width: 100%;
+  }
+}
+/* .whoWeArePhoto{
+
+} */
