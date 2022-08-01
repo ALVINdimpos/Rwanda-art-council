@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/Pages/Home";
+import Aboutus from "./components/Pages/Aboutus";
+import Contactus from "./components/Pages/Contactus";
+import Gallery from "./components/Pages/Gallery";
+import Event from "./components/Pages/Events";
+import Whatwedo from "./components/Pages/Whatwedo";
+import Register from'./components/Pages/Register'
+import Login from './components/Pages/Login'
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="Home" element={<Home />} />
+        <Route path="Aboutus" element={<Aboutus />} />
+        <Route path="Contactus" element={<Contactus />} />
+        <Route path="Gallery" element={<Gallery />} />
+        <Route path="Event" element={<Event />} />
+        <Route path="Whatwedo" element={<Whatwedo />} />
+        <Route path="Register" element={<Register />} />
+        <Route path="Login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-export default App;
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);

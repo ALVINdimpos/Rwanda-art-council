@@ -1,0 +1,45 @@
+.NavBar {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway";
+  font-size: 16px;
+  font-weight: 800;
+}
+.NavBar li {
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+.NavBar li a {
+  text-decoration: none;
+  color: #817382;
+  
+}
+.nav-link{
+  color: #C5801A !important;
+}
+
+.headerStyle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  width: 100%;
+  padding-right: 1rem;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+}
+.headerStyle img {
+  height: 5.5rem;
+  /* height: 100px;
+  width: 100px; */
+  margin-left: 30px;
+  vertical-align: middle;
+}
+
