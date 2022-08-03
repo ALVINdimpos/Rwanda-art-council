@@ -1,7 +1,7 @@
-.loginMainWraper{
-    padding-top: 2rem;
+.registerMainWraper {
+  padding-top: 2rem;
 }
-.loginWraper {
+.registerWraper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -13,4 +13,7 @@
   margin: 5rem auto;
   background-color: white;
   padding: 2em;
+}
+.registerWraper ::placeholder{
+  font-size: small;
 }

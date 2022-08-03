@@ -1,6 +1,8 @@
 import React from "react";
 import Style from "./Style.module.css";
-import EventPhot from "../../../assets/photos/eventPhoto.png";
+import EventPhot from "../../../assets/photos/mainevent.jpeg";
+import EventPhot2 from "../../../assets/photos/mainphoto.jpg";
+import EventPhot3 from "../../../assets/photos/Event.jpeg";
 import Button from "../../Button/Index";
 function Index() {
   return (
@@ -20,7 +22,7 @@ function Index() {
           <Button name="Read more"/>
         </div>
         <div className={Style.eventBox}>
-          <img src={EventPhot} alt="description of image" />
+          <img src={EventPhot2} alt="description of image" />
           <h4>Donec Sit Amet Nibh</h4>
           <h5>by Nick Roach | May 9, 2014 | Location</h5>
           <p>
@@ -33,7 +35,7 @@ function Index() {
           <Button name="Read more"/>
         </div>
         <div className={Style.eventBox}>
-          <img src={EventPhot} alt="description of image"/>
+          <img src={EventPhot3} alt="description of image"/>
           <h4>Donec Sit Amet Nibh</h4>
           <h5>by Nick Roach | May 9, 2014 | Location</h5>
           <p>
