@@ -11,7 +11,7 @@ function Index(props) {
          <p style={{alignSelf:'center',marginLeft:'17px',marginTop:'17px',fontWeight:'bold'}}>{props.name}</p>
       </div>
    
-    <button className={Style.viewAllButton}>View all</button>
+    <button className={Style.viewAllButton} onClick={props.onClick}>View all</button>
     
     </div>
 

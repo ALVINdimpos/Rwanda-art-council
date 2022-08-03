@@ -4,14 +4,29 @@ import Partner from "../box/partners/Index";
 import Footer from "../Footer/Footer";
 import Style from "./ContactusStyle.module.css";
 import Button from "../Button/Index";
+import PageIndicator from "../PageIndicator/Index";
 import { MDBIcon } from "mdbreact";
 import { MDBInput, MDBTextArea } from "mdb-react-ui-kit";
 
 function Index() {
   return (
     <>
+      {" "}
       <NavBar />
+      <PageIndicator name="Contact us" />
       <div className={Style.loginMainWraper}>
+        <div className={Style.mapouter}>
+          <div className="gmap_canvas">
+            <iframe
+              width={1000}
+              height={500}
+              id="gmap_canvas"
+              src="https://maps.google.com/maps?q=Rwanda%20art%20council&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              frameBorder={0}
+              scrolling="no"
+            />
+          </div>
+        </div>
         <div className={Style.loginWraper}>
           <div>
             <div>
@@ -35,14 +50,13 @@ function Index() {
             />
           </div>
           <div>
-            <MDBTextArea  id="textAreaExample" rows={4} />
+            <MDBTextArea id="textAreaExample" rows={4} />
           </div>
           <div>
             <Button name="Send email" />
           </div>
         </div>
       </div>
-
       <Partner />
       <Footer />
     </>

@@ -4,6 +4,7 @@ import Partner1 from '../../../assets/photos/PartnerOne.png'
 import Partner2 from '../../../assets/photos/PartnerTwo.png'
 import Partner3 from '../../../assets/photos/PartnerThree.png'
 import Partner4 from '../../../assets/photos/PartnerFour.png'
+import Klablogo from "../../../assets/photos/Klablogo.png"
 
 function Index() {
   return (
@@ -22,6 +23,9 @@ function Index() {
         </div>
         <div className={Style.partnerBox}>
            <img src={Partner4}alt="description of image"/>
+        </div>
+        <div className={Style.partnerBox}>
+           <img src={Klablogo}alt="description of image"/>
         </div>
 
 

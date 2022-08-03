@@ -1,25 +1,24 @@
 import React from "react";
 import NavBar from "../NavBar/Index";
-import Partner from "../box/partners/Index";
-import Footer from "../Footer/Footer";
-import Style from "./LoginStyle.module.css";
+import Style from "./RegisterStyle.module.css";
 import Button from "../Button/Index";
 import { MDBIcon } from "mdbreact";
 import { MDBInput } from "mdb-react-ui-kit";
 import { MDBFile } from "mdb-react-ui-kit";
-
+import { Link } from "react-router-dom";
 function Index() {
   return (
     <>
       <NavBar />
-      <div className={Style.loginMainWraper}>
-        <div className={Style.loginWraper}>
+      <div className={Style.registerMainWraper}>
+        <div className={Style.registerWraper}>
           <div>
             <div>
-              <h4 style={{ color: "#c5801a" }}>
+             <Link to='/Home'> <h4 style={{ color: "#c5801a" }}>
                 <MDBIcon fas icon="angle-left" />
                 Home
               </h4>
+              </Link>
             </div>
           </div>
           <div>
@@ -29,10 +28,10 @@ function Index() {
             <MDBInput id="typeText" type="text" placeholder="Federation_name" />
           </div>
           <div>
-            <MDBInput id="typeText" type="number" placeholder="Phone_number" />
+            <MDBInput id="typeText" type="text" placeholder="Phone_number" />
           </div>
           <div>
-            <MDBInput id="typeText" type="number" placeholder="Tin_number" />
+            <MDBInput id="typeText" type="text" placeholder="Tin_number" />
           </div>
           <div>
             <MDBInput
@@ -62,7 +61,7 @@ function Index() {
           <div>
             <select name="" id="cars" class="browser-default custom-select">
               <optgroup label="PLASTIC ARTS">
-              <option selected>Select cluster</option>
+                <option selected>Select cluster</option>
                 <option value="Illustrators">Illustrators</option>
                 <option value="Painters">Painters</option>
                 <option value="Sculptors">Sculptors</option>
@@ -113,15 +112,14 @@ function Index() {
           </div>
           <div>
             <p>
-              Already have an account?
-              <span style={{ color: "#c5801a" }}>Sign in</span>
+              Already have an account?{" "}
+              <Link to="/Login">
+                <span style={{ color: "#c5801a" }}>Sign in</span>
+              </Link>
             </p>
           </div>
         </div>
       </div>
-
-      <Partner />
-      <Footer />
     </>
   );
 }

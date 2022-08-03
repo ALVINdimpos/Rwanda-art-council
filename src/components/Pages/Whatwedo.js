@@ -3,7 +3,9 @@ import NavBar from "../NavBar/Index";
 import Partner from "../box/partners/Index";
 import Footer from "../Footer/Footer";
 import Style from "./Whatwedo.module.css";
-import Image1 from "../../assets/photos/CatImage1.jpeg";
+import Image1 from "../../assets/photos/painting.jpg";
+import Image2 from "../../assets/photos/mainphoto.jpg";
+import Image3 from "../../assets/photos/imigongo.jpg";
 import PageIndicator from "../PageIndicator/Index";
 function Whatwedo() {
   return (
@@ -23,7 +25,7 @@ function Whatwedo() {
           </p>
         </div>
         <div className={Style.ServicesBox}>
-          <img src={Image1}alt="description of image" />
+          <img src={Image2}alt="description of image" />
           <h3>Lorem ipsum</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
@@ -31,7 +33,7 @@ function Whatwedo() {
           </p>
         </div>
         <div className={Style.ServicesBox}>
-          <img src={Image1} alt="description of image"/>
+          <img src={Image3} alt="description of image"/>
           <h3>Lorem ipsum</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh

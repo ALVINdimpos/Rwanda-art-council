@@ -11,6 +11,7 @@
   background-color: white;
 }
 .eventBox img {
+  height: 250px;
 width: 100%;
 }
 .eventBox Button {

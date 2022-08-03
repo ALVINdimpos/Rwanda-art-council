@@ -1,0 +1,55 @@
+.CardWraper {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    flex-direction: row;
+    margin-bottom: 1rem;
+    margin: 1rem auto;
+    gap: 2rem;
+  }
+  .Card {
+    background-color: white;
+    width: 80%;
+    height: 470px;
+    width: 350px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border-radius: 4px;
+  }
+  .Card Button {
+   float: right;
+  
+  }
+  .Card h4 {
+    font-family: "Bebas";
+    font-size: 42px;
+    font-weight: 300;
+    text-align: center;
+  }
+  .DateCardWraper {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+  }
+  .DateCardWraper p {
+    font-family: "EB Garamond";
+    padding: 1rem;
+  }
+  .DateCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 139px;
+    width: 76px;
+    background:whitesmoke;
+    border-radius: 10px;
+  }
+  .DateCard h5 {
+    padding: 0.5rem;
+    color: black;
+    font-size: 16px;
+  }
+  .Card img {
+    height: 210px;
+    width: 100%;
+  }
+  

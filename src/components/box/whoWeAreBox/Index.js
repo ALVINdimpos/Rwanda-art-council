@@ -2,7 +2,14 @@ import React from "react";
 import Style from "./Style.module.css";
 import whoWeArePhoto from '../../../assets/photos/WhoWeAre.png'
 import Button from "../../Button/Index";
+import { useNavigate } from "react-router-dom";
 function Index() {
+ const navigate =useNavigate();
+  const whoHandler=(e)=>{
+ e.preventDefault();
+ navigate('/Aboutus')
+
+  }
   return (
     <div>
       <div className={Style.whoWeAreBox}>
@@ -16,7 +23,7 @@ function Index() {
             printing andtypesetting industry. Lorem Ipsum has been theindustry's
             standard dummy text ever since the 1500s,{" "}
           </p>
-          <Button name="Read more" />
+          <Button name="Read more" onClick={whoHandler}/>
         </div>
         <div className={Style.whoWeArePhoto}>
 
