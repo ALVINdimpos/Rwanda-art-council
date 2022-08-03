@@ -16,8 +16,44 @@ import PHOTO8 from "../../assets/photos/CateImage8.jpeg";
 import PHOTO9 from "../../assets/photos/CateImage9.jpeg";
 import PHOTO10 from "../../assets/photos/CateImage10.jpeg";
 import PageIndicator from "../PageIndicator/Index";
+const photos = [
+  {
+    src: PHOTO,
+    category:"Painting"
+  },
+  {
+    src: PHOTO1,
+    category:"Sculpture"
+  },
+  {
+    src: PHOTO2,
+    category:"Literature"
+  },
+  {
+    src: PHOTO4,
+    category:"Architecture"
+  },
+  {
+    src: PHOTO3,
+    category:"Cinema"
+  },
+  {
+    src: PHOTO5,
+    category:"Music"
+  },
+  {
+    src: PHOTO9,
+    category:"Theater"
+  },
+  {
+    src: PHOTO10,
+    category:"Painting"
+  },
+  
+];
 
 function Gallery() {
+
   return (
     <>
       <PageIndicator name="Gallery" />
@@ -52,61 +88,5 @@ function Gallery() {
     </>
   );
 }
-// const photos = [
-//   {
-//     src: PHOTO,
-//     height: 301,
-//     width: 398,
-//   },
-//   {
-//     src: PHOTO1,
-//     height: 300,
-//     width: 376,
-//   },
-//   {
-//     src: PHOTO2,
-//     height: 300,
-//     width: 373,
-//   },
-//   {
-//     src: PHOTO3,
-//     width: 1600,
-//     height: 900,
-//   },
-//   {
-//     src: PHOTO4,
-//     width: 1600,
-//     height: 900,
-//   },
-//   {
-//     src: PHOTO5,
-//     width: 1600,
-//     height: 900,
-//   },
-//   {
-//     src: PHOTO6,
-//     width: 1600,
-//     height: 900,
-//   },
-//   {
-//     src: PHOTO7,
-//     width: 1600,
-//     height: 900,
-//   },
-//   {
-//     src: PHOTO8,
-//     width: 1600,
-//     height: 900,
-//   },
-//   {
-//     src:PHOTO9,
-//     width: 1600,
-//     height: 900,
-//   },
-//   {
-//     src: PHOTO10,
-//     width: 1600,
-//     height: 900,
-//   },
-// ];
+
 export default Gallery;

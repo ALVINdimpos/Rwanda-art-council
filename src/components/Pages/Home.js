@@ -12,8 +12,15 @@ import Testmonial from "../box/testmonial/Index";
 import News from "../box/newsBox/Index";
 import Partner from "../box/partners/Index";
 import Footer from "../Footer/Footer";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+
+  const EventHandler = (e) => {
+    e.preventDefaul();
+    navigate("/Events");
+  };
   return (
     <>
       <NavBar />
@@ -24,9 +31,9 @@ function Home() {
       <WhoWeAreBox />
       <SectionIndicator name="Fiderations" />
       <FidBox />
-      <SectionIndicator name="Events" />
+      <SectionIndicator name="Events" onClick={EventHandler}/>
       <EventBox />
-      <SectionIndicator name="Categories" />
+      <SectionIndicator name="Categories"  />
       <Categories />
       <Testmonial />
       <SectionIndicator name="Latest News" />

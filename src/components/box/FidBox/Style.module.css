@@ -11,7 +11,7 @@
   height: 220px;
   width: 197px;
   border-radius: 25px;
-  background-color: white;
+  background-color: whitesmoke;
   box-shadow: 0px 4px 4px 0px #00000040;
 }
 .FideBox img {
@@ -25,6 +25,7 @@
 .FideBox p{
   font-family: 'EB Garamond';
   font-size: 16px;
-  line-height: 15px;
-  padding: 0 1rem 0 1rem;
+  line-height: 14px;
+  text-align: center;
+  padding: 10px;
 }
