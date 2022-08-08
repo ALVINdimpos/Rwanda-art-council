@@ -17,7 +17,10 @@ function Whatwedo() {
       </div>
       <div className={Style.ServicesBoxWraper}>
         <div className={Style.ServicesBox}>
-          <img src={Image1}alt="description of image" />
+          <div className={Style.overFlow}>
+            <img src={Image1} alt="description of image" className={Style.CardImgTop}/>
+          </div>
+
           <h3>Lorem ipsum</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
@@ -25,7 +28,10 @@ function Whatwedo() {
           </p>
         </div>
         <div className={Style.ServicesBox}>
-          <img src={Image2}alt="description of image" />
+        <div className={Style.overFlow}>
+            <img src={Image2} alt="description of image" className={Style.CardImgTop}/>
+          </div>
+
           <h3>Lorem ipsum</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
@@ -33,7 +39,10 @@ function Whatwedo() {
           </p>
         </div>
         <div className={Style.ServicesBox}>
-          <img src={Image3} alt="description of image"/>
+        <div className={Style.overFlow}>
+            <img src={Image3} alt="description of image" className={Style.CardImgTop}/>
+          </div>
+
           <h3>Lorem ipsum</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh

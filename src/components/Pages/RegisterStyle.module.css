@@ -17,3 +17,9 @@
 .registerWraper ::placeholder{
   font-size: small;
 }
+@media (max-width:858px)  {
+.registerWraper{
+  width: 80%;
+}
+  
+}
