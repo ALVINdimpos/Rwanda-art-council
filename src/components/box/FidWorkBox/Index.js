@@ -10,8 +10,12 @@ import Image7 from "../../../assets/photos/Service3.png";
 
 function Index() {
   return (
-    <div>
       <div className={Style.FideWorkBoxWraper}>
+        <div className={Style.FideWorkBox1}>
+          <img src={Image1} alt="description of image" />
+          <p>Lorem Ipsum is simply dummy text of the fid</p> 
+        </div>
+        
         <div className={Style.FideWorkBox1}>
           <img src={Image1} alt="description of image" />
           <p>Lorem Ipsum is simply dummy text of the fid</p> 
@@ -19,6 +23,11 @@ function Index() {
 
         <div className={Style.FideWorkBox1}>
           <img src={Image2} alt="description of image" />
+          <p>Lorem Ipsum is simply dummy text of the fid</p> 
+        </div>
+
+        <div className={Style.FideWorkBox1}>
+          <img src={Image3} alt="description of image" />
           <p>Lorem Ipsum is simply dummy text of the fid</p> 
         </div>
 
@@ -44,7 +53,6 @@ function Index() {
           <p>Lorem Ipsum is simply dummy text of the fid</p> 
         </div>
       </div>
-    </div>
   );
 }
 

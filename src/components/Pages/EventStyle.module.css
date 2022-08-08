@@ -3,13 +3,9 @@
   grid-template-columns: auto auto auto;
   width: 80%;
   margin: 2rem auto;
+  gap: 3rem;
 }
-@media (max-width: 482px) {
-  .EventsWraper {
-    grid-template-columns: auto;
-    justify-content: space-between;
-  }
-}
+
 .EventSearchWraper {
   display: flex;
   width: 80%;
@@ -31,4 +27,10 @@
 }
 .EventSearchBox ::placeholder {
   font-size: small;
+}
+@media (max-width: 482px) {
+  .EventsWraper {
+    grid-template-columns: auto;
+    justify-content: space-between;
+  }
 }

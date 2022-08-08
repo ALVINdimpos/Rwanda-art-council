@@ -7,6 +7,7 @@ import Style from "./About.module.css";
 import Service1 from "../../assets/photos/Service1.png";
 import Service2 from "../../assets/photos/Service2.png";
 import Service3 from "../../assets/photos/Service3.png";
+import ServiceCard from "../box/OurServiceCard/Index";
 function Aboutus() {
   return (
     <>
@@ -24,36 +25,30 @@ function Aboutus() {
         </div>
       </div>
       <div className={Style.ServiceBoxWraper}>
-        <div className={Style.ServiceBox}>
-          <img src={Service1} alt="description of "/>
-          <h2>Lorem Ipsum is simply</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
-            mauris, nec turpis
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
-            mauris, nec turpis
-          </p>
-        </div>
-        <div className={Style.ServiceBox}>
-          <img src={Service2} alt="description of "/>
-          <h2>Lorem Ipsum is simply</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
-            mauris, nec turpis
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
-            mauris, nec turpis
-          </p>
-        </div>
-        <div className={Style.ServiceBox}>
-          <img src={Service3} alt="description of "/>
-          <h2>Lorem Ipsum is simply</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
-            mauris, nec turpis
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
-            mauris, nec turpis
-          </p>
-        </div>
+        <ServiceCard
+          header="Mission"
+          img={Service1}
+          subheader="Lorem Ipsum is simply"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
+            mauris, nec turpis Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Cursus nibh mauris, nec turpisLorem"
+        />
+        <ServiceCard
+          header="Vission"
+          img={Service2}
+          subheader="Lorem Ipsum is simply"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
+            mauris, nec turpis Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Cursus nibh mauris, nec turpisLorem"
+        />
+        <ServiceCard
+          header="Our value"
+          img={Service3}
+          subheader="Lorem Ipsum is simply"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
+            mauris, nec turpis Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Cursus nibh mauris, nec turpisLorem"
+        />
       </div>
       <NavBar />
       <Partner />

@@ -1,14 +1,29 @@
+.headerStyle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  width: 100%;
+  padding-right: 1rem;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  z-index: 999;
+}
 .NavBar {
   display: flex;
   list-style: none;
   gap: 2rem;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
   font-family: "Raleway";
   font-size: 16px;
   font-weight: 800;
+  height: 64px;
 }
 .NavBar li {
   flex-grow: 0;
@@ -23,23 +38,44 @@
   color: #C5801A !important;
 }
 
-.headerStyle {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  background-color: white;
-  width: 100%;
-  padding-right: 1rem;
-  position: fixed;
-  top: 0;
-  overflow: hidden;
-}
+
 .headerStyle img {
   height: 5.5rem;
-  /* height: 100px;
-  width: 100px; */
   margin-left: 30px;
   vertical-align: middle;
 }
-
+.hamburger{
+  display: none !important;
+  font-size: 30px;
+  float: right;
+  cursor: pointer;
+}
+@media screen and (max-width: 800px){
+  .list {
+      flex-direction: column;
+      height: auto;
+  }
+  .hamburger{
+    display: block !important;
+  }
+  .NavBar{
+    display: block;
+    flex-direction: column;
+    height: auto;
+    position: relative;
+    background-color: #fff;
+    overflow-y: visible;
+  }
+  .Button{
+    display: none;
+  }
+  .items:nth-child(1){
+      border-top: 1px solid rgba(255, 255, 255, 0.555);
+      margin-top: 50px;
+  }
+  .items {
+   flex-direction: column;
+     
+  }
+ 
+}
