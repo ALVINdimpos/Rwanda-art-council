@@ -15,8 +15,6 @@
 }
 .partnerBox {
   padding: 2rem;
-  display: flex;
-  flex-direction: row;
   width: 80%;
 }
 .h1 {
@@ -27,14 +25,14 @@
   text-align: center;
 }
 @media (max-width: 482px) {
-  .partnerBox {
-    flex-direction: column;
-    justify-content: space-between;
-  }
+  
   .partnerBox img{
     width: 100%;
+    object-fit: contain;
   }
   .partnerWraper {
     flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
   }
 }

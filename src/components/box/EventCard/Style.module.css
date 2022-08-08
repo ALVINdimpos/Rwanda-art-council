@@ -1,13 +1,20 @@
-.CardWraper {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    flex-direction: row;
-    margin-bottom: 1rem;
-    margin: 1rem auto;
-    gap: 2rem;
+  .EventButton{
+    top: 4px;
+    left: 4px;
+    position: absolute;
+  }
+  .CardImgTop{
+    transform: scale(1);
+    transition: transform 0.5s ease;
+  }
+  .CardImgTop:hover{
+    transform: scale(1.8);
+  }
+  .overFlow{
+    overflow: hidden;
   }
   .Card {
+    position: relative;
     background-color: white;
     width: 80%;
     height: 470px;
@@ -15,14 +22,18 @@
     box-shadow: 0px 4px 4px 0px #00000040;
     border-radius: 4px;
   }
+  .Card:hover{
+    box-shadow: 5px 10px 20px 1px #00000040;
+  }
   .Card Button {
    float: right;
   
   }
   .Card h4 {
     font-family: "Bebas";
-    font-size: 42px;
+    font-size: 22px;
     font-weight: 300;
+    padding-top: 2rem;
     text-align: center;
   }
   .DateCardWraper {

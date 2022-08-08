@@ -5,34 +5,42 @@ import Logo from "../../assets/photos/Logo.png";
 import { Link, NavLink } from "react-router-dom";
 import { route } from "../../utils/header";
 import { useNavigate } from "react-router-dom";
-
+import { MDBIcon } from "mdbreact";
 
 function Index() {
   const navigate = useNavigate();
-  const loginHandler = (event)=>{
-event.preventDefault()
-navigate('/Login')
-  }
+  const loginHandler = (event) => {
+    event.preventDefault();
+    navigate("/Login");
+  };
   return (
     <header className={NavStyle.headerStyle}>
-     <Link to="/Home"><img src={Logo} className={NavStyle.mainLogo} alt="description of photo"/></Link> 
+      <Link to="/Home">
+        <img
+          src={Logo}
+          className={NavStyle.mainLogo}
+          alt="description of photo"
+        />
+      </Link>
+
       <div>
         <ul className={NavStyle.NavBar}>
-        {route?.map((element,index)=> <li key={index}>
-            <NavLink to={element.link} className={isActive =>
-    "nav-link" + (!isActive ? " unselected" : "")
-  }>
-           {element.name}
-            </NavLink>
-          </li>
-
-        )}
-         
-        
+          {route?.map((element, index) => (
+            <li key={index}>
+              <NavLink
+                to={element.link}
+                className={NavStyle.items}
+              >
+                {element.name}
+              </NavLink>
+            </li>
+          ))}
         </ul>
       </div>
-       <Button name="Login" onClick={loginHandler} />
-    </header >
+      <div className={NavStyle.Button }> <Button name="Login" onClick={loginHandler} /></div>
+     
+      <MDBIcon fas icon="bars" className={NavStyle.hamburger} />
+    </header>
   );
 }
 

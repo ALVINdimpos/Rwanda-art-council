@@ -5,8 +5,16 @@ import Button from "../Button/Index";
 import { MDBIcon } from "mdbreact";
 import { MDBInput } from "mdb-react-ui-kit";
 import { Link, NavLink } from "react-router-dom";
-
+import { useState } from "react";
 function Index() {
+  const [Email,SetEmail]=useState('');
+  const [Password,SetPassword]=useState('');
+  const EmailHandler=(e)=>{
+    SetEmail(e.target.value);
+  }
+  const PasswordHandler=(e)=>{
+    SetPassword(e.target.value);
+  }
   return (
     <>
       <NavBar />
@@ -25,28 +33,15 @@ function Index() {
             <h1>Sign in</h1>
           </div>
           <div>
-            <p>Sign up on the internal platform</p>
-          </div>
-          <div className={Style.loginButtonWraper}>
-            <div>
-              <Button name="Login with facebook" />
-            </div>
-            <div>
-              <Button name="Login with google" />
-            </div>
-          </div>
-          <div>
-            <p>or login with email address</p>
-          </div>
-          <div>
             <MDBInput
               id="typeText"
               type="email"
               placeholder="Enter your email"
+              onChange={EmailHandler}
             />
           </div>
           <div>
-            <MDBInput id="typeText" type="password" placeholder="Password" />
+            <MDBInput id="typeText" type="password" placeholder="Password"  onChange={PasswordHandler}/>
           </div>
           <div>
             {" "}

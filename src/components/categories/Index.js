@@ -21,7 +21,7 @@ function Index() {
          <div>
         <img src={Photo3}alt="description of photo"/>
         </div>
-        <div>
+        <div className={Style.CategoriesColumn}>
         <img src={Photo4}alt="description of photo"/>
         <img src={Photo5}alt="description of photo"/>
         </div>

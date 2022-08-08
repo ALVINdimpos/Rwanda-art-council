@@ -19,41 +19,39 @@ import PageIndicator from "../PageIndicator/Index";
 const photos = [
   {
     src: PHOTO,
-    category:"Painting"
+    category: "Painting",
   },
   {
     src: PHOTO1,
-    category:"Sculpture"
+    category: "Sculpture",
   },
   {
     src: PHOTO2,
-    category:"Literature"
+    category: "Literature",
   },
   {
     src: PHOTO4,
-    category:"Architecture"
+    category: "Architecture",
   },
   {
     src: PHOTO3,
-    category:"Cinema"
+    category: "Cinema",
   },
   {
     src: PHOTO5,
-    category:"Music"
+    category: "Music",
   },
   {
     src: PHOTO9,
-    category:"Theater"
+    category: "Theater",
   },
   {
     src: PHOTO10,
-    category:"Painting"
+    category: "Painting",
   },
-  
 ];
 
 function Gallery() {
-
   return (
     <>
       <PageIndicator name="Gallery" />
@@ -70,16 +68,16 @@ function Gallery() {
         </ul>
       </div>
       <div className={Style.PhotoAlbum}>
-        <img src={PHOTO} className={Style.PhotoGallery}alt="description of image" />
-        <img src={PHOTO1} alt="description of image"/>
-        <img src={PHOTO2} alt="description of image"/>
-        <img src={PHOTO3} alt="description of image"/>
-        <img src={PHOTO4} alt="description of image"/>
-        <img src={PHOTO5} alt="description of image"/>
-        <img src={PHOTO6} alt="description of image"/>
-        <img src={PHOTO7} alt="description of image"/>
-        <img src={PHOTO8} alt="description of image"/>
-        <img src={PHOTO9} alt="description of image"/>
+        <img src={PHOTO} alt="description of image" />
+        <img src={PHOTO1} alt="description of image" />
+        <img src={PHOTO2} alt="description of image" />
+        <img src={PHOTO3} alt="description of image" />
+        <img src={PHOTO4} alt="description of image" />
+        <img src={PHOTO5} alt="description of image" />
+        <img src={PHOTO6} alt="description of image" />
+        <img src={PHOTO7} alt="description of image" />
+        <img src={PHOTO8} alt="description of image" />
+        <img src={PHOTO9} alt="description of image" />
       </div>
 
       <NavBar />

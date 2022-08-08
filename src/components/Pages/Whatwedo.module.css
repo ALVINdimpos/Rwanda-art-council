@@ -32,9 +32,22 @@
   height: 474px;
   box-shadow: 0px 4px 4px 0px #00000040;
 }
+.ServicesBox:hover{
+  box-shadow: 5px 10px 20px 1px #00000040;
+}
 .ServicesBox img {
   height: 240px;
   width: 100%;
+}
+.CardImgTop{
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+.CardImgTop:hover{
+  transform: scale(1.8);
+}
+.overFlow{
+  overflow: hidden;
 }
 .ServicesBox p{
   font-family: 'EB Garamond';
