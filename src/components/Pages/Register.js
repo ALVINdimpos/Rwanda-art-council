@@ -143,7 +143,7 @@ function Index() {
               onChange={CategoryHandler}
               value={Category}
             >
-              <option selected>Select category</option>
+              <option defaultValue>Select category</option>
               <option value="1">PLASTIC ARTS</option>
               <option value="2">MUSIC & DANCE</option>
               <option value="3">ACTING & DRAMA</option>

@@ -1,5 +1,5 @@
 import React from "react";
-import Style from "./HomeStyle.module.css"
+import Style from "./HomeStyle.module.css";
 import NavBar from "../NavBar/Index";
 import Header from "../HeaderDiv/Index";
 import SearchBox from "../SearchBox/Index";
@@ -33,38 +33,64 @@ function Home() {
       <FidWOrkBox />
       <WhoWeAreBox />
       <SectionIndicator name="Fiderations" />
-      <FidBox />
+      <div className={Style.FiderationBoxWraper}>
+        <FidBox
+          fidname="Fideration name"
+          fiddescription="Lorem Ipsum is simply dummy text of the printing"
+        />
+        <FidBox
+          fidname="Fideration name"
+          fiddescription="Lorem Ipsum is simply dummy text of the printing"
+        />
+        <FidBox
+          fidname="Fideration name"
+          fiddescription="Lorem Ipsum is simply dummy text of the printing"
+        />
+        <FidBox
+          fidname="Fideration name"
+          fiddescription="Lorem Ipsum is simply dummy text of the printing"
+        />
+        <FidBox
+          fidname="Fideration name"
+          fiddescription="Lorem Ipsum is simply dummy text of the printing"
+        />
+        <FidBox
+          fidname="Fideration name"
+          fiddescription="Lorem Ipsum is simply dummy text of the printing"
+        />
+      </div>
+
       <SectionIndicator name="Events" onClick={EventHandler} />
       <div className={Style.eventBoxWraper}>
-            <EventBox
-        title="Donec Sit Amet Nibh"
-        date="by Nick Roach | May 9, 2014 | Location"
-        description="Donec eu consectetur purus. Lorem ipsum dolor sit amet, consectetur
+        <EventBox
+          title="Donec Sit Amet Nibh"
+          date="by Nick Roach | May 9, 2014 | Location"
+          description="Donec eu consectetur purus. Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Sed rhoncus iaculis mauris eu mattis. Donec vel
             odio pellentesque, tristique massa sit amet, pharetra metus. Nam
             rutrum nulla vel blandit dignissim. Nulla turpis metus, malesuada in"
-            img={EventPhot}
-      />
-      <EventBox
-        title="Donec Sit Amet Nibh"
-        date="by Nick Roach | May 9, 2014 | Location"
-        description="Donec eu consectetur purus. Lorem ipsum dolor sit amet, consectetur
+          img={EventPhot}
+        />
+        <EventBox
+          title="Donec Sit Amet Nibh"
+          date="by Nick Roach | May 9, 2014 | Location"
+          description="Donec eu consectetur purus. Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Sed rhoncus iaculis mauris eu mattis. Donec vel
             odio pellentesque, tristique massa sit amet, pharetra metus. Nam
             rutrum nulla vel blandit dignissim. Nulla turpis metus, malesuada in"
-            img={EventPhot2}
-      />
-      <EventBox
-        title="Donec Sit Amet Nibh"
-        date="by Nick Roach | May 9, 2014 | Location"
-        description="Donec eu consectetur purus. Lorem ipsum dolor sit amet, consectetur
+          img={EventPhot2}
+        />
+        <EventBox
+          title="Donec Sit Amet Nibh"
+          date="by Nick Roach | May 9, 2014 | Location"
+          description="Donec eu consectetur purus. Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Sed rhoncus iaculis mauris eu mattis. Donec vel
             odio pellentesque, tristique massa sit amet, pharetra metus. Nam
             rutrum nulla vel blandit dignissim. Nulla turpis metus, malesuada in"
-            img={EventPhot3}
-      />
+          img={EventPhot3}
+        />
       </div>
-  
+
       <SectionIndicator name="Categories" />
       <Categories />
       <Testmonial />

@@ -1,18 +1,13 @@
-.FideBoxWraper {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  flex-direction: row;
-  margin-bottom: 1rem;
-  margin: 1rem auto;
-  gap: 2rem;
-}
+
 .FideBox {
   height: 220px;
   width: 197px;
-  border-radius: 25px;
+  border-radius: 15px;
   background-color: whitesmoke;
   box-shadow: 0px 4px 4px 0px #00000040;
+}
+.FideBox:hover{
+  box-shadow: 5px 10px 20px 1px #00000040;
 }
 .FideBox img {
   height: 129px;

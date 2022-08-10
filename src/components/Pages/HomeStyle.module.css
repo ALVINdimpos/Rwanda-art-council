@@ -5,9 +5,23 @@
     gap: 2rem;
     margin: 1rem auto;
   }
+  .FiderationBoxWraper{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    width: 90%;
+    gap: 2rem;
+    margin: 1rem auto;
+  }
+   @media (max-width: 700px) {
+    .eventBoxWraper {
+      grid-template-columns: auto auto;
+      justify-content: space-between;
+    }
+  }
   @media (max-width: 482px) {
     .eventBoxWraper {
       grid-template-columns: auto;
       justify-content: space-between;
     }
   }
+ 
