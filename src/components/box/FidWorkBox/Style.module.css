@@ -1,28 +1,29 @@
 .FideWorkBoxWraper {
   display: flex;
   justify-content: space-between;
-  max-width: 90%;
-  overflow-x: scroll;
+  width: 90%;
   flex-direction: row;
   margin-bottom: 1rem;
   margin: 1rem auto;
   gap: 2rem;
 }
 .FideWorkBox1 {
-  height: 220px;
+  height: 200px;
   width: 197px;
-  border-radius: 25px;
-  background-color: whitesmoke;
+  background-color: white;
   box-shadow: 0px 4px 4px 0px #00000040;
 }
+.FideWorkBox1:hover{
+  box-shadow: 5px 10px 20px 1px #00000040;
+}
 .FideWorkBox1 img {
-  height: 136px;
+  height: 125px;
   width: 100%;
 }
 .FideWorkBox1 p {
   font-family: "EB Garamond";
   font-size: 16px;
   line-height: 15px;
-  font-weight: 900;
+  font-weight: 500;
   padding: 10px;
 }

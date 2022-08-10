@@ -1,6 +1,7 @@
 .testWraper {
   display: flex;
   width: 90%;
+  position: relative;
   margin: 0 auto;
   gap: 2rem;
 }
@@ -10,6 +11,24 @@
 .testmonial img {
   width: 100%;
   object-fit: fill;
+}
+.People1 {
+  position: absolute;
+  left: 100px;
+  top: 30px;
+}
+.People1 img {
+  height: 76px;
+  width: 76px;
+  border-radius: 50%;
+}
+.People1 p {
+  font-family: "Lato";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  height: 97px;
+  width: 230px;
 }
 .dot {
   text-align: center;
@@ -22,6 +41,6 @@
   font-size: 36px;
   font-weight: 400;
 }
-.dot1{
-  color: #C5801A;
+.dot1 {
+  color: #c5801a;
 }
