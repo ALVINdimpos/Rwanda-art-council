@@ -13,7 +13,7 @@ function Index() {
         />
         <select name="" id="cars" className={SearchStyle.select}>
         <optgroup label="PLASTIC ARTS">
-                <option selected>Select category</option>
+                <option defaultValue>Select category</option>
                 <option value="Illustrators">Illustrators</option>
                 <option value="Painters">Painters</option>
                 <option value="Sculptors">Sculptors</option>

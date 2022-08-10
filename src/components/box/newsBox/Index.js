@@ -1,5 +1,6 @@
 import React from "react";
 import Style from "./Style.module.css";
+import NewsBox from "../../box/eventBox/Index"
 import NewsPhoto1 from "../../../assets/photos/news1.png";
 import NewsPhoto2 from "../../../assets/photos/news2.png";
 import NewsPhoto3 from "../../../assets/photos/news3.png";
@@ -9,42 +10,33 @@ function Index() {
   return (
     <div>
       <div className={Style.NewsWraper}>
-        <div className={Style.NewsBox}>
-          <img src={NewsPhoto1} alt="description of "/>
-          <h4>Donec Sit Amet Nibh</h4>
-          <h5>by Nick Roach | May 9, 2014 | Category</h5>
-          <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. in voluptate velit{" "}
-          </p>
-          <Button name="Read more"/>
-        </div>
-        <div className={Style.NewsBox}>
-          <img src={NewsPhoto2} alt="description of "/>
-          <h4>Donec Sit Amet Nibh</h4>
-          <h5>by Nick Roach | May 9, 2014 | Category</h5>
-          <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. in voluptate velit{" "}
-          </p>
-          <Button name="Read more"/>
-        </div>
-        <div className={Style.NewsBox}>
-          <img src={NewsPhoto3} alt="description of "/>
-          <h4>Donec Sit Amet Nibh</h4>
-          <h5>by Nick Roach | May 9, 2014 | Category</h5>
-          <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. in voluptate velit{" "}
-          </p>
-          <Button name="Read more"/>
-        </div>
+      <NewsBox
+        title="Donec Sit Amet Nibh"
+        date="by Nick Roach | May 9, 2014 | Location"
+        description="Donec eu consectetur purus. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Sed rhoncus iaculis mauris eu mattis. Donec vel
+            odio pellentesque, tristique massa sit amet, pharetra metus. Nam
+            rutrum nulla vel blandit dignissim. Nulla turpis metus, malesuada in"
+            img={NewsPhoto1}
+      />
+        <NewsBox
+        title="Donec Sit Amet Nibh"
+        date="by Nick Roach | May 9, 2014 | Location"
+        description="Donec eu consectetur purus. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Sed rhoncus iaculis mauris eu mattis. Donec vel
+            odio pellentesque, tristique massa sit amet, pharetra metus. Nam
+            rutrum nulla vel blandit dignissim. Nulla turpis metus, malesuada in"
+            img={NewsPhoto2}
+      />
+      <NewsBox
+        title="Donec Sit Amet Nibh"
+        date="by Nick Roach | May 9, 2014 | Location"
+        description="Donec eu consectetur purus. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Sed rhoncus iaculis mauris eu mattis. Donec vel
+            odio pellentesque, tristique massa sit amet, pharetra metus. Nam
+            rutrum nulla vel blandit dignissim. Nulla turpis metus, malesuada in"
+            img={NewsPhoto3}
+      />
       </div>
     </div>
   );
