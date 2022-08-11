@@ -1,12 +1,12 @@
 import React from "react";
-import NavBar from "../NavBar/Index";
 import Style from "./RegisterStyle.module.css";
 import Button from "../Button/Index";
 import { MDBIcon } from "mdbreact";
 import { MDBInput } from "mdb-react-ui-kit";
 import { MDBFile } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
-import { useState ,useEffect} from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 function Index() {
   const [Federation_name, SetFederation_name] = useState("");
   const [Phone_number, SetPhone_number] = useState("");
@@ -17,10 +17,10 @@ function Index() {
   const [Cluster, SetCluster] = useState("");
   const [Password, SetPassword] = useState("");
   const [ConfirmPassword, SetConfirmPassword] = useState("");
-  const [CustomFile, SetCustomFile] = useState("");
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [CustomFile, SetCustomFile] = useState({});
+  const [Logo, SetLogo] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [fileName, setFileName] = useState("");
   const Federation_nameHandler = (e) => {
     SetFederation_name(e.target.value);
   };
@@ -46,37 +46,56 @@ function Index() {
     SetPassword(e.target.value);
   };
   const ConfirmPasswordHandler = (e) => {
-    ConfirmPassword(e.target.value);
+    SetConfirmPassword(e.target.value);
   };
+  const CustomLogoHandler = (e) => {
+    e.preventDefault();
+    const logo = e.target.files[0];
+    if (logo.size > 1000000) alert("Logo size cannot exceed more than 8MB");
+    else SetLogo(logo);
+  };
+  console.log("hhhhhhhhh",Logo)
   const CustomFileHandler = (e) => {
-    SetCustomFile(e.target.value);
+    e.preventDefault();
+    const file = e.target.files[0];
+   
+    // console.log(file);
+    if (file.size > 1000000) alert("File size cannot exceed more than 8MB");
+    else SetCustomFile(file);
   };
-  useEffect(() => {
-  fetch(``)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(
-          `This is an HTTP error: The status is ${response.status}`
-        );
-      }
-      return response.json();
-    })
-    .then((actualData) => {
-      setData(actualData);
-      setError(null);
-    })
-    .catch((err) => {
-      setError(err.message);
-      setData(null);
-    })
-    .finally(() => {
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    let formData = new FormData();
+    formData.append("federation_name",Federation_name);
+    formData.append("phone_number",Phone_number);
+    formData.append("tinnumber",Tin_number);
+    formData.append("email",Email);
+    formData.append("number_of_members",Number_of_members);
+    formData.append("category_id",Category);
+    formData.append("password",Password);
+    formData.append("password_confirmation",ConfirmPassword);
+    formData.append("file",CustomFile);
+    formData.append("image",Logo);
+    setLoading(true);
+    try {
+      const res = await axios.post(
+        "https://rwanda-art-api.herokuapp.com/api/register",
+        formData,{ headers: {
+          'Content-Type': 'multipart/form-data'
+        }}
+
+      );
+      console.log(res);
       setLoading(false);
-    });
-   }, []);
-  console.log(CustomFile);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  };
   return (
     <>
-      <NavBar />
+      <div className={Style.mainWraper}>
         <div className={Style.registerWraper}>
           <div>
             <div>
@@ -139,7 +158,7 @@ function Index() {
           </div>
           <div>
             <select
-              class="browser-default custom-select"
+              className="browser-default custom-select"
               onChange={CategoryHandler}
               value={Category}
             >
@@ -156,12 +175,12 @@ function Index() {
             <select
               name=""
               id="cars"
-              class="browser-default custom-select"
+              className="browser-default custom-select"
               onChange={ClusterHandler}
               value={Cluster}
             >
               <optgroup label="PLASTIC ARTS">
-                <option selected>Select cluster</option>
+                <option defaultValue>Select cluster</option>
                 <option value="Illustrators">Illustrators</option>
                 <option value="Painters">Painters</option>
                 <option value="Sculptors">Sculptors</option>
@@ -213,15 +232,23 @@ function Index() {
 
           <div>
             <MDBFile
-              label="Upload file"
+              label="RDB Certificate"
               id="customFile"
               onChange={CustomFileHandler}
-              value={CustomFile}
             />
           </div>
           <div>
-            {" "}
-            <Button name="Sign up" />
+            <MDBFile
+              label="upload your logo"
+              id="customFile"
+              onChange={CustomLogoHandler}
+            />
+          </div>
+          <div>
+            <Button
+              name={loading ? "loading..." : `Sign up`}
+              onClick={submitHandler}
+            />
           </div>
           <div>
             <p>
@@ -232,6 +259,7 @@ function Index() {
             </p>
           </div>
         </div>
+      </div>
     </>
   );
 }

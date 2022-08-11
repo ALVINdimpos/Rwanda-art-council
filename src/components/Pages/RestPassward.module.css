@@ -1,0 +1,10 @@
+.MainWraper {
+    min-height: 100vh;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .row{
+    
+  }
