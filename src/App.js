@@ -1,4 +1,5 @@
 import ReactDOM from "react-dom/client";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Pages/Home";
 import Aboutus from "./components/Pages/Aboutus";
@@ -8,7 +9,7 @@ import Event from "./components/Pages/Events";
 import Whatwedo from "./components/Pages/Whatwedo";
 import Register from'./components/Pages/Register'
 import Login from './components/Pages/Login'
-
+import PasswordResset from "./components/Pages/PasswordResset";
 export default function App() {
   return (
     <BrowserRouter>
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="Whatwedo" element={<Whatwedo />} />
         <Route path="Register" element={<Register />} />
         <Route path="Login" element={<Login />} />
+        <Route path="PasswordResset" element={< PasswordResset />} />
       </Routes>
     </BrowserRouter>
   );
