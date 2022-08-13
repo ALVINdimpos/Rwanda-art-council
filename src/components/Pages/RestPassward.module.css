@@ -1,10 +1,28 @@
-.MainWraper {
-    min-height: 100vh;
-    background-color: whitesmoke;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .row{
-    
-  }
+.carddetails {
+  position: relative;
+  display: flex;
+
+  padding-bottom: 20px;
+}
+.carddetails input {
+  height: 50px;
+  width: 100%;
+  font-size: 18px;
+  caret-color: white;
+  background-color: whitesmoke;
+  color: black;
+  padding: 0px 20px;
+  padding-left: 50px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+}
+.carddetails i {
+  position: absolute;
+  left: 10px;
+  top: 16px;
+  color: black;
+  font-size: 18px;
+}
+
