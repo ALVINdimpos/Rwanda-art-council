@@ -93,13 +93,16 @@ function Index() {
       setLoading(false);
     }
   };
+  const Token = localStorage.getItem("token")
   const fetchCategorie = () => {
     fetch("https://rwanda-art-api.herokuapp.com/api/user/category", {
       headers: {
         "Content-Type": "application/json",
         'Accept': "application/json",
+        'Authorization':`Bearer ${Token}`
       },
     })
+
       .then((response) => {
         return response.json();
       })
