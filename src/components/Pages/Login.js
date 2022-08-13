@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 function Index() {
+  
   const [Email, SetEmail] = useState("");
   const [Password, SetPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -24,6 +25,8 @@ function Index() {
     email: Email,
     password: Password,
   };
+
+
   const loginHandler = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -33,6 +36,8 @@ function Index() {
         loginData
       );
       console.log(res)
+      localStorage.setItem("token",res.data.access_token)
+  
       setLoading(false);
     } catch (error) {
       SetPassword("");
@@ -40,7 +45,7 @@ function Index() {
       setLoading(false);
     }
   };
-
+  
   return (
     <>
       <div className={Style.loginMainWraper}>
