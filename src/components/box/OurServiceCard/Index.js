@@ -19,9 +19,6 @@ function Index(props) {
           <h2>{props.subheader}</h2>
           <p>
             {props.description}
-            {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
-            mauris, nec turpis Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Cursus nibh mauris, nec turpisLorem  */}
           </p>
         </div>
     </div>
