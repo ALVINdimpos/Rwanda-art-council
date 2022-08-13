@@ -20,7 +20,6 @@ function Index() {
   const [CustomFile, SetCustomFile] = useState({});
   const [Logo, SetLogo] = useState({});
   const [loading, setLoading] = useState(false);
-  const [fileName, setFileName] = useState("");
   const Federation_nameHandler = (e) => {
     SetFederation_name(e.target.value);
   };
@@ -54,11 +53,10 @@ function Index() {
     if (logo.size > 1000000) alert("Logo size cannot exceed more than 8MB");
     else SetLogo(logo);
   };
-  console.log("hhhhhhhhh",Logo)
   const CustomFileHandler = (e) => {
     e.preventDefault();
     const file = e.target.files[0];
-   
+
     // console.log(file);
     if (file.size > 1000000) alert("File size cannot exceed more than 8MB");
     else SetCustomFile(file);
@@ -67,24 +65,26 @@ function Index() {
   const submitHandler = async (e) => {
     e.preventDefault();
     let formData = new FormData();
-    formData.append("federation_name",Federation_name);
-    formData.append("phone_number",Phone_number);
-    formData.append("tinnumber",Tin_number);
-    formData.append("email",Email);
-    formData.append("number_of_members",Number_of_members);
-    formData.append("category_id",Category);
-    formData.append("password",Password);
-    formData.append("password_confirmation",ConfirmPassword);
-    formData.append("file",CustomFile);
-    formData.append("image",Logo);
+    formData.append("federation_name", Federation_name);
+    formData.append("phone_number", Phone_number);
+    formData.append("tinnumber", Tin_number);
+    formData.append("email", Email);
+    formData.append("number_of_members", Number_of_members);
+    formData.append("category_id", Category);
+    formData.append("password", Password);
+    formData.append("password_confirmation", ConfirmPassword);
+    formData.append("file", CustomFile);
+    formData.append("image", Logo);
     setLoading(true);
     try {
       const res = await axios.post(
         "https://rwanda-art-api.herokuapp.com/api/register",
-        formData,{ headers: {
-          'Content-Type': 'multipart/form-data'
-        }}
-
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
       );
       console.log(res);
       setLoading(false);
@@ -93,6 +93,27 @@ function Index() {
       setLoading(false);
     }
   };
+  const fetchCategorie = () => {
+    fetch("https://rwanda-art-api.herokuapp.com/api/user/category", {
+      headers: {
+        "Content-Type": "application/json",
+        'Accept': "application/json",
+      },
+    })
+      .then((response) => {
+        return response.json();
+      })
+
+      .then((data) => {
+        SetCategory(data);
+      });
+  };
+  console.log("category", Category);
+  useEffect(() => {
+    fetchCategorie();
+    submitHandler();
+  }, []);
+
   return (
     <>
       <div className={Style.mainWraper}>

@@ -16,6 +16,7 @@ import Footer from "../Footer/Footer";
 import EventPhot from "../../assets/photos/mainevent.jpeg";
 import EventPhot2 from "../../assets/photos/mainphoto.jpg";
 import EventPhot3 from "../../assets/photos/Event.jpeg";
+import OurTeam from "../box/ourTeam/Index"
 import { useNavigate } from "react-router-dom";
 function Home() {
   const navigate = useNavigate();
@@ -93,9 +94,10 @@ function Home() {
 
       <SectionIndicator name="Categories" />
       <Categories />
-      <Testmonial />
+      <OurTeam/>
       <SectionIndicator name="Latest News" />
       <News />
+      <Testmonial />
       <Partner />
       <Footer />
     </>
