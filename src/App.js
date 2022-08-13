@@ -9,6 +9,7 @@ import Event from "./components/Pages/Events";
 import Whatwedo from "./components/Pages/Whatwedo";
 import Register from'./components/Pages/Register'
 import Login from './components/Pages/Login'
+import ForgotPassward from "./components/Pages/ForgotPassward";
 import PasswordResset from "./components/Pages/PasswordResset";
 export default function App() {
   return (
@@ -23,7 +24,8 @@ export default function App() {
         <Route path="Whatwedo" element={<Whatwedo />} />
         <Route path="Register" element={<Register />} />
         <Route path="Login" element={<Login />} />
-        <Route path="PasswordResset" element={< PasswordResset />} />
+        <Route path="ForgotPassward" element={<ForgotPassward />} />
+        <Route path="PasswordResset" element={<PasswordResset />} />
       </Routes>
     </BrowserRouter>
   );
