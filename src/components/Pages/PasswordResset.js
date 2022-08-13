@@ -1,109 +1,88 @@
 import React from "react";
-import Style from "./RestPassward.module.css";
+import Style from "./LoginStyle.module.css";
+import Button from "../Button/Index";
+import { MDBIcon } from "mdbreact";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
-
-function PasswordResset() {
-  const [email, SetEmail] = useState("");
+function Index() {
+  const [Email, SetEmail] = useState("");
+  const [Password, SetPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const EmailHandler = (e) => {
-    e.preventDefault();
+  const [passwordShown, setPasswordShown] = useState(false);
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
+  const NewPasswordHandler = (e) => {
     SetEmail(e.target.value);
   };
-  const submitHandler = async (e) => {
+  const NewPasswordComfirmHandler = (e) => {
+    SetPassword(e.target.value);
+  };
+  const loginData = {
+    code: Email,
+    password:Password,
+  };
+  const loginHandler = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios({
-        url:"https://rwanda-art-api.herokuapp.com/api/password/email",
-        data:{email},
-        method:"POST"
-      }
-        
+    const res=  await axios.post(
+        "https://rwanda-art-api.herokuapp.com/api/password/reset",
+        loginData
       );
-      console.log(res);
+      console.log(res)
       setLoading(false);
     } catch (error) {
-      SetEmail("");
+      SetPassword("");
       console.log(error);
       setLoading(false);
     }
   };
+
   return (
-    <div
-      className="container"
-      style={{
-        minHeight: "100vh",
-      }}
-    >
-      <div className="row">
-        <div className="col-md-4 col-md-offset-4">
-          <div className="panel panel-default">
-            <div className="panel-body">
-              <div
-                className="text-center"
-                style={{
-                  minHeight: "50vh",
-                  paddingTop: "5rem",
-                  backgroundColor: "white",
-                  borderRadius: " 8px",
-                  boxShadow: " 0px 4px 4px 0px #00000040",
-                  padding: "2em",
-                  width: "400px",
-                  marginTop: "2rem",
-                  marginLeft: "20rem",
-                }}
-              >
-                <h3>
-                  <i className="fa fa-lock fa-4x" />
-                </h3>
-                <h2 className="text-center">Forgot Password?</h2>
-                <p>You can reset your password here.</p>
-                <div className="panel-body">
-                  <form
-                    id="register-form"
-                    role="form"
-                    autoComplete="off"
-                    className="form"
-                    method="post"
-                  >
-                    <div className="form-group">
-                      <div className={Style.carddetails}>
-                        <input
-                          type="email"
-                          placeholder="Enter your email"
-                          onChange={EmailHandler}
-                          value={email}
-                          required
-                        />
-                        <i className="fa fa-envelope" />
-                      </div>
-                    </div>
-                    <div className="form-group">
-                      <input
-                        name="recover-submit"
-                        className="btn btn-lg btn-primary btn-block"
-                        onClick={submitHandler}
-                        type="submit"
-                        value={loading ? "loading..." : `Reset password`}
-                      />
-                    </div>
-                    <input
-                      type="hidden"
-                      className="hide"
-                      name="token"
-                      id="token"
-                      defaultValue
-                    />
-                  </form>
-                </div>
-              </div>
-            </div>
+    <>
+      <div className={Style.loginMainWraper}>
+        <div className={Style.loginWraper}>
+          <div>
+            <h1>Password resset</h1>
+          </div>
+          <div className={Style.carddetails}>
+          <input
+              type={passwordShown ? "text" : "password"}
+              id="password-input"
+              placeholder="Enter your new password"
+              onChange={NewPasswordHandler}
+              required
+            />
+            <i className="fa fa-lock" />
+            <span>
+              <small className="fa fa-eye-slash passcode" onClick={togglePassword}/>
+            </span>
+          </div>
+          <div className={Style.carddetails}>
+            <input
+              type={passwordShown ? "text" : "password"}
+              id="password-input"
+              placeholder="Comfirm your new  password"
+              onChange={NewPasswordComfirmHandler}
+              required
+            />
+            <i className="fa fa-lock" />
+            <span>
+              <small className="fa fa-eye-slash passcode" onClick={togglePassword}/>
+            </span>
+          </div>
+          <div>
+            <Button
+              name={loading ? "loading..." : `Resset password`}
+              onClick={loginHandler}
+            />
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
-export default PasswordResset;
+export default Index;
