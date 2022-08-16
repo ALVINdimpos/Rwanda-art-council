@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useRef }  from "react";
 import NavBar from "../NavBar/Index";
 import Partner from "../box/partners/Index";
 import Footer from "../Footer/Footer";
@@ -7,7 +7,6 @@ import Button from "../Button/Index";
 import PageIndicator from "../PageIndicator/Index";
 import { MDBIcon } from "mdbreact";
 import { MDBInput, MDBTextArea } from "mdb-react-ui-kit";
-
 function Index() {
   return (
     <>

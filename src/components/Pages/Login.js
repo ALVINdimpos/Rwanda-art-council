@@ -5,8 +5,9 @@ import Button from "../Button/Index";
 import { MDBIcon } from "mdbreact";
 import { MDBInput } from "mdb-react-ui-kit";
 import { Link, NavLink } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 function Index() {
+  const navigate=useNavigate();
   return (
     <>
       <NavBar />
@@ -50,7 +51,7 @@ function Index() {
           </div>
           <div>
             {" "}
-            <Button name="Login" />
+            <Button name="Login" onClick={()=>navigate('/logindash')} />
           </div>
           <div>
             <p>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "../NavBar/Index";
 import Style from "./RegisterStyle.module.css";
 import Button from "../Button/Index";
@@ -6,7 +6,11 @@ import { MDBIcon } from "mdbreact";
 import { MDBInput } from "mdb-react-ui-kit";
 import { MDBFile } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
+import { category } from "./sideResource";
+import { clusters } from "./sideResource";
 function Index() {
+  const [categori,setCategori]=useState([])
+
   return (
     <>
       <NavBar />
