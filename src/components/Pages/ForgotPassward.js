@@ -59,7 +59,7 @@ function PasswordResset() {
                 </h3>
                 <h2 className="text-center">Forgot Password?</h2>
                 <p>You can reset your password here.</p>
-                <div className="panel-body">
+                <div>
                   <form
                     id="register-form"
                     role="form"
