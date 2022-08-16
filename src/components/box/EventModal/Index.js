@@ -1,11 +1,7 @@
 import React from "react";
 import Style from "./Style.module.css";
-import { MDBInput } from "mdb-react-ui-kit";
-import Button from "../../Button/Index";
-import { MDBIcon } from "mdbreact";
 import { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 function Index() {
   const [email, SetEmail] = useState();
   const [Phone_number, SetPhone_number] = useState();
@@ -21,7 +17,7 @@ function Index() {
     setLoading(true);
     try {
       const res = await axios({
-        url: "https://rwanda-art-api.herokuapp.com/api/password/email",
+        url: "https://rwanda-art-api.herokuapp.com/api/booking/create/{event_id}",
         data: { email, Phone_number },
         method: "POST",
       });
@@ -34,37 +30,40 @@ function Index() {
     }
   };
   console.log(email);
+
   return (
     <>
-      <div className={Style.EventCardWraper}>
-        <div className={Style.EventCard}>
-          <div>
-            <Link to="/Event">
-              <MDBIcon fas icon="times" />
-            </Link>
-            <MDBInput
-              id="typeText"
-              type="email"
-              placeholder="Enter your email"
-              onChange={emailHandler}
-              value={email}
-            />
-          </div>
-          <div>
-            <MDBInput
-              id="typeText"
-              type="text"
-              placeholder="Phone number"
-              onChange={Phone_numberHander}
-              value={Phone_number}
-            />
-          </div>
-          <div>
-            <Button
-              name={loading ? "Loading..." : `Book now`}
-              onClick={submitHandler}
-            />
-          </div>
+      <div className={Style.loginWraper}>
+        <div className={Style.carddetails}>
+          <input
+            type="email"
+            placeholder="Enter your email"
+            onChange={emailHandler}
+            value={email}
+            required
+          />
+          <i className="fa fa-envelope" />
+        </div>
+        <div className={Style.carddetails}>
+          <input
+            type="phone"
+            id="phonenumber-input"
+            placeholder="Enter your phone number"
+            onChange={Phone_numberHander}
+            value={Phone_number}
+            required
+          />
+          <i className="fa fa-phone" />
+        </div>
+        <div className="form-group">
+          <input
+            name="recover-submit"
+            className="btn btn-lg  btn-block"
+            onClick={submitHandler}
+            type="submit"
+            value={loading ? "loading..." : `Book now`}
+            style={{ backgroundColor: "#C5801A", color: "white" }}
+          />
         </div>
       </div>
     </>

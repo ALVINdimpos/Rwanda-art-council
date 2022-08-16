@@ -2,7 +2,6 @@ import React from "react";
 import Style from "./LoginStyle.module.css";
 import Button from "../Button/Index";
 import { MDBIcon } from "mdbreact";
-import { MDBInput } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
@@ -25,8 +24,6 @@ function Index() {
     email: Email,
     password: Password,
   };
-
-
   const loginHandler = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -89,6 +86,12 @@ function Index() {
               name={loading ? "loading..." : `Login`}
               onClick={loginHandler}
             />
+             <p>
+              Don’t have an account?
+              <Link to="/Register">
+                <span style={{ color: "#c5801a" }}>Sign up</span>
+              </Link>
+            </p>
           </div>
           <div>
             <p>

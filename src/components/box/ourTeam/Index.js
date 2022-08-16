@@ -8,7 +8,7 @@ function Index() {
       <h1
         style={{
           textAlign: "center",
-          fontFamily: "Bebas Neue",
+          fontFamily: "Raleway",
           marginTop: "2rem",
         }}
       >
