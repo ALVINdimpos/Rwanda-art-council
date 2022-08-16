@@ -13,7 +13,7 @@ function Index() {
   const [Tin_number, SetTin_number] = useState("");
   const [Email, SetEmail] = useState("");
   const [Number_of_members, SetNumber_of_members] = useState("");
-  const [Category, SetCategory] = useState("");
+  const [Category, SetCategory] = useState([]);
   const [Cluster, SetCluster] = useState("");
   const [Password, SetPassword] = useState("");
   const [ConfirmPassword, SetConfirmPassword] = useState("");
@@ -57,11 +57,9 @@ function Index() {
     e.preventDefault();
     const file = e.target.files[0];
 
-    // console.log(file);
     if (file.size > 1000000) alert("File size cannot exceed more than 8MB");
     else SetCustomFile(file);
   };
-
   const submitHandler = async (e) => {
     e.preventDefault();
     let formData = new FormData();
@@ -93,16 +91,15 @@ function Index() {
       setLoading(false);
     }
   };
-  const Token = localStorage.getItem("token")
+  const Token = localStorage.getItem("token");
   const fetchCategorie = () => {
     fetch("https://rwanda-art-api.herokuapp.com/api/user/category", {
       headers: {
         "Content-Type": "application/json",
-        'Accept': "application/json",
-        'Authorization':`Bearer ${Token}`
+        Accept: "application/json",
+        Authorization: `Bearer ${Token}`,
       },
     })
-
       .then((response) => {
         return response.json();
       })
@@ -124,7 +121,6 @@ function Index() {
           <div>
             <div>
               <Link to="/Home">
-                {" "}
                 <h4 style={{ color: "#c5801a" }}>
                   <MDBIcon fas icon="angle-left" />
                   Home
@@ -142,6 +138,7 @@ function Index() {
               placeholder="Federation_name"
               onChange={Federation_nameHandler}
               value={Federation_name}
+              required
             />
           </div>
           <div>
@@ -151,6 +148,7 @@ function Index() {
               placeholder="Phone_number"
               onChange={Phone_numberHander}
               value={Phone_number}
+              required
             />
           </div>
           <div>
@@ -160,6 +158,7 @@ function Index() {
               placeholder="Tin_number"
               onChange={Tin_numberHandler}
               value={Tin_number}
+              required
             />
           </div>
           <div>
@@ -169,6 +168,7 @@ function Index() {
               placeholder="Enter your email"
               onChange={EmailHandler}
               value={Email}
+              required
             />
           </div>
           <div>
@@ -178,21 +178,22 @@ function Index() {
               placeholder="Number_of_members"
               onChange={Number_of_membersHandler}
               value={Number_of_members}
+              required
             />
           </div>
           <div>
+            
             <select
               className="browser-default custom-select"
-              onChange={CategoryHandler}
-              value={Category}
             >
-              <option defaultValue>Select category</option>
-              <option value="1">PLASTIC ARTS</option>
-              <option value="2">MUSIC & DANCE</option>
-              <option value="3">ACTING & DRAMA</option>
-              <option value="3">CINEMATOGRAPHY & PHOTOGRAPHY</option>
-              <option value="3">LITERATURE</option>
-              <option value="3">FASHION</option>
+              {
+                Category.categories?.map((item,idx) => {
+                  return (
+                    <option key={idx} value={Category}  onChange={CategoryHandler}>{item.name}</option>
+                  )
+                })
+              }
+              
             </select>
           </div>
           <div>
@@ -202,6 +203,7 @@ function Index() {
               className="browser-default custom-select"
               onChange={ClusterHandler}
               value={Cluster}
+              required
             >
               <optgroup label="PLASTIC ARTS">
                 <option defaultValue>Select cluster</option>
@@ -242,6 +244,7 @@ function Index() {
               placeholder="Password"
               onChange={PasswordHandler}
               value={Password}
+              required
             />
           </div>
           <div>
@@ -251,6 +254,7 @@ function Index() {
               placeholder="Confirm password"
               onChange={ConfirmPasswordHandler}
               value={ConfirmPassword}
+              required
             />
           </div>
 
@@ -259,6 +263,7 @@ function Index() {
               label="RDB Certificate"
               id="customFile"
               onChange={CustomFileHandler}
+              required
             />
           </div>
           <div>
@@ -266,6 +271,7 @@ function Index() {
               label="upload your logo"
               id="customFile"
               onChange={CustomLogoHandler}
+              required
             />
           </div>
           <div>

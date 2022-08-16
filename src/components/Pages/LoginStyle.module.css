@@ -70,3 +70,18 @@
 .card-details span:hover{
   opacity:1;
 }
+@media (min-width:375px) {
+  .loginWraper{
+    width: auto;
+  }
+}
+@media (min-width:360px) {
+  .loginWraper{
+    width: auto;
+  }
+}
+@media (min-width:280px) {
+  .loginWraper{
+    width: auto;
+  }
+}

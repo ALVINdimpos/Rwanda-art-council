@@ -1,3 +1,27 @@
+.EventSearchWraper {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  margin: 2rem auto;
+}
+.EventSearchBox {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.EventSearchBox input {
+  height:max-content;
+  width: max-content;
+}
+.EventSearchWraper h1 {
+  font-family: "Raleway";
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 70px;
+}
+.EventSearchBox ::placeholder {
+  font-size: small;
+}
 .EventsWraper {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -6,31 +30,82 @@
   gap: 3rem;
 }
 
-.EventSearchWraper {
-  display: flex;
-  width: 80%;
-  justify-content: space-between;
-  margin: 2rem auto;
-}
-.EventSearchWraper h1 {
-  font-family: 'Bebas Neue';
-  font-size: 52px;
-  font-weight: 400;
-  line-height: 70px;
-}
-.EventSearchBox {
-  justify-content: space-between;
-  display: flex;
-}
-.EventSearchBox input {
-  padding: 2rem;
-}
-.EventSearchBox ::placeholder {
-  font-size: small;
-}
 @media (max-width: 482px) {
+  .EventSearchWraper{
+    display: flex;
+    flex-direction: column;
+  }
+  .EventSearchBox{
+    display: flex;
+    flex-direction: column;
+  }
   .EventsWraper {
     grid-template-columns: auto;
     justify-content: space-between;
+    padding:1rem;
+  }
+}
+@media (max-width: 820px) {
+  .EventSearchBox{
+    display: flex;
+    flex-direction: column;
+  }
+  .EventsWraper {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    width: 90%;
+    padding:1rem;
+  }
+}
+@media (max-width: 768px) {
+  .EventSearchBox{
+    display: flex;
+    flex-direction: column;
+  }
+  .EventsWraper {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    width: 100%;
+    padding:1rem;
+  }
+}
+@media (max-width: 912px) {
+  .EventsWraper {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    width: 80%;
+    padding:1rem;
+  }
+}
+@media (max-width: 912px) {
+  .EventsWraper {
+    grid-template-columns: auto;
+    justify-content: space-between;
+    width: 100%;
+    padding:1rem;
+  }
+}
+@media (max-width: 1024px) {
+  .EventsWraper {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    width: 80%;
+    padding:1rem;
+  }
+}
+@media (max-width:1280px) {
+  .EventsWraper {
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    width: 100%;
+    padding:1rem;
+  }
+}
+@media (max-width:375px) {
+  .EventsWraper {
+    grid-template-columns:auto;
+    justify-content: space-between;
+    width: 100%;
+    padding:1rem;
   }
 }

@@ -25,7 +25,13 @@
 }
 @media (max-width:858px)  {
 .registerWraper{
-  width: 80%;
+  width: auto;
 }
   
 }
+@media (max-width:912px)  {
+  .registerWraper{
+    width: auto;
+  }
+    
+  }
