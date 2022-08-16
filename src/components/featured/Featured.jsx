@@ -8,7 +8,6 @@ import {Example} from './Example'
 const Featured = () => {
   return (
     <div className="featured">
-      {/* <Example/> */}
       <div className='bar'>
         <>Analytical dashboard</>
          {/* <Example/> */}
