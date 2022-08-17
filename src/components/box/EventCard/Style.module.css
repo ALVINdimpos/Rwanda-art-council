@@ -53,6 +53,7 @@
     width: 76px;
     background:whitesmoke;
     border-radius: 10px;
+    box-shadow: 0.5px 5px 5px 0.5px rgb(70, 69, 69);
   }
   .DateCard h5 {
     padding: 0.5rem;

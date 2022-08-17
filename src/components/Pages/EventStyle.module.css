@@ -12,6 +12,7 @@
 .EventSearchBox input {
   height:max-content;
   width: max-content;
+  box-shadow: 5px 5px 5px 5px rgb(70, 69, 69);
 }
 .EventSearchWraper h1 {
   font-family: "Raleway";

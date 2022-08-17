@@ -86,6 +86,7 @@ function PasswordResset() {
                         onClick={submitHandler}
                         type="submit"
                         value={loading ? "loading..." : `Reset password`}
+                        style={{ backgroundColor:"#C5801A", color:"white" }}
                       />
                     </div>
                     <input

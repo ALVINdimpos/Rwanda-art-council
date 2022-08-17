@@ -62,7 +62,7 @@ function Index() {
             <input
               type={passwordShown ? "text" : "password"}
               id="password-input"
-              placeholder="Comfirm your new  password"
+              placeholder="Comfirm new  password"
               onChange={NewPasswordComfirmHandler}
               required
             />
