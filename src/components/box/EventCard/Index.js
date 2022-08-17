@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Picture1 from "../../../assets/photos/CatImage4.jpeg";
 import Style from "./Style.module.css";
 import Button from "../../Button/Index";
@@ -9,6 +9,27 @@ import { MDBModal } from "mdb-react-ui-kit";
 function Index() {
   const [basicModal, setBasicModal] = useState(false);
   const toggleShow = () => setBasicModal(!basicModal);
+  const [Event,setEvent]=useState([])
+  const Token = localStorage.getItem("token");
+  const fetchEvents = () => {
+    fetch("https://rwanda-art-api.herokuapp.com/api/user/category", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${Token}`,
+      },
+    })
+      .then((response) => {
+        return response.json();
+      })
+
+      .then((data) => {
+        setEvent(data);
+      });
+  };
+  useEffect(() => {
+    fetchEvents();
+  }, [Event]);
   return (
     <div>
       <div className={Style.CardWraper}>
@@ -16,7 +37,7 @@ function Index() {
           <div className={Style.overFlow}>
             <img
               src={Picture1}
-              alt="description of image"
+              alt="description"
               className={Style.CardImgTop}
             />
           </div>
