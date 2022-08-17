@@ -32,11 +32,6 @@ function Events() {
       </div>
       <div className={Style.EventsWraper}>
         <EventCard />
-        <EventCard />
-        <EventCard />
-        <EventCard />
-        <EventCard />
-        <EventCard />
       </div>
       <NavBar />
       <Partner />
