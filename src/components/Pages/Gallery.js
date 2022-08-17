@@ -1,5 +1,4 @@
 import React from "react";
-import PhotoAlbum from "react-photo-album";
 import NavBar from "../NavBar/Index";
 import Partner from "../box/partners/Index";
 import Footer from "../Footer/Footer";
@@ -22,7 +21,19 @@ const photos = [
     category: "Painting",
   },
   {
+    src: PHOTO6,
+    category: "Painting",
+  },
+  {
+    src: PHOTO7,
+    category: "Painting",
+  },
+  {
     src: PHOTO1,
+    category: "Sculpture",
+  },
+  {
+    src: PHOTO8,
     category: "Sculpture",
   },
   {
@@ -68,18 +79,10 @@ function Gallery() {
         </ul>
       </div>
       <div className={Style.PhotoAlbum}>
-        <img src={PHOTO} alt="description of image" />
-        <img src={PHOTO1} alt="description of image" />
-        <img src={PHOTO2} alt="description of image" />
-        <img src={PHOTO3} alt="description of image" />
-        <img src={PHOTO4} alt="description of image" />
-        <img src={PHOTO5} alt="description of image" />
-        <img src={PHOTO6} alt="description of image" />
-        <img src={PHOTO7} alt="description of image" />
-        <img src={PHOTO8} alt="description of image" />
-        <img src={PHOTO9} alt="description of image" />
+        {photos.map((photo) => (
+          <img src={photo.src} photo={photo} alt=""/>
+        ))}
       </div>
-
       <NavBar />
       <Partner />
       <Footer />

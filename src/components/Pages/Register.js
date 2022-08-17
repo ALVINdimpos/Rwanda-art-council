@@ -135,7 +135,7 @@ function Index() {
             <MDBInput
               id="typeText"
               type="text"
-              placeholder="Federation_name"
+              placeholder="Enter fideration name"
               onChange={Federation_nameHandler}
               value={Federation_name}
               required
@@ -145,7 +145,7 @@ function Index() {
             <MDBInput
               id="typeText"
               type="text"
-              placeholder="Phone_number"
+              placeholder="Enter phone number"
               onChange={Phone_numberHander}
               value={Phone_number}
               required
@@ -155,7 +155,7 @@ function Index() {
             <MDBInput
               id="typeText"
               type="text"
-              placeholder="Tin_number"
+              placeholder="Enter tin number"
               onChange={Tin_numberHandler}
               value={Tin_number}
               required
@@ -175,7 +175,7 @@ function Index() {
             <MDBInput
               id="typeText"
               type="number"
-              placeholder="Number_of_members"
+              placeholder="Enter number of members"
               onChange={Number_of_membersHandler}
               value={Number_of_members}
               required
@@ -241,7 +241,7 @@ function Index() {
             <MDBInput
               id="typeText"
               type="password"
-              placeholder="Password"
+              placeholder="Enter Password"
               onChange={PasswordHandler}
               value={Password}
               required
