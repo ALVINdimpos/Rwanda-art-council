@@ -16,3 +16,27 @@
     margin: 1rem auto;
     
   }
+  @media (min-width:375px) {
+    .Gallery {
+      display: flex;
+      font-family: "Rubik Moonrocks";
+      color: white;
+      font-size: 96px;
+      font-weight: 400;
+      line-height: 86px;
+      margin: 1rem auto;
+      
+    }
+  }
+  @media (min-width:360px) {
+    .Gallery {
+      display: flex;
+      font-family: "Rubik Moonrocks";
+      color: white;
+      font-size: 90px;
+      font-weight: 400;
+      line-height: 86px;
+      margin: 1rem auto;
+     
+    }
+  }
