@@ -11,7 +11,12 @@
       object-fit: cover;
     }
   }
-
+.link{
+  font-size: 30px;
+}
+.link:hover{
+  cursor:pointer;
+}
   .status {
     padding: 5px;
     border-radius: 5px;

@@ -18,7 +18,7 @@ import Navbar from "./components/nav/Navbar";
 import Sidebar from "./components/sidebar/Sidebar";
 import Contactor from "./components/Pages/contactor/Contactor";
 import Federation from './pages/federation/Federation'
-
+import View from './pages/viewing/View'
 
 export default function App() {
   return (
@@ -44,7 +44,9 @@ export default function App() {
             
               <Route
                 path="federation"
-                element={<Federation />} />
+                element={<Federation />} >
+                  <Route path=":fedId" element={<View />}/>
+                </Route>
     <Route path="addnotify" element={<Contactor />} />            
    </Routes>
  </BrowserRouter>
