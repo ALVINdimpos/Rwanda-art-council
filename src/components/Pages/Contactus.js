@@ -18,7 +18,7 @@ function Index() {
         <div className={Style.mapouter}>
           <div className="gmap_canvas">
             <iframe
-              width={1000}
+              width={800}
               height={500}
               id="gmap_canvas"
               src="https://maps.google.com/maps?q=Rwanda%20art%20council&t=&z=13&ie=UTF8&iwloc=&output=embed"

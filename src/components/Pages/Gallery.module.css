@@ -10,14 +10,14 @@
     display: grid;
     grid-template-columns: auto auto auto;
     padding: 10px;
-    width: 90%;
+    width: 80%;
     margin: 2rem auto;
     justify-content: center;
     gap: 1rem;
 }
 .PhotoAlbum img{
-    height: 400px;
-    width: 473px;
+    height: 300px;
+    width: 373px;
     padding: 20px;
     box-shadow: 0px 4px 4px 0px #00000040; 
 }
