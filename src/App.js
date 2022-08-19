@@ -41,14 +41,10 @@ export default function App() {
                 path="new"
                 element={<New inputs={userInputs} title="Add New User" />}/>
             </Route>
-            <Route path="federation">
-              <Route index element={ <Federation />} />
-              <Route path=":productId" element={<Single />} />
+            
               <Route
-                path="new"
-                element={<New inputs={productInputs} title="Add New Product" />}
-              />
-            </Route>
+                path="federation"
+                element={<Federation />} />
     <Route path="addnotify" element={<Contactor />} />            
    </Routes>
  </BrowserRouter>
