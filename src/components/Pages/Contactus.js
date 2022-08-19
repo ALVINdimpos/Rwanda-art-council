@@ -5,13 +5,50 @@ import Footer from "../Footer/Footer";
 import Style from "./ContactusStyle.module.css";
 import Button from "../Button/Index";
 import PageIndicator from "../PageIndicator/Index";
+import { useState } from "react";
+import axios from "axios";
 import { MDBIcon } from "mdbreact";
 import { MDBInput, MDBTextArea } from "mdb-react-ui-kit";
 
 function Index() {
+  const [email,setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message,setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const datas={
+    email,
+    subject,
+    message
+  }
+  const subjectHandler=(e)=>{
+    setSubject(e.target.value);
+  }
+  const emailHandler=(e)=>{
+    setEmail(e.target.value);
+  }
+  const messageHandler=(e)=>{
+    setMessage(e.target.value);
+  }
+  const submitHandler= async(e)=>{
+    e.preventDefault();
+    setLoading(true);
+    try {
+    const res=  await axios.post(
+        "https://rwanda-art-api.herokuapp.com/api/contact-us",
+        datas
+      );
+      console.log(res)
+      setLoading(false);
+    } catch (error) {
+      setEmail("");
+      setSubject("");
+      setMessage("");
+      console.log(error);
+      setLoading(false);
+    }
+  }
   return (
     <>
-      {" "}
       <NavBar />
       <PageIndicator name="Contact us" />
       <div className={Style.loginMainWraper}>
@@ -47,13 +84,22 @@ function Index() {
               id="typeText"
               type="email"
               placeholder="Enter your email"
+              onChange={emailHandler}
             />
           </div>
           <div>
-            <MDBTextArea id="textAreaExample" rows={4} />
+            <MDBInput
+              id="typeText"
+              type="text"
+              placeholder="Subject"
+              onChange={subjectHandler}
+            />
           </div>
           <div>
-            <Button name="Send email" />
+            <MDBTextArea id="textAreaExample" rows={4} onChange={messageHandler} />
+          </div>
+          <div>
+            <Button name={loading ? "loading..." : `Send email`} onClick={submitHandler}/>
           </div>
         </div>
       </div>
