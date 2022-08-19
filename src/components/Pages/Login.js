@@ -86,12 +86,7 @@ function Index() {
               name={loading ? "loading..." : `Login`}
               onClick={loginHandler}
             />
-             <p>
-              Don’t have an account?
-              <Link to="/Register">
-                <span style={{ color: "#c5801a" }}>Sign up</span>
-              </Link>
-            </p>
+      
           </div>
           <div>
             <p>

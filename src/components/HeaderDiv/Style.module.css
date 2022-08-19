@@ -41,7 +41,7 @@
   width: 500px;
   margin: 0 0 0 2rem;
 }
-@media (min-width: 375px) {
+/* @media (min-width: 375px) {
   .MainContent {
     width: 100%;
     margin: 2rem;
@@ -151,4 +151,4 @@
     gap: 1rem;
     border-color: white;
   }
-}
+} */
