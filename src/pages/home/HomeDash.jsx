@@ -5,7 +5,8 @@ import Sidebar from '../../components/sidebar/Sidebar'
 import Navbar from '../../components/nav/Navbar'
 import Featured from '../../components/featured/Featured'
 import Chart from '../../components/chart/Chart'
-import Example from './Data';
+import Charta from '../../components/chart/Charta'
+
 
 const Home = () => {
   return (
@@ -21,7 +22,9 @@ const Home = () => {
         </div>
         <div className="charts">
           <Featured />
+          {/* <Charta/> */}
           <Chart/>
+
           {/* <Chart title="Last 6 Months (Revenue)" aspect={2 / 1} /> */}
         </div>
         {/* <div className="listContainer">

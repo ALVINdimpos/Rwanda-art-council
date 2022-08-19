@@ -15,12 +15,6 @@ export const userColumns = [
       );
     },
   },
-  // {
-  //   field: "fedName",
-  //   headerName: "Name Federation",
-  //   width: 230,
-  // },
-
   {
     field: "mobile",
     headerName: "Mobile",
