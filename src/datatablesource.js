@@ -4,8 +4,8 @@ export const userColumns = [
   { field: "id", headerName: "ID", width: 70 },
   {
     field: "fedName",
-    headerName: "Federation Name",
-    width: 230,
+    headerName: "Federation",
+    width: 150,
     renderCell: (params) => {
       return (
         <div className="cellWithImg">
@@ -18,32 +18,37 @@ export const userColumns = [
   {
     field: "mobile",
     headerName: "Mobile",
-    width: 250,
+    width: 100,
   },
   {
     field: "tin",
     headerName: "Tin",
-    width: 250,
+    width: 100,
   },
   {
     field: "member",
-    headerName: "No-Members",
-    width: 250,
+    headerName: "No-",
+    width: 40,
   },
   {
     field: "category",
     headerName: "Category",
-    width: 250,
+    width: 80,
+  },
+  {
+    field: "status",
+    headerName: "Status",
+    width: 80,
   },
   {
     field: "created",
     headerName: "Created",
-    width: 250,
+    width: 60,
   },
   {
     field: "updated",
     headerName: "Updated",
-    width: 200,
+    width: 60,
     renderCell: (params) => {
       return (
         <div className={`cellWithStatus ${params.row.status}`}>
