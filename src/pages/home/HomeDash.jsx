@@ -22,15 +22,11 @@ const Home = () => {
         </div>
         <div className="charts">
           <Featured />
-          {/* <Charta/> */}
-          {/* <Chart/> */}
+     
 
-          <Chart title="Last 6 Months (Revenue)" aspect={2 / 1} />
+          <Chart title="Recently Registered Federation" aspect={2 / 1} />
         </div>
-        {/* <div className="listContainer">
-          <div className="listTitle">Latest Transactions</div>
-          // <Table />
-        </div> */}
+    
       </div>
     </div>
   );
