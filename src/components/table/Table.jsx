@@ -30,8 +30,7 @@ console.log('My Token',getTocken())
         }})
         .then(result=>{
           return result.json()})
-        .then(data=>{setRow(data)
-          console.log("Token Data",data)})
+        .then(data=>{setRow(data)})
     },[])
   return (
     <TableContainer component={Paper} className="table"
@@ -72,7 +71,7 @@ console.log('My Token',getTocken())
               <TableCell className="tableCell">{row.number_of_members}</TableCell>
               <TableCell className="tableCell">{row.status}</TableCell>
               <TableCell className="tableCell">{convertDate(row.updated_at)}</TableCell>
-              <TableCell className="tableCell"><Link className='link' to={`/federation/${row.id}`}>e</Link></TableCell>
+              <TableCell className="tableCell"><Link className="link" to={`/https://rwanda-art-api.herokuapp.com/api/ViewUser/${row.id}`}>e</Link></TableCell>
 
 
 
