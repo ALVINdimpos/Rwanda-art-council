@@ -3,81 +3,50 @@ import {
   AreaChart,
   Area,
   XAxis,
-  YAxis,
   CartesianGrid,
   Tooltip,
-  Line,
-  LineChart,
-
   ResponsiveContainer,
 } from "recharts";
 
 const data = [
-  { name: "January", Total: 100 },
-  { name: "February", Total: 200 },
-  { name: "March", Total: 340 },
-  { name: "April", Total: 180 },
-  { name: "May", Total: 100 },
-  { name: "June", Total: 45 },
+  { name: "January", Total: 1200 },
+  { name: "February", Total: 2100 },
+  { name: "March", Total: 800 },
+  { name: "April", Total: 1600 },
+  { name: "May", Total: 900 },
+  { name: "June", Total: 1700 },
 ];
 
-const Chart = () => {
+const Chart = ({ aspect, title }) => {
   return (
-    <>
     <div className="chart">
-      {/* <div className="title">{title}</div> */}
-      {/* <ResponsiveContainer width="100%" height="100%">
+      <div className="title">{title}</div>
+      <ResponsiveContainer width="100%" aspect={aspect}>
         <AreaChart
-          width={500}
-          height={400}
+          width={730}
+          height={250}
           data={data}
-          margin={{
-            top: 10,
-            right: 30,
-            left: 0,
-            bottom: 0,
-          }}
+          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
+          <defs>
+            <linearGradient id="total" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#C5801A" stopOpacity={0.8} />
+              <stop offset="95%" stopColor="#C5801A" stopOpacity={0} />
+            </linearGradient>
+          </defs>
+          <XAxis dataKey="name" stroke="gray" />
+          <CartesianGrid strokeDasharray="3 3" className="chartGrid" />
           <Tooltip />
-          <Area type="monotone" dataKey="value" stroke="#8884d8" fill="#8884d8" />
+          <Area
+            type="monotone"
+            dataKey="Total"
+            stroke="#8884d8"
+            fillOpacity={1}
+            fill="url(#total)"
+          />
         </AreaChart>
-      </ResponsiveContainer> */}
-
-      {/* <ResponsiveContainer width="100%" height="100%">
-        <LineChart width={150} height={30} data={data}>
-          <Line type="monotone" dataKey="total" className="charts" stroke="#8884d8" strokeWidth={2} />
-        </LineChart>
-      </ResponsiveContainer> */}
-
-      <span>Graphicall Dashboard</span>
-      {/* <ResponsiveContainer width="100%" height="100%">
-        <AreaChart
-          width={500}
-          height={400}
-          data={data}
-          margin={{
-            top: 10,
-            right: 30,
-            left: 0,
-            bottom: 0,
-          }}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Area type="monotone" dataKey="Total" stroke="#8884d8" fill="#8884d8" />
-        </AreaChart>
-      </ResponsiveContainer> */}
-      
+      </ResponsiveContainer>
     </div>
-
-    {/* another session */}
-
-    
-    </>
   );
 };
 

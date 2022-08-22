@@ -18,7 +18,6 @@ const Sidebar = () => {
         </Link>
       </div>
       <div className="center">
-      {/* <p className="title">HOME</p> */}
 
         <ul>
       
@@ -28,11 +27,10 @@ const Sidebar = () => {
               <span>Home</span>
             </li>
           </Link>
-          {/* <p className="title">LISTS</p> */}
           <Link to="/users" style={{ textDecoration: "none" }}>
             <li>
               <PersonOutlineIcon className="icon" />
-              <span>Users</span>
+              <span>Artists</span>
             </li>
           </Link>
           <Link to="/federation" style={{ textDecoration: "none" }}>
@@ -42,13 +40,12 @@ const Sidebar = () => {
             </li>
           </Link>
       
-          <Link to="/booking" style={{ textDecoration: "none" }}>
+          <Link to="/" style={{ textDecoration: "none" }}>
             <li>
               <StoreIcon className="icon" />
               <span>Booking</span>
             </li>
           </Link>
-          {/* <p className="title">Quit</p> */}
           
           <li>
             <ExitToAppIcon className="icon" />

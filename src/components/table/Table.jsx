@@ -20,7 +20,7 @@ const List = () => {
       const date= Date.parse(dt);
       return new Date(date).getFullYear()
     }
-
+console.log('My Token',getTocken())
     useEffect(()=>{
       fetch(base_uri,{
         method: 'GET',
@@ -30,7 +30,8 @@ const List = () => {
         }})
         .then(result=>{
           return result.json()})
-        .then(data=>{setRow(data)})
+        .then(data=>{setRow(data)
+          console.log("Token Data",data)})
     },[])
   return (
     <TableContainer component={Paper} className="table"
