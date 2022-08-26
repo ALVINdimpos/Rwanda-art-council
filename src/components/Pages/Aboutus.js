@@ -31,12 +31,12 @@ function Aboutus() {
           header="Mission"
           img={Service1}
           subheader="Lorem Ipsum is simply"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
-            mauris, nec turpis Lorem ipsum dolor sit amet, consectetur
+          description="Lorem ipsum dolor sit amen, consectetur advising elit. Cursus nibh
+            maurist, nec turpis Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Cursus nibh mauris, nec turpisLorem"
         />
         <ServiceCard
-          header="Vission"
+          header="Vision"
           img={Service2}
           subheader="Lorem Ipsum is simply"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh

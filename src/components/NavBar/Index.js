@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React from "react";
 import Button from "../Button/Index";
 import NavStyle from "./Style.module.css";

@@ -1,33 +1,35 @@
-import React from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from "react";
 import Style from "./LoginStyle.module.css";
 import Button from "../Button/Index";
 import { useState } from "react";
 import axios from "axios";
 function Index() {
-  const [Email, SetEmail] = useState("");
+  const [verificatonCode, setVerficationCode] = useState("");
   const [Password, SetPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
   };
-  const NewPasswordHandler = (e) => {
-    SetEmail(e.target.value);
+  const verificatonCodeHandler = (e) => {
+    setVerficationCode(e.target.value);
   };
   const NewPasswordComfirmHandler = (e) => {
     SetPassword(e.target.value);
   };
-  const loginData = {
-    code: Email,
+  const resetData = {
+    code: verificatonCode,
     password:Password,
   };
-  const loginHandler = async (e) => {
+  const resetHandler = async (e) => {
     e.preventDefault();
     setLoading(true);
+    
     try {
     const res=  await axios.post(
         "https://rwanda-art-api.herokuapp.com/api/password/reset",
-        loginData
+        resetData
       );
       console.log(res)
       setLoading(false);
@@ -37,7 +39,9 @@ function Index() {
       setLoading(false);
     }
   };
-
+useEffect(()=>{
+  resetHandler();
+},[])
   return (
     <>
       <div className={Style.loginMainWraper}>
@@ -49,8 +53,8 @@ function Index() {
           <input
               type={passwordShown ? "text" : "password"}
               id="password-input"
-              placeholder="Enter your new password"
-              onChange={NewPasswordHandler}
+              placeholder="Enter verification code here"
+              onChange={verificatonCodeHandler}
               required
             />
             <i className="fa fa-lock" />
@@ -62,7 +66,7 @@ function Index() {
             <input
               type={passwordShown ? "text" : "password"}
               id="password-input"
-              placeholder="Comfirm new  password"
+              placeholder="Enter new  password"
               onChange={NewPasswordComfirmHandler}
               required
             />
@@ -74,7 +78,7 @@ function Index() {
           <div>
             <Button
               name={loading ? "loading..." : `Resset password`}
-              onClick={loginHandler}
+              onClick={resetHandler}
             />
           </div>
         </div>
