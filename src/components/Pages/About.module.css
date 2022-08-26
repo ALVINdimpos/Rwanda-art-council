@@ -23,9 +23,23 @@
   gap: 2rem;
   margin: 1rem auto; 
 }
-@media (max-width: 482px) {
+@media (max-width:1050px) {
   .ServiceBoxWraper {
-    grid-template-columns: auto;
-    justify-content: space-between;
+    grid-template-columns: auto auto auto;
+    
+    
+  }
+}
+@media (max-width:700px) {
+  .ServiceBoxWraper {
+    grid-template-columns: auto auto ;
+    
+  }
+}
+@media (max-width:550px) {
+  .ServiceBoxWraper {
+    grid-template-columns: auto ;
+
+    
   }
 }

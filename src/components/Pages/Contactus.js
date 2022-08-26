@@ -5,17 +5,16 @@ import Footer from "../Footer/Footer";
 import Style from "./ContactusStyle.module.css";
 import Button from "../Button/Index";
 import PageIndicator from "../PageIndicator/Index";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import axios from "axios";
 import { MDBIcon } from "mdbreact";
 import { MDBInput, MDBTextArea } from "mdb-react-ui-kit";
-
 function Index() {
   const [email,setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message,setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const datas={
+  const data={
     email,
     subject,
     message
@@ -35,7 +34,7 @@ function Index() {
     try {
     const res=  await axios.post(
         "https://rwanda-art-api.herokuapp.com/api/contact-us",
-        datas
+        data
       );
       console.log(res)
       setLoading(false);
@@ -47,11 +46,14 @@ function Index() {
       setLoading(false);
     }
   }
+	useEffect(()=>{
+  submitHandler();
+	},[])
   return (
     <>
       <NavBar />
       <PageIndicator name="Contact us" />
-      <div className={Style.loginMainWraper}>
+      <div className={Style.loginMainWrapper}>
         <div className={Style.mapouter}>
           <div className="gmap_canvas">
             <iframe
@@ -64,7 +66,7 @@ function Index() {
             />
           </div>
         </div>
-        <div className={Style.loginWraper}>
+        <div className={Style.loginWrapper}>
           <div>
             <div>
               <h4 style={{ color: "#c5801a" }}>

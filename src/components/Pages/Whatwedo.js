@@ -3,9 +3,9 @@ import NavBar from "../NavBar/Index";
 import Partner from "../box/partners/Index";
 import Footer from "../Footer/Footer";
 import Style from "./Whatwedo.module.css";
-import Image1 from "../../assets/photos/painting.jpg";
-import Image2 from "../../assets/photos/mainphoto.jpg";
-import Image3 from "../../assets/photos/imigongo.jpg";
+import pic1 from "../../assets/photos/painting.jpg";
+import pic2 from "../../assets/photos/mainphoto.jpg";
+import pic3 from "../../assets/photos/imigongo.jpg";
 import PageIndicator from "../PageIndicator/Index";
 function Whatwedo() {
   return (
@@ -18,7 +18,7 @@ function Whatwedo() {
       <div className={Style.ServicesBoxWraper}>
         <div className={Style.ServicesBox}>
           <div className={Style.overFlow}>
-            <img src={Image1} alt="description of image" className={Style.CardImgTop}/>
+            <img src={pic2} alt="description of pic" className={Style.CardImgTop}/>
           </div>
 
           <h3>Lorem ipsum</h3>
@@ -29,7 +29,7 @@ function Whatwedo() {
         </div>
         <div className={Style.ServicesBox}>
         <div className={Style.overFlow}>
-            <img src={Image2} alt="description of image" className={Style.CardImgTop}/>
+            <img src={pic2} alt="description of pic" className={Style.CardImgTop}/>
           </div>
 
           <h3>Lorem ipsum</h3>
@@ -40,7 +40,7 @@ function Whatwedo() {
         </div>
         <div className={Style.ServicesBox}>
         <div className={Style.overFlow}>
-            <img src={Image3} alt="description of image" className={Style.CardImgTop}/>
+            <img src={pic3} alt="description of pic" className={Style.CardImgTop}/>
           </div>
 
           <h3>Lorem ipsum</h3>

@@ -1,6 +1,7 @@
-import React from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable jsx-a11y/no-redundant-roles */
+import React, { useEffect, useState} from "react";
 import Style from "./RestPassward.module.css";
-import { useState } from "react";
 import axios from "axios";
 
 function PasswordResset() {
@@ -29,6 +30,9 @@ function PasswordResset() {
       setLoading(false);
     }
   };
+  useEffect(()=>{
+   submitHandler();
+  },[])
   return (
     <div
       className="container"
@@ -82,7 +86,7 @@ function PasswordResset() {
                     <div className="form-group">
                       <input
                         name="recover-submit"
-                        className="btn btn-lg btn-primary btn-block"
+                        className="btn btn-lg btn- btn-block"
                         onClick={submitHandler}
                         type="submit"
                         value={loading ? "loading..." : `Reset password`}

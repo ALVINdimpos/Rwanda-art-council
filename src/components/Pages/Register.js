@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import Style from "./RegisterStyle.module.css";
 import Button from "../Button/Index";
@@ -6,6 +7,8 @@ import { MDBInput } from "mdb-react-ui-kit";
 import { MDBFile } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
 function Index() {
   const [Federation_name, SetFederation_name] = useState("");
@@ -60,8 +63,19 @@ function Index() {
     if (file.size > 1000000) alert("File size cannot exceed more than 8MB");
     else SetCustomFile(file);
   };
+  const showToastMessage = () => {
+  toast.success("Registration Successful", {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });}
   const submitHandler = async (e) => {
     e.preventDefault();
+    showToastMessage();
     let formData = new FormData();
     formData.append("federation_name", Federation_name);
     formData.append("phone_number", Phone_number);
@@ -85,6 +99,7 @@ function Index() {
         }
       );
       console.log(res);
+      
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -92,7 +107,7 @@ function Index() {
     }
   };
   const Token = localStorage.getItem("token");
-  const fetchCategorie = () => {
+  const fetchCategories = () => {
     fetch("https://rwanda-art-api.herokuapp.com/api/user/category", {
       headers: {
         "Content-Type": "application/json",
@@ -108,15 +123,16 @@ function Index() {
         SetCategory(data);
       });
   };
-  console.log("category", Category);
   useEffect(() => {
-    fetchCategorie();
+    fetchCategories();
     submitHandler();
   }, []);
 
   return (
     <>
       <div className={Style.mainWraper}>
+
+        <ToastContainer />
         <div className={Style.registerWraper}>
           <div>
             <div>
@@ -293,5 +309,4 @@ function Index() {
     </>
   );
 }
-
 export default Index;
