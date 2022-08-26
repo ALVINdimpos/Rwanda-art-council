@@ -13,19 +13,19 @@ function Index() {
     <div className={Style.partnerWraper}>
         
         <div className={Style.partnerBox}>
-           <img src={Partner1}alt="description of image"/>
+           <img src={Partner1}alt="description of "/>
         </div>
         <div className={Style.partnerBox}>
-           <img src={Partner2}alt="description of image"/>
+           <img src={Partner2}alt="description of "/>
         </div>
         <div className={Style.partnerBox}>
-           <img src={Partner3}alt="description of image"/>
+           <img src={Partner3}alt="description of "/>
         </div>
         <div className={Style.partnerBox}>
-           <img src={Partner4}alt="description of image"/>
+           <img src={Partner4}alt="description of "/>
         </div>
         <div className={Style.partnerBox}>
-           <img src={Klablogo}alt="description of image"/>
+           <img src={Klablogo}alt="description of "/>
         </div>
 
 

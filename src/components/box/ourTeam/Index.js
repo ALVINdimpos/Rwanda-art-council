@@ -20,7 +20,7 @@ function Index() {
             <img src={People1} />
           </div>
           <div className={Style.caption}>
-            <h3>Vin Diesel</h3>
+            <h3>Alvin</h3>
             <p>Senior App Developer</p>
             <div className={Style.social_links}>
               <a href="#">
@@ -40,7 +40,7 @@ function Index() {
             <img src={People1} />
           </div>
           <div className={Style.caption}>
-            <h3>Vin Diesel</h3>
+            <h3>Alvin</h3>
             <p>Senior App Developer</p>
             <div className={Style.social_links}>
               <a href="#">
@@ -60,7 +60,7 @@ function Index() {
             <img src={People1} />
           </div>
           <div className={Style.caption}>
-            <h3>Vin Diesel</h3>
+            <h3>Alvin</h3>
             <p>Senior App Developer</p>
             <div className={Style.social_links}>
               <a href="#">

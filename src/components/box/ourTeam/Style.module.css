@@ -79,3 +79,24 @@
   .social_links i{
     color:#C5801A;
   }
+ @media (max-width:1050px) {
+  .main{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
+  
+ }
+ @media (max-width:700px) {
+  .main{
+    display: grid;
+    grid-template-columns: auto auto ;
+  }
+  
+ }
+ @media (max-width:700px) {
+  .main{
+    display: grid;
+    grid-template-columns: auto  ;
+  }
+  
+ }

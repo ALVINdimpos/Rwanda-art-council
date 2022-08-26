@@ -1,9 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import Style from "./LoginStyle.module.css";
 import Button from "../Button/Index";
 import { MDBIcon } from "mdbreact";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
 function Index() {
   
@@ -20,12 +23,24 @@ function Index() {
   const PasswordHandler = (e) => {
     SetPassword(e.target.value);
   };
+  const showToastMessage = () => {
+    toast.success("Login Successful", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+  
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });}
   const loginData = {
     email: Email,
     password: Password,
   };
   const loginHandler = async (e) => {
     e.preventDefault();
+    showToastMessage();
     setLoading(true);
     try {
     const res=  await axios.post(
@@ -34,7 +49,6 @@ function Index() {
       );
       console.log(res)
       localStorage.setItem("token",res.data.access_token)
-  
       setLoading(false);
     } catch (error) {
       SetPassword("");
@@ -42,7 +56,10 @@ function Index() {
       setLoading(false);
     }
   };
-  
+  useEffect(()=>{
+loginHandler();
+
+  },[])
   return (
     <>
       <div className={Style.loginMainWraper}>
@@ -82,11 +99,15 @@ function Index() {
             </span>
           </div>
           <div>
+            
             <Button
               name={loading ? "loading..." : `Login`}
               onClick={loginHandler}
             />
-      
+            <Link to="/ForgotPassward">
+                <span style={{ color: "#c5801a" }}>Forgot password?</span>
+              </Link>
+       <ToastContainer />
           </div>
           <div>
             <p>

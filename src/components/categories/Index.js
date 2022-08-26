@@ -1,29 +1,29 @@
 import React from "react";
 import Style from "./Style.module.css";
-import Photo from "../../assets/photos/PLASTIC.png";
-import Photo1 from "../../assets/photos/Fashion.png";
-import Photo2 from "../../assets/photos/Cinema.png";
-import Photo3 from "../../assets/photos/dance.png";
-import Photo4 from "../../assets/photos/acting.png";
-import Photo5 from "../../assets/photos/literature.png";
+import pic from "../../assets/photos/palastic.png";
+import Pic1 from "../../assets/photos/Fashion.png";
+import Pic2 from "../../assets/photos/cinema.png";
+import Pic3 from "../../assets/photos/dance.png";
+import Pic4 from "../../assets/photos/acting.png";
+import Pic5 from "../../assets/photos/literature.png";
 
 function Index() {
   return (
     <div>
       <div className={Style.CategoriesContainer}>
           <div className={Style.CategoriesColumn}>
-        <img src={Photo}alt="description of photo"/>
-        <img src={Photo1}alt="description of photo"/>
+        <img src={pic}alt="description of pic"/>
+        <img src={Pic1}alt="description of pic"/>
         </div>
         <div>
-         <img src={Photo2}alt="description of photo"/>
+         <img src={Pic2}alt="description of pic"/>
          </div>
          <div>
-        <img src={Photo3}alt="description of photo"/>
+        <img src={Pic3}alt="description of pic"/>
         </div>
         <div className={Style.CategoriesColumn}>
-        <img src={Photo4}alt="description of photo"/>
-        <img src={Photo5}alt="description of photo"/>
+        <img src={Pic4}alt="description of pic"/>
+        <img src={Pic5}alt="description of pic"/>
         </div>
       </div>
     </div>
