@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "../NavBar/Index";
 import Partner from "../box/partners/Index";
 import Footer from "../Footer/Footer";
-import PageIndicator from "../PageIndicator/Index";
+import PageIndicator from "../NavBar/PageIndicator/Index";
 import Style from "./About.module.css";
 import Service1 from "../../assets/photos/Service1.png";
 import Service2 from "../../assets/photos/Service2.png";

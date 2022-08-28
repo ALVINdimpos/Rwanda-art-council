@@ -4,7 +4,7 @@ import Partner from "../box/partners/Index";
 import Footer from "../Footer/Footer";
 import Style from "./ContactusStyle.module.css";
 import Button from "../Button/Index";
-import PageIndicator from "../PageIndicator/Index";
+import PageIndicator from "../NavBar/PageIndicator/Index";
 import { MDBIcon } from "mdbreact";
 import { MDBInput, MDBTextArea } from "mdb-react-ui-kit";
 function Index() {

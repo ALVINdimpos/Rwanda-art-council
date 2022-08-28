@@ -1,0 +1,86 @@
+.regist{
+position: relative;
+max-width: 800px;
+height: 70vh;
+margin: auto;
+display: flex;
+}
+.recontainer{
+position: absolute;
+left:260px;
+
+}
+.regiscont{
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+  justify-content: space-between;
+}
+.harvest{
+  width: 240px;
+  height:100%;
+
+}
+.recontainer .heading{
+  margin: 0px 0px 20px 150px  ;
+
+  
+}
+.heading span{
+  font-size: 30px;
+}
+.harvest  img{
+  width:100%;
+  height: 100%;
+  object-fit: fixed;
+  object-position: center;
+
+}
+.regpage{
+  display: flex;
+  justify-content:center;
+  flex-direction: column;
+  width: 200px;
+}
+.regpage>input[type='text'],select,input[type='email'],input[type='date']{
+  width:100%;
+  height: 20px;
+  border: rgb(red, green, blue);
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: normal;
+}
+.regpage>input[type='text'],select,input[type='email'],input[type='date']:hover{
+  outline: none;
+}
+.regpage>label{
+  font-size: 12px;
+  padding-left: 5px;
+}
+ .btn{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.btn input[type="button"]{
+  width:80px;
+  height:35px;
+  background-color: #c5801a;
+  border:none;
+  border-radius: 12px;
+  
+
+}
+.btn input[type="button"]:hover{
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.5);
+}
+.recontainer .loged{
+  margin-top: 20px;
+}

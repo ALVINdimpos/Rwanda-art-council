@@ -15,7 +15,7 @@ import PHOTO7 from "../../assets/photos/CateImage7.jpeg";
 import PHOTO8 from "../../assets/photos/CateImage8.jpeg";
 import PHOTO9 from "../../assets/photos/CateImage9.jpeg";
 import PHOTO10 from "../../assets/photos/CateImage10.jpeg";
-import PageIndicator from "../PageIndicator/Index";
+import PageIndicator from "../NavBar/PageIndicator/Index";
 const photos = [
   {
     src: PHOTO,

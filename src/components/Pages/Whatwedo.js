@@ -6,7 +6,7 @@ import Style from "./Whatwedo.module.css";
 import Image1 from "../../assets/photos/painting.jpg";
 import Image2 from "../../assets/photos/mainphoto.jpg";
 import Image3 from "../../assets/photos/imigongo.jpg";
-import PageIndicator from "../PageIndicator/Index";
+import PageIndicator from "../NavBar/PageIndicator/Index";
 function Whatwedo() {
   return (
     <>

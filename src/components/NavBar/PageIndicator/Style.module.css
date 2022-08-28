@@ -1,6 +1,6 @@
 .PageIndicator {
     display: flex;
-    background-image: url("../../assets/photos/mainphoto.jpg");
+    background-image: url("../PageIndicator/mainphoto.jpg");
     background-size: cover;
     align-items: center;
     height: 75vh;

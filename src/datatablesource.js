@@ -1,39 +1,37 @@
-
-
-export const userColumns = [
-  { field: "id", headerName: "ID", width: 70 },
+import { convertDate } from "./components/token/Token";
+  const myImage='https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'      
+  export const userColumns = [
+  { field: "id", headerName: "ID", width: 8, resizable:false},
   {
-    field: "fedName",
+    field: "federation_name",
     headerName: "Federation",
-    width: 150,
-    renderCell: (params) => {
-      return (
-        <div className="cellWithImg">
-          <img className="cellImg" src={params.row.img} alt="avatar" />
-          {params.row.username}
-        </div>
-      );
-    },
+    width: 145,
   },
+  
   {
-    field: "mobile",
+    field: "phone_number",
     headerName: "Mobile",
     width: 100,
   },
   {
-    field: "tin",
+    field: "email",
+    headerName: "Email",
+    width: 140,
+  },
+  {
+    field: "tinnumber",
     headerName: "Tin",
     width: 100,
   },
   {
-    field: "member",
-    headerName: "No-",
+    field: "number_of_members",
+    headerName: "No",
     width: 40,
   },
   {
-    field: "category",
+    field: "category_id",
     headerName: "Category",
-    width: 80,
+    width: 50,
   },
   {
     field: "status",
@@ -41,14 +39,14 @@ export const userColumns = [
     width: 80,
   },
   {
-    field: "created",
+    field: "created_at",
     headerName: "Created",
-    width: 60,
+    width: 120,
   },
   {
-    field: "updated",
-    headerName: "Updated",
-    width: 60,
+    field: "updated_at",
+    headerName: "Status",
+    width: 80,
     renderCell: (params) => {
       return (
         <div className={`cellWithStatus ${params.row.status}`}>
@@ -59,90 +57,55 @@ export const userColumns = [
   },
 ];
 
+//url data 
 
-
-
-
-//temporary data
-export const userRows = [
+export const Data= [
   {
     id: 1,
-    username: "Snow",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    status: "active",
-    email: "1snow@gmail.com",
-    age: 35,
+    federation_name: "RwandaArtCouncil",
+    phone_number: "0785419773",
+    email: "admin@gmail.com",
+    tinnumber: 11111,
+    number_of_members: 121,
+    status: "Pending",
+    category_id: null,
+    created_at: convertDate("2022-08-18T16:24:41.000000Z"),
+    updated_at: convertDate("2022-08-18T16:24:41.000000Z")
   },
   {
     id: 2,
-    username: "Jamie Lannister",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "2snow@gmail.com",
-    status: "passive",
-    age: 42,
-  },
+    federation_name: "Isubyo",
+    phone_number: "0784748439",
+    email: "isubyoart@gmail.com",
+    tinnumber: 23838930,
+    number_of_members: 89,
+    status: "Pending",
+    category_id: 1,
+    created_at: convertDate("2022-08-19T12:48:31.000000Z"),
+    updated_at: convertDate("2022-08-19T12:48:31.000000Z")
+  }
+  ,
   {
     id: 3,
-    username: "Lannister",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "3snow@gmail.com",
-    status: "pending",
-    age: 45,
-  },
-  {
-    id: 4,
-    username: "Stark",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "4snow@gmail.com",
-    status: "active",
-    age: 16,
-  },
-  {
-    id: 5,
-    username: "Targaryen",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "5snow@gmail.com",
-    status: "passive",
-    age: 22,
-  },
-  {
-    id: 6,
-    username: "Melisandre",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "6snow@gmail.com",
-    status: "active",
-    age: 15,
-  },
-  {
-    id: 7,
-    username: "Clifford",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "7snow@gmail.com",
-    status: "passive",
-    age: 44,
-  },
-  {
-    id: 8,
-    username: "Frances",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "8snow@gmail.com",
-    status: "active",
-    age: 36,
-  },
-  {
-    id: 9,
-    username: "Roxie",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "snow@gmail.com",
-    status: "pending",
-    age: 65,
-  },
-  {
-    id: 10,
-    username: "Roxie",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "snow@gmail.com",
-    status: "active",
-    age: 65,
-  },
-];
+    federation_name: "Ihuriro",
+    phone_number: "0784748439",
+    email: "ihuriro@gmail.com",
+    tinnumber: 23838930,
+    number_of_members: 100,
+    status: "Pending",
+    category_id: 1,
+    created_at: convertDate("2022-08-19T12:48:31.000000Z"),
+    updated_at: convertDate("2022-08-19T12:48:31.000000Z")
+  }
+]
+
+
+
+// end of data
+
+
+
+
+
+
+
