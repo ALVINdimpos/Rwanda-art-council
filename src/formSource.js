@@ -1,77 +1,56 @@
 export const userInputs = [
     {
       id: 1,
-      label: "Username",
+      label: "Federation",
       type: "text",
-      placeholder: "john_doe",
+      placeholder: "Enter Federation",
     },
+   
     {
       id: 2,
-      label: "Name and surname",
-      type: "text",
-      placeholder: "John Doe",
+      label: "Email",
+      type: "mail",
+      placeholder: "abc@gmail.com",
     },
     {
       id: 3,
-      label: "Email",
-      type: "mail",
-      placeholder: "john_doe@gmail.com",
+      label: "Mobile",
+      type: "text",
+      placeholder: "(+250 xxx xxxx xxx)",
     },
     {
       id: 4,
-      label: "Phone",
+      label: "Tin Number",
       type: "text",
-      placeholder: "+1 234 567 89",
+      placeholder: "(0123456789)",
     },
+   
     {
       id: 5,
-      label: "Password",
-      type: "password",
+      label: "Number of Members",
+      type: "text",
+      placeholder: "0-9",
     },
     {
       id: 6,
-      label: "Address",
-      type: "text",
-      placeholder: "Elton St. 216 NewYork",
+      label: "Category",
+      type: "select",
+      placeholder: "add category",
+    }, {
+      id: 7,
+      label: "Cluster",
+      type: "select",
     },
     {
-      id: 7,
-      label: "Country",
-      type: "text",
-      placeholder: "USA",
+      id: 8,
+      label: "RePassword",
+      type: "password",
+    },{
+      id: 9,
+      label: "RePassword",
+      type: "password",
     },
   ];
   
-  export const productInputs = [
-    {
-      id: 1,
-      label: "Title",
-      type: "text",
-      placeholder: "Apple Macbook Pro",
-    },
-    {
-      id: 2,
-      label: "Description",
-      type: "text",
-      placeholder: "Description",
-    },
-    {
-      id: 3,
-      label: "Category",
-      type: "text",
-      placeholder: "Computers",
-    },
-    {
-      id: 4,
-      label: "Price",
-      type: "text",
-      placeholder: "100",
-    },
-    {
-      id: 5,
-      label: "Stock",
-      type: "text",
-      placeholder: "in stock",
-    },
-  ];
+
   

@@ -1,12 +1,11 @@
-import React from 'react'
+import React from "react";
 import "./home.scss";
-import Widget from '../../components/widget/Widget'
-import Sidebar from '../../components/sidebar/Sidebar'
-import Navbar from '../../components/nav/Navbar'
-import Featured from '../../components/featured/Featured'
-import Chart from '../../components/chart/Chart'
-// import Charta from '../../components/chart/Charta'
-
+import Widget from "../../components/widget/Widget";
+import Sidebar from "../../components/sidebar/Sidebar";
+import Navbar from "../../components/nav/Navbar";
+import Featured from "../../components/featured/Featured";
+import Chart from "../../components/chart/Chart";
+import Event from '../eventTable/Event';
 
 const Home = () => {
   return (
@@ -22,12 +21,14 @@ const Home = () => {
         </div>
         <div className="charts">
           <Featured />
-     
-
           <Chart title="Recently Registered Federation" aspect={2 / 1} />
         </div>
-    
+        <div className="eventContainer">
+          <Event />  
+        </div>
+       
       </div>
+  
     </div>
   );
 };

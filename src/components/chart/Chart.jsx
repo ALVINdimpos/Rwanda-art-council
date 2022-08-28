@@ -5,19 +5,108 @@ import {
   XAxis,
   CartesianGrid,
   Tooltip,
+  YAxis,
   ResponsiveContainer,
 } from "recharts";
+import { Data } from "../../datatablesource";
+import { useState,useEffect } from "react";
+import { getTocken,base_uri,convertMonth } from "../token/Token";
 
-const data = [
-  { name: "January", Total: 1200 },
-  { name: "February", Total: 2100 },
-  { name: "March", Total: 800 },
-  { name: "April", Total: 1600 },
-  { name: "May", Total: 900 },
-  { name: "June", Total: 1700 },
-];
+
+
+
 
 const Chart = ({ aspect, title }) => {
+  const [row,setRow]=useState([])
+//the API data
+useEffect(()=>{
+  fetch(base_uri,{
+    method: 'GET',
+    headers: {
+        'Authorization': getTocken(),
+        'Content-Type': 'application/json'
+    }})
+    .then(result=>{
+      return result.json()})
+    .then(data=>{setRow(data?.User.Data)})
+},[])
+
+
+
+//end of API
+
+
+
+
+
+
+let registeredMonth=[]
+row.forEach(item=>(
+ registeredMonth.push(convertMonth(item.created_at))
+  )
+  )
+  let months=["jan","feb","mar","apr","may","june","july","august","sept","oct","nov","dec"];
+  for(let i=0;i<registeredMonth.length;i++){
+    if(registeredMonth[i]==='January'){
+      months[0]=registeredMonth.length
+    }
+    if(registeredMonth[i]==='February'){
+      months[1]=registeredMonth.length
+    }
+    if(registeredMonth[i]==='March'){
+      months[2]=registeredMonth.length
+    }
+    if(registeredMonth[i]==='April'){
+      months[3]=registeredMonth.length
+    }
+    if(registeredMonth[i]==='May'){
+      months[4]=registeredMonth.length
+    }
+    if(registeredMonth[i]==='June'){
+      months[5]=registeredMonth.length
+    }
+    if(registeredMonth[i]==='July'){
+      months[6]=registeredMonth.length
+    }
+    if(registeredMonth[i]==='August'){
+      months[7]=registeredMonth.length
+    }
+    if(registeredMonth[i]==='September'){
+      months[8]=registeredMonth.length
+    }
+    if(registeredMonth[i]==='October'){
+      months[9]=registeredMonth.length
+    }
+    if(registeredMonth[i]==='November'){
+      months[10]=registeredMonth.length
+    }
+    if(registeredMonth[i]==='December'){
+      months[11]=registeredMonth.length
+      console.log('Mysterous Size',months[11])
+    }
+
+  
+  }
+
+ 
+  
+  const data = [
+    { name: "Jan", Size: months[0] | "0" },
+    { name: "Feb", Size: months[1] | "0"},
+    { name: "Mar", Size: months[2] | "0"},
+    { name: "Apr", Size: months[3] | "0"},
+    { name: "May", Size: months[4] | "0"},
+    { name: "June", Size: months[5] | "0"},
+    { name: "July", Size: months[6] | "0"},
+    { name: "Aug", Size: months[7] | "0"},
+    { name: "Sept", Size: months[8] | "0"},
+    { name: "Oct", Size: months[9] | "0"},
+    { name: "Nov", Size: months[10] | "0"},
+    { name: "Dec", Size: months[11] | "0"},
+  ];
+
+
+ 
   return (
     <div className="chart">
       <div className="title">{title}</div>
@@ -35,14 +124,15 @@ const Chart = ({ aspect, title }) => {
             </linearGradient>
           </defs>
           <XAxis dataKey="name" stroke="gray" />
+          <YAxis/>
           <CartesianGrid strokeDasharray="3 3" className="chartGrid" />
           <Tooltip />
           <Area
             type="monotone"
-            dataKey="Total"
-            stroke="#8884d8"
+            dataKey="Size"
+            stroke="#C5801A"
             fillOpacity={1}
-            fill="url(#total)"
+            fill="#C5801A"
           />
         </AreaChart>
       </ResponsiveContainer>

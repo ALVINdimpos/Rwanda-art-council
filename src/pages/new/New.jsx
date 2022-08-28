@@ -44,9 +44,11 @@ const New = ({ inputs, title }) => {
                 <div className="formInput" key={input.id}>
                   <label>{input.label}</label>
                   <input type={input.type} placeholder={input.placeholder} />
+             
                 </div>
               ))}
-              <button>Send</button>
+             
+              <button>Submit</button>
             </form>
           </div>
         </div>

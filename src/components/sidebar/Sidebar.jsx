@@ -40,10 +40,10 @@ const Sidebar = () => {
             </li>
           </Link>
       
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/addEvent" style={{ textDecoration: "none" }}>
             <li>
               <StoreIcon className="icon" />
-              <span>Booking</span>
+              <span>Add Event</span>
             </li>
           </Link>
           

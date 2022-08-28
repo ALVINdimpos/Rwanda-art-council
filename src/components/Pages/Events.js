@@ -1,7 +1,10 @@
 import React from "react";
 import NavBar from "../NavBar/Index";
 import Footer from "../Footer/Footer";
-import PageIndicator from "../PageIndicator/Index";
+import PageIndicator from "../NavBar/PageIndicator/Index";
+import Picture1 from "../../assets/photos/CatImage4.jpeg";
+import Picture2 from "../../assets/photos/CateImage6.jpeg";
+import Picture3 from "../../assets/photos/images2.png";
 import Style from "./EventStyle.module.css";
 import EventCard from "../box/EventCard/Index";
 import { MDBInput } from "mdb-react-ui-kit";
