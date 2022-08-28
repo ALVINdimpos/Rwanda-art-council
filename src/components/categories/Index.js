@@ -2,7 +2,7 @@ import React from "react";
 import Style from "./Style.module.css";
 import pic from "../../assets/photos/palastic.png";
 import Pic1 from "../../assets/photos/Fashion.png";
-import Pic2 from "../../assets/photos/cinema.png";
+import Pic2 from "../../assets/photos/Cinema.png";
 import Pic3 from "../../assets/photos/dance.png";
 import Pic4 from "../../assets/photos/acting.png";
 import Pic5 from "../../assets/photos/literature.png";
