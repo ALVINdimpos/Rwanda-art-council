@@ -1,5 +1,9 @@
 .loginMainWraper {
-  padding-top: 2rem;
+  min-height: 100vh;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .loginWraper {
   display: flex;
@@ -17,4 +21,67 @@
 .loginButtonWraper {
   display: flex;
   justify-content: space-between;
+}
+.carddetails{
+  position:relative;
+  display:flex;
+  
+  padding-bottom:20px;
+}
+.carddetails input{
+  height:50px;
+  width:100%;
+  font-size:18px;
+  caret-color:white;
+  background-color:whitesmoke;
+  color:black;
+  padding:0px 20px;
+  padding-left:50px;
+  box-sizing:border-box;
+  border-radius:10px;
+  outline:none;
+  border:none;
+}
+.carddetails i{
+  position:absolute;
+  left:10px;
+  top:16px;
+  color:#C5801A;
+  font-size:18px;
+}
+.carddetails span{
+  position:absolute;
+  width:20px;
+  height:20px;
+  background-color:#fff;
+  border-radius:50%;
+  color:#ffe4be;
+  font-size:10px;
+  color:#000;
+  right:10px;
+  top:15px;
+  opacity:0.4;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  cursor:pointer;
+}
+
+.card-details span:hover{
+  opacity:1;
+}
+@media (min-width:375px) {
+  .loginWraper{
+    width: auto;
+  }
+}
+@media (min-width:360px) {
+  .loginWraper{
+    width: auto;
+  }
+}
+@media (min-width:280px) {
+  .loginWraper{
+    width: auto;
+  }
 }

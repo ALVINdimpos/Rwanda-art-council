@@ -1,16 +1,74 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
-import NavBar from "../NavBar/Index";
 import Style from "./LoginStyle.module.css";
 import Button from "../Button/Index";
 import { MDBIcon } from "mdbreact";
-import { MDBInput } from "mdb-react-ui-kit";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useState,useEffect } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 function Index() {
-  const navigate=useNavigate();
+  
+  const [Email, SetEmail] = useState("");
+  const [Password, SetPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [passwordShown, setPasswordShown] = useState(false);
+  const navigate=useNavigate()
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
+  const EmailHandler = (e) => {
+    SetEmail(e.target.value);
+  };
+  const PasswordHandler = (e) => {
+    console.log(e.target.value)
+    SetPassword(e.target.value);
+  };
+  const showToastMessage = () => {
+    toast.success("Login Successful", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+  
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });}
+  const loginData = {
+    email: Email,
+    password: Password,
+  };
+  const loginHandler = async (e) => {
+    e.preventDefault();
+    showToastMessage();
+    setLoading(true);
+    try {
+      console.log('my Data',loginData)
+    const res=  await axios.post(
+        "https://rwanda-art-api.herokuapp.com/api/login",
+        loginData
+      ).then(res=>{
+        console.log('Response data',res.data)
+        localStorage.setItem("token",res.data.access_token)
+      })
+      //.catch(err=>console.log(new Error(err.message)))
+      setLoading(false);
+    } catch (error) {
+      SetPassword("");
+      console.log('Error Message',JSON.stringify(error.message));
+      setLoading(false);
+    }
+    if(localStorage.getItem('token')) navigate('/logindash')
+    else navigate('/Login')
+  };
+
+
+
   return (
     <>
-      <NavBar />
       <div className={Style.loginMainWraper}>
         <div className={Style.loginWraper}>
           <div>
@@ -25,38 +83,46 @@ function Index() {
           <div>
             <h1>Sign in</h1>
           </div>
-          <div>
-            <p>Sign up on the internal platform</p>
-          </div>
-          <div className={Style.loginButtonWraper}>
-            <div>
-              <Button name="Login with facebook" />
-            </div>
-            <div>
-              <Button name="Login with google" />
-            </div>
-          </div>
-          <div>
-            <p>or login with email address</p>
-          </div>
-          <div>
-            <MDBInput
-              id="typeText"
+          <div className={Style.carddetails}>
+            <input
               type="email"
-              placeholder="Enter your email"
+              placeholder="Enter your name"
+              value={Email}
+              onChange={EmailHandler}
+              required
             />
+            <i className="fa fa-envelope" />
+          </div>
+          <div className={Style.carddetails}>
+            <input
+              type={passwordShown ? "text" : "password"}
+              id="password-input"
+              placeholder="Enter your password"
+              onChange={PasswordHandler}
+              value={Password}
+              required
+            />
+            <i className="fa fa-lock" />
+            <span>
+              <small className="fa fa-eye-slash passcode" onClick={togglePassword}/>
+            </span>
           </div>
           <div>
-            <MDBInput id="typeText" type="password" placeholder="Password" />
-          </div>
-          <div>
-            {" "}
-            <Button name="Login" onClick={()=>navigate('/logindash')} />
+            
+            <Button
+              name={loading ? "loading..." : `Login`}
+              onClick={loginHandler}
+            />
+            <Link to="/ForgotPassward">
+                <span style={{ color: "#c5801a" }}>Forgot password?</span>
+              </Link>
+       <ToastContainer />
           </div>
           <div>
             <p>
-            Don’t have an account?<Link to='/Register' >
-              <span style={{ color: "#c5801a" }}>Sign up</span>
+              Don’t have an account?
+              <Link to="/Register">
+                <span style={{ color: "#c5801a" }}>Sign up</span>
               </Link>
             </p>
           </div>

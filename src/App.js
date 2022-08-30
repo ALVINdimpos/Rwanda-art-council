@@ -22,6 +22,7 @@ import FederationTable from "./components/widgetcategory/federation/FederationTa
 import CategoryTable from "./components/widgetcategory/category/CategoryTable";
 import ArtsTable from "./components/widgetcategory/arts/ArtsTable";
 import Eventing from "./components/myEvent/Eventing";
+  import HomeFed from "./pages/federationDashboard/home/HomeFed";
 export default function App() {
   return (
     <BrowserRouter>
@@ -60,6 +61,7 @@ export default function App() {
         </Route>
 
         <Route path="addnotify" element={<Contactor />} />
+        <Route path="myFederation" element={<HomeFed/>}/>
       </Routes>
     </BrowserRouter>
   );

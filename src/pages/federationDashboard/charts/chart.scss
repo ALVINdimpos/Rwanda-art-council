@@ -1,0 +1,55 @@
+.container-chart{
+    // display: flex;
+    // // flex-wrap: wrap;
+    // flex-direction:column;
+    // background-color: black;
+    // padding-left: 0;
+    // justify-content:flex-start;
+    .charts{
+      display:flex;
+      .poly{
+        width:50vw;
+        height:300px;
+        border:0.5px solid white;
+        border-radius: 8px;
+
+        span{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: medium;
+        }
+      }    
+      
+      .widget{
+        flex: 1;
+        height:300px;
+        display: flex;
+        flex-direction:column;
+        .my-widge{
+            display:flex;
+            gap:18px;
+            // background-color: orange;
+            .w-1,.w-2{
+                border-radius:5px;
+                width:154px;
+                height: 80px;
+                box-shadow: 0 0.5px 0.8px 0 ;
+                // background-color: black;
+
+
+           }
+
+        }
+        .progress-bar{
+            background-color: blue;
+            width:330px;
+            height: 29vh;
+            background-color: white;
+            border-radius: 8px;
+
+        }
+
+      }
+
+
+    }
+}
