@@ -10,7 +10,7 @@ import {
 } from "recharts";
 import { Data } from "../../datatablesource";
 import { useState,useEffect } from "react";
-import { getTocken,base_uri,convertMonth } from "../token/Token";
+import { base_uri,convertMonth } from "../token/Token";
 
 
 
@@ -23,7 +23,7 @@ useEffect(()=>{
   fetch(base_uri,{
     method: 'GET',
     headers: {
-        'Authorization': getTocken(),
+        'Authorization': localStorage.getItem('token'),
         'Content-Type': 'application/json'
     }})
     .then(result=>{
@@ -119,6 +119,7 @@ row.forEach(item=>(
         >
           <defs>
             <linearGradient id="total" x1="0" y1="0" x2="0" y2="1">
+ 
               <stop offset="5%" stopColor="#C5801A" stopOpacity={0.8} />
               <stop offset="95%" stopColor="#C5801A" stopOpacity={0} />
             </linearGradient>
@@ -130,9 +131,9 @@ row.forEach(item=>(
           <Area
             type="monotone"
             dataKey="Size"
-            stroke="#C5801A"
+            stroke="#FFB636"
             fillOpacity={1}
-            fill="#C5801A"
+            fill="#FFB636"
           />
         </AreaChart>
       </ResponsiveContainer>

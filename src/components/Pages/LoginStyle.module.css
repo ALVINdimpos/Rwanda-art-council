@@ -1,8 +1,9 @@
 .loginMainWraper {
+  min-height: 100vh;
+  background-color: whitesmoke;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 .loginWraper {
   display: flex;
@@ -83,6 +84,25 @@
 @media (min-width:1050px) {
   .loginWraper{
     margin: 1rem auto;
+  }
+.card-details span:hover{
+  opacity:1;
+}
+@media (min-width:375px) {
+  .loginWraper{
     width: auto;
   }
 }
+@media (min-width:360px) {
+  .loginWraper{
+    width: auto;
+  }
+}
+
+@media (min-width:280px) {
+  .loginWraper{
+    width: auto;
+  }
+}
+
+/* Path: src\components\Pages\LoginStyle.module.css */

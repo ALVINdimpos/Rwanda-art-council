@@ -18,7 +18,7 @@ width:100,
 ]
 
 export const eventRow=[
-    {id:1,title:"art rwandaubuhanzi",booki:"2345",dt:"2/8/2022 16:00"},
-    {id:2,title:"Sculpt Collection",booki:"2500",dt:"2/8/2022 08:00"},
-    {id:3,title:"Inzovu Mall Celemony",booki:"1250",dt:"2/10/2022 08:05"}
+    {id:1,title:"art ",booki:"2345",dt:"2/8/2022 16:00"},
+    {id:2,title:"Sculpt ",booki:"2500",dt:"2/8/2022 08:00"},
+    {id:3,title:"Inzovu Mall ",booki:"1250",dt:"2/10/2022 08:05"}
 ]

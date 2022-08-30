@@ -2,22 +2,22 @@
 import React from "react";
 import Style from "./LoginStyle.module.css";
 import Button from "../Button/Index";
-import { useNavigate } from "react-router-dom";
 import { MDBIcon } from "mdbreact";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import validator from "validator";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import validator from "validator";
 
 function Index() {
   const [Email, SetEmail] = useState("");
   const [Password, SetPassword] = useState("");
-  const [emaiValid, setEmailValid] = useState("");
-  const [passwordValid, setPasswordValid] = useState("");
   const [loading, setLoading] = useState(false);
   const [passwordShown, setPasswordShown] = useState(false);
+  const [emailValid, setEmailValid] = useState("");
+  const navigate = useNavigate();
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
   };
@@ -25,7 +25,20 @@ function Index() {
     SetEmail(e.target.value);
   };
   const PasswordHandler = (e) => {
+    console.log(e.target.value);
     SetPassword(e.target.value);
+  };
+  const showToastMessage = () => {
+    toast.success("Login Successful", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
   const loginData = {
     email: Email,
@@ -33,97 +46,127 @@ function Index() {
   };
   const loginHandler = async (e) => {
     e.preventDefault();
-    if (validator.isEmail(Email)) {
-      setEmailValid("");
-    } else {
-      setEmailValid("Please enter a valid email");
-    }
-    if (Password.length < 8) {
-      setPasswordValid("Password must be 8 characters long");
-    } else {
-      setPasswordValid("");
-    }
-
+    showToastMessage();
     setLoading(true);
     try {
-      const res = await axios.post(
-        "https://rwanda-art-api.herokuapp.com/api/login",
-        loginData
-      );
-      if (res.status === 200) {
-        toast.success("Login successful");
-        console.log(res);
-      }
+      console.log("my Data", loginData);
+      const res = await axios
+        .post("https://rwanda-art-api.herokuapp.com/api/login", loginData)
+        .then((res) => {
+          console.log("Response data", res.data);
+          localStorage.setItem("token", res.data.access_token);
+        });
+      //.catch(err=>console.log(new Error(err.message)))
+      setLoading(false);
     } catch (error) {
-      console.log(error);
+      SetPassword("");
+      console.log("Error Message", JSON.stringify(error.message));
       setLoading(false);
     }
-    SetEmail("");
-    SetPassword("");
-    setEmailValid("");
-    setPasswordValid("");
-    setLoading(false);
+    if (localStorage.getItem("token")) navigate("/logindash");
+    else navigate("/Login");
   };
-  useEffect(() => {
-    loginHandler();
-  }, []);
 
-  const navigate = useNavigate();
   return (
     <>
       <div className={Style.loginMainWraper}>
         <div className={Style.loginWraper}>
-          <form>
+          <div>
             <div>
-              <div>
-                <Link to="/Home">
-                  <h4 style={{ color: "#c5801a" }}>
-                    <MDBIcon fas icon="angle-left" /> Home
-                  </h4>
-                </Link>
-              </div>
-            </div>
-            <div>
-              <h1>Sign in</h1>
-            </div>
-            <div className={Style.carddetails}>
-              <input
-                type="email"
-                placeholder="Enter your name"
-                onChange={EmailHandler}
-              />
-              <i className="fa fa-envelope" />
-            </div>
-            {emaiValid && <p style={{ color: "red" }}>{emaiValid}</p>}
-            <div className={Style.carddetails}>
-              <input
-                type={passwordShown ? "text" : "password"}
-                id="password-input"
-                placeholder="Enter your password"
-                onChange={PasswordHandler}
-                value={Password}
-              />
-              <i className="fa fa-lock" />
-              <span>
-                <small
-                  className="fa fa-eye-slash passcode"
-                  onClick={togglePassword}
-                />
-              </span>
-            </div>
-            <div>
-              {" "}
-              <Button name="Login" onClick={() => navigate("/logindash")} />
-            </div>
-            <div>
-              <p>Don’t have an account?</p>
-              <Link to="/Register">
-                <span style={{ color: "#c5801a" }}>Sign up</span>
+              <Link to="/Home">
+                <h4 style={{ color: "#c5801a" }}>
+                  <MDBIcon fas icon="angle-left" /> Home
+                </h4>
               </Link>
-              <ToastContainer />
             </div>
-            <div></div>
-          </form>
+          </div>
+          <div>
+            <h1>Sign in</h1>
+          </div>
+          <div className={Style.carddetails}>
+            <input
+              type="email"
+              placeholder="Enter your name"
+              onChange={EmailHandler}
+            />
+            <i className="fa fa-envelope" />
+          </div>
+          {emailValid && <p style={{ color: "red" }}>{emailValid}</p>}
+          <div className={Style.carddetails}>
+            <input
+              type={passwordShown ? "text" : "password"}
+              id="password-input"
+              placeholder="Enter your password"
+              onChange={PasswordHandler}
+              value={Password}
+            />
+            <i className="fa fa-lock" />
+            <span>
+              <small
+                className="fa fa-eye-slash passcode"
+                onClick={togglePassword}
+              />
+            </span>
+          </div>
+          <div>
+            {" "}
+            <Button name="Login" onClick={() => navigate("/logindash")} />
+          </div>
+          <div>
+            <p>Don’t have an account?</p>
+            <Link to="/Register">
+              <span style={{ color: "#c5801a" }}>Sign up</span>
+            </Link>
+            <ToastContainer />
+          </div>
+        </div>
+        <div>
+          <h1>Sign in</h1>
+        </div>
+        <div className={Style.carddetails}>
+          <input
+            type="email"
+            placeholder="Enter your name"
+            value={Email}
+            onChange={EmailHandler}
+            required
+          />
+          <i className="fa fa-envelope" />
+        </div>
+        <div className={Style.carddetails}>
+          <input
+            type={passwordShown ? "text" : "password"}
+            id="password-input"
+            placeholder="Enter your password"
+            onChange={PasswordHandler}
+            value={Password}
+            required
+          />
+          <i className="fa fa-lock" />
+          <span>
+            <small
+              className="fa fa-eye-slash passcode"
+              onClick={togglePassword}
+            />
+          </span>
+        </div>
+        <div>
+          <Button
+            name={loading ? "loading..." : `Login`}
+            onClick={loginHandler}
+          />
+          <Link to="/ForgotPassward">
+            <span style={{ color: "#c5801a" }}>Forgot password?</span>
+          </Link>
+          <ToastContainer />
+        </div>
+        <div>
+          <p>
+            Don’t have an account?
+            <Link to="/Register">
+              <span style={{ color: "#c5801a" }}>Sign up</span>
+            </Link>
+          </p>
         </div>
       </div>
     </>
