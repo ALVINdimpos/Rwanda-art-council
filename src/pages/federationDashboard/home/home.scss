@@ -9,36 +9,78 @@
         display: flex;
         padding-top:10px;
       }
-  
-    //   .charts {
-    //     padding: 5px 20px;
-    //   }
-    //   .events{
-    //     padding:5px 15px;
-  
-    //   }
-  
-    //   .listContainer {
-    //     -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-    //     box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-    //     padding: 20px;
-    //     margin: 20px;
-  
-    //     .listTitle {
-    //       font-weight: 500;
-    //       color: gray;
-    //       margin-bottom: 15px;
-    //     }
-    //   }
-    //   .eventContainer{
-    //     display:flex;
-    //     margin-top: 12px;
-    //     height: 400px;
-    //     width: 373px;
-    //     padding:0;
-    //     margin-left: 20px;  
-    //   }
+     
+      .artist-table{
+        // width:85%;
+        padding: 0 4.5%;
+        flex: 4;
+        // background-color:green;
+
+        .tbl-title{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          .btn{
+            cursor:pointer;
+            width:150px;
+            background-color:#FFB636;    
+            height: 40px;
+            border-radius: 6px;
+            font-size:11px;
+            margin-bottom: 0px;
+            box-shadow: 0 0.5px 0.5px rgba(0,0,0,0.5);
+
+            &:hover{
+              transition:ease .2;
+              border-radius: 6px;
+              opacity: .4px;
+              border:1.5px solid ;
+              background:transparent;
+              font-size:11px;
+              padding: 5px 0px;
+
+               }
+          }
+          .upl-CSV{
+            // margin-bottom: 0px;
+            height: 40px;
+            display: inline-block;
+            padding-top: 3px;
+
+              input{
+                width: 300px;
+                margin-right: 0px;
+                margin-top: 2px;
+
+              }
+
+            .btn-upload{
+              width:60px;
+              font-size: 8px;
+              height: 30px;
+              border-radius: 5px;
+              // margin-bottom: 2px;
+              border: none;
+              background-color:#FFB636;    
+              font-size:11px;
+              &:hover{
+                transition:ease .2;
+                border-radius: 5px;
+                opacity: .4px;
+                border:1.5px solid ;
+                background:transparent;
+              
+              }
+
+            }
+          }
+         
+        }
+      }
+
     }
+    
    
    
   }

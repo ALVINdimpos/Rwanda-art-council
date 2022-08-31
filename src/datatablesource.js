@@ -1,43 +1,53 @@
 import { convertDate } from "./components/token/Token";
   const myImage='https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'      
   export const userColumns = [
-  { field: "id", headerName: "ID", width: 8, resizable:false},
+  { field: "id", headerName: "ID", width: 4, resizable:false},
   {
     field: "federation_name",
     headerName: "Federation",
-    width: 145,
+    width: 140,
+    // flex:1,
   },
   
   {
     field: "phone_number",
     headerName: "Mobile",
-    width: 100,
+    width: 120,
+    // flex:1,
+
   },
   {
     field: "email",
     headerName: "Email",
-    width: 140,
+    width: 110,
+    // flex:1,
+
   },
   {
     field: "tinnumber",
     headerName: "Tin",
     width: 100,
+
   },
   {
     field: "number_of_members",
     headerName: "No",
     width: 40,
   },
-  {
-    field: "category_id",
-    headerName: "Category",
-    width: 50,
-  },
-  {
-    field: "status",
-    headerName: "Status",
-    width: 80,
-  },
+  // {
+  //   field: "category_id",
+  //   headerName: "Category",
+  //   width: 50,
+  //   // flex:1
+
+  // },
+  // {
+  //   field: "status",
+  //   headerName: "Status",
+  //   width: 80,
+  //   flex:1,
+
+  // },
   {
     field: "created_at",
     headerName: "Created",
@@ -67,8 +77,8 @@ export const Data= [
     email: "admin@gmail.com",
     tinnumber: 11111,
     number_of_members: 121,
-    status: "Pending",
-    category_id: null,
+    // status: "Pending",
+    // category_id: null,
     created_at: convertDate("2022-08-18T16:24:41.000000Z"),
     updated_at: convertDate("2022-08-18T16:24:41.000000Z")
   },
@@ -79,8 +89,8 @@ export const Data= [
     email: "isubyoart@gmail.com",
     tinnumber: 23838930,
     number_of_members: 89,
-    status: "Pending",
-    category_id: 1,
+    // status: "Pending",
+    // category_id: 1,
     created_at: convertDate("2022-08-19T12:48:31.000000Z"),
     updated_at: convertDate("2022-08-19T12:48:31.000000Z")
   }
