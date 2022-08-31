@@ -23,7 +23,7 @@ import CategoryTable from "./components/widgetcategory/category/CategoryTable";
 import ArtsTable from "./components/widgetcategory/arts/ArtsTable";
 import Eventing from "./components/myEvent/Eventing";
   import HomeFed from "./pages/federationDashboard/home/HomeFed";
-import ArtisistReg from "./pages/artistregistration/ArtisistReg";
+import RegisterArt from "./pages/federationDashboard/regist/RegisterArt";
 export default function App() {
   return (
     <BrowserRouter>
@@ -66,7 +66,7 @@ export default function App() {
 
 
 
-        <Route path="adartist" element={<ArtisistReg />}/>
+        <Route path="adartist" element={<RegisterArt />}/>
       </Routes>
     </BrowserRouter>
   );

@@ -1,4 +1,9 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap');
+
+
+
 
 @mixin lebels {
     font-size:12px;
@@ -10,52 +15,63 @@
 }
 @mixin location{
     border:none;
-    border-bottom:2px solid rgba(0,0,0,0.5);
+    border:2px solid rgba(0,0,0,0.4);
     height: 40px;
     font-size: 12px;
     padding-bottom: 0;   
+    border-color: #FBAB7E;
+    border-radius: 5px;
 }
 @mixin inputs{
     width:100%;
     border:none;
-    border-bottom:2px solid rgba(0,0,0,0.5);
+    border-radius: 5px;
+    border:2px solid rgba(0,0,0,0.5);
     height: 40px;
     font-size: 12px;
+    border-color: #FBAB7E;
     padding-bottom: 0;
-    // font-family: Arial;
+
     
-    &:hover,:focus{
+
+    
+    &:focus{
         outline:none;
     }
 }
 @mixin dated{
     border:none;
-    border-bottom:2px solid rgba(0,0,0,0.5);
+    border:2px solid rgba(0,0,0,0.5);
     height: 40px;
     font-size: 12px;
-    padding-bottom: 0;
-    // background-color: red;
-    // font-family: Arial;
     
-    &:hover,:focus{
+    padding-bottom: 0;
+    border-radius: 5px;
+    border-color: #FBAB7E;
+    
+    &:focus{
         outline:none;
     }
 }
 @mixin  texting {
     
     border:none;
-    border-bottom:2px solid rgba(0,0,0,0.5);
+    border:2px solid rgba(0,0,0,0.4);
     margin-left: 5px;
     height: 85px;
     font-size: 12px;
-    &:hover{
+    border-radius: 5px;
+    border-color: #FBAB7E;
+
+    &:focus{
         outline:none;
     }
     
 }
 
 
-    
+
+ 
 
 .eventPage{
     display: flex;
@@ -63,11 +79,15 @@
     background-color: white;
     border: none;
     margin-left: 20%;
-    width: 400px;
+    width: 500px;
     
+.file-chooser{
+    padding-top: 12px;
+}
+
         .title{
-                background: chocolate;
-                height:60px;
+            background-color: #FFB636; 
+            height:60px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -78,111 +98,127 @@
                 
         }
         }
-        .imgEvent{
-            height: 120px;
-            // background:red;
-            width: 100%;
+            .cover-s{
 
-            ::-webkit-file-upload-button .image{
-                background: black;
-                color: red;
-                padding: 1em;
-              }
-
-        }
-
-        .tt{
-            display: flex;
-            .titledes{
-                flex: 1;    
-                flex-direction: column;
-                flex-wrap: wrap;
-                label{
-                    @include lebels();
-                }
-                input{
-                    @include inputs()
-                }
-              
-            }
-        }
-        .timeloc{
-            display:flex;
-            flex-direction: row;
-            justify-content: space-between;
-            .tim{
-                display:flex;
-                flex-direction:column;
-                width: 30%;
-                label{
-                    @include lebels();
-                }
-                input{
-                    @include location()
-                }
-            }
-            .loc{
-                display:flex;
-                flex-direction: column;
-                width: 60%;
-
-                label{
-                    @include lebels();
-                }
-                input{
-                    @include dated()
-                }
-            }
-        }
-        .desc{
-            display:block;
-            margin-top: 10px;
-            // flex-direction: column;
-            
-            .description{
-                display:flex;
-                flex-direction: column;
-                label{
-                    @include lebels();
-                }
-                textarea{
-                    @include texting()
-                }
-            }
-            
-        }
+                padding: 0 5px;
+                .imgEvent{
+                    height: 120px;
+                    // background:red;
+                    width: 100%;
         
+                     .image{
+                        // background: black;
+                        padding: 1em;
+                        width:120px;
+                        height:120px;
+                        border-radius: 50%;
 
-
-
-
+                        img{
+                            object-fit:center;
+                            object-position:center;
+                            width: 100%;
+                        }
+                      }
         
-        .buttons{
-            // width: 100%;
-            margin-top: 8px;
-            .btn{
-                display:inline;
-                width:100%;
-                height:50px;
-                font-size:10px ;
-                color: black;
-                opacity: .4px;
-                background-color: #FFB636; 
-                border-radius: 10px; 
+                }
+        
+                .tt{
+                    display: flex;
+                    .titledes{
+                        flex: 1;    
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                        label{
+                            @include lebels();
+                        }
+                        input{
+                            @include inputs()
+                        }
+                      
+                    }
+                }
+                .timeloc{
+                    display:flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding-top: 12px;
 
-
-                &:hover{
-                    background: transparent;
-                    transition: .3 ;
-                    border:2px solid rgba(0,0,0,0.5);
-
-
+                    .tim{
+                        display:flex;
+                        flex-direction:column;
+                        width: 30%;
+                        label{
+                            @include lebels();
+                        }
+                        input{
+                            @include location()
+                        }
+                    }
+                    .loc{
+                        display:flex;
+                        flex-direction: column;
+                        width: 60%;
+        
+                        label{
+                            @include lebels();
+                        }
+                        input{
+                            @include dated()
+                        }
+                    }
+                }
+                .desc{
+                    display:block;
+                    margin-top: 10px;
+                    // flex-direction: column;
+                    
+                    .description{
+                        display:flex;
+                        flex-direction: column;
+                        label{
+                            @include lebels();
+                        }
+                        textarea{
+                            @include texting()
+                        }
+                    }
                     
                 }
-
-             
+                
+        
+        
+        
+        
+                
+                .buttons{
+                    // width: 100%;
+                    margin-top: 12px;
+                    display: flex;
+                    justify-items: center;
+                    align-items: center;
+                    .btn{
+                        width:100%;
+                        height:50px;
+                        font-size:10px ;
+                        color: black;
+                        opacity: .4px;
+                        background-color: #FFB636; 
+                        border-radius: 10px; 
+        
+        
+                        &:hover{
+                            background: orange;
+                            transition: .3 ;
+                            // border:2px solid rgba(0,0,0,0.5);
+        
+        
+                            
+                        }
+        
+                     
+                    }
+                }
             }
-        }
         
 
 }

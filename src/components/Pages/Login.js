@@ -46,12 +46,12 @@ function Index() {
     showToastMessage();
     setLoading(true);
     try {
-      console.log('my Data',loginData)
+      // console.log('my Data',loginData)
     const res=  await axios.post(
         "https://rwanda-art-api.herokuapp.com/api/login",
         loginData
       ).then(res=>{
-        console.log('Response data',res.data)
+        console.log('Response Token data',res.data)
         localStorage.setItem("token",res.data.access_token)
       })
       //.catch(err=>console.log(new Error(err.message)))
