@@ -8,7 +8,7 @@ import {
   YAxis,
   ResponsiveContainer,
 } from "recharts";
-import { Data } from "../../datatablesource";
+// import { Data } from "../../datatablesource";
 import { useState,useEffect } from "react";
 import { base_uri,convertMonth } from "../token/Token";
 
@@ -23,15 +23,18 @@ useEffect(()=>{
   fetch(base_uri,{
     method: 'GET',
     headers: {
-        'Authorization': localStorage.getItem('token'),
+        'Authorization': 'Bearer '+localStorage.getItem('token'),
         'Content-Type': 'application/json'
     }})
     .then(result=>{
+     console.log('API Data',result.json())
       return result.json()})
     .then(data=>{setRow(data?.User.Data)})
 },[])
 
+// console.log('Rows In API',row)
 
+// console.log('current Token',localStorage.getItem('token'));
 
 //end of API
 

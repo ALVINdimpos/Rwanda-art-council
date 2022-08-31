@@ -5,6 +5,8 @@ import './event.scss'
 import { useState,useEffect } from 'react';
 import {ImUpload} from 'react-icons/im'
 import { getTocken,eventUrl } from '../../components/token/Token';
+import {FiUpload} from 'react-icons/fi'
+
 
 function EventPrp() {
 
@@ -99,7 +101,7 @@ function EventPrp() {
                 <span>Event Preparation</span>
             </div>
             <div className='imgEvent'>
-            <input type="file"  onChange={handleImage} className='images' />
+            <input type="file"  onChange={handleImage} className='form-control' />
             {/* <img src={imFile} /> */}
             </div> 
             <div className='tt'>
@@ -120,10 +122,10 @@ function EventPrp() {
             </div>
         </div>
        
-       <div className='tt'>
-                 <div className='titledes'>
+       <div className='desc'>
+                 <div className='description'>
                 <label>Description</label>
-                <textarea cols="40" value={desc} rows="30" 
+                <textarea value={desc}  
                 onChange={e=>handleDesc(e)}
                 placeholder='type Description ...'>
             </textarea>

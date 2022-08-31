@@ -17,9 +17,7 @@ function ChartsData() {
                     <div className='w-2'>
                         widget 2
                     </div>
-                    {/* <div className='w-2'>
-                        w-2
-                    </div> */}
+                  
                 </div>
                 <div className='progress-bar'>
                         hha
