@@ -1,5 +1,5 @@
 import React from "react";
-import "./home.scss";
+import "./regist.scss"
 import { Link } from "react-router-dom";
 import FedSidebar from "../sideFedbar/FedSidebar";
 import FedNavbar from "../nav/FedNavbar";
@@ -9,7 +9,8 @@ import {BiPlusMedical} from 'react-icons/bi'
 import {RiUpload2Fill} from 'react-icons/ri'
 import { Data } from "../DumFederation";
 import * as XLSX from 'xlsx'
-const HomeFed = () => {
+import ArtisistReg from "../../artistregistration/ArtisistReg";
+const RegisterArt = () => {
   const handleFile= async e=>{
     const file=e.target.files[0]
     const data=await file.arrayBuffer()
@@ -57,18 +58,9 @@ const HomeFed = () => {
             <FedNavbar />
 
           <div className="charts">
-          <ChartsData />
+          <ArtisistReg/>
           </div>
-          <div className="artist-table">
-            <div className='tbl-title'>
-            <div className="btn"  ><Link to="/adartist"><BiPlusMedical style={{fontSize:"large", paddingRight:"5px"}}/> Add New</Link> </div>  
-            <div className="upl-CSV">
-            <input  type='file' onChange={e=>handleFile(e)}/> 
-            <button onClick={handleClick} className="btn-upload"><RiUpload2Fill style={{fontSize:"large"}} /></button>
-            </div>
-            </div>
-          <Artists/>
-          </div>
+   
 
 
          
@@ -78,4 +70,4 @@ const HomeFed = () => {
   );
 };
 
-export default HomeFed;
+export default RegisterArt;

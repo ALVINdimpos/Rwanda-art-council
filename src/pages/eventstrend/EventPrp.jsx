@@ -46,8 +46,8 @@ function EventPrp() {
     // useEffect(e=>setTimes(e.target.value))
 
     const handleImage=e=>{
-        // console.log('Target value', e.target.files[0])
-        setImFile(e.target.files[0])
+        console.log('Image:',URL.createObjectURL((e.target.files[0])))
+        setImFile(URL.createObjectURL((e.target.files[0])))
     }
 
 
@@ -88,8 +88,8 @@ function EventPrp() {
 
 
 
-        console.log('img File',imFile)
-        console.log('My Data',data)
+        // console.log('img File',imFile)
+        // console.log('My Data',data)
     }
 
  
@@ -100,9 +100,12 @@ function EventPrp() {
             <div className="title">
                 <span>Event Preparation</span>
             </div>
+            <div className="cover-s" >
             <div className='imgEvent'>
-            <input type="file"  onChange={handleImage} className='form-control' />
-            {/* <img src={imFile} /> */}
+            <input type="file"  onChange={handleImage} className="file-chooser"/>
+            <img src={imFile } className="image"/>
+            {/* blackimg */}
+            {/* imFile */}
             </div> 
             <div className='tt'>
         <div className="titledes">
@@ -135,7 +138,8 @@ function EventPrp() {
         <input type='submit' className='btn' value="Submit" />
     </div>
        
-
+   
+            </div>
     </div>
     </form>
     )

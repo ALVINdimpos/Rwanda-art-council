@@ -3,7 +3,7 @@ import React from 'react'
 import { Data,userColumns } from '../DumFederation'
 import './artist.scss'
 
-export default function Artists() {
+export default function ArtistsTable() {
   console.log('Dummy Data',Data);
   return (
     <div className='tbl-container'>

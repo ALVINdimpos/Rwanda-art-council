@@ -18,6 +18,8 @@ import { base_uri,convertMonth } from "../token/Token";
 
 const Chart = ({ aspect, title }) => {
   const [row,setRow]=useState([])
+  // console.log('Current token',localStorage.getItem('token'))
+
 //the API data
 useEffect(()=>{
   fetch(base_uri,{
@@ -27,7 +29,7 @@ useEffect(()=>{
         'Content-Type': 'application/json'
     }})
     .then(result=>{
-     console.log('API Data',result.json())
+    //  console.log('API Data',result.json())
       return result.json()})
     .then(data=>{setRow(data?.User.Data)})
 },[])
