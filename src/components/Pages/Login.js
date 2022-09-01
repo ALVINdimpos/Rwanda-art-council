@@ -98,7 +98,7 @@ loginHandler();
               <small className="fa fa-eye-slash passcode" onClick={togglePassword}/>
             </span>
           </div>
-          <div>
+          <div className={Style.loginForgot}>
             
             <Button
               name={loading ? "loading..." : `Login`}
@@ -107,7 +107,7 @@ loginHandler();
             <Link to="/ForgotPassward">
                 <span style={{ color: "#c5801a" }}>Forgot password?</span>
               </Link>
-       <ToastContainer />
+           <ToastContainer />
           </div>
           <div>
             <p>

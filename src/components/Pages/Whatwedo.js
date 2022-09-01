@@ -3,9 +3,9 @@ import NavBar from "../NavBar/Index";
 import Partner from "../box/partners/Index";
 import Footer from "../Footer/Footer";
 import Style from "./Whatwedo.module.css";
-import pic1 from "../../assets/photos/painting.jpg";
-import pic2 from "../../assets/photos/mainphoto.jpg";
+import pic2 from "../../assets/photos/new.jpeg";
 import pic3 from "../../assets/photos/imigongo.jpg";
+import pic1 from "../../assets/photos/art.jpg";
 import PageIndicator from "../PageIndicator/Index";
 function Whatwedo() {
   return (
@@ -24,17 +24,19 @@ function Whatwedo() {
           <h3>Lorem ipsum</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
+            mauris, nec turpis Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
             mauris, nec turpis
           </p>
         </div>
         <div className={Style.ServicesBox}>
         <div className={Style.overFlow}>
-            <img src={pic2} alt="description of pic" className={Style.CardImgTop}/>
+            <img src={pic1} alt="description of pic" className={Style.CardImgTop}/>
           </div>
 
           <h3>Lorem ipsum</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
+            mauris, nec turpis  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
             mauris, nec turpis
           </p>
         </div>
@@ -47,10 +49,11 @@ function Whatwedo() {
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
             mauris, nec turpis
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
+            mauris, nec turpis
           </p>
         </div>
       </div>
-
       <NavBar />
       <Partner />
       <Footer />

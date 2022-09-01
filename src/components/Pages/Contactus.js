@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable jsx-a11y/iframe-has-title */
 import React from "react";
 import NavBar from "../NavBar/Index";
 import Partner from "../box/partners/Index";

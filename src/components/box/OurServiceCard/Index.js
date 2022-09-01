@@ -1,6 +1,6 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react'
 import Style from "./Style.module.css";
-import Service1 from "../../../assets/photos/Service1.png";
 
 function Index(props) {
   return (
