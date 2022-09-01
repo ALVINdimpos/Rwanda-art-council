@@ -51,7 +51,7 @@ form .input-box span.details{
 }
 .user-details .input-box input:focus,
 .user-details .input-box input:valid{
-  border-color: #FBAB7E;
+  border-color: #C5801A ; 
 }
  form .gender-details .gender-title{
   font-size: 20px;
