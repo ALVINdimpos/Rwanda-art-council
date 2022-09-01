@@ -19,8 +19,9 @@
     height: 40px;
     font-size: 12px;
     padding-bottom: 0;   
-    border-color: #FBAB7E;
-    border-radius: 5px;
+    border-color: #C5801A;
+    opacity:.4;   
+     border-radius: 5px;
 }
 @mixin inputs{
     width:100%;
@@ -29,7 +30,8 @@
     border:2px solid rgba(0,0,0,0.5);
     height: 40px;
     font-size: 12px;
-    border-color: #FBAB7E;
+    border-color: #C5801A;
+    opacity:.4;
     padding-bottom: 0;
 
     
@@ -47,7 +49,8 @@
     
     padding-bottom: 0;
     border-radius: 5px;
-    border-color: #FBAB7E;
+    border-color: #C5801A;
+    opacity:.4;
     
     &:focus{
         outline:none;
@@ -61,8 +64,8 @@
     height: 85px;
     font-size: 12px;
     border-radius: 5px;
-    border-color: #FBAB7E;
-
+    border-color: #C5801A;
+    opacity:.4;
     &:focus{
         outline:none;
     }
@@ -86,7 +89,7 @@
 }
 
         .title{
-            background-color: #FFB636; 
+            background-color: #C5801A;  
             height:60px;
                 display: flex;
                 align-items: center;
@@ -202,12 +205,13 @@
                         font-size:10px ;
                         color: black;
                         opacity: .4px;
-                        background-color: #FFB636; 
+                         
+                        background-color:#C5801A; 
                         border-radius: 10px; 
         
         
                         &:hover{
-                            background: orange;
+                            background: #FFB636;
                             transition: .3 ;
                             // border:2px solid rgba(0,0,0,0.5);
         
