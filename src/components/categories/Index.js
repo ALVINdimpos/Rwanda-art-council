@@ -17,7 +17,7 @@ function Index() {
         </div>
         <div>
          <img src={Pic2}alt="description of pic"/>
-         </div>
+                </div>
          <div>
         <img src={Pic3}alt="description of pic"/>
         </div>

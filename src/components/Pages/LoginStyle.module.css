@@ -10,13 +10,11 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
-  width: 30%;
-  padding-top: 2rem;
   border-radius: 8px;
   box-shadow: 0px 4px 4px 0px #00000040;
-  margin: 5rem auto;
+  margin: 2rem auto;
   background-color: white;
-  padding: 2em;
+  padding: 2rem;
 }
 .loginButtonWraper {
   display: flex;
@@ -66,9 +64,10 @@
   align-items:center;
   cursor:pointer;
 }
-
-.card-details span:hover{
-  opacity:1;
+.loginForgot{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 @media (min-width:375px) {
   .loginWraper{
