@@ -2,7 +2,9 @@ import "./list.scss"
 import Sidebar from "../../components/sidebar/Sidebar"
 import Datatable from "../../components/datatable/Datatable"
 
-import Navbar from '../../components/nav/Navbar'
+// import FedNavbar from "../federationDashboard/navigatebar/FedNavbar"
+
+import Navbar from "../../components/nav/Navbar"
 
 const List = () => {
   return (

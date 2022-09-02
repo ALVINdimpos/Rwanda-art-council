@@ -1,5 +1,6 @@
 import './chart.scss'
 import React from 'react'
+import ChartsArtist from '../artistCharts/ChartsArtist'
 
 function ChartsData() {
   return (
@@ -8,6 +9,10 @@ function ChartsData() {
         <div className='charts'>
             <div className='poly'>
                 <span>Artist Charts</span>
+
+                <ChartsArtist/>
+
+
             </div>
             <div className='widget'>
                 <div className='my-widge'>

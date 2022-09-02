@@ -40,7 +40,7 @@ const FedSidebar = () => {
             </li>
           </Link>
       
-          <Link to="/#" style={{ textDecoration: "none" }}>
+          <Link to="/addEvent" style={{ textDecoration: "none" }}>
             <li>
               <StoreIcon className="icon" />
               <span>Add Event</span>

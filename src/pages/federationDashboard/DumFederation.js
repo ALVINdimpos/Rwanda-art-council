@@ -6,47 +6,63 @@
     field: "First_Name",
     headerName: "First Name",
     width: 145,
+    flex:1,
   },
   
   {
     field: "Last_Name",
     headerName: "Last Name",
     width: 100,
+    flex:1,
+
   },
   {
     field: "email",
     headerName: "Email",
     width: 140,
+    flex:1,
+
   },
   {
     field: "mobile",
     headerName: "Phone",
     width: 100,
+    flex:1,
+
   },
   {
     field: "Gender",
     headerName: "Gender",
     width: 60,
+    flex:1,
+
   },
   {
     field: "Adress",
     headerName: "Adress",
     width: 80,
+    flex:1,
+
   },
   {
     field: "National_ID",
     headerName: "Identity",
     width: 180,
+    flex:1,
+
   },
   {
     field: "Federation",
     headerName: "Federation",
     width: 120,
+    flex:1,
+
   },
   {
     field: "union",
     headerName: "Union",
     width: 120,
+    flex:1,
    
   },
 ];

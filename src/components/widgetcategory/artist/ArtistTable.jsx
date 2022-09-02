@@ -15,7 +15,7 @@ export default function ArtistTable() {
       columns={artistColumn}
       pages={5}
         rowsPerPageOptions={[5]}
-        Style="{DynamicResource DataGridStyle1}"
+        autoHeight
       />
     </div>
   </div>

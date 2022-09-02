@@ -24,6 +24,8 @@ import ArtsTable from "./components/widgetcategory/arts/ArtsTable";
 import Eventing from "./components/myEvent/Eventing";
   import HomeFed from "./pages/federationDashboard/home/HomeFed";
 import RegisterArt from "./pages/federationDashboard/regist/RegisterArt";
+import Union from "./pages/federationDashboard/union/Union";
+import UnionAdd from "./pages/federationDashboard/unionAddition/UnionAdd";
 export default function App() {
   return (
     <BrowserRouter>
@@ -62,11 +64,11 @@ export default function App() {
         </Route>
 
         <Route path="addnotify" element={<Contactor />} />
-        <Route path="myFederation" element={<HomeFed/>}/>
+        <Route path="homefederation" element={<HomeFed/>}/>
+        {/* <Route path="unios" element={<V/>} /> */}
+        <Route path="addEvent" element={<Eventing/>}/>
 
-
-
-        <Route path="adartist" element={<RegisterArt />}/>
+        <Route path="adartist" element={<Union />}/>
       </Routes>
     </BrowserRouter>
   );
