@@ -4,7 +4,6 @@ import NewsBox from "../../box/eventBox/Index"
 import NewsPhoto1 from "../../../assets/photos/news1.png";
 import NewsPhoto2 from "../../../assets/photos/news2.png";
 import NewsPhoto3 from "../../../assets/photos/news3.png";
-import Button from '../../Button/Index'
 
 function Index() {
   return (

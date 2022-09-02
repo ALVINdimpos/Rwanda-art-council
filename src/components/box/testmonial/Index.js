@@ -1,8 +1,8 @@
 import React from "react";
 import Style from "./Style.module.css";
-import Testmo1 from "../../../assets/photos/testmonial0.svg";
-import Testmo2 from "../../../assets/photos/tesmonial.svg";
-import Testmo3 from "../../../assets/photos/testmonial1.svg";
+import Testmo1 from "../../../assets/photos/ish.svg";
+import Testmo2 from "../../../assets/photos/kenny.svg";
+import Testmo3 from "../../../assets/photos/juno.svg";
 
 import { MDBIcon } from "mdbreact";
 

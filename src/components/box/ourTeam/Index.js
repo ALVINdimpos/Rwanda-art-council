@@ -3,6 +3,7 @@
 import React from "react";
 import Style from "./Style.module.css";
 import People1 from "../../../assets/photos/images1.png";
+import People2 from "../../../assets/photos/news.jpeg";
 
 function Index() {
   return (
@@ -43,7 +44,7 @@ function Index() {
           </div>
           <div className={Style.caption}>
             <h3>Alvin</h3>
-            <p>Senior App Developer</p>
+            <p>Frontend Developer</p>
             <div className={Style.social_links}>
               <a href="#">
                 <i class="fab fa-facebook"></i>
@@ -63,7 +64,7 @@ function Index() {
           </div>
           <div className={Style.caption}>
             <h3>Alvin</h3>
-            <p>Senior App Developer</p>
+            <p>Frontend Developerr</p>
             <div className={Style.social_links}>
               <a href="#">
                 <i class="fab fa-facebook"></i>
@@ -83,7 +84,7 @@ function Index() {
           </div>
           <div className={Style.caption}>
             <h3>Alvin fiston</h3>
-            <p>CEO of company</p>
+            <p>Frontend Developer</p>
             <div className={Style.social_links}>
               <a href="#">
                 <i class="fab fa-facebook"></i>
