@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import Picture1 from "../../../assets/photos/CatImage4.jpeg";
 import Style from "./Style.module.css";
@@ -70,35 +71,3 @@ function Index() {
 }
 
 export default Index;
-{
-  /* // map through events and display them  here
-      <div className={Style.EventCard}>
-        {Event.map((event) => {
-          return (
-            <div className={Style.EventCard}>
-              <div className={Style.EventCardImage}>
-                <img src={Picture1} alt="Event" />
-              </div>
-              <div className={Style.EventCardContent}>
-                <div className={Style.EventCardContentTitle}>
-                  <h3>{event.title}</h3>
-                </div>
-                <div className={Style.EventCardContentDescription}>
-                  <p>{event.description}</p>
-                </div>
-                <div className={Style.EventCardContentButton}>
-                  <Button onClick={toggleShow}>View Event</Button>
-                </div>
-              </div>
-            </div>
-          );
-        }
-        )}
-      </div>
-      <MDBModal isOpen={basicModal} toggle={toggleShow}>
-        <Model />
-      </MDBModal>
-    </div>
-  );
-} */
-}

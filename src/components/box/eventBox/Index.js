@@ -1,8 +1,6 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
 import Style from "./Style.module.css";
-import EventPhot from "../../../assets/photos/mainevent.jpeg";
-import EventPhot2 from "../../../assets/photos/mainphoto.jpg";
-import EventPhot3 from "../../../assets/photos/Event.jpeg";
 import Button from "../../Button/Index";
 function Index(props) {
   return (

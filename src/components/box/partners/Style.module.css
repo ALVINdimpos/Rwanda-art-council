@@ -1,62 +1,54 @@
-.partnerWraper {
-  background-color: white;
+.heading{
+  margin: 1rem auto;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+.container {
   width: 90%;
   display: flex;
+  gap: 3rem;
   justify-content: space-between;
-  align-items: center;
   margin: 0 auto;
-  border-radius: 30px;
-  height: 350px;
-  box-shadow: 0px 4px 4px 0px #00000040;
+}
+.container img {
+ height: 100px;
+ width: 180px;
+}
+.custmo{
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+font-weight: bold;
+color: #C5801A;
+}
 
+.description{
+  width: 70%;
 }
-.partnerBox img {
-  width: 100%;
-}
-.partnerBox {
-  padding: 2rem;
+.section1{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   width: 80%;
 }
-.h1 {
-  margin-top: 2rem;
-  font-family: "Raleway";
-  font-size: 36px;
-  font-weight: 400;
-  text-align: center;
+.section2{
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  gap: 1rem;
 }
-@media (max-width: 1050px) {
+.imageSection1{
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.imageSection2{
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  flex-direction: column;
+}
   
-  .partnerBox img{
-    height: 100%;
-    width: 100%;
-  }
-  .partnerWraper {
-   display: grid;
-   grid-template-columns: auto auto auto auto;
-   height: 100%;
-  }
-}
-@media (max-width: 700px) {
-  
-  .partnerBox img{
-    height: 100%;
-    width: 100%;
-  }
-  .partnerWraper {
-    display: grid;
-    grid-template-columns: auto auto ;
-    height: 100%;
-  }
-}
-@media (max-width: 550px) {
-  
-  .partnerBox img{
-    height: 100%;
-    width: 100%;
-  }
-  .partnerWraper {
-    display: grid;
-    grid-template-columns: auto ;
-    height: 100%;
-  }
-}
+
