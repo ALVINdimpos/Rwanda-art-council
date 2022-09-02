@@ -7,7 +7,6 @@
 
 @mixin lebels {
     font-size:12px;
-    // font-family:Arial;
     margin-left:5px;
     margin-bottom: 0;
     
@@ -62,7 +61,6 @@
     border:2px solid rgba(0,0,0,0.4);
     margin-left: 5px;
     height: 85px;
-    font-size: 12px;
     border-radius: 5px;
     border-color: #C5801A;
     opacity:.4;
@@ -81,8 +79,7 @@
     flex-direction: column;
     background-color: white;
     border: none;
-    // margin-left: 20%;
-    width: 500px;
+   width: 700px;
     
 .file-chooser{
     padding-top: 12px;
@@ -96,34 +93,15 @@
                 justify-content: center;
 
             span{
-                font-family: 'Roboto Mono', monospace;
-            font-size: 20px;
+                // font-family: 'Roboto Mono', monospace;
+            font-size: 40px;
                 
         }
         }
             .cover-s{
 
-                padding: 0 5px;
-                .imgEvent{
-                    height: 120px;
-                    // background:red;
-                    width: 100%;
-        
-                     .image{
-                        // background: black;
-                        padding: 1em;
-                        width:120px;
-                        height:120px;
-                        border-radius: 50%;
+                padding: 0 4em;
 
-                        img{
-                            object-fit:center;
-                            object-position:center;
-                            width: 100%;
-                        }
-                      }
-        
-                }
         
                 .tt{
                     display: flex;
@@ -153,27 +131,15 @@
                         label{
                             @include lebels();
                         }
-                        input{
+                        select{
                             @include location()
                         }
                     }
-                    .loc{
-                        display:flex;
-                        flex-direction: column;
-                        width: 60%;
-        
-                        label{
-                            @include lebels();
-                        }
-                        input{
-                            @include dated()
-                        }
-                    }
+             
                 }
                 .desc{
                     display:block;
                     margin-top: 10px;
-                    // flex-direction: column;
                     
                     .description{
                         display:flex;
@@ -181,9 +147,11 @@
                         label{
                             @include lebels();
                         }
-                        textarea{
-                            @include texting()
-                        }
+                      select{
+                            option{
+                                @include texting()
+                            }
+                      }
                     }
                     
                 }
@@ -200,9 +168,9 @@
                     justify-items: center;
                     align-items: center;
                     .btn{
-                        width:100%;
+                        width:30%;
                         height:50px;
-                        font-size:10px ;
+                        font-size:20px ;
                         color: black;
                         opacity: .4px;
                          
@@ -213,7 +181,6 @@
                         &:hover{
                             background: #FFB636;
                             transition: .3 ;
-                            // border:2px solid rgba(0,0,0,0.5);
         
         
                             

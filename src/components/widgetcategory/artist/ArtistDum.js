@@ -55,40 +55,53 @@ export const artist = [
 export const artistColumn= [
   { field: "id", headerName: "id", hide: true },
 
-  { field: "fname", headerName: "First Name", width: "150" },
+  { field: "fname",
+  flex:1,
+  headerName: "First Name", width: "150" },
   {
     field: "lname",
     headerName: "Last Name",
     width: "150",
+    flex:1,
+
   },
   {
     field: "gender",
     headerName: "Sex",
     width: "80",
     headerClassName: 'super-app-theme--header'
+    ,flex:1,
+
   },
   {
     field: "useNaname",
     headerName: "User Name(aka)",
     width: "200",
+    flex:1,
+
   },
   ,
   {
     field: "email",
     headerName: "Email",
     width: "200",
-  
+    flex:1,
+
 },
 {
     field: "category",
     headerName: "Category",
     width: "200",
-}
+    flex:1,
+
+  }
 ,
 {
     field: "cluster",
     headerName: "Cluster",
     width: "200",
-}
+    flex:1,
+
+  }
 
 ];

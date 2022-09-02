@@ -78,13 +78,19 @@ const List = () => {
     return (
     
       <div className="datatable">
-    
+          <div className="datatableTitle">
+        Federation Details
+        <Link to="/users/new" className="link">
+          Add New helping tea
+        </Link>
+      </div>
       <DataGrid
         className="datagrid"
         rows={row}
         columns={userColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
+        // autoHeight
       />
     </div>
 

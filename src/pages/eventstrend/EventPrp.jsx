@@ -22,10 +22,7 @@ function EventPrp() {
     const titleHandler=e=>{
         setTitles(e.target.value)
     }
-    // useEffect((e)=>{
-    //     setTitles(e.target.value)
-    // },[])
-    
+   
     const timeHandler=(e)=>{
         setTimes(e.target.value)
     }

@@ -2,7 +2,7 @@ import React from "react";
 import "./regist.scss"
 import { Link } from "react-router-dom";
 import FedSidebar from "../sideFedbar/FedSidebar";
-import FedNavbar from "../nav/FedNavbar";
+import FedNavbar from "../navigatebar/FedNavbar";
 import ChartsData from "../charts/ChartsData";
 import Artists from "../artists/ArtistsTable";
 import {BiPlusMedical} from 'react-icons/bi'

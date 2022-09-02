@@ -1,7 +1,6 @@
 .home {
     display: flex;
     .homeContainer {
-        // background:red;
         display: flex;
         margin-left: 15%;
         flex-direction: column;
@@ -24,11 +23,12 @@
           .btn{
             cursor:pointer;
             width:150px;
-            background-color:#FFB636;    
-            height: 40px;
+            opacity: .9;
+            background-color: #C5801A  ; 
+             height: 40px;
             border-radius: 6px;
             font-size:11px;
-            margin-bottom: 0px;
+            // margin-bottom: 0px;
             box-shadow: 0 0.5px 0.5px rgba(0,0,0,0.5);
 
             &:hover{
@@ -60,9 +60,9 @@
               font-size: 8px;
               height: 30px;
               border-radius: 5px;
-              // margin-bottom: 2px;
               border: none;
-              background-color:#FFB636;    
+              // // background-color: #C5801A;
+              // // opacity: .9;
               font-size:11px;
               &:hover{
                 transition:ease .2;

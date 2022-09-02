@@ -9,7 +9,7 @@ function Eventing() {
       <Sidebar/>
       <div className="listContainer">
         <Navbar/>
-    <EventPrp />
+         <EventPrp /> 
       </div>
     </div>
     )

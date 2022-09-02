@@ -12,7 +12,10 @@
         height:300px;
         border:0.5px solid white;
         border-radius: 8px;
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         span{
             font-family: 'Times New Roman', Times, serif;
             font-size: medium;
@@ -31,6 +34,8 @@
                 border-radius:5px;
                 width:154px;
                 height: 80px;
+                 background-color: white;
+
                 box-shadow: 0 0.5px 0.8px 0 ;
 
 
@@ -38,11 +43,11 @@
 
         }
         .progress-bar{
-            background-color: blue;
             width:330px;
             height: 29vh;
-            background-color: white;
             border-radius: 8px;
+            opacity: .9;
+            background-color: #C5801A ;
 
         }
 
