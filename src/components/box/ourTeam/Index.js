@@ -23,8 +23,8 @@ function Index() {
             <img src={People1} />
           </div>
           <div className={Style.caption}>
-            <h3>Alvin</h3>
-            <p>Senior App Developer</p>
+            <h3>Fiston Alvin</h3>
+            <p>UI/UX & WEB Designer</p>
             <div className={Style.social_links}>
               <a href="#">
                 <i class="fab fa-facebook"></i>
@@ -43,8 +43,8 @@ function Index() {
             <img src={People1} />
           </div>
           <div className={Style.caption}>
-            <h3>Alvin</h3>
-            <p>Frontend Developer</p>
+            <h3>Fiston Alvin</h3>
+            <p>UI/UX & WEB Designer</p>
             <div className={Style.social_links}>
               <a href="#">
                 <i class="fab fa-facebook"></i>
@@ -63,8 +63,8 @@ function Index() {
             <img src={People1} />
           </div>
           <div className={Style.caption}>
-            <h3>Alvin</h3>
-            <p>Frontend Developerr</p>
+            <h3> Fiston Alvin</h3>
+            <p>UI/UX & WEB Designer</p>
             <div className={Style.social_links}>
               <a href="#">
                 <i class="fab fa-facebook"></i>
@@ -84,7 +84,7 @@ function Index() {
           </div>
           <div className={Style.caption}>
             <h3>Alvin fiston</h3>
-            <p>Frontend Developer</p>
+            <p>UI/UX & WEB Designer</p>
             <div className={Style.social_links}>
               <a href="#">
                 <i class="fab fa-facebook"></i>

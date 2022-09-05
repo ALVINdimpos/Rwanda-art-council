@@ -32,6 +32,10 @@ color: #C5801A;
   flex-direction: column;
   width: 80%;
 }
+.section1 h1{
+  font-size: 2rem;
+  font-weight: bold;
+}
 .section2{
   display: flex;
   justify-content: space-between;

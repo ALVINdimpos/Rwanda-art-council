@@ -1,6 +1,6 @@
 #root {
   font-family: "Raleway"!important;
-  background-color: whitesmoke;
+  background-color: whitesmoke !important;
   margin: 0px;
   padding: 0px;
 }

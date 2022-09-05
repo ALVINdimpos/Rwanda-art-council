@@ -2,7 +2,6 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 import React from "react";
 import NavBar from "../NavBar/Index";
-import Partner from "../box/partners/Index";
 import Footer from "../Footer/Footer";
 import Style from "./ContactusStyle.module.css";
 import Button from "../Button/Index";
@@ -107,7 +106,6 @@ function Index() {
           </div>
         </div>
       </div>
-      <Partner />
       <Footer />
     </>
   );

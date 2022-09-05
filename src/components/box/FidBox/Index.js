@@ -21,7 +21,7 @@ function Card(props) {
         <h2 className="card__title">{props.title}</h2>
         <p className="card__description">{props.description}</p>
       </div>
-      <button className="card__btn">Read more</button>
+      <button className="card__btn">Read more ...</button>
     </div>
   );
 }

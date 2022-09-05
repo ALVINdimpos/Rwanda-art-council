@@ -14,11 +14,11 @@ function Index() {
     <div className={Style.container}>
       <div className={Style.section1}>
          <div className={Style.custmo}>
-         <p>A TEAM</p>
-         <p>Lorem Ipsum</p>
-         <p>Lorem Ipsum</p>
+         <p>Our team</p>
+         <p>Fideration</p>
+         <p>Our testmonial</p>
          </div>
-         <div><h1>Lorem Ipsum</h1></div>
+         <div><h1>We work with the best partner</h1></div>
          <div className={Style.description} >
             <p>Lorem ipsum dolor sit amet, consectetur 
             adipiscing elit. Donec dignissim orci imperdiet
