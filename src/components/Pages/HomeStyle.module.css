@@ -7,7 +7,7 @@
   }
   .FiderationBoxWraper{
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
     width: 90%;
     gap: 2rem;
     margin: 1rem auto;
