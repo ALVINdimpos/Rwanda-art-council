@@ -25,7 +25,8 @@ import Eventing from "./components/myEvent/Eventing";
   import HomeFed from "./pages/federationDashboard/home/HomeFed";
 import RegisterArt from "./pages/federationDashboard/regist/RegisterArt";
 import Union from "./pages/federationDashboard/union/Union";
-import UnionAdd from "./pages/federationDashboard/unionAddition/UnionAdd";
+import ViewArtist from "./pages/viewartist/ViewArtist";
+import UnionView from "./pages/federationDashboard/unionView/UnionView";
 export default function App() {
   return (
     <BrowserRouter>
@@ -64,7 +65,7 @@ export default function App() {
 
         <Route path="addnotify" element={<Contactor />} />
         <Route path="homefederation" element={<HomeFed/>}/>
-        {/* <Route path="unios" element={<V/>} /> */}
+        <Route path="unios" element={<UnionView/>} />
         <Route path="addEvent" element={<Eventing/>}/>
 
         <Route path="adartist" element={<Union />}/>

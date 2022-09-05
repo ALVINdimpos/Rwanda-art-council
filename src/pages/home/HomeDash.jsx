@@ -1,16 +1,16 @@
 import React from "react";
 import "./home.scss";
 import Widget from "../../components/widget/Widget";
-import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/nav/Navbar";
 import Featured from "../../components/featured/Featured";
 import Chart from "../../components/chart/Chart";
 import Event from '../eventTable/Event';
+import Sidebar from "../../components/sidebar/Sidebar";
 
-const Home = () => {
+const HomeDash = () => {
   return (
     <div className="home">
-      <Sidebar />
+      <Sidebar/>
       <div className="homeContainer">
         <Navbar />
         <div className="widgets">
@@ -33,4 +33,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeDash;
