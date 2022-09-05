@@ -4,6 +4,24 @@
   justify-content: space-between;
   margin: 2rem auto;
 }
+.PreviusEvent{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0rem auto;
+  gap: 1rem;
+}
+.PreviusEvent iframe{
+  box-shadow: 0px 5px 5px 0px rgb(70, 69, 69);
+}
+.heading{
+  font-family: "Raleway";
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 70px; 
+  margin-left: 4rem;
+  margin-bottom: 2rem;
+}
 .EventSearchBox {
   display: flex;
   justify-content: space-between;
