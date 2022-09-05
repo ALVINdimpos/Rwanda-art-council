@@ -35,26 +35,10 @@ function Home() {
       <WhoWeAreBox />
       <SectionIndicator name="Fiderations" />
       <div className={Style.FiderationBoxWraper}>
-        <FidBox
-          fidname="Fideration name"
-          fiddescription="Lorem Ipsum is simply dummy text of the printing"
-        />
-        <FidBox
-          fidname="Fideration name"
-          fiddescription="Lorem Ipsum is simply dummy text of the printing"
-        />
-        <FidBox
-          fidname="Fideration name"
-          fiddescription="Lorem Ipsum is simply dummy text of the printing"
-        />
-        <FidBox
-          fidname="Fideration name"
-          fiddescription="Lorem Ipsum is simply dummy text of the printing"
-        />
-         <FidBox
-          fidname="Fideration name"
-          fiddescription="Lorem Ipsum is simply dummy text of the printing"
-        />
+        <FidBox />
+        <FidBox />
+        <FidBox/>
+        <FidBox/>
       </div>
 
       <SectionIndicator name="Events" onClick={EventHandler} />
