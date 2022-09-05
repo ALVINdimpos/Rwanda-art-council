@@ -1,6 +1,5 @@
 import React from "react";
 import NavBar from "../NavBar/Index";
-import Partner from "../box/partners/Index";
 import Footer from "../Footer/Footer";
 import Style from "./Gallery.module.css";
 import PHOTO from "../../assets/photos/new.jpeg";
@@ -65,6 +64,7 @@ const photos = [
 function Gallery() {
   return (
     <>
+    <NavBar />
       <PageIndicator name="Gallery" />
       <div>
         <ul className={Style.GalleryCategorie}>
@@ -83,8 +83,7 @@ function Gallery() {
           <img src={photo.src} photo={photo} alt=""/>
         ))}
       </div>
-      <NavBar />
-      <Partner />
+      
       <Footer />
     </>
   );

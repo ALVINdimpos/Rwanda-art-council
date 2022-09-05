@@ -1,6 +1,5 @@
 import React from "react";
 import NavBar from "../NavBar/Index";
-import Partner from "../box/partners/Index";
 import Footer from "../Footer/Footer";
 import Style from "./Whatwedo.module.css";
 import pic2 from "../../assets/photos/new.jpeg";
@@ -10,6 +9,7 @@ import PageIndicator from "../PageIndicator/Index";
 function Whatwedo() {
   return (
     <>
+       <NavBar />
       <PageIndicator name="Our service" />
       <div className={Style.OurserviceHeader}>
         <h3>What we do</h3>
@@ -54,8 +54,7 @@ function Whatwedo() {
           </p>
         </div>
       </div>
-      <NavBar />
-      <Partner />
+   
       <Footer />
     </>
   );
