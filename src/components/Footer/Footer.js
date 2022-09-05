@@ -17,7 +17,7 @@ const year = d.getFullYear();
               <i className="fas fa-map-marker-alt" />
               <div className="cta-text">
                 <h4>Find us</h4>
-                <span>1010 Avenue, sw 54321, chandigarh</span>
+                <span>21 KG 7 Ave, Kigali</span>
               </div>
             </div>
           </div>
@@ -26,7 +26,7 @@ const year = d.getFullYear();
               <i className="fas fa-phone" />
               <div className="cta-text">
                 <h4>Call us</h4>
-                <span>9876543210 0</span>
+                <span> 0785 655 755</span>
               </div>
             </div>
           </div>
@@ -35,7 +35,7 @@ const year = d.getFullYear();
               <i className="far fa-envelope-open" />
               <div className="cta-text">
                 <h4>Mail us</h4>
-                <span>mail@info.com</span>
+                <span>rwandaartscouncil@gmail.com</span>
               </div>
             </div>
           </div>
@@ -55,8 +55,8 @@ const year = d.getFullYear();
               <div className="footer-social-icon">
                 <span>Follow us</span>
                 <a href="#"><i className="fab fa-facebook-f facebook-bg" /></a>
-                <a href="#"><i className="fab fa-twitter twitter-bg" /></a>
-                <a href="#"><i className="fab fa-google-plus-g google-bg" /></a>
+                <a href="https://twitter.com/rwandartcouncil"><i className="fab fa-twitter twitter-bg" /></a>
+                <a href="https://google.com/rwandartcouncil"><i className="fab fa-google-plus-g google-bg" /></a>
               </div>
             </div>
           </div>
@@ -103,7 +103,7 @@ const year = d.getFullYear();
         <div className="row">
           <div className="col-xl-6 col-lg-6 text-center text-lg-left">
             <div className="copyright-text">
-              <p>Copyright © {year}, All Right Reserved <a href="#">Alvin</a></p>
+              <p>Copyright © {year}, All Right Reserved <a href="https://alvinfiston.me/">Alvin</a></p>
             </div>
           </div>
           <div className="col-xl-6 col-lg-6 d-none d-lg-block text-right">
