@@ -51,11 +51,7 @@ function Home() {
           fidname="Fideration name"
           fiddescription="Lorem Ipsum is simply dummy text of the printing"
         />
-        <FidBox
-          fidname="Fideration name"
-          fiddescription="Lorem Ipsum is simply dummy text of the printing"
-        />
-        <FidBox
+         <FidBox
           fidname="Fideration name"
           fiddescription="Lorem Ipsum is simply dummy text of the printing"
         />
