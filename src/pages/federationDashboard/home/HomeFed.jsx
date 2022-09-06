@@ -10,6 +10,7 @@ import {RiUpload2Fill} from 'react-icons/ri'
 import { Data } from "../DumFederation";
 import * as XLSX from 'xlsx'
 import UnionForm from "../unionbyDialog/UnionForm";
+import UnionAdd from "../unionAddition/UnionAdd";
 const HomeFed = () => {
 // try to handle union form page for registration
 
@@ -63,38 +64,6 @@ const HomeFed = () => {
 
   return (
     <div className="home">
-{/* <>
-   <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Open dialog
-      </Button>
-      <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
-        <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Modal title
-        </DialogTitle>
-        <DialogContent dividers>
-          <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
-            in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-          </Typography>
-          <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
-            lacus vel augue laoreet rutrum faucibus dolor auctor.
-          </Typography>
-          <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
-            scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
-            auctor fringilla.
-          </Typography>
-        </DialogContent>
-        <DialogActions>
-          <Button autoFocus onClick={handleClose} color="primary">
-            Save changes
-          </Button>
-        </DialogActions>
-      </Dialog>
-</> */}
-
-
       <FedSidebar />
       <div className="homeContainer">
             <FedNavbar />
@@ -106,8 +75,12 @@ const HomeFed = () => {
             <div className='tbl-title'>
             {/* <Link to="/adartist">  this OG before dialog trial*/}
             {/* <div className="btn" onClick={()=>handleUnionForm()}><BiPlusMedical style={{fontSize:"large", paddingRight:"5px"}}/> Add New</div>   */}
-            <div><UnionForm /></div>  
-            
+            <div>
+              <UnionForm title='Union Registration'>
+                <UnionAdd />
+              </UnionForm >
+
+            </div>  
             <div className="upl-CSV">
             <input  type='file' onChange={e=>handleFile(e)}/> 
             <button onClick={handleClick} className="btn-upload"><RiUpload2Fill style={{fontSize:"large"}} /></button>
