@@ -26,7 +26,7 @@ const year = d.getFullYear();
               <i className="fas fa-phone" />
               <div className="cta-text">
                 <h4>Call us</h4>
-                <span> 0785 655 755</span>
+                <span> +250 785 655 755</span>
               </div>
             </div>
           </div>
