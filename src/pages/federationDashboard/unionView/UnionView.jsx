@@ -20,7 +20,6 @@ export default function UnionView() {
             
             <div className="union-upper">
 
-            {/* Hello bro */}
             <div className="details-part">
                 <div className="top">
                     <div className="icon-side">

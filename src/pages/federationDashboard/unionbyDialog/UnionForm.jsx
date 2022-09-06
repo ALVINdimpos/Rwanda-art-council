@@ -1,4 +1,5 @@
 import React from 'react';
+import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -14,23 +15,28 @@ const useStyle=makeStyles({
             cursor:"pointer",
             width:"150px",
             opacity: .9,
-            backgroundCcolor: "#C5801A",
+            backgroundColor: "#C5801A",
              height: "40px",
+             border:"none",
             borderRadius: "6px",
             fontSize:"11px",
-            // boxShadow: 0 "0.5px" "0.5px" rgba(0,0,0,0.5),
+           '&:hover':{
+              transition:"ease",
+              borderRadius: "6px",
+              opacity: ".4px",
+              border:"1.5px solid",
+              background:"transparent",
+              fontSize:"11px",
+              padding: "5px 0px",
 
-            // &:hover{
-            //   transition:ease .2;
-            //   border-radius: 6px;
-            //   opacity: .4px;
-            //   border:1.5px solid ;
-            //   background:transparent;
-            //   font-size:11px;
-            //   padding: 5px 0px;
-
-            //    }
     },
+
+},
+lbl:{
+  fontSize:'12px',
+  paddingLeft:'5px'
+}
+
 
 });
 
@@ -76,7 +82,7 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions);
 
-export default function UnionForm() {
+export default function UnionForm({children,title}) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -91,32 +97,15 @@ const classes=useStyle();
   return (
     <div>
       <Button className={classes.btn} onClick={handleClickOpen}>
-        Open
+        <PersonAddAltIcon /> <strong className={classes.lbl}>New</strong> 
       </Button>
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Modal title
+           {title}
         </DialogTitle>
         <DialogContent dividers>
-          <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
-            in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-          </Typography>
-          <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
-            lacus vel augue laoreet rutrum faucibus dolor auctor.
-          </Typography>
-          <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
-            scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
-            auctor fringilla.
-          </Typography>
-        </DialogContent>
-        <DialogActions>
-          <Button autoFocus onClick={handleClose} color="primary">
-            Save changes
-          </Button>
-        </DialogActions>
+        {children}          
+        </DialogContent>       
       </Dialog>
     </div>
   );

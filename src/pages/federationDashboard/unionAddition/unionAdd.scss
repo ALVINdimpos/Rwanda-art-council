@@ -1,34 +1,44 @@
 
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap');
 
-
+@import url('https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@500&family=DM+Sans:ital,wght@1,700&family=Oswald:wght@500&display=swap');
 
 
 @mixin lebels {
-    font-size:12px;
+    font-size:11px;
     margin-left:5px;
     margin-bottom: 0;
+    font-family: 'Anek Telugu', sans-serif;
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Oswald', sans-serif;
     
     
 }
 @mixin location{
     border:none;
-    border:2px solid rgba(0,0,0,0.4);
-    height: 40px;
-    font-size: 12px;
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+    height: 30px;
+    font-size: 11px;
     padding-bottom: 0;   
     border-color: #C5801A;
     opacity:.4;   
-     border-radius: 5px;
+    font-family: 'Anek Telugu', sans-serif;
+font-family: 'DM Sans', sans-serif;
+font-family: 'Oswald', sans-serif;
+
+
+    &:focus{
+        outline: none;
+    }
+    //  border-radius: 5px;
 }
 @mixin inputs{
     width:100%;
     border:none;
-    border-radius: 5px;
-    border:2px solid rgba(0,0,0,0.5);
-    height: 40px;
-    font-size: 12px;
+    // border-radius: 5px;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+    height: 30px;
+    font-size: 14px;
     border-color: #C5801A;
     opacity:.4;
     padding-bottom: 0;
@@ -42,9 +52,9 @@
 }
 @mixin dated{
     border:none;
-    border:2px solid rgba(0,0,0,0.5);
-    height: 40px;
-    font-size: 12px;
+    border-bottom:1px solid rgba(0,0,0,0.5);
+    height: 30px;
+    font-size: 10px;
     
     padding-bottom: 0;
     border-radius: 5px;
@@ -55,15 +65,18 @@
         outline:none;
     }
 }
-@mixin  texting {
+@mixin  options {
     
     border:none;
-    border:2px solid rgba(0,0,0,0.4);
+    border-bottom:1px solid rgba(0,0,0,0.4);
     margin-left: 5px;
-    height: 85px;
     border-radius: 5px;
+    font-size: 11px;
     border-color: #C5801A;
     opacity:.4;
+    font-family: 'Anek Telugu', sans-serif;
+font-family: 'DM Sans', sans-serif;
+font-family: 'Oswald', sans-serif;
     &:focus{
         outline:none;
     }
@@ -77,30 +90,15 @@
 .eventPage{
     display: flex;
     flex-direction: column;
-    background-color: white;
-    border: none;
-   width: 700px;
     
 .file-chooser{
-    padding-top: 12px;
+    padding-top: 5px;
 }
 
-        .title{
-            background-color: #C5801A;  
-            height:60px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-            span{
-                // font-family: 'Roboto Mono', monospace;
-            font-size: 40px;
-                
-        }
-        }
+     
             .cover-s{
 
-                padding: 0 4em;
+                padding: 0 1em;
 
         
                 .tt{
@@ -148,9 +146,7 @@
                             @include lebels();
                         }
                       select{
-                            option{
-                                @include texting()
-                            }
+                           @include location();
                       }
                     }
                     
@@ -162,26 +158,26 @@
         
                 
                 .buttons{
-                    // width: 100%;
-                    margin-top: 12px;
+                    margin-top: 10px;
                     display: flex;
-                    justify-items: center;
+                    justify-content: center;
                     align-items: center;
-                    .btn{
-                        width:30%;
-                        height:50px;
-                        font-size:20px ;
-                        color: black;
-                        opacity: .4px;
-                         
-                        background-color:#C5801A; 
-                        border-radius: 10px; 
-        
-        
+                    font-family: 'Anek Telugu', sans-serif;
+                    font-family: 'DM Sans', sans-serif;
+                    font-family: 'Oswald', sans-serif;
+                    width:30%;
+                    height:40px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    background-color:#C5801A; 
+
+                    
                         &:hover{
                             background: #FFB636;
                             transition: .3 ;
-        
+                            width:30%;
+                            height:40px;
+                            border-radius: 5px;
         
                             
                         }
@@ -192,4 +188,4 @@
             }
         
 
-}
+

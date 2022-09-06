@@ -7,6 +7,7 @@ export default function UnionAdd() {
 const [provence,setProvence]=useState([]);
 const [dist,setDist]=useState([]);
 const [sector,setSector]=useState();
+const [unionType,setUnionType]=useState();
 
 
 
@@ -25,11 +26,8 @@ function handleCategory(id){
 
 
   return (
-        <form>
+        <form outoComplete="off">
             <div className='eventPage'>
-            <div className="title">
-                <span>Union Registration</span>
-            </div>
             <div className="cover-s" >
             <div className='imgEvent'>
             <input type="file"   className="file-chooser"/>
@@ -89,15 +87,18 @@ function handleCategory(id){
        <div className='desc'>
                  <div className='description'>
                 <label>Union Type</label>
-                {/* <textarea 
-                
-                placeholder='type Description ...'>
-            </textarea> */}
+                 <select onChange={(e)=>setUnionType(e.target.value)}>
+                    <option selected value='-1'>Choose Type</option>
+                    <option value='plastic art'>Plastic Art</option>
+                    <option value='music'>Music</option>
+                    <option value='fashion'>Fashion</option>
+                    </select>                               
             </div>
        </div>
-    <div className='buttons'>
-        <input type='submit' className='btn' value="Regist" />
-    </div>
+    {/* <div> */}
+        <div className="buttons">Submit</div>
+        {/* <input type='submit' className='btn' value="Regist" /> */}
+    {/* </div> */}
        
    
             </div>
