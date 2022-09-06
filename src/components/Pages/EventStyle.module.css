@@ -48,84 +48,39 @@
   margin: 2rem auto;
   gap: 3rem;
 }
-
-/* @media (max-width: 482px) {
-  .EventSearchWraper{
-    display: flex;
-    flex-direction: column;
-  }
-  .EventSearchBox{
-    display: flex;
-    flex-direction: column;
-  }
-  .EventsWraper {
-    grid-template-columns: auto;
-    justify-content: space-between;
-    padding:1rem;
-  }
+@media (max-width:700px){
+  .PreviusEvent{
+    display: grid;
+      grid-template-columns: auto;
+      width: 100%;
+     justify-items: center;
+    }
+    .PreviusEvent iframe{
+      width: 100%;
+    }
+    .EventSearchBox {
+      display: flex;
+   flex-direction: column;
+    }
+    .EventSearchWraper{
+      flex-direction: column;
+    }
 }
-@media (max-width: 820px) {
-  .EventSearchBox{
-    display: flex;
-    flex-direction: column;
-  }
-  .EventsWraper {
-    grid-template-columns: auto auto;
-    justify-content: space-between;
-    width: 90%;
-    padding:1rem;
-  }
+@media (max-width:550px){
+  .PreviusEvent{
+    display: grid;
+      grid-template-columns: auto;
+  justify-items: center;
+      
+    }
+    .PreviusEvent iframe{
+      width: 100%;
+    }
+    .EventSearchBox {
+      display: flex;
+   flex-direction: column;
+    }
+    .EventSearchWraper{
+      flex-direction: column;
+    }
 }
-@media (max-width: 768px) {
-  .EventSearchBox{
-    display: flex;
-    flex-direction: column;
-  }
-  .EventsWraper {
-    grid-template-columns: auto auto;
-    justify-content: space-between;
-    width: 100%;
-    padding:1rem;
-  }
-}
-@media (max-width: 912px) {
-  .EventsWraper {
-    grid-template-columns: auto auto;
-    justify-content: space-between;
-    width: 80%;
-    padding:1rem;
-  }
-}
-@media (max-width: 912px) {
-  .EventsWraper {
-    grid-template-columns: auto;
-    justify-content: space-between;
-    width: 100%;
-    padding:1rem;
-  }
-}
-@media (max-width: 1024px) {
-  .EventsWraper {
-    grid-template-columns: auto auto;
-    justify-content: space-between;
-    width: 80%;
-    padding:1rem;
-  }
-}
-@media (max-width:1280px) {
-  .EventsWraper {
-    grid-template-columns: auto auto auto;
-    justify-content: space-between;
-    width: 100%;
-    padding:1rem;
-  }
-}
-@media (max-width:375px) {
-  .EventsWraper {
-    grid-template-columns:auto;
-    justify-content: space-between;
-    width: 100%;
-    padding:1rem;
-  }
-
-} */

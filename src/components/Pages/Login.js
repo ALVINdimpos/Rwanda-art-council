@@ -9,7 +9,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
 function Index() {
-  
   const [Email, SetEmail] = useState("");
   const [Password, SetPassword] = useState("");
   const [loading, setLoading] = useState(false);
