@@ -56,7 +56,7 @@ export default function ChartsArtist() {
           <XAxis dataKey="name" interval="preserveStartEnd" />
           <YAxis interval="preserveStartEnd" />
           <Legend />
-          <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
+          <Line type="monotone" dataKey="pv" stroke="#C5801A" activeDot={{ r: 8 }} />
         </LineChart>
       </div>
 

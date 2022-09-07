@@ -5,7 +5,8 @@ export default function BarChat() {
   return (
     <>
      <BarChart width={700} height={140} data={data1}>
-          <Bar dataKey="uv" fill="#8884d8" />
+          <Bar dataKey="uv" fill="#C5801A" />
+          <XAxis dataKey="name" />
 
         </BarChart>
     </>

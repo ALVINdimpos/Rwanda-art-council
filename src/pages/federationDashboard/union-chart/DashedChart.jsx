@@ -21,7 +21,7 @@ export default function DashedChart() {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+          <Line type="monotone" dataKey="uv" stroke="#C5801A" />
 
         </LineChart>
     </>

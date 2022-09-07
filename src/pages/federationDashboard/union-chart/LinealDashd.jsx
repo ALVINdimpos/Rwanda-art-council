@@ -20,8 +20,8 @@ export default function LinealDashd() {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-          <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+          <Line type="monotone" dataKey="uv" stroke="#C5801A" />
+          <Area type="monotone" dataKey="uv" stroke="#C5801A" fill="#C5801A" />
 
         </ComposedChart>
 

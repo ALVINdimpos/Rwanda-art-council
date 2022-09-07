@@ -33,23 +33,23 @@ const FedSidebar = () => {
               <span>Union</span>
             </li>
           </Link>
-          <Link to="/bookingEvents" style={{ textDecoration: "none" }}>
+          <Link to="#" style={{ textDecoration: "none" }}>
             <li>
               <StoreIcon className="icon" />
               <span>Book Event</span>
             </li>
           </Link>
       
-          <Link to="/addEvent" style={{ textDecoration: "none" }}>
+          {/* <Link to="/createEvent" style={{ textDecoration: "none" }}>
             <li>
               <StoreIcon className="icon" />
-              <span>Add Event</span>
+              <span>Create Event</span>
             </li>
-          </Link>
+          </Link> */}
           
           <li>
             <ExitToAppIcon className="icon" />
-            <span>Logout</span>
+            <span>Exit</span>
           </li>
         </ul>
       </div>
