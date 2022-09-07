@@ -95,10 +95,7 @@ function handleCategory(id){
                     </select>                               
             </div>
        </div>
-    {/* <div> */}
         <div className="buttons">Submit</div>
-        {/* <input type='submit' className='btn' value="Regist" /> */}
-    {/* </div> */}
        
    
             </div>
