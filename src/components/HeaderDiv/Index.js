@@ -7,7 +7,7 @@ function Index() {
   const navigate = useNavigate();
   const getStartedHandler = (e) => {
     e.preventDefault();
-    navigate("/Register");
+    navigate("/BecomeMember");
   };
   return (
     <div>

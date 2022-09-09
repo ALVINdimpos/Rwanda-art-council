@@ -4,7 +4,6 @@ import NavBar from "../NavBar/Index";
 import Header from "../HeaderDiv/Index";
 import SearchBox from "../SearchBox/Index";
 import SectionIndicator from "../sectionIndicator/Index";
-import FidWOrkBox from "../box/FidWorkBox/Index";
 import WhoWeAreBox from "../box/whoWeAreBox/Index";
 import FidBox from "../box/FidBox/Index";
 import EventBox from "../box/eventBox/Index";
@@ -30,8 +29,6 @@ function Home() {
       <NavBar />
       <Header></Header>
       <SearchBox />
-      <SectionIndicator name="Fideration's work" />
-      <FidWOrkBox />
       <WhoWeAreBox />
       <SectionIndicator name="Fiderations" />
       <div className={Style.FiderationBoxWraper}>
