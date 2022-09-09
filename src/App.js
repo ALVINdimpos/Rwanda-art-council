@@ -6,7 +6,7 @@ import Contactus from "./components/Pages/Contactus";
 import Gallery from "./components/Pages/Gallery";
 import Event from "./components/Pages/Events";
 import Whatwedo from "./components/Pages/Whatwedo";
-import Register from'./components/Pages/Register'
+import BecomeMember from'./components/Pages/BecomeMember'
 import Login from './components/Pages/Login'
 import ForgotPassward from "./components/Pages/ForgotPassward";
 import PasswordResset from "./components/Pages/PasswordResset";
@@ -21,7 +21,7 @@ export default function App() {
         <Route path="Gallery" element={<Gallery />} />
         <Route path="Event" element={<Event />} />
         <Route path="Whatwedo" element={<Whatwedo />} />
-        <Route path="Register" element={<Register />} />
+        <Route path="becomeMember" element={<BecomeMember />} />
         <Route path="Login" element={<Login />} />
         <Route path="ForgotPassward" element={<ForgotPassward />} />
         <Route path="PasswordResset" element={<PasswordResset />} />

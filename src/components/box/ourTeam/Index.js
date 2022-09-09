@@ -3,7 +3,8 @@
 import React from "react";
 import Style from "./Style.module.css";
 import People1 from "../../../assets/photos/images1.png";
-import news from "../../../assets/photos/news1.jpeg";
+import news from "../../../assets/photos/news.jpeg";
+import news1 from "../../../assets/photos/news1.jpeg";
 
 function Index() {
   return (
@@ -60,7 +61,7 @@ function Index() {
         </div>
         <div className={Style.profile_card}>
           <div className={Style.img}>
-            <img src={news} />
+            <img src={news1} />
           </div>
           <div className={Style.caption}>
             <h3> Fiston Alvin</h3>
