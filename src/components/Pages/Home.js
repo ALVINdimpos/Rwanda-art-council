@@ -21,8 +21,7 @@ function Home() {
   const navigate = useNavigate();
 
   const EventHandler = (e) => {
-    e.preventDefaul();
-    navigate("/Events");
+    navigate("/Event");
   };
   return (
     <>

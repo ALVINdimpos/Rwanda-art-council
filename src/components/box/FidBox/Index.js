@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import FidLogo from "../../../assets/photos/FidLogo.png"
+import { useNavigate } from "react-router-dom";
 import "./Style.css";
 function Index(props) {
   return (
@@ -14,6 +16,10 @@ function Index(props) {
   );
 }
 function Card(props) {
+  const navigate = useNavigate();
+  const onClickHandler = () => {
+    navigate("/Fideration");
+  };
   return (
     <div className="card">
       <div className="card__body">
@@ -21,7 +27,7 @@ function Card(props) {
         <h2 className="card__title">{props.title}</h2>
         <p className="card__description">{props.description}</p>
       </div>
-      <button className="card__btn">Read more ...</button>
+      <button className="card__btn" onClick={onClickHandler}>Read more ...</button>
     </div>
   );
 }
