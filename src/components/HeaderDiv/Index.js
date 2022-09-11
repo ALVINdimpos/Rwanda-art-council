@@ -22,7 +22,7 @@ function Index() {
           </p>
           <div className={HeaderStyle.Button}>
             <Button name="Explore Artworks" />
-            <Button name="Get started" onClick={getStartedHandler} />
+            <Button name="Be a member" onClick={getStartedHandler} />
           </div>
         </div>
       </div>

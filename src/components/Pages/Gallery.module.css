@@ -13,7 +13,7 @@
     justify-content: space-between;
     width: 90%;
     gap: 2rem;
-    margin: 0rem auto;
+    padding-left: 1rem; 
 }
 .PhotoAlbum img{
   width: 200px;
@@ -27,6 +27,7 @@
 @media (max-width:1050px){
   .PhotoAlbum {
       grid-template-columns: auto auto auto;
+      width: 90%;
     }
     .PhotoAlbum img{
       height: 100%;

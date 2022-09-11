@@ -20,7 +20,6 @@ function PasswordResset() {
         data:{email},
         method:"POST"
       }
-        
       );
       console.log(res);
       setLoading(false);
