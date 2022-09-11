@@ -20,4 +20,19 @@
   box-shadow: 0px 4px 4px 0px #00000040;
   margin: 3rem auto;
 }
+iframe{
+  width: 700px;
+}
+@media (max-width:550px) {
+  .loginMainWrapper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .loginWrapper {
+    width: 100%;
+  }
+ iframe{
+    width: 100%;
+  }
+}
 
