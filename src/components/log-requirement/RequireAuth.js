@@ -10,9 +10,8 @@ function RequireAuth({children}) {
     const location=useLocation()
     useEffect(()=>{
         if(!auth.user){
-            return <Navigate to='/Login' state={{path:location.pathname}} replace='true'/>
+             <Navigate to='/Login' state={{path:location.pathname}} replace='true'/>
         }
-      return children
     
     },[]) 
 
