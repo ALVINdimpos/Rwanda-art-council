@@ -28,7 +28,7 @@ const HomeFed = () => {
 
     const jSonData=XLSX.utils.sheet_to_json(wSheet);
 
-    console.log('Json Data',jSonData);
+    // console.log('Json Data',jSonData);
 
     const workSheet=XLSX.utils.json_to_sheet(jSonData)
     const wb=XLSX.utils.book_new()

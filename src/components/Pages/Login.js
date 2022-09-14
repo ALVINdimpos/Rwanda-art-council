@@ -55,20 +55,21 @@ function Index() {
     showToastMessage();
     setLoading(true);
     try {
-      // console.log('my Data',loginData)
-      axios
-        .post("https://rwanda-art-api.herokuapp.com/api/login", loginData)
-        .then((res) => {
-          console.log("Response Token data", res.data.access_token);
-          if (res.data.access_token) {
-            auth.Login(loginData);
-            localStorage.setItem("token", res.data.access_token);
-            navigate(redirectPath, { replace: true });
-          } else {
-            console.log("new Method does not work...");
+     axios.post(
+        "https://rwanda-art-api.herokuapp.com/api/login",
+        loginData
+      ).then(res=>{
+        if(res.data.access_token){
+              auth.Login(loginData)
+              localStorage.setItem("token",res.data.access_token)
+          navigate(redirectPath,{replace:true})
           }
-        })
-        .catch((err) => console.log(err.message));
+        }
+
+      )
+      .catch(err=>{if(err.message=='Network Error'){
+        alert('Check network Connectivity')
+      }})
       setLoading(false);
     } catch (error) {
       SetPassword("");
