@@ -46,7 +46,7 @@ function Index() {
   };
 
   const redirectPath=location.state?.path
-  console.log('my Path',redirectPath)
+  // console.log('my Path',redirectPath)
 
   const loginHandler = async (e) => {
     e.preventDefault();
@@ -62,7 +62,7 @@ function Index() {
         if(res.data.access_token){
               auth.Login(loginData)
               localStorage.setItem("token",res.data.access_token)
-          navigate('/logindash',{replace:true})
+          navigate(redirectPath,{replace:true})
           }else{
         console.log('new Method does not work...')
    }
