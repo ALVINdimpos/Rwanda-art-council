@@ -1,8 +1,8 @@
 import React from 'react'
-import Datatable from '../../datatable/Datatable'
 import './federation.scss'
 import Sidebar from '../../sidebar/Sidebar'
 import Navbar from '../../nav/Navbar'
+import FedAPItable from '../../../pages/federationTable/FedAPItable'
 export default function FederationTable() {
   return (
 
@@ -10,7 +10,7 @@ export default function FederationTable() {
     <Sidebar/>
     <div className="listContainer">
       <Navbar/>
-      <Datatable/>
+      <FedAPItable/>
     </div>
   </div>
 

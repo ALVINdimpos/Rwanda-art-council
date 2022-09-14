@@ -25,17 +25,12 @@
 }
 @mixin inputs{
     width:100%;
-    border:none;
     border-radius: 5px;
-    border:2px solid rgba(0,0,0,0.5);
+    border:1px solid rgba(0,0,0,0.5);
     height: 40px;
     font-size: 12px;
     border-color: #C5801A;
-    opacity:.4;
-    padding-bottom: 0;
-
-    
-
+   
     
     &:focus{
         outline:none;
@@ -59,9 +54,9 @@
 @mixin  texting {
     
     border:none;
-    border:2px solid rgba(0,0,0,0.4);
+    border:1px solid rgba(0,0,0,0.4);
     margin-left: 5px;
-    height: 85px;
+    height: 75px;
     font-size: 12px;
     border-radius: 5px;
     border-color: #C5801A;
@@ -88,19 +83,18 @@
     padding-top: 12px;
 }
 
-        .title{
-            background-color: #C5801A;  
-            height:60px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+        // .title{
+        //     height:60px;
+        //         display: flex;
+        //         align-items: center;
+        //         justify-content: center;
 
-            span{
-                font-family: 'Roboto Mono', monospace;
-            font-size: 20px;
+        //     span{
+        //         font-family: 'Roboto Mono', monospace;
+        //     font-size: 20px;
                 
-        }
-        }
+        // }
+        // }
             .cover-s{
 
                 padding: 0 5px;
@@ -172,8 +166,7 @@
                 }
                 .desc{
                     display:block;
-                    margin-top: 10px;
-                    // flex-direction: column;
+                    margin-top: 8px;
                     
                     .description{
                         display:flex;
@@ -188,40 +181,18 @@
                     
                 }
                 
-        
-        
+               
         
         
                 
                 .buttons{
-                    // width: 100%;
                     margin-top: 12px;
                     display: flex;
                     justify-items: center;
                     align-items: center;
-                    .btn{
-                        width:100%;
-                        height:50px;
-                        font-size:10px ;
-                        color: black;
-                        opacity: .4px;
-                         
-                        background-color:#C5801A; 
-                        border-radius: 10px; 
-        
-        
-                        &:hover{
-                            background: #FFB636;
-                            transition: .3 ;
-                            // border:2px solid rgba(0,0,0,0.5);
-        
-        
-                            
-                        }
-        
-                     
-                    }
                 }
+                   
+                
             }
         
 

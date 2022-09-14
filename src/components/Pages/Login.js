@@ -7,11 +7,13 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useAutho } from "../authenticate/Auths";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import validator from "validator";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Index() {
+  const auth = useAutho();
+  const location = useLocation();
   const [Email, SetEmail] = useState("");
   const [Password, SetPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -44,19 +46,29 @@ function Index() {
     email: Email,
     password: Password,
   };
+
+  const redirectPath = location.state?.path;
+  console.log("my Path", redirectPath);
+
   const loginHandler = async (e) => {
     e.preventDefault();
     showToastMessage();
     setLoading(true);
     try {
       // console.log('my Data',loginData)
-      await axios
+      axios
         .post("https://rwanda-art-api.herokuapp.com/api/login", loginData)
         .then((res) => {
-          console.log("Response Token data", res.data);
-          localStorage.setItem("token", res.data.access_token);
-        });
-      //.catch(err=>console.log(new Error(err.message)))
+          console.log("Response Token data", res.data.access_token);
+          if (res.data.access_token) {
+            auth.Login(loginData);
+            localStorage.setItem("token", res.data.access_token);
+            navigate("/logindash", { replace: true });
+          } else {
+            console.log("new Method does not work...");
+          }
+        })
+        .catch((err) => console.log(err.message));
       setLoading(false);
     } catch (error) {
       SetPassword("");

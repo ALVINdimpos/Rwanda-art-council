@@ -1,0 +1,25 @@
+// .container{
+// display: flex;
+
+// .body-container{
+//     display: flex;
+//     margin-left: 15%;
+//     height:85%;
+//     flex-direction: column;
+// }
+
+// }
+.list {
+    display: flex;
+    width: 100%;
+    .listContainer {
+      flex: 6;
+
+      .data-table{
+        margin-top: 20px;
+        display: block;
+
+      }
+    }
+  }
+  

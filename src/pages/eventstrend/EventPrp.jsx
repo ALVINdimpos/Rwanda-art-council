@@ -4,8 +4,9 @@ import blackimg from './blackimg.png'
 import './event.scss'
 import { useState,useEffect } from 'react';
 import {ImUpload} from 'react-icons/im'
-import { getTocken,eventUrl } from '../../components/token/Token';
+import { getTocken,eventUrl } from '../../components/token/Token'
 import {FiUpload} from 'react-icons/fi'
+import axios from 'axios';
 
 
 function EventPrp() {
@@ -14,7 +15,7 @@ function EventPrp() {
     const [times,setTimes]=useState();
     const [desc,setDesc]=useState();
     const [location,setLocation]=useState();
-    const [imFile,setImFile]=useState()
+    const [imFile,setImFile]=useState({})
 
      
 
@@ -42,51 +43,34 @@ function EventPrp() {
  
     // useEffect(e=>setTimes(e.target.value))
 
-    const handleImage=e=>{
-        console.log('Image:',URL.createObjectURL((e.target.files[0])))
-        setImFile(URL.createObjectURL((e.target.files[0])))
+    // const handleImage=e=>{
+    //     // console.log('Image:',URL.createObjectURL((e.target.files[0])))
+    //     // setImFile(URL.createObjectURL((e.target.files[0])))
+    //     setImFile((e.target.files[0]))
+    // }
+
+    let data={
+        title:titles,
+        description :desc,
+        at :times,
+        file :imFile,
+        location:location,
     }
-
-
     const handleDataForm=e=>{
-        e.preventDefault()
-        let data={
-            title:titles,
-            description :desc,
-            at :times,
-            file :imFile,
-            location:location,
-        }
-    //     fetch(eventUrl,{
-    //         method:'POST'     ,    
-    //         // mode:'cors',  
-    //         headers:{
-    //             // "Access-Control-Allow-Origin": 'http://localhost:3000',
-    //             // "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-    //             // 'Access-Control-Allow-Credentials': true,
-    //             'Content-Type':'application/json',
-    //             'Authorization':getTocken()
-    //         },
-    //         body:JSON.stringify(event)
-    //         //ADD bodyJSON.stringify()
-    //     }).then(result=>{
-    //         if(!result.ok) throw new Error('This Exception rose',result.statusText)
-    //         console.log('my found result',result)
-    //     })
-    //     .then(data=>{return data.json()}).then(
-    //         data=>console.log(data).catch(err=>err.message)
-    //     )
-        
-
-        
-        // const data={
-          
-        // }
-
-
-
-        // console.log('img File',imFile)
-        // console.log('My Data',data)
+        e.preventDefault()     
+        axios.post('https://rwanda-art-api.herokuapp.com/api/events/create',data
+            // Headers:{
+            //     'Authorization':`Bearer  ${localStorage.getItem('token')}`,
+            // },data
+        )
+        .then(result=>{
+            if(!result.ok) {throw new Error('This Exception rose',result.statusText)}
+            console.log('my found result',result)
+             result.data
+        })
+       .then(data=>console.log(data)
+       .catch(err=>err.message))     
+    
     }
 
  
@@ -94,15 +78,11 @@ function EventPrp() {
   return (
     <form  onSubmit={handleDataForm}>
         <div className='eventPage'>
-            <div className="title">
-                <span>Event Preparation</span>
-            </div>
-            <div className="cover-s" >
+                        <div className="cover-s" >
             <div className='imgEvent'>
-            <input type="file"  onChange={handleImage} className="file-chooser"/>
-            <img src={imFile } className="image"/>
-            {/* blackimg */}
-            {/* imFile */}
+            <input type="file"  onChange={(e)=>setImFile(e.target.files[0])} className="file-chooser"/>
+            {/* <img src={imFile} className="image"/> */}
+           
             </div> 
             <div className='tt'>
         <div className="titledes">
@@ -128,12 +108,12 @@ function EventPrp() {
                 <textarea value={desc}  
                 onChange={e=>handleDesc(e)}
                 placeholder='type Description ...'>
-            </textarea>
+                </textarea>
             </div>
        </div>
-    <div className='buttons'>
-        <input type='submit' className='btn' value="Submit" />
-    </div>
+    <div >
+        <button className="buttons"type='submit'>Add</button>
+        </div>
        
    
             </div>

@@ -136,7 +136,7 @@ row.forEach(item=>(
           <Area
             type="monotone"
             dataKey="Size"
-            stroke="#FFB636"
+            stroke="#C5801A"
             fillOpacity={1}
             fill="#FFB636"
           />

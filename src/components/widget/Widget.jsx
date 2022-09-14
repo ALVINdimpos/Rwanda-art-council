@@ -4,14 +4,49 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import {FaTradeFederation} from 'react-icons/fa'
-import { Data } from "../../datatablesource";
+import { artistData } from "../../datatablesource";
 import { NavLink } from "react-router-dom";
+import { useState,useEffect } from "react";
 import { artist } from "../widgetcategory/artist/ArtistDum";
+// import { getFederation_Size } from "../../datatablesource";
 const Widget = ({ type }) => {
   let data;
   let federation=[]
-    Data.forEach(data=>federation.push(data.federation_name))
+  artistData.forEach(data=>federation.push(data.federation_name))
+  let federationSize=[]
+
+  // start of API for federation size
+  const [rowFed,setRowFed]=useState([])
+  useEffect(()=>{
+    fetch('https://rwanda-art-api.herokuapp.com/api/ViewUser',
+    {
+        method:'GET',
+    headers:{
+        'Authorization':'Bearer '+localStorage.getItem('token'),
+        'Content-Type':'application/json'
+    }       
+}).then(res=>res.json())
+    .then(val=>
+        // console.log(data.User?.Data),
+          setRowFed(val.User?.Data)
+        )
+    .catch(err=>console.error('mention Error.',err))
+
+   
+  },[] )
+
+
+  useEffect(()=>{
+    rowFed.map(data=>federationSize.push(data))
+  },[])
   
+  console.log('my Size',federationSize)
+
+  // this is end
+
+
+
+
 
 
 
@@ -44,7 +79,7 @@ const Widget = ({ type }) => {
         id:2,
         title: "Art",
         link: "/vart",
-        description:"View all Art",
+        description:"View all Unions",
         icon: (
           <ShoppingCartOutlinedIcon
             className="icon"
@@ -62,7 +97,7 @@ const Widget = ({ type }) => {
       data = {
         id:3,
         title: "Federation",
-        link: "vfed",
+        link: "/vfed",
         description: "View All Federation",
         icon: (
           <FaTradeFederation
@@ -71,7 +106,7 @@ const Widget = ({ type }) => {
           />
           
         ),
-        size:federation.length | "0"
+        size:federationSize | "0"
       };
       break;
     case "category":

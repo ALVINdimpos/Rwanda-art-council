@@ -1,4 +1,5 @@
 import React from 'react';
+import {BiPlusMedical} from 'react-icons/bi'
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -12,26 +13,27 @@ import  Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 const useStyle=makeStyles({
     btn:{
-            cursor:"pointer",
-            width:"150px",
-            opacity: .9,
-            backgroundColor: "#C5801A",
-             height: "40px",
-             border:"none",
-            borderRadius: "6px",
-            fontSize:"11px",
-           '&:hover':{
-              transition:"ease",
-              borderRadius: "6px",
-              opacity: ".4px",
-              border:"1.5px solid",
-              background:"transparent",
-              fontSize:"11px",
-              padding: "5px 0px",
+            width: '100px',
+            padding: '12px',
+            cursor: 'pointer',
+            background: '#C5801A',
+            color:'white',
+            opacity:'.8',
+            border:'none',
+            textTransform:'capitalize',
+            borderadius: "8px",
 
+
+            '&:hover':{
+                background: 'transparent',
+                border: "1.5px solid #C5801A",
+                color: "#C5801A",
+                borderRadius: '8px',
+            }
+        
     },
 
-},
+
 lbl:{
   fontSize:'12px',
   paddingLeft:'5px'
@@ -82,7 +84,7 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions);
 
-export default function UnionForm({children,title}) {
+export default function EventDialog({children,title}) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -97,7 +99,7 @@ const classes=useStyle();
   return (
     <div>
       <Button className={classes.btn} onClick={handleClickOpen}>
-        <PersonAddAltIcon /> <strong className={classes.lbl}>New</strong> 
+      <BiPlusMedical style={{marginRight:"10px"}}/> Event
       </Button>
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>

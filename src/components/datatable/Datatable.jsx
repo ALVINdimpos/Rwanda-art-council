@@ -1,6 +1,6 @@
 import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
-import { userColumns, userRows,Data } from "../../datatablesource";
+import { userColumns,artistData } from "../../datatablesource";
 import { Link, NavLink } from "react-router-dom";
 import {useEffect, useState } from "react";
 import { getTocken
@@ -10,7 +10,7 @@ import axios from "axios";
 const Datatable = () => {
   const [row,setRow] =useState([]) //it refers to data from API
   // const [rowData,setRowData]=useState([])  //this is for the dummy data from current test
-  const [rowData,setRowData]=useState(Data)  //this is for the dummy data from current test
+  const [rowData,setRowData]=useState(artistData)  //this is for the dummy data from current test
   const [userId,setUserId]=useState([])
     function convertDate(dt){
       const date= Date.parse(dt);
@@ -67,13 +67,13 @@ const Datatable = () => {
               
                     
     <Link to={`/users/${1}`} style={{ textDecoration: "none" }}>
-     <div className="viewButton">View</div>
+     <div className="viewButton">View Artist</div>
    </Link>
-              <div
+              {/* <div
                 className="deleteButton"
                 onClick={() => handleDelete(params.row.id)}>
                 Delete
-                </div>
+                </div> */}
                 </div>
               )
               
@@ -84,10 +84,10 @@ const Datatable = () => {
   return (
     <div className="datatable">
       <div className="datatableTitle">
-        Add New Federation
-        <Link to="/users/new" className="link">
+      Artist List
+        {/* <Link to="/users/new" className="link">
           Add New
-        </Link>
+        </Link> */}
       </div>
       <DataGrid
         className="datagrid"
@@ -96,6 +96,7 @@ const Datatable = () => {
         pageSize={9}
         rowsPerPageOptions={[9]}
         checkboxSelection
+        autoHeight
       />
     </div>
   );

@@ -21,6 +21,36 @@
       border-radius: 5px;
       cursor: pointer;
     }
+    .buttons{
+      margin-top: 10px;
+      display: flex;
+      color: black;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Anek Telugu', sans-serif;
+      font-family: 'DM Sans', sans-serif;
+      font-family: 'Oswald', sans-serif;
+      width:120px;
+      padding:10px;
+      font-size: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color:#C5801A; 
+
+      
+          &:hover{
+              background: #FFB636;
+              transition: .3 ;
+              // width:30%;
+              // height:40px;
+              border-radius: 5px;
+
+              
+          }
+
+       
+      }
   }
 
   .cellWithImg {

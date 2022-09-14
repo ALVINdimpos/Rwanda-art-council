@@ -6,17 +6,21 @@ import StoreIcon from "@mui/icons-material/Store";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 
 import { Link } from "react-router-dom";
+import { useAutho } from "../authenticate/Auths";
 
 import logo from './logo.png'
-
+import { useNavigate } from "react-router-dom";
 const Sidebar = () => {
+  const auth=useAutho()
+  const navigate=useNavigate()
+  const handleLogout=()=>{
+      auth.Logout()
+      localStorage.removeItem('token')
+      navigate("/",{replace:true})
+  }
   return (
     <div className="sidebar">
-      <div className="top">
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <span className="logo"><img src={logo} alt="logo" className='log-img'/></span>
-        </Link>
-      </div>
+
       <div className="center">
 
         <ul>
@@ -27,29 +31,35 @@ const Sidebar = () => {
               <span>Home</span>
             </li>
           </Link>
-          <Link to="/users" style={{ textDecoration: "none" }}>
+          <Link to="/federation" style={{ textDecoration: "none" }}>
             <li>
               <PersonOutlineIcon className="icon" />
+              <span>Federation</span>
+            </li>
+          </Link>
+          <Link to="/users" style={{ textDecoration: "none" }}>
+            <li>
+              <StoreIcon className="icon" />
               <span>Artists</span>
             </li>
           </Link>
-          <Link to="/federation" style={{ textDecoration: "none" }}>
+          <Link to="/admunions" style={{ textDecoration: "none" }}>
             <li>
               <StoreIcon className="icon" />
-              <span>Federation</span>
+              <span>Unions</span>
             </li>
           </Link>
       
           <Link to="/addEvent" style={{ textDecoration: "none" }}>
             <li>
               <StoreIcon className="icon" />
-              <span>Add Event</span>
+              <span>Events</span>
             </li>
           </Link>
           
           <li>
             <ExitToAppIcon className="icon" />
-            <span>Logout</span>
+            <button onClick={handleLogout}>Logout</button>
           </li>
         </ul>
       </div>

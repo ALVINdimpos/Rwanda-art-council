@@ -1,0 +1,52 @@
+
+.form-container{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .header{
+        text-align: center;
+        h2{
+            font-size: 300;
+            opacity: .4px;
+            color: #C5801A;  
+            padding-top: 10px;  
+            }
+    }
+    .body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       width:400px;
+       height:20em;
+       box-shadow: 0px 1.3px 1.2px 1.2px;
+       border-radius: 5px;
+    }
+
+    .footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width:400px;
+        margin-top: 2em; 
+
+        button{
+            background-color: #C5801A;
+            // opacity: .5;
+            border:none;
+            padding:8px;
+            cursor: pointer;
+            width:70px;
+            border-radius: 5px;
+
+
+            &:hover{
+                background: transparent;
+                color:#C5801A;
+                border: 1px solid #C5801A;
+                outline: none;
+            }
+        }
+    }
+}
