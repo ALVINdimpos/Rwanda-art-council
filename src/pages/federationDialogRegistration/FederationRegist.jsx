@@ -2,13 +2,13 @@ import React from 'react';
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import {Dialog} from '@material-ui/core';
-import  MuiDialogTitle from '@material-ui/core/DialogTitle';
+import Dialog from '@material-ui/core/Dialog';
+import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import MuiDialogContent from '@material-ui/core/DialogContent';
 import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-import  Typography from '@material-ui/core/Typography';
+import   Typography   from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 const useStyle=makeStyles({
     btn:{
@@ -82,7 +82,7 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions);
 
-export default function UnionForm({children,title}) {
+export function FederationRegist({children,title}) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -110,3 +110,6 @@ const classes=useStyle();
     </div>
   );
 }
+
+
+

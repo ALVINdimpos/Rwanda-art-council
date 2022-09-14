@@ -1,20 +1,15 @@
 import "./table.scss";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import { Link } from "react-bootstrap-icons";
+import { ImPlus } from "react-icons/im";
 import {useEffect,useState} from 'react';
 import { getTocken } from "../token/Token";
-import { DataGrid } from "@mui/x-data-grid";
-import { userColumns } from "./MyColumn";
-import { aprove_uri } from "../token/Token";
+import {FederationRegist} from "../../pages/federationDialogRegistration/FederationRegist";
+import FedRegistrationTmp from '../../pages/federationRegistration/FedRegistrationTmp'
 import axios from "axios";
+import FedAPItable from "../../pages/federationTable/FedAPItable";
+// import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const List = () => {
-
+  const hist=useNavigate()
   const [row,setRow] =useState([])
   const base_uri=`https://rwanda-art-api.herokuapp.com/api/ViewUser`
     
@@ -54,44 +49,37 @@ const List = () => {
     //   }).then(data=>console.log(data)).catch(err=>console.log('This is Error:',err.message))
     }
 
-    const actionColumn = [
-      {
-        field: "action",
-        headerName: "Action",
-        width: 200,
-        renderCell: (params) => {
-          return(
-                 <div className="cellAction">                                       
-                <div
-                  className="deleteButton"
-                  onClick={() => approveFedederation(params.row.id)}>
-                  Approve
-                  </div>
-                  </div>
-                )
+    // const actionColumn = [
+    //   {
+    //     field: "action",
+    //     headerName: "Action",
+    //     width: 200,
+    //     renderCell: (params) => {
+    //       return(
+    //              <div className="cellAction">                                       
+    //             <div
+    //               className="deleteButton"
+    //               onClick={() => approveFedederation(params.row.id)}>
+    //               Approve
+    //               </div>
+    //               </div>
+    //             )
                 
-              }
-            }
+    //           }
+    //         }
           
-    ];
+    // ];
 
     return (
     
       <div className="datatable">
-          <div className="datatableTitle">
-        Federation Details
-        <Link to="/users/new" className="link">
-          Add New helping tea
-        </Link>
-      </div>
-      <DataGrid
-        className="datagrid"
-        rows={row}
-        columns={userColumns.concat(actionColumn)}
-        pageSize={9}
-        rowsPerPageOptions={[9]}
-        // autoHeight
-      />
+      <div className="datatableTitle">
+      Federation List
+      
+        <div className="buttons" onClick={()=>hist("/federation-registration")}>Add Federation
+        </div>
+      </div>        
+      <FedAPItable />
     </div>
 
 

@@ -3,8 +3,7 @@
   border-right: 0.5px solid rgb(230, 227, 227);
   min-height: 100vh;
   opacity: .4px;
-  // background-color: #C5801A;
-  background-color:red;
+  background-color: #C5801A;
 
   .top {
     height: 50px;
@@ -32,15 +31,6 @@
       margin: 0;
       padding: 0;
 
-      .title {
-        font-size: 10px;
-        font-weight: bold;
-        color: black;
-        opacity:38%;
-        margin-top: 15px;
-        margin-bottom: 5px;
-      }
-
       li {
         display: flex;
         align-items: center;
@@ -53,14 +43,26 @@
 
         .icon {
           font-size: 18px;
-          color: black;
         }
 
         span{
             font-size: 13px;
             font-weight: 600;
-            color: black;
+            // color: white;
             margin-left: 10px;
+        }
+        button{
+          font-size: 13px;
+          font-weight: 600;
+          background:transparent;
+          color:black;
+          margin-left: 10px;
+          border: none;
+          
+          &:focus{
+            text-decoration: none;
+            border:none;
+          }
         }
       }
     }

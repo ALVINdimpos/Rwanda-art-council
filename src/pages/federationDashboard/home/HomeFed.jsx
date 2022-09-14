@@ -4,24 +4,20 @@ import { Link } from "react-router-dom";
 import FedSidebar from "../sideFedbar/FedSidebar";
 import FedNavbar from "../navigatebar/FedNavbar";
 import ChartsData from "../charts/ChartsData";
-import Artists from "../artists/ArtistsTable";
-import {BiPlusMedical} from 'react-icons/bi'
-import {RiUpload2Fill} from 'react-icons/ri'
 import { Data } from "../DumFederation";
+import UnionAdd from "../unionAddition/UnionAdd";
+import {RiUpload2Fill} from 'react-icons/ri'
 import * as XLSX from 'xlsx'
 import UnionForm from "../unionbyDialog/UnionForm";
-import UnionAdd from "../unionAddition/UnionAdd";
+
+import Artists from "../artists/ArtistsTable";
+import {BiPlusMedical} from 'react-icons/bi'
+// 
+import { dataUnion } from '../unionDetails'
+import UnionAPI from "../../union-api-data/UnionAPI";
+import { Container } from "@mui/system";
+
 const HomeFed = () => {
-// try to handle union form page for registration
-
-// const handleUnionForm=()=>{
-//   return (<UnionForm/>)
-//   // console.log('Hello brq');
-// }
-
-
-
-
   const handleFile= async e=>{
     const file=e.target.files[0]
     const data=await file.arrayBuffer()
@@ -55,11 +51,6 @@ const HomeFed = () => {
   XLSX.writeFile(workB,"DumedData.xlsx")
 
 
-
- 
-
-
-
  }
 
   return (
@@ -68,13 +59,15 @@ const HomeFed = () => {
       <div className="homeContainer">
             <FedNavbar />
 
-          <div className="charts">
+        <Container>
+            <div className="charts">
           <ChartsData />
           </div>
+         
+
           <div className="artist-table">
             <div className='tbl-title'>
-            {/* <Link to="/adartist">  this OG before dialog trial*/}
-            {/* <div className="btn" onClick={()=>handleUnionForm()}><BiPlusMedical style={{fontSize:"large", paddingRight:"5px"}}/> Add New</div>   */}
+           
             <div>
               <UnionForm title='Union Registration'>
                 <UnionAdd />
@@ -85,11 +78,10 @@ const HomeFed = () => {
             <input  type='file' onChange={e=>handleFile(e)}/> 
             <button onClick={handleClick} className="btn-upload"><RiUpload2Fill style={{fontSize:"large"}} /></button>
             </div>
-            </div>
-          <Artists/>
+            </div> 
+           <UnionAPI/>
           </div>
-
-
+        </Container>
          
       </div>
   

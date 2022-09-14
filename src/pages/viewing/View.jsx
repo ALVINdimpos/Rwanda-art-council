@@ -2,13 +2,13 @@ import impala from './impala.jpg'
 import React,{useState,useEffect} from 'react'
 import './view.css'
 import { useParams } from 'react-router-dom'
-import { Data } from '../../datatablesource'
+import { artistData } from '../../datatablesource'
 import { convertDate } from '../../components/token/Token'
 const View=()=> {
 const params=useParams();
 let id=params.usId;
 const handleSearch=(id)=>{
-  return (Data.find(data=>data.id===id))
+  return (artistData.find(data=>data.id===id))
 }
   let federation=handleSearch(parseInt(id));
 console.log('found Federation',federation)

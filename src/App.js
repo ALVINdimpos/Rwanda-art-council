@@ -9,7 +9,10 @@ import Event from "./components/Pages/Events";
 import Whatwedo from "./components/Pages/Whatwedo";
 import Register from "./components/Pages/Register";
 import Login from "./components/Pages/Login";
+import RequireAuth from "./components/log-requirement/RequireAuth";
 import { userInputs } from "./formSource";
+import { AuthProvider } from "./components/authenticate/Auths";
+import UnionPage from "./pages/union-page/UnionPage";
 import New from "./pages/new/New";
 import List from "./pages/list/List";
 import HomeDash from "./pages/home/HomeDash";
@@ -26,8 +29,10 @@ import Eventing from "./components/myEvent/Eventing";
 import RegisterArt from "./pages/federationDashboard/regist/RegisterArt";
 import ViewArtist from "./pages/viewartist/ViewArtist";
 import UnionView from "./pages/federationDashboard/unionView/UnionView";
+import RegFedContainer from "./pages/regfederaton-page-dash/RegFedContainer";
 export default function App() {
   return (
+    <AuthProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -39,17 +44,13 @@ export default function App() {
         <Route path="Whatwedo" element={<Whatwedo />} />
         <Route path="Register" element={<Register />} />
         <Route path="Login" element={<Login />} />
-        <Route path="logindash" element={<HomeDash />} >
+        <Route path="logindash" element={<RequireAuth> <HomeDash /></RequireAuth> } />
         <Route path="vfed" element={<FederationTable />} />
-        </Route>
-
         <Route path="addEvent" element={<Eventing />}/>
-        <Route path="vartist" element={<ArtistTable />} />
-          
+        <Route path="vartist" element={<ArtistTable />} />  
           <Route path="vcat" element={<CategoryTable />} />
           <Route path="vart" element={<ArtsTable />} />
-
-
+        <Route path='federation-registration' element={<RegFedContainer/>}/>
         <Route path="users">
           <Route index element={<List />} />
           <Route path=":usId" element={<ViewID />} />
@@ -58,16 +59,17 @@ export default function App() {
             element={<New inputs={userInputs} title="Add Federation" />}
           />
         </Route>
-
+          <Route path="admunions" element={<UnionPage />}/>
         <Route path="federation" element={<Federation />}>
           <Route path=":fedId" element={<View />} />
         </Route>
-
         <Route path="addnotify" element={<Contactor />} />
-        <Route path="homefederation" element={<HomeFed/>}/>
+        <Route path="homefederation" element={<RequireAuth><HomeFed/> </RequireAuth> }/>
         <Route path="unios" element={<UnionView/>} />
         <Route path="addEvent" element={<Eventing/>}/>
+        
       </Routes>
     </BrowserRouter>
+    </AuthProvider>
   );
 }

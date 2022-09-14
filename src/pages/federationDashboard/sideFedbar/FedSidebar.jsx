@@ -12,11 +12,11 @@ import logo from './logo.png'
 const FedSidebar = () => {
   return (
     <div className="sidebar">
-      <div className="top">
+      {/* <div className="top">
         <Link to="/" style={{ textDecoration: "none" }}>
           <span className="logo"><img src={logo} alt="logo" className='log-img'/></span>
         </Link>
-      </div>
+      </div> */}
       <div className="center">
 
         <ul>
@@ -27,16 +27,16 @@ const FedSidebar = () => {
               <span>Home</span>
             </li>
           </Link>
-          <Link to="/unios" style={{ textDecoration: "none" }}>
+          {/* <Link to="/unios" style={{ textDecoration: "none" }}>
             <li>
               <PersonOutlineIcon className="icon" />
               <span>Union</span>
             </li>
-          </Link>
+          </Link> */}
           <Link to="#" style={{ textDecoration: "none" }}>
             <li>
               <StoreIcon className="icon" />
-              <span>Book Event</span>
+              <span>Events</span>
             </li>
           </Link>
       

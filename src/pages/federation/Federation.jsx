@@ -10,6 +10,7 @@ const List = () => {
       <div className="listContainer">
         <Navbar/>
         <Table />
+
       </div>
     </div>
   )

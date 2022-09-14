@@ -1,6 +1,7 @@
 .home {
     display: flex;
     .homeContainer {
+        // background-color: white;
         display: flex;
         margin-left: 15%;
         flex-direction: column;
@@ -8,9 +9,12 @@
         display: flex;
         padding-top:10px;
       }
+
+    
+
      
       .artist-table{
-        padding: 0 4.5%;
+        // padding: 0 4.5%;
         flex: 4;
 
         .tbl-title{

@@ -1,0 +1,14 @@
+.file-container{
+    display:flex;
+    flex-direction: column;
+    .up-file{
+        margin-top: 12px;
+
+        label{
+            font-size:12px;
+            padding-left: 5px;
+            
+        }
+    }
+
+}
