@@ -46,7 +46,6 @@ function Index() {
   };
 
   const redirectPath=location.state?.path
-  // console.log('my Path',redirectPath)
 
   const loginHandler = async (e) => {
     e.preventDefault();
@@ -74,17 +73,8 @@ function Index() {
       console.log('Error Message',JSON.stringify(error.message));
       setLoading(false);
     }
-  //  if(localStorage.getItem('token')){
-  //   auth.Login(loginData)
-  //   navigate('/logindash')
-  //  }else{
-  //   console.log('new Method does not work...')
-  //  }
-
-
-    // if(localStorage.getItem('token')) navigate('/logindash')
-    // else navigate('/Login')
   };
+
 
 
 
