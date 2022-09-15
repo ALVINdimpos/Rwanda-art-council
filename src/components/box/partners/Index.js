@@ -8,16 +8,12 @@ import Partner4 from '../../../assets/photos/PartnerFour.png'
 import Klablogo from "../../../assets/photos/Klablogo.png"
 
 function Index() {
+
   return (
    <>
     <h1 className={Style.heading}> Our partner</h1>
     <div className={Style.container}>
       <div className={Style.section1}>
-         <div className={Style.custmo}>
-         <p>Our team</p>
-         <p>Fideration</p>
-         <p>Our testmonial</p>
-         </div>
          <div><h1>We work with the best partner</h1></div>
          <div className={Style.description} >
             <p>Lorem ipsum dolor sit amet, consectetur 
