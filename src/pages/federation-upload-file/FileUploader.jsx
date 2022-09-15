@@ -8,9 +8,9 @@ export const FileUploader = ({formData,setFormData}) => {
             <span>company logo</span>
           </div>
         <div className="up-file">
-        <label>Upload Logo</label>
-        <input type="file" 
+        <input type="file" accept="image/*" id="logo"
         onChange={e=>setFormData({...formData,file:(e.target.files[0])})}/>
+                <label for="logo">Upload Logo</label>
         </div>
         <div className="up-file">
         <label>Upload Image</label>
