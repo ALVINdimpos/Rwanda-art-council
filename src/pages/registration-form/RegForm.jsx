@@ -4,14 +4,11 @@ import { useState } from 'react'
 import { Container } from '@mui/system'
 import FedRegistrationTmp from '../federationRegistration/FedRegistrationTmp'
 import FederationAccount from '../federation-account/FederationAccount'
-import { FileUploader } from '../federation-upload-file/FileUploader'
-import impala from '../../components/sidebar/logo.png'
 import axios from 'axios'
+import { FileUploader } from '../federation-upload-file/FileUploader'
 
 function RegForm() {
-    const [image,setImage]=useState(impala)
     const [page,setPage]=useState(0)
-    const [isSubmitting,setIsSubmitting]=useState(false)
 const [formData,setFormData]=useState({
     federation_name:'',
     phone_number:'',
@@ -20,38 +17,36 @@ const [formData,setFormData]=useState({
     number_of_members:20,
     password:'',
     password_confirmation:'',
-    file:image,
-    image:image,
+    file:'',
+    image:'',
 })
 
-
-    const pageTitle=['Personal Information','Create Account','Other']
+    const pageTitle=['Personal Information','File Uploading','Create Account']
     const displayPage=()=>{
         if(page===0) return <FedRegistrationTmp formData={formData} setFormData={setFormData}/>
-        // else if(page===1) return <FileUploader formData={formData} setFormData={setFormData} />
-        else if(page===1) return <FederationAccount formData={formData} setFormData={setFormData}/>
-      else if(page===2) return <>
-        <span>Thanks</span>
-        </>
+        else if(page===1) return <FileUploader formData={formData} setFormData={setFormData}/>
+      else if(page===2) return < FederationAccount formData={formData} setFormData={setFormData} />
+        
 
-     }
-    //  function handleFormDatas(){
-    //     return <form onSubmit={handleSubmit}>
-    //             {displayPage()}
-    //     </form>
-    //  }
+     }     
+     const handleSubmit=()=>{
+        console.log('found Data',formData)
 
 
- 
-     const handleSubmit=e=>{
-        setIsSubmitting(true)
-        axios.post('https://rwanda-art-api.herokuapp.com/api/register',formData)
-         .then(res=>{
-            console.log('resut Object',res.data)
-            setIsSubmitting(false)
-        })
-         .then(data=>console.log(data))
-         .catch(err=>console.error(err.message))
+        try{
+                axios.post('https://rwanda-art-api.herokuapp.com/api/register'
+                ,formData,{
+                    headers:{
+                        "Content-type": "multipart/form-data"
+                    }
+                }
+                )
+                .then(res=>res.data)
+                .then(data=>alert(data.message))
+        }catch(err){
+            console.log('check this mistake->',err)
+        }
+        
      }
 
   return (
@@ -63,14 +58,13 @@ const [formData,setFormData]=useState({
                 <h2 >{pageTitle[page]}</h2>
             </div>
             <div className="body">
+                <span>Step {page+1}</span>
             {displayPage()}
             </div>
             <div className="footer">
                 <button onClick={()=>setPage(current=>current-1)} disabled={page==0}>Prev</button>
-                <button type={page==pageTitle.length -1? "submit":"button" } 
-                onClick={()=>
-                 {page===pageTitle.length-1?
-                    handleSubmit
+                <button onClick={()=>{page===pageTitle.length-1?
+                    handleSubmit()
                     :
                  setPage(current=>current+1)}
                    
@@ -78,7 +72,9 @@ const [formData,setFormData]=useState({
                     {page==pageTitle.length-1 ? "Submit" : "Next"}</button>
             </div>
         </div>
-        </Container>  )
-}
+        </Container>  
+        )
+            }
+
 
 export default RegForm
