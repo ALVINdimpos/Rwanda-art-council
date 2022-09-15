@@ -14,7 +14,7 @@ function FedRegistrationTmp({formData,setFormData}) {
  value={formData.federation_name}
  style={{color:"black"}}
  onChange={e=>setFormData({...formData,federation_name:e.target.value})}>
- <option  value="-1" selected='true'>Select category</option>
+ <option defaultValue='-1'>Select category</option>
               <option value="1">PLASTIC ARTS</option>
               <option value="MUSIC/ DANCE">MUSIC & DANCE</option>
               <option value="ACTING/ DRAMA">ACTING & DRAMA</option>

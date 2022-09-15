@@ -30,7 +30,6 @@ const [formData,setFormData]=useState({
 
      }     
      const handleSubmit=()=>{
-        console.log('found Data',formData)
 
 
         try{
