@@ -47,8 +47,7 @@ function Index() {
     password: Password,
   };
 
-  const redirectPath = location.state?.path;
-  // console.log('my Path',redirectPath)
+  const redirectPath=location.state?.path
 
   const loginHandler = async (e) => {
     e.preventDefault();
@@ -76,9 +75,10 @@ function Index() {
       console.log("Error Message", JSON.stringify(error.message));
       setLoading(false);
     }
-    if (localStorage.getItem("token")) navigate("/logindash");
-    else navigate("/Login");
   };
+
+
+
 
   return (
     <>
