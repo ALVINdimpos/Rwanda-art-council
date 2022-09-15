@@ -4,25 +4,29 @@ import { DataGrid } from '@mui/x-data-grid'
 import React,{useEffect,useState} from 'react'
 import { unionColumn } from '../../datatablesource'
 import {RiDownload2Fill} from 'react-icons/ri'
+import axios from 'axios'
 // import *as XLSX from 'xlsx'
 
 function UnionAPI() {
     const [union,setUnion]=useState([])
 
     useEffect(()=>{
-        fetch('https://rwanda-art-api.herokuapp.com/api/Union/view',
+       try{
+    axios.get('https://rwanda-art-api.herokuapp.com/api/Union/view',
         {
             method:'GET',
             headers:{
             'Authorization':'Bearer '+localStorage.getItem('token'),
             'Content-Type':'application/json'
         }       
-    }).then(res=>res.json)
+    }).then(res=>res.data)
         .then(val=>
               setUnion(val.User?.Data)
             )
-        .catch(err=>console.log('mention Error.',err))
     
+       }catch(err){
+        alert('error while trying to fetch',err.message)
+       }
        
       },[] )
 const actionView=[
