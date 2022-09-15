@@ -27,12 +27,6 @@ const FedSidebar = () => {
               <span>Home</span>
             </li>
           </Link>
-          {/* <Link to="/unios" style={{ textDecoration: "none" }}>
-            <li>
-              <PersonOutlineIcon className="icon" />
-              <span>Union</span>
-            </li>
-          </Link> */}
           <Link to="#" style={{ textDecoration: "none" }}>
             <li>
               <StoreIcon className="icon" />
@@ -40,12 +34,7 @@ const FedSidebar = () => {
             </li>
           </Link>
       
-          {/* <Link to="/createEvent" style={{ textDecoration: "none" }}>
-            <li>
-              <StoreIcon className="icon" />
-              <span>Create Event</span>
-            </li>
-          </Link> */}
+  
           
           <li>
             <ExitToAppIcon className="icon" />

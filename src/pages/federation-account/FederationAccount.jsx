@@ -5,43 +5,37 @@ function FederationAccount({formData,setFormData}) {
 
   
   return (
-   <>
-    <form>
-    <div className='eventPage'>
-    <div className="cover-s" >
-<div className='tt'>
-<div className="titledes">
+   <>        
+      <div className='account-Page'>
+    <div className="cover-padding" >
+
+<div className='tt-side-up'>
+<div className="des">
 <label>Email</label>
-<input required value={formData.email}
- onChange={e=>setFormData({...formData,email:e.target.value})} 
- type="email" />
+<input required style={{color:"black"}}
+value={formData.email} type="email" 
+onChange={e=>setFormData({...formData,email:e.target.value})} />
 </div>
 </div>
-
-<div className='tt'>
-<div className="titledes">
+<div className='tt-side'>
+<div className="des">
 <label>Password</label>
-<input  type="password"
-    value={formData.password}
-    onChange={e=>setFormData({...formData,password:e.target.value})}
-required />
+<input style={{color:"black"}}  required type="text"  min="10"
+  value={formData.password} 
+  onChange={e=>setFormData({...formData,password:e.target.value})}/>
 </div>
 </div>
-<div className='tt'>
-<div className="titledes">
-<label>Confirm Password</label>
-<input  type="password" required 
-value={formData.password_confirmation}
-onChange={e=>setFormData({...formData,password_confirmation:e.target.value})}
-/>
+<div className='tt-side'>
+<div className="des">
+<label>re-Password</label>
+<input style={{color:"black"}}  required type="text"  min="10"
+  value={formData.password_confirmation} 
+  onChange={e=>setFormData({...formData,password_confirmation:e.target.value})}/>
 </div>
 </div>
 
-
-
-    </div>
 </div>
-</form> 
+</div>
    </>
     )
 }

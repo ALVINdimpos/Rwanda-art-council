@@ -8,41 +8,17 @@
     font-size:11px;
     margin-left:5px;
     margin-bottom: 0;
-    font-family: 'Anek Telugu', sans-serif;
-    font-family: 'DM Sans', sans-serif;
-    font-family: 'Oswald', sans-serif;
-    
+   
     
 }
-@mixin location{
-    border:none;
-    border-bottom: 1px solid rgba(0,0,0,0.4);
-    height: 30px;
-    font-size: 11px;
-    padding-bottom: 0;   
-    border-color: #C5801A;
-    // opacity:.4;   
-    font-family: 'Anek Telugu', sans-serif;
-font-family: 'DM Sans', sans-serif;
-font-family: 'Oswald', sans-serif;
 
-
-    &:focus{
-        outline: none;
-    }
-    //  border-radius: 5px;
-}
 @mixin inputs{
     width:100%;
-    border:none;
-    // border-radius: 5px;
-    border-bottom: 1px solid rgba(0,0,0,0.5);
-    height: 30px;
+    border: 1px solid rgba(0,0,0,0.4);
+    border-radius: 2px;
+    padding:5px;
     font-size: 14px;
-    color:black;
-    border-color: #C5801A;
-    // opacity:.4;
-    padding-bottom: 0;
+    height:30px;
 
     
 
@@ -50,68 +26,32 @@ font-family: 'Oswald', sans-serif;
     &:focus{
         outline:none;
     }
-}
-@mixin dated{
-    border:none;
-    border-bottom:1px solid rgba(0,0,0,0.5);
-    height: 30px;
-    font-size: 10px;
-    
-    padding-bottom: 0;
-    border-radius: 5px;
-    border-color: #C5801A;
-    // opacity:.4;
-    
-    &:focus{
-        outline:none;
-    }
-}
-@mixin  options {
-    
-    border:none;
-    border-bottom:1px solid rgba(0,0,0,0.4);
-    margin-left: 5px;
-    border-radius: 5px;
-    font-size: 11px;
-    border-color: #C5801A;
-    opacity:.4;
-    font-family: 'Anek Telugu', sans-serif;
-font-family: 'DM Sans', sans-serif;
-font-family: 'Oswald', sans-serif;
-    &:focus{
-        outline:none;
-    }
-    
 }
 
 
 
  
 
-.eventPage{
+.reg-Page{
     display: flex;
     flex-direction: column;
-    // width: 100%;
-    // height:100%;    
-    border:1px solid black;
+   
+            .cover-pad{
 
-
-     
-            .cover-s{
-
-                padding: 0 1em;
+                padding: 0 1.2em;
 
         
-                .tt{
+                .tt-side{
                     display: flex;
-                    .titledes{
+                    margin-top: .3em;
+                    .des{
                         flex: 1;    
                         flex-direction: column;
                         flex-wrap: wrap;
                         label{
                             @include lebels();
                         }
-                        input{
+                        input,select{
                             @include inputs()
                         }
                       
@@ -125,34 +65,7 @@ font-family: 'Oswald', sans-serif;
         
         
                 
-                // .buttons{
-                //     margin-top: 10px;
-                //     display: flex;
-                //     justify-content: center;
-                //     align-items: center;
-                //     font-family: 'Anek Telugu', sans-serif;
-                //     font-family: 'DM Sans', sans-serif;
-                //     font-family: 'Oswald', sans-serif;
-                //     width:30%;
-                //     height:40px;
-                //     border: none;
-                //     border-radius: 5px;
-                //     cursor: pointer;
-                //     background-color:#C5801A; 
-
-                    
-                //         &:hover{
-                //             background: #FFB636;
-                //             transition: .3 ;
-                //             width:30%;
-                //             height:40px;
-                //             border-radius: 5px;
-        
-                            
-                //         }
-        
-                     
-                //     }
+               
                 }
             }
         
