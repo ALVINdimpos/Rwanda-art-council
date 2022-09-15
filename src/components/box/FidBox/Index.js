@@ -3,8 +3,25 @@
 import React from "react";
 import FidLogo from "../../../assets/photos/FidLogo.png"
 import { useNavigate } from "react-router-dom";
+import { useEffect,useState } from "react";
 import "./Style.css";
 function Index(props) {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    fetch(`https://rwanda-art-api.herokuapp.com/api/ViewUser`,{
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        console.log(data);
+      }
+      );
+  }, []);
   return (
     <div className="wrapper">
     <Card

@@ -12,12 +12,12 @@
   gap: 1rem;
 }
 .PreviusEvent iframe{
-  box-shadow: 0px 5px 5px 0px rgb(70, 69, 69);
+  box-shadow: 0px 1px 1px 0px rgb(70, 69, 69);
 }
 .heading{
   font-family: "Raleway";
-  font-size: 52px;
-  font-weight: 400;
+  font-size: 25px;
+  font-weight: bolder;
   line-height: 70px; 
   margin-left: 4rem;
   margin-bottom: 2rem;
@@ -30,12 +30,12 @@
 .EventSearchBox input {
   height:max-content;
   width: max-content;
-  box-shadow: 0px 5px 5px 0px rgb(70, 69, 69);
+  box-shadow: 0px 1px 1px 0px rgb(70, 69, 69);
 }
 .EventSearchWraper h1 {
   font-family: "Raleway";
-  font-size: 52px;
-  font-weight: 400;
+  font-size: 25px;
+  font-weight: bolder;
   line-height: 70px;
 }
 .EventSearchBox ::placeholder {

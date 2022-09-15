@@ -4,7 +4,7 @@ import Style from "./Style.module.css";
 
 function Index(props) {
   return (
-    <div>
+    <div >
          <div className={Style.ServiceBox}>
           <div className={Style.overFlow}>
             <img

@@ -9,7 +9,6 @@ import FidBox from "../box/FidBox/Index";
 import EventBox from "../box/eventBox/Index";
 import Categories from "../categories/Index";
 import Testmonial from "../box/testmonial/Index";
-import News from "../box/newsBox/Index";
 import Partner from "../box/partners/Index";
 import Footer from "../Footer/Footer";
 import EventPhot from "../../assets/photos/mainevent.jpeg";
@@ -71,8 +70,6 @@ function Home() {
       <SectionIndicator name="Categories" />
       <Categories />
       <OurTeam/>
-      <SectionIndicator name="Latest News" />
-      <News />
       <Testmonial />
       <Partner />
       <Footer />

@@ -9,7 +9,7 @@
   width: 30%;
   padding-top: 2rem;
   border-radius: 8px;
-  box-shadow: 0px 4px 4px 0px #00000040;
+  box-shadow: 0px 1px 1px 0px #00000040;
   margin: 3rem auto;
   background-color: white;
   padding: 2em;
@@ -17,7 +17,7 @@
   height: 530Px;
 }
 .mapouter {
-  box-shadow: 0px 4px 4px 0px #00000040;
+  box-shadow: 0px 1px 1px 0px #00000040;
   margin: 3rem auto;
 }
 iframe{
