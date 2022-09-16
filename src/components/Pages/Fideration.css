@@ -1,0 +1,10 @@
+.main-row{
+    display: flex !important;
+    flex-direction: row;
+    margin:3rem 0 0 6rem;
+    gap: 2rem;
+}
+.main-row img{
+    width: 200px;
+    height: 250px;
+}
