@@ -1,0 +1,183 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap');
+
+
+
+
+@mixin lebels {
+    font-size:12px;
+    // font-family:Arial;
+    margin-left:5px;
+    margin-bottom: 0;
+    
+    
+}
+@mixin location{
+    border:none;
+    border:1px solid rgba(0,0,0,0.4);
+    max-height: 40px;
+    font-size: 12px;
+    padding-bottom: 0;   
+    opacity:.4;   
+     border-radius: 5px;
+}
+@mixin inputs{
+    width:100%;
+    border-radius: 5px;
+    border:1px solid rgba(0,0,0,0.5);
+    height: 40px;
+    font-size: 12px;
+    border-color: #C5801A;
+   
+    
+    &:focus{
+        outline:none;
+    }
+}
+@mixin dated{
+    border:none;
+    border:2px solid rgba(0,0,0,0.5);
+    height: 40px;
+    font-size: 12px;
+    
+    padding-bottom: 0;
+    border-radius: 5px;
+    border-color: #C5801A;
+    opacity:.4;
+    
+    &:focus{
+        outline:none;
+    }
+}
+@mixin  texting {
+    
+    border:none;
+    border:1px solid rgba(0,0,0,0.4);
+    margin-left: 5px;
+    height: 75px;
+    font-size: 12px;
+    border-radius: 5px;
+    border-color: #C5801A;
+    opacity:.4;
+    &:focus{
+        outline:none;
+    }
+    
+}
+
+
+
+ 
+
+.eventPage{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: none;
+    // margin-left: 20%;
+    width: 500px;
+    
+.file-chooser{
+    padding-top: 12px;
+}
+
+
+            .cover-s{
+
+                padding: 0 5px;
+                .imgEvent{
+                     .image{
+                        // background: black;
+                        padding: 1em;
+                        width:120px;
+                        height:120px;
+                        border-radius: 50%;
+
+                        img{
+                            object-fit:center;
+                            object-position:center;
+                            width: 100%;
+                        }
+                      }
+        
+                }
+        
+                .tt{
+                    display: flex;
+                    .titledes{
+                        flex: 1;    
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                        label{
+                            @include lebels();
+                        }
+                        input{
+                            @include inputs()
+                        }
+                      
+                    }
+                }
+                .timeloc{
+                    display:flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding-top: 12px;
+
+                    .tim{
+                        display:flex;
+                        flex-direction:column;
+                        width: 30%;
+                        label{
+                            @include lebels();
+                        }
+                        input{
+                            @include location()
+                        }
+                    }
+                    .loc{
+                        display:flex;
+                        flex-direction: column;
+                        width: 60%;
+        
+                        label{
+                            @include lebels();
+                        }
+                        input{
+                            @include dated()
+                        }
+                    }
+                }
+                .desc{
+                    display:block;
+                    margin-top: 8px;
+                    
+                    .description{
+                        display:flex;
+                        flex-direction: column;
+                        label{
+                            @include lebels();
+                        }
+                        textarea{
+                            @include texting()
+                        }
+                    }
+                    
+                }
+                
+               
+        
+        
+                
+                .buttons{
+                    margin-top: 12px;
+                    display: flex;
+                    justify-items: center;
+                    align-items: center;
+                }
+                   
+                
+            }
+        
+
+}

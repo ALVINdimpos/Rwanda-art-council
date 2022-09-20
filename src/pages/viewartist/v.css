@@ -1,0 +1,80 @@
+.art-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  width: 100px;
+}
+.art-page .artide-side {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: green;
+}
+.art-page .artide-side .prof-side {
+  display: block;
+  height: 100%;
+  padding-top: 0;
+  margin-top: 5px;
+}
+.art-page .artide-side .prof-side .profile {
+  display: block;
+  width: 200px;
+  height: 180;
+  background-color: yellow;
+  border-radius: 12px;
+}
+.art-page .artide-side .prof-side .profile .prof-image {
+  width: 100%;
+  height: 155px;
+  background-color: white;
+}
+.art-page .artide-side .prof-side .profile .prof-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.art-page .artide-side .prof-side .profile .user-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+}
+.art-page .artide-side .prof-side .buttons {
+  display: flex;
+}
+.art-page .artide-side .details {
+  margin-left: 25px;
+  height: 100%;
+  background-color: red;
+}
+.art-page .artide-side .details .artist-details {
+  display: block;
+  margin-top: 5px;
+  background-color: cyan;
+}
+.art-page .artide-side .details .artist-details .details-side {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: yellow;
+  flex-direction: column;
+  padding-left: 5px;
+}
+.art-page .artide-side .details .artist-details .details-side .details {
+  display: block;
+}
+.art-page .artide-side .details .artist-details .details-side .details span {
+  padding-top: 8px;
+}
+.art-page .qr-side {
+  flex: 1;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=v.css.map */

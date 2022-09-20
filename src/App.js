@@ -30,6 +30,10 @@ import RegisterArt from "./pages/federationDashboard/regist/RegisterArt";
 import ViewArtist from "./pages/viewartist/ViewArtist";
 import UnionView from "./pages/federationDashboard/unionView/UnionView";
 import RegFedContainer from "./pages/regfederaton-page-dash/RegFedContainer";
+import UnionHome from "./components/union-dashboard/union-home/UnionHome";
+import HomeSide from "./components/union-dashboard/HomeSide";
+import ArtistPage from "./components/union-dashboard/artist-union-side/ArtistPage";
+
 export default function App() {
   return (
     <AuthProvider>
@@ -46,7 +50,7 @@ export default function App() {
         <Route path="Login" element={<Login />} />
         <Route path="logindash" element={<RequireAuth> <HomeDash /></RequireAuth> } />
         <Route path="vfed" element={<FederationTable />} />
-        <Route path="addEvent" element={<Eventing />}/>
+        <Route path="my-event" element={<Eventing />}/>
         <Route path="vartist" element={<ArtistTable />} />  
           <Route path="vcat" element={<CategoryTable />} />
           <Route path="vart" element={<ArtsTable />} />
@@ -66,8 +70,9 @@ export default function App() {
         <Route path="addnotify" element={<Contactor />} />
         <Route path="homefederation" element={<RequireAuth><HomeFed/> </RequireAuth> }/>
         <Route path="unios" element={<UnionView/>} />
-        <Route path="addEvent" element={<Eventing/>}/>
-        
+        <Route path="artist-side" element={<ArtistPage />} />
+        <Route path="union-dash" element={<UnionHome />}/>
+        <Route path="home-union" element={<UnionHome />} />
       </Routes>
     </BrowserRouter>
     </AuthProvider>

@@ -1,0 +1,103 @@
+.container-chart .charts {
+  display: flex;
+}
+.container-chart .charts .poly {
+  width: 50vw;
+  height: 300px;
+  border: 0.5px solid white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container-chart .charts .poly span {
+  font-family: "Times New Roman", Times, serif;
+  font-size: medium;
+  color: rgba(0, 0, 0, 0.4);
+}
+.container-chart .charts .widget {
+  flex: 1;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.container-chart .charts .widget .my-widge {
+  display: flex;
+  gap: 18px;
+}
+.container-chart .charts .widget .my-widge .w-1, .container-chart .charts .widget .my-widge .w-2 {
+  border-radius: 5px;
+  width: 154px;
+  height: 80px;
+  background-color: white;
+  display: flex;
+  box-shadow: 0 0.5px 0.8px 0;
+  display: flex;
+}
+.container-chart .charts .widget .my-widge .w-1 .top, .container-chart .charts .widget .my-widge .w-1 .middle, .container-chart .charts .widget .my-widge .w-1 .lower, .container-chart .charts .widget .my-widge .w-2 .top, .container-chart .charts .widget .my-widge .w-2 .middle, .container-chart .charts .widget .my-widge .w-2 .lower {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-around;
+}
+.container-chart .charts .widget .my-widge .w-1 .top .icon-side, .container-chart .charts .widget .my-widge .w-1 .middle .icon-side, .container-chart .charts .widget .my-widge .w-1 .lower .icon-side, .container-chart .charts .widget .my-widge .w-2 .top .icon-side, .container-chart .charts .widget .my-widge .w-2 .middle .icon-side, .container-chart .charts .widget .my-widge .w-2 .lower .icon-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-chart .charts .widget .my-widge .w-1 .top .icon-side .icons, .container-chart .charts .widget .my-widge .w-1 .middle .icon-side .icons, .container-chart .charts .widget .my-widge .w-1 .lower .icon-side .icons, .container-chart .charts .widget .my-widge .w-2 .top .icon-side .icons, .container-chart .charts .widget .my-widge .w-2 .middle .icon-side .icons, .container-chart .charts .widget .my-widge .w-2 .lower .icon-side .icons {
+  font-size: 1.5rem;
+}
+.container-chart .charts .widget .my-widge .w-1 .top .icon-details, .container-chart .charts .widget .my-widge .w-1 .middle .icon-details, .container-chart .charts .widget .my-widge .w-1 .lower .icon-details, .container-chart .charts .widget .my-widge .w-2 .top .icon-details, .container-chart .charts .widget .my-widge .w-2 .middle .icon-details, .container-chart .charts .widget .my-widge .w-2 .lower .icon-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 5px;
+  align-items: center;
+  height: 100%;
+}
+.container-chart .charts .widget .my-widge .w-1 .top .icon-details .size-total, .container-chart .charts .widget .my-widge .w-1 .middle .icon-details .size-total, .container-chart .charts .widget .my-widge .w-1 .lower .icon-details .size-total, .container-chart .charts .widget .my-widge .w-2 .top .icon-details .size-total, .container-chart .charts .widget .my-widge .w-2 .middle .icon-details .size-total, .container-chart .charts .widget .my-widge .w-2 .lower .icon-details .size-total {
+  font-family: "Oswald", sans-serif;
+  font-size: 14px;
+}
+.container-chart .charts .widget .my-widge .w-1 .top .icon-details .desc, .container-chart .charts .widget .my-widge .w-1 .middle .icon-details .desc, .container-chart .charts .widget .my-widge .w-1 .lower .icon-details .desc, .container-chart .charts .widget .my-widge .w-2 .top .icon-details .desc, .container-chart .charts .widget .my-widge .w-2 .middle .icon-details .desc, .container-chart .charts .widget .my-widge .w-2 .lower .icon-details .desc {
+  font-family: "Oswald", sans-serif;
+  font-size: 0.7em;
+}
+.container-chart .charts .widget .progress-bar {
+  width: 330px;
+  height: 29vh;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  box-shadow: 0 0.8px 2px rgba(0, 0, 0, 0.4);
+  flex-direction: row;
+  justify-content: space-between;
+}
+.container-chart .charts .widget .progress-bar .union-side {
+  display: flex;
+  height: 100%;
+  width: 150px;
+}
+.container-chart .charts .widget .progress-bar .union-side span {
+  color: black;
+}
+.container-chart .charts .widget .progress-bar .event-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 150px;
+}
+.container-chart .charts .widget .progress-bar .event-side .upp-side {
+  width: 100%;
+  color: black;
+}
+.container-chart .charts .widget .progress-bar .event-side .bottom-part {
+  padding-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  padding-left: 12px;
+  align-items: center;
+}/*# sourceMappingURL=chart.css.map */

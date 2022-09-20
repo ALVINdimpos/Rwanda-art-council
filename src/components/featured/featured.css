@@ -1,0 +1,14 @@
+.featured {
+  flex: 2;
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  padding: 10px;
+}
+
+.featured .bar {
+  width: 425px;
+  height: 250px;
+  /* margin-top: px; */
+  border: none;
+  margin-left: 30px;
+  border-radius: 4px;
+}/*# sourceMappingURL=featured.css.map */
