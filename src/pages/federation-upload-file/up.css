@@ -1,0 +1,24 @@
+.file-container {
+  display: flex;
+  flex-direction: column;
+}
+.file-container .file-header {
+  width: 100%;
+  height: 40px;
+  opacity: 0.7;
+  background-color: #C5801A;
+}
+.file-container .file-header span {
+  font-family: "Courier New", Courier, monospace;
+  font-size: large;
+  color: white;
+  padding-bottom: 2px;
+  text-transform: capitalize;
+}
+.file-container .up-file {
+  margin-top: 12px;
+}
+.file-container .up-file label {
+  font-size: 12px;
+  padding-left: 5px;
+}/*# sourceMappingURL=up.css.map */

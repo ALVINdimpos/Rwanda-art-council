@@ -11,7 +11,6 @@ function UnionAPI() {
     const [union,setUnion]=useState([])
 
     useEffect(()=>{
-       try{
     axios.get('https://rwanda-art-api.herokuapp.com/api/Union/view',
         {
             method:'GET',
@@ -19,16 +18,12 @@ function UnionAPI() {
             'Authorization':'Bearer '+localStorage.getItem('token'),
             'Content-Type':'application/json'
         }       
-    }).then(res=>res.data)
-        .then(val=>
-              setUnion(val.User?.Data)
-            )
-    
-       }catch(err){
-        alert('error while trying to fetch',err.message)
-       }
-       
-      },[] )
+    }).then(res=>console.log('results UNION:',res.data))
+        // .then(val=>
+        //       setUnion(val.User?.Data)   
+        },[] )
+
+
 const actionView=[
     {field:'action',
     headerName:'Action',
@@ -53,6 +48,9 @@ const actionView=[
 
     return (
      <>
+
+
+     UNION API
          <DataGrid 
             rows={union}
             columns={unionColumn.concat(actionView)}

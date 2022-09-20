@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@500&family=DM+Sans:ital,wght@1,700&family=Oswald:wght@500&display=swap");
+.reg-Page {
+  display: flex;
+  flex-direction: column;
+}
+.reg-Page .cover-pad {
+  padding: 0 1.2em;
+}
+.reg-Page .cover-pad .tt-side {
+  display: flex;
+  margin-top: 0.3em;
+}
+.reg-Page .cover-pad .tt-side .des {
+  flex: 1;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.reg-Page .cover-pad .tt-side .des label {
+  font-size: 11px;
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+.reg-Page .cover-pad .tt-side .des input, .reg-Page .cover-pad .tt-side .des select {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  padding: 5px;
+  font-size: 14px;
+  height: 30px;
+}
+.reg-Page .cover-pad .tt-side .des input:focus, .reg-Page .cover-pad .tt-side .des select:focus {
+  outline: none;
+}/*# sourceMappingURL=reg.css.map */

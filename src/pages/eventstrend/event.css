@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap");
+.eventPage {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: none;
+  width: 500px;
+}
+.eventPage .file-chooser {
+  padding-top: 12px;
+}
+.eventPage .cover-s {
+  padding: 0 5px;
+}
+.eventPage .cover-s .imgEvent {
+  height: 120px;
+  width: 100%;
+}
+.eventPage .cover-s .imgEvent .image {
+  padding: 1em;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+.eventPage .cover-s .imgEvent .image img {
+  -o-object-fit: center;
+     object-fit: center;
+  -o-object-position: center;
+     object-position: center;
+  width: 100%;
+}
+.eventPage .cover-s .tt {
+  display: flex;
+}
+.eventPage .cover-s .tt .titledes {
+  flex: 1;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.eventPage .cover-s .tt .titledes label {
+  font-size: 12px;
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+.eventPage .cover-s .tt .titledes input {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  height: 40px;
+  font-size: 12px;
+  border-color: #C5801A;
+}
+.eventPage .cover-s .tt .titledes input:focus {
+  outline: none;
+}
+.eventPage .cover-s .timeloc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 12px;
+}
+.eventPage .cover-s .timeloc .tim {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+.eventPage .cover-s .timeloc .tim label {
+  font-size: 12px;
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+.eventPage .cover-s .timeloc .tim input {
+  border: none;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  height: 40px;
+  font-size: 12px;
+  padding-bottom: 0;
+  border-color: #C5801A;
+  opacity: 0.4;
+  border-radius: 5px;
+}
+.eventPage .cover-s .timeloc .loc {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+.eventPage .cover-s .timeloc .loc label {
+  font-size: 12px;
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+.eventPage .cover-s .timeloc .loc input {
+  border: none;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  height: 40px;
+  font-size: 12px;
+  padding-bottom: 0;
+  border-radius: 5px;
+  border-color: #C5801A;
+  opacity: 0.4;
+}
+.eventPage .cover-s .timeloc .loc input:focus {
+  outline: none;
+}
+.eventPage .cover-s .desc {
+  display: block;
+  margin-top: 8px;
+}
+.eventPage .cover-s .desc .description {
+  display: flex;
+  flex-direction: column;
+}
+.eventPage .cover-s .desc .description label {
+  font-size: 12px;
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+.eventPage .cover-s .desc .description textarea {
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  margin-left: 5px;
+  height: 75px;
+  font-size: 12px;
+  border-radius: 5px;
+  border-color: #C5801A;
+  opacity: 0.4;
+}
+.eventPage .cover-s .desc .description textarea:focus {
+  outline: none;
+}
+.eventPage .cover-s .buttons {
+  margin-top: 12px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}/*# sourceMappingURL=event.css.map */

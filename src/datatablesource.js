@@ -204,66 +204,66 @@ flex:1
 
 
 
-cell
-: 
-"nyabihu"
-created_at
-: 
-"2022-09-12T22:06:51.000000Z"
-district
-: 
-"nyabihu"
-email
-: 
-"nyab@gmail.com"
-fedelation_code
-: 
-"111"
-file
-: 
-"1663020411.20200307200426_458fb189a394ed53cd39f55ef79da308.png"
-first_name
-: 
-"union"
-id
-: 
-1
-image
-: 
-"1663020411.20200307200426_458fb189a394ed53cd39f55ef79da308.png"
-last_name
-: 
-"union"
-number_of_members
-: 
-12
-password
-: 
-"$2y$10$UY8HJCS70NuhsAmAB3O15.wcdK2XrtZQAFtek06WDw0oadxYjbaYm"
-phone_number
-: 
-"0781234567"
-province
-: 
-"western"
-sector
-: 
-"nyabihu"
-status
-: 
-"Pending"
-tinnumber
-: 
-112233499
-union_name
-: 
-"my union"
-union_slogan
-: 
-"union n yacu"
-updated_at
-: 
-"2022-09-12T22:06:51.000000Z"
+// cell
+// : 
+// "nyabihu"
+// created_at
+// : 
+// "2022-09-12T22:06:51.000000Z"
+// district
+// : 
+// "nyabihu"
+// email
+// : 
+// "nyab@gmail.com"
+// fedelation_code
+// : 
+// "111"
+// file
+// : 
+// "1663020411.20200307200426_458fb189a394ed53cd39f55ef79da308.png"
+// first_name
+// : 
+// "union"
+// id
+// : 
+// 1
+// image
+// : 
+// "1663020411.20200307200426_458fb189a394ed53cd39f55ef79da308.png"
+// last_name
+// : 
+// "union"
+// number_of_members
+// : 
+// 12
+// password
+// : 
+// "$2y$10$UY8HJCS70NuhsAmAB3O15.wcdK2XrtZQAFtek06WDw0oadxYjbaYm"
+// phone_number
+// : 
+// "0781234567"
+// province
+// : 
+// "western"
+// sector
+// : 
+// "nyabihu"
+// status
+// : 
+// "Pending"
+// tinnumber
+// : 
+// 112233499
+// union_name
+// : 
+// "my union"
+// union_slogan
+// : 
+// "union n yacu"
+// updated_at
+// : 
+// "2022-09-12T22:06:51.000000Z"
 
 
 

@@ -1,0 +1,33 @@
+.cellAction {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.cellAction .viewButton {
+  padding: 2px 5px;
+  border-radius: 5px;
+  color: darkblue;
+  border: 1px dotted rgba(0, 0, 139, 0.596);
+  cursor: pointer;
+}
+
+.csv-session {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+.csv-session .csv-icon {
+  width: 100px;
+  padding: 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  background-color: #C5801A;
+  opacity: 0.9;
+  border: none;
+  cursor: pointer;
+}
+.csv-session .csv-icon:hover {
+  background-color: transparent;
+  border: 1px solid #C5801A;
+  transition: ease-in-out 1.2s;
+}/*# sourceMappingURL=uni.css.map */

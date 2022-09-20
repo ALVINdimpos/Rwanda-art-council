@@ -63,11 +63,7 @@ function EventPrp() {
             //     'Authorization':`Bearer  ${localStorage.getItem('token')}`,
             // },data
         )
-        .then(result=>{
-            if(!result.ok) {throw new Error('This Exception rose',result.statusText)}
-            console.log('my found result',result)
-             result.data
-        })
+        .then(result=>result.data)
        .then(data=>console.log(data)
        .catch(err=>err.message))     
     

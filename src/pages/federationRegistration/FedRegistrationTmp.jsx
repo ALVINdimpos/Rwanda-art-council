@@ -1,5 +1,7 @@
 import './reg.scss'
 import React from 'react'
+import axios from 'axios'
+
 
 function FedRegistrationTmp({formData,setFormData}) {
 

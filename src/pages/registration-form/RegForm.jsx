@@ -1,14 +1,15 @@
 import './reg.scss'
-import React from 'react'
-import { useState } from 'react'
+import React,{ useEffect,useState } from 'react'
 import { Container } from '@mui/system'
 import FedRegistrationTmp from '../federationRegistration/FedRegistrationTmp'
 import FederationAccount from '../federation-account/FederationAccount'
-import axios from 'axios'
 import { FileUploader } from '../federation-upload-file/FileUploader'
-
+import axios from 'axios'
 function RegForm() {
     const [page,setPage]=useState(0)
+    const [regSuccess,setRegSuccess]=useState('')
+    const [isRecorded,setIsRecorded]=useState(false)
+    const [myFederation,setMyFederation]=useState([''])
 const [formData,setFormData]=useState({
     federation_name:'',
     phone_number:'',
@@ -20,6 +21,38 @@ const [formData,setFormData]=useState({
     file:'',
     image:'',
 })
+const federationNames=['']
+
+useEffect(()=>{
+    fetch('https://rwanda-art-api.herokuapp.com/api/ViewUser',
+    {
+        method:'GET',
+        headers:{
+        'Authorization':'Bearer '+localStorage.getItem('token'),
+        'Content-Type':'application/json'
+    }       
+}).then(res=>res.json())
+    .then(val=>
+          setMyFederation(val.User?.Data)
+        )
+    .catch(err=>{console.error('mentioned Error.',err)
+        setMyFederation('')
+})   
+  },[] )
+
+
+  myFederation.forEach(fedNames=>{
+    federationNames.push(fedNames.federation_name)
+  })
+
+// console.log('fed Names found:',federationNames.find(fed=>fed==='Paining'));
+
+
+
+
+
+
+
 
     const pageTitle=['Personal Information','File Uploading','Create Account']
     const displayPage=()=>{
@@ -29,6 +62,17 @@ const [formData,setFormData]=useState({
         
 
      }     
+
+useEffect(()=>{
+    
+})
+
+
+
+
+
+
+
      const handleSubmit=()=>{
 
 
@@ -41,7 +85,7 @@ const [formData,setFormData]=useState({
                 }
                 )
                 .then(res=>res.data)
-                .then(data=>alert(data.message))
+                .then(data=>setRegSuccess(data.message))
         }catch(err){
             console.log('check this mistake->',err)
         }
@@ -53,6 +97,9 @@ const [formData,setFormData]=useState({
     <Container style={{backgroundColor:"white"}}>
         <div className="progressbar"></div>
         <div className='form-container'>
+            <div className="result">
+                <span>{regSuccess}</span>
+            </div>
             <div className="header">
                 <h2 >{pageTitle[page]}</h2>
             </div>
