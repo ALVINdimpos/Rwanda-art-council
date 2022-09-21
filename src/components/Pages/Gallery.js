@@ -1,88 +1,68 @@
 import React from "react";
 import NavBar from "../NavBar/Index";
+import PageIndicator from "../PageIndicator/Index";
 import Footer from "../Footer/Footer";
 import Style from "./Gallery.module.css";
-import PHOTO from "../../assets/photos/new.jpeg";
-import PHOTO1 from "../../assets/photos/CatImage1.jpeg";
-import PHOTO2 from "../../assets/photos/CatImage2.jpeg";
-import PHOTO3 from "../../assets/photos/CatImage3.jpeg";
-import PHOTO4 from "../../assets/photos/CatImage4.jpeg";
-import PHOTO5 from "../../assets/photos/CateImage5.jpeg";
-import PHOTO6 from "../../assets/photos/CateImage6.jpeg";
-import PHOTO7 from "../../assets/photos/CateImage7.jpeg";
-import PHOTO8 from "../../assets/photos/CateImage8.jpeg";
-import PHOTO9 from "../../assets/photos/CateImage9.jpeg";
-import PHOTO10 from "../../assets/photos/CateImage10.jpeg";
-import PageIndicator from "../PageIndicator/Index";
-const photos = [
-  {
-    src: PHOTO,
-    category: "Painting",
-  },
-  {
-    src: PHOTO6,
-    category: "Painting",
-  },
-  {
-    src: PHOTO7,
-    category: "Painting",
-  },
-  {
-    src: PHOTO1,
-    category: "Sculpture",
-  },
-  {
-    src: PHOTO8,
-    category: "Sculpture",
-  },
-  {
-    src: PHOTO2,
-    category: "Literature",
-  },
-  {
-    src: PHOTO4,
-    category: "Architecture",
-  },
-  {
-    src: PHOTO3,
-    category: "Cinema",
-  },
-  {
-    src: PHOTO5,
-    category: "Music",
-  },
-  {
-    src: PHOTO9,
-    category: "Theater",
-  },
-  {
-    src: PHOTO10,
-    category: "Painting",
-  },
-];
-
+import All from "../Gallery/Allphoto/Index"
+import Painting from "../Gallery/Painting/Index"
+import Sculpture from "../Gallery/Sculpture/Index"
+import Literature from "../Gallery/Literature/Index"
+import Architecture from "../Gallery/Architecture/Index"
+import Cinema from "../Gallery/Cinema/Index"
+import Music from "../Gallery/Allphoto/Index"
+import Theater from "../Gallery/Theater/Index"
 function Gallery() {
+  const [ActiveTab, setActiveTab] = React.useState(1);
   return (
     <>
     <NavBar />
       <PageIndicator name="Gallery" />
       <div>
         <ul className={Style.GalleryCategorie}>
-          <li>All</li>
-          <li>Painting</li>
-          <li>Sculpture</li>
-          <li>Literature</li>
-          <li>Architecture</li>
-          <li>Cinema</li>
-          <li>Music</li>
-          <li>Theater</li>
+          <li onClick={()=>setActiveTab(1)}>All</li>
+          <li onClick={()=>setActiveTab(2)}>Painting</li>
+          <li onClick={()=>setActiveTab(3)}>Sculpture</li>
+          <li onClick={()=>setActiveTab(4)}>Literature</li>
+          <li onClick={()=>setActiveTab(5)}>Architecture</li>
+          <li onClick={()=>setActiveTab(6)}>Cinema</li>
+          <li onClick={()=>setActiveTab(7)}>Music</li>
+          <li onClick={()=>setActiveTab(8)}>Theater</li>
         </ul>
       </div>
-      <div className={Style.PhotoAlbum}>
-        {photos.map((photo) => (
-          <img src={photo.src} photo={photo} alt=""/>
-        ))}
-      </div>
+      {
+        ActiveTab===1 && (
+     <All/>
+      )}
+       {
+        ActiveTab===2 && (
+     <Painting/>
+      )}
+       {
+        ActiveTab===3 && (
+     <Sculpture/>
+      )}
+       {
+        ActiveTab===4 && (
+     <Literature/>
+      )}
+       {
+        ActiveTab===5 && (
+     <Architecture/>
+      )}
+       {
+        ActiveTab===6 && (
+     <Cinema/>
+      )}
+       {
+        ActiveTab===7 && (
+     <Music/>
+      )}
+       {
+        ActiveTab===8 && (
+     <Theater/>
+      )}
+    
+      
       
       <Footer />
     </>

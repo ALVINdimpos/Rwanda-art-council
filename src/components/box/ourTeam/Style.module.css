@@ -3,9 +3,6 @@
     display: flex;
     align-items: center;
   }
-  .tab{
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 5s;
-  }
   .ActiveTab h3{
     text-align: center;
      margin: 0 auto;

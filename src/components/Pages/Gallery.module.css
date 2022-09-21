@@ -11,59 +11,8 @@
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     justify-content: space-between;
-    width: 90%;
+    width: 95%;
+    margin: 0 auto;
     gap: 2rem;
     padding-left: 1rem; 
-}
-.PhotoAlbum img{
-  width: 200px;
-  height: 220px;
-  padding: 1rem;
-  box-shadow: 0px 4px 4px 0px #00000040; 
-}
-.PhotoAlbum img:hover{
-  box-shadow: 5px 10px 20px 1px #00000040;
-}
-@media (max-width:1050px){
-  .PhotoAlbum {
-      grid-template-columns: auto auto auto;
-      width: 90%;
-    }
-    .PhotoAlbum img{
-      height: 100%;
-      width: 100%;
-      padding: 20px;
-      box-shadow: 0px 4px 4px 0px #00000040; 
-  }
-  .GalleryCategorie{
-    width: 80%;
-   }
-}
-@media (max-width:700px){
-  .PhotoAlbum {
-      grid-template-columns: auto auto;
-    }
-    .PhotoAlbum img{
-      width: 300px;
-      height: 300px;
-      padding: 20px;
-      box-shadow: 0px 4px 4px 0px #00000040; 
-  }
-  .GalleryCategorie{
-    width: 80%;
-   }
-}
-@media (max-width:550px){
-  .PhotoAlbum {
-      grid-template-columns: auto;
-    }
-    .PhotoAlbum img{
-      height: 100%;
-      width: 100%;
-      padding: 20px;
-      box-shadow: 0px 4px 4px 0px #00000040; 
-  }
-  .GalleryCategorie{
-    width: 80%;
-   }
 }

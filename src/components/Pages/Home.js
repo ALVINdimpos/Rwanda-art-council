@@ -1,6 +1,6 @@
 import React from "react";
 import Style from "./HomeStyle.module.css";
-import NavBar from "../NavBar/Index";
+import NavBar from "../NavBar/Index"
 import Header from "../HeaderDiv/Index";
 import SearchBox from "../SearchBox/Index";
 import SectionIndicator from "../sectionIndicator/Index";
@@ -24,7 +24,7 @@ function Home() {
   };
   return (
     <>
-      <NavBar />
+      <NavBar/>
       <Header></Header>
       <SearchBox />
       <WhoWeAreBox />

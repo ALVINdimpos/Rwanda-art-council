@@ -5,6 +5,7 @@ ul {
 .footer-section {
   margin-top: 3rem;
   background: white;
+  position: relative;
   box-shadow: 0px 4px 4px 0px #00000040;
 }
 .footer-cta {
@@ -31,9 +32,8 @@ ul {
   font-size: 13px;
 }
 .footer-content {
-display: flex;
-justify-content: space-between;
-width: 100%;
+  position: relative;
+  z-index: 2;
 }
 .footer-pattern img {
   position: absolute;
@@ -43,12 +43,9 @@ width: 100%;
   background-size: cover;
   background-position: 100% 100%;
 }
-.footer-logo {
-  margin-bottom: 30px;
-}
 .footer-logo img {
-  max-width: 200px;
-  max-height: 50px;
+  width: 149px;
+  height: 86px;
 }
 .footer-text p {
   margin-bottom: 14px;
@@ -103,6 +100,7 @@ width: 100%;
 }
 .footer-widget ul li {
   display: inline-block;
+  float: left;
   width: 50%;
   margin-bottom: 12px;
 }
