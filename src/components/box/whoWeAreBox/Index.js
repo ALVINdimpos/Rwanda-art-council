@@ -1,6 +1,6 @@
 import React from "react";
 import Style from "./Style.module.css";
-import whoWeArePhoto from '../../../assets/photos/WhoWeAre.png'
+import whoWeArePhoto from '../../../assets/photos/Back3.jpg'
 import Button from "../../Button/Index";
 import { useNavigate } from "react-router-dom";
 function Index() {

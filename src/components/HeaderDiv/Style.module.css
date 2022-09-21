@@ -1,18 +1,27 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .MainHeader {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-image: url("../../assets/photos/mainphoto.jpg");
   background-size: cover;
+  animation: animate 20s ease-in-out infinite;
   height: 95vh;
   width: 100%;
 }
+@keyframes animate {
+  0% {
+    background-image: url("../../assets/photos/mainphoto.jpg");
+  }
+  50% {
+    background-image: url("../../assets/photos/Back2.jpg");
+  }
+  75% {
+    background-image: url("../../assets/photos/Back3.jpg");
+  }
+  100% {
+    background-image: url("../../assets/photos/Back1.jpg");
+  }
+}
+  
 .WlcText {
   font-family: "Montserrat", sans-serif;
   font-size: 46px;

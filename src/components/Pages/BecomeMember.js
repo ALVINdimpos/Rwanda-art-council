@@ -1,5 +1,4 @@
 import React from 'react'
-import Style from "./becomeMember.module.css";
 import NavBar from '../NavBar/Index'
 import PageIndicator from "../PageIndicator/Index";
 import Card from "../box/card/Index";
