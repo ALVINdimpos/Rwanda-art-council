@@ -12,7 +12,7 @@ function Whatwedo() {
        <NavBar />
       <PageIndicator name="Our service" />
       <div className={Style.OurserviceHeader}>
-        <h1>our top services</h1>
+        <h1>Our top services</h1>
       </div>
       <div className={Style.ServicesBoxWraper}>
         <div className={Style.ServicesBox}>

@@ -14,6 +14,7 @@
     "react-bootstrap-icons": "^1.8.4",
     "react-dom": "^18.2.0",
     "react-flow-renderer": "^10.3.16",
+    "react-hook-form": "^7.36.0",
     "react-photo-album": "^1.16.1",
     "react-responsive-carousel": "^3.2.23",
     "react-scripts": "^5.0.1",
@@ -22,6 +23,7 @@
     "sass": "^1.54.2",
     "styled-components": "^5.3.5",
     "swiper": "^8.3.2",
+    "validator": "^13.7.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

@@ -7,53 +7,61 @@ import { Link } from "react-router-dom";
 import { useState,useEffect } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import validator from "validator";
 import axios from "axios";
 function Index() {
   const [Email, SetEmail] = useState("");
   const [Password, SetPassword] = useState("");
+  const[emaiValid,setEmailValid]=useState("");
+  const[passwordValid,setPasswordValid]=useState("");
   const [loading, setLoading] = useState(false);
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
   };
   const EmailHandler = (e) => {
-    SetEmail(e.target.value);
+      SetEmail(e.target.value);
   };
   const PasswordHandler = (e) => {
     SetPassword(e.target.value);
   };
-  const showToastMessage = () => {
-    toast.success("Login Successful", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-  
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });}
   const loginData = {
     email: Email,
     password: Password,
   };
   const loginHandler = async (e) => {
     e.preventDefault();
-    showToastMessage();
+    if(validator.isEmail(Email)){
+      setEmailValid("");
+    }else{
+      setEmailValid("Please enter a valid email");
+    }
+    if(Password.length<8){
+      setPasswordValid("Password must be 8 characters long");
+    }else{
+      setPasswordValid("");
+    }
+  
     setLoading(true);
     try {
     const res=  await axios.post(
         "https://rwanda-art-api.herokuapp.com/api/login",
         loginData
       );
-      console.log(res)
-      localStorage.setItem("token",res.data.access_token)
-      setLoading(false);
+      if (res.status === 200) {
+        toast.success("Login successful");
+        console.log(res);
+      }
     } catch (error) {
-      SetPassword("");
       console.log(error);
       setLoading(false);
     }
+      SetEmail("");
+      SetPassword("");
+      setEmailValid("");
+      setPasswordValid("");
+      setLoading(false);
+
   };
   useEffect(()=>{
 loginHandler();
@@ -63,6 +71,7 @@ loginHandler();
     <>
       <div className={Style.loginMainWraper}>
         <div className={Style.loginWraper}>
+          <form>
           <div>
             <div>
               <Link to="/Home">
@@ -80,23 +89,25 @@ loginHandler();
               type="email"
               placeholder="Enter your name"
               onChange={EmailHandler}
-              required
+             
             />
             <i className="fa fa-envelope" />
           </div>
+          {emaiValid && <p style={{ color: "red" }}>{emaiValid}</p>}
           <div className={Style.carddetails}>
             <input
               type={passwordShown ? "text" : "password"}
               id="password-input"
               placeholder="Enter your password"
               onChange={PasswordHandler}
-              required
+              value={Password}
             />
             <i className="fa fa-lock" />
             <span>
               <small className="fa fa-eye-slash passcode" onClick={togglePassword}/>
             </span>
           </div>
+          {passwordValid && <p style={{ color: "red" }}>{passwordValid}</p>}
           <div className={Style.loginForgot}>
             
             <Button
@@ -116,6 +127,7 @@ loginHandler();
               </Link>
             </p>
           </div>
+          </form>
         </div>
       </div>
     </>

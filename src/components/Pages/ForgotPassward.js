@@ -2,32 +2,37 @@
 /* eslint-disable jsx-a11y/no-redundant-roles */
 import React, { useEffect, useState} from "react";
 import Style from "./RestPassward.module.css";
+import validator from "validator";
 import axios from "axios";
 
 function PasswordResset() {
   const [email, SetEmail] = useState("");
   const [loading, setLoading] = useState(false);
+const [valid, setValid] = useState("");
   const EmailHandler = (e) => {
     e.preventDefault();
     SetEmail(e.target.value);
   };
   const submitHandler = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    try {
-      const res = await axios({
-        url:"https://rwanda-art-api.herokuapp.com/api/password/email",
-        data:{email},
-        method:"POST"
+if (validator.isEmail(email)) {
+      setLoading(true);
+      try {
+        const res = await axios.post(
+          "https://rwanda-art-api.herokuapp.com/api/password-reset",
+          { email }
+        );
+        console.log(res);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+        setLoading(false);
       }
-      );
-      console.log(res);
-      setLoading(false);
-    } catch (error) {
-      SetEmail("");
-      console.log(error);
-      setLoading(false);
+    } else {
+      setValid("Please enter a valid email");
     }
+    SetEmail("");
+    setValid("");
   };
   useEffect(()=>{
    submitHandler();
@@ -40,7 +45,7 @@ function PasswordResset() {
       }}
     >
       <div className="row">
-        <div className="col-md-4 col-md-offset-4">
+        <div className="col-md col-md-offset-4">
           <div className="panel panel-default">
             <div className="panel-body">
               <div
@@ -52,9 +57,8 @@ function PasswordResset() {
                   borderRadius: " 8px",
                   boxShadow: " 0px 4px 4px 0px #00000040",
                   padding: "2em",
-                  width: "400px",
-                  marginTop: "2rem",
-                  marginLeft: "20rem",
+                  width: "40%",
+                 margin:" 1rem auto"
                 }}
               >
                 <h3>
@@ -81,6 +85,7 @@ function PasswordResset() {
                         />
                         <i className="fa fa-envelope" />
                       </div>
+                      {valid && <p style={{ color: "red" }}>{valid}</p>}
                     </div>
                     <div className="form-group">
                       <input

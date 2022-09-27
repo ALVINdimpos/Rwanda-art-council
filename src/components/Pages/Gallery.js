@@ -19,7 +19,7 @@ function Gallery() {
       <PageIndicator name="Gallery" />
       <div>
         <ul className={Style.GalleryCategorie}>
-          <li onClick={()=>setActiveTab(1)}>All</li>
+          <li onClick={()=>setActiveTab(1)}>All </li>
           <li onClick={()=>setActiveTab(2)}>Painting</li>
           <li onClick={()=>setActiveTab(3)}>Sculpture</li>
           <li onClick={()=>setActiveTab(4)}>Literature</li>
@@ -61,9 +61,6 @@ function Gallery() {
         ActiveTab===8 && (
      <Theater/>
       )}
-    
-      
-      
       <Footer />
     </>
   );

@@ -7,13 +7,19 @@ import Style from "./ContactusStyle.module.css";
 import Button from "../Button/Index";
 import PageIndicator from "../PageIndicator/Index";
 import { useState,useEffect } from "react";
+import validator from "validator";
 import axios from "axios";
 import { MDBIcon } from "mdbreact";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { MDBInput, MDBTextArea } from "mdb-react-ui-kit";
 function Index() {
   const [email,setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message,setMessage] = useState("");
+  const [emailValid,setEmailValid] = useState("");
+  const [subjectValid,setSubjectValid] = useState("");
+  const [messageValid,setMessageValid] = useState("");
   const [loading, setLoading] = useState(false);
   const data={
     email,
@@ -31,21 +37,42 @@ function Index() {
   }
   const submitHandler= async(e)=>{
     e.preventDefault();
+    if(validator.isEmail(email)){
+      setEmailValid("");
+    }else{
+      setEmailValid("Please enter a valid email");
+    }
+    if(subject.length<5){
+      setSubjectValid("Subject must be 5 characters long");
+    }else{
+      setSubjectValid("");
+    }
+    if(message.length<10){
+      setMessageValid("Message must be 10 characters long");
+    }else{
+      setMessageValid("");
+    }
     setLoading(true);
     try {
     const res=  await axios.post(
         "https://rwanda-art-api.herokuapp.com/api/contact-us",
         data
       );
-      console.log(res)
-      setLoading(false);
+      if (res.status === 200) {
+        toast.success("Message sent successfully");
+        console.log(res); 
+      }
+
     } catch (error) {
-      setEmail("");
-      setSubject("");
-      setMessage("");
       console.log(error);
       setLoading(false);
     }
+    setEmail("");
+    setSubject("");
+    setMessage("");
+    setEmailValid("");
+    setSubjectValid("");
+    setMessageValid("");
   }
 	useEffect(()=>{
   submitHandler();
@@ -86,24 +113,32 @@ function Index() {
               type="email"
               placeholder="Enter your email"
               onChange={emailHandler}
+              value={email}
             />
           </div>
+    {emailValid && <div className={Style.error}>{emailValid}</div>}
           <div>
             <MDBInput
               id="typeText"
               type="text"
               placeholder="Subject"
               onChange={subjectHandler}
+              value={subject}
             />
           </div>
+          
+    {subjectValid && <div className={Style.error}>{subjectValid}</div>}
           <div>
-            <MDBTextArea id="textAreaExample" rows={4} onChange={messageHandler} />
+            <MDBTextArea id="textAreaExample" rows={4} onChange={messageHandler}
+            value={message} />
           </div>
+    {messageValid && <div className={Style.error}>{messageValid}</div>}
           <div>
             <Button name={loading ? "loading..." : `Send email`} onClick={submitHandler}/>
           </div>
         </div>
       </div>
+      <ToastContainer/>
       <Footer />
     </>
   );

@@ -2,7 +2,6 @@ import React from "react";
 import Style from "./HomeStyle.module.css";
 import NavBar from "../NavBar/Index"
 import Header from "../HeaderDiv/Index";
-import SearchBox from "../SearchBox/Index";
 import SectionIndicator from "../sectionIndicator/Index";
 import WhoWeAreBox from "../box/whoWeAreBox/Index";
 import FidBox from "../box/FidBox/Index";
@@ -26,7 +25,6 @@ function Home() {
     <>
       <NavBar/>
       <Header></Header>
-      <SearchBox />
       <WhoWeAreBox />
       <SectionIndicator name="Fiderations" />
       <div className={Style.FiderationBoxWraper}>

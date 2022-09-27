@@ -14,7 +14,13 @@
   background-color: white;
   padding: 2em;
   margin-top: -120px;
-  height: 530Px;
+  
+}
+.error{
+  color: red;
+  font-size: 12px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 .mapouter {
   box-shadow: 0px 1px 1px 0px #00000040;
