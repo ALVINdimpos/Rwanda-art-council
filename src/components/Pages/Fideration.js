@@ -39,11 +39,12 @@ const Fideration = () => {
             <div className="">
               <h1>Fideration</h1>
               <h2>Union </h2>
+              <h2>Member </h2>
               <p>Andrey is driven by turning ideas into scalable and and empowering experiences that solve real life problems.</p>
               <p>He is currently the founder of Dvorak Media. Previously, Andrey was a product designer at Dropbox.</p>
               <p>Over the years, Michael has been priviledged to have worked with Adobe, Evernote, Square and more.</p>
               <p>He is currently the founder of Dvorak Media. Previously, Andrey was a product designer at Dropbox.</p>
-              <p>Over the years, Michael has been priviledged to have worked with Adobe, Evernote, Square and more.</p>
+             
             </div>
           </div>
         </div>

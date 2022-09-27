@@ -103,7 +103,7 @@ const year = d.getFullYear();
         <div className="row">
           <div className="col-xl-6 col-lg-6 text-center text-lg-left">
             <div className="copyright-text">
-              <p>Copyright © {year}, Developed by  <a href="https://alvinfiston.me/">Alvin</a></p>
+            <p>Copyright © {year},<a href="https://alvinfiston.me/">Alvin</a>. All rights reserved</p>
             </div>
           </div>
           <div className="col-xl-6 col-lg-6 d-none d-lg-block text-right">

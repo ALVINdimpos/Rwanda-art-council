@@ -36,12 +36,11 @@
   }
   .ServiceBox h2 {
     text-align: center;
-    font-family: 'Raleway';
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 400;
     margin: 1rem auto;
   }
   .ServiceBox p{
     font-family: 'EB Garamond';
-    margin: 2rem;
+    margin: 1rem;
   }
