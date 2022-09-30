@@ -1,8 +1,7 @@
-import React from "react";
+import * as React from 'react';
 import NavBar from "../NavBar/Index";
 import PageIndicator from "../PageIndicator/Index";
 import Footer from "../Footer/Footer";
-import Style from "./Gallery.module.css";
 import All from "../Gallery/Allphoto/Index"
 import Painting from "../Gallery/Painting/Index"
 import Sculpture from "../Gallery/Sculpture/Index"
@@ -11,59 +10,48 @@ import Architecture from "../Gallery/Architecture/Index"
 import Cinema from "../Gallery/Cinema/Index"
 import Music from "../Gallery/Allphoto/Index"
 import Theater from "../Gallery/Theater/Index"
-function Gallery() {
-  const [ActiveTab, setActiveTab] = React.useState(1);
+import Box from '@mui/material/Box';
+import Tab from '@mui/material/Tab';
+import TabContext from '@mui/lab/TabContext';
+import TabList from '@mui/lab/TabList';
+import TabPanel from '@mui/lab/TabPanel';
+
+export default function LabTabs() {
+  const [value, setValue] = React.useState('1');
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <>
-    <NavBar />
-      <PageIndicator name="Gallery" />
-      <div>
-        <ul className={Style.GalleryCategorie}>
-          <li onClick={()=>setActiveTab(1)}>All </li>
-          <li onClick={()=>setActiveTab(2)}>Painting</li>
-          <li onClick={()=>setActiveTab(3)}>Sculpture</li>
-          <li onClick={()=>setActiveTab(4)}>Literature</li>
-          <li onClick={()=>setActiveTab(5)}>Architecture</li>
-          <li onClick={()=>setActiveTab(6)}>Cinema</li>
-          <li onClick={()=>setActiveTab(7)}>Music</li>
-          <li onClick={()=>setActiveTab(8)}>Theater</li>
-        </ul>
-      </div>
-      {
-        ActiveTab===1 && (
-     <All/>
-      )}
-       {
-        ActiveTab===2 && (
-     <Painting/>
-      )}
-       {
-        ActiveTab===3 && (
-     <Sculpture/>
-      )}
-       {
-        ActiveTab===4 && (
-     <Literature/>
-      )}
-       {
-        ActiveTab===5 && (
-     <Architecture/>
-      )}
-       {
-        ActiveTab===6 && (
-     <Cinema/>
-      )}
-       {
-        ActiveTab===7 && (
-     <Music/>
-      )}
-       {
-        ActiveTab===8 && (
-     <Theater/>
-      )}
-      <Footer />
+    <NavBar/>
+    <PageIndicator name="Gallery"/>
+    <Box sx={{ width: '100%', typography: 'body1' ,backgroundColor:'whitesmoke' }}>
+      <TabContext value={value}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider',marginTop:'1rem' }}>
+          <TabList onChange={handleChange} aria-label="lab API tabs example" centered>
+            <Tab label="All" value="1" />
+            <Tab label="Painting" value="2" />
+            <Tab label="Sculpture" value="3" />
+            <Tab label="Literature" value="4" />
+            <Tab label="Architecture" value="5" />
+            <Tab label="Cinema" value="6" />
+            <Tab label="Music" value="7" />
+            <Tab label="Theater" value="8" />
+          </TabList>
+        </Box>
+        <TabPanel value="1"><All/></TabPanel>
+        <TabPanel value="2"><Painting/></TabPanel>
+        <TabPanel value="3"><Sculpture/></TabPanel>
+        <TabPanel value="4"><Literature/></TabPanel>
+        <TabPanel value="5"><Architecture/></TabPanel>
+        <TabPanel value="6"><Cinema/></TabPanel>
+        <TabPanel value="7"><Music/></TabPanel>
+        <TabPanel value="8"><Theater/></TabPanel>
+      </TabContext>
+    </Box>
+    <Footer/>
     </>
   );
 }
-
-export default Gallery;

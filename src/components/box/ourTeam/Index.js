@@ -1,37 +1,31 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import Style from "./Style.module.css";
-import BoardTeam from "./BoardTeam/Index";
-import ExcutiveTeam from "./ExcutiveTeam/Index"
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Tab from '@mui/material/Tab';
+import TabContext from '@mui/lab/TabContext';
+import TabList from '@mui/lab/TabList';
+import TabPanel from '@mui/lab/TabPanel';
+import BoardTeam from '../ourTeam/BoardTeam/Index'
+import ExcutiveTeam from '../ourTeam/ExcutiveTeam/Index'
+export default function LabTabs() {
+  const [value, setValue] = React.useState('1');
 
-function Index() {
-  const [ActiveTab, setActiveTab] = React.useState(1);
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
-    <div>
-      <h1
-        style={{
-          textAlign: "center",
-          fontFamily: "Raleway",
-          marginTop: "2rem",
-        }}
-      >
-        Meet our team
-      </h1>
-      <div className={Style.ActiveTab}>
-      <h3 onClick={()=>setActiveTab(1)}>Board team</h3>
-      <h3 onClick={()=>setActiveTab(2)}> Excutive team</h3>
-      </div>
-      {
-        ActiveTab===1 && (
-     <BoardTeam/>
-      )}
-      {
-        ActiveTab===2 && (
-          <ExcutiveTeam />
-      )};
-    </div>
+    <Box sx={{ width: '100%', typography: 'body1' }}>
+      <TabContext value={value} >
+        <Box sx={{ borderBottom: 1, borderColor: 'white', marginTop:'1rem', textAlign:'center' }} >
+          <TabList onChange={handleChange} aria-label="lab API tabs example"  centered>
+            <Tab label="Board team" value="1" />
+            <Tab label="Excutive team" value="2" />
+          </TabList>
+        </Box>
+        <TabPanel value="1"><BoardTeam/></TabPanel>
+        <TabPanel value="2"><ExcutiveTeam/></TabPanel>
+       
+      </TabContext>
+    </Box>
   );
 }
-
-export default Index;

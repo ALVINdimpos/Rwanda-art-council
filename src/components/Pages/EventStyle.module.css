@@ -52,8 +52,7 @@
   .PreviusEvent{
     display: grid;
       grid-template-columns: auto;
-      width: 100%;
-     justify-items: center;
+      margin: 0 auto; 
     }
     .PreviusEvent iframe{
       width: 100%;
@@ -69,9 +68,8 @@
 @media (max-width:550px){
   .PreviusEvent{
     display: grid;
-      grid-template-columns: auto;
-  justify-items: center;
-      
+    grid-template-columns: auto;
+    margin: 0 auto;  
     }
     .PreviusEvent iframe{
       width: 100%;
