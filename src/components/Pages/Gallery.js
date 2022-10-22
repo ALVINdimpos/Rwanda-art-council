@@ -1,6 +1,6 @@
 import * as React from 'react';
 import NavBar from "../NavBar/Index";
-import PageIndicator from "../PageIndicator/Index";
+import PageIndicator from "../NavBar/PageIndicator/Index";
 import Footer from "../Footer/Footer";
 import All from "../Gallery/Allphoto/Index"
 import Painting from "../Gallery/Painting/Index"
