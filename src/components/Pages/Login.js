@@ -47,28 +47,27 @@ function Index() {
     password: Password,
   };
 
-  const redirectPath=location.state?.path
+  const redirectPath = location.state?.path;
 
   const loginHandler = async (e) => {
     e.preventDefault();
     showToastMessage();
     setLoading(true);
     try {
-     axios.post(
-        "https://rwanda-art-api.herokuapp.com/api/login",
-        loginData
-      ).then(res=>{
-        if(res.data.access_token){
-              auth.Login(loginData)
-              localStorage.setItem("token",res.data.access_token)
-          navigate(redirectPath,{replace:true})
+      axios
+        .post("https://rwanda-art-api.herokuapp.com/api/login", loginData)
+        .then((res) => {
+          if (res.data.access_token) {
+            auth.Login(loginData);
+            localStorage.setItem("token", res.data.access_token);
+            navigate(redirectPath, { replace: true });
           }
-        }
-
-      )
-      .catch(err=>{if(err.message=='Network Error'){
-        alert('Check network Connectivity')
-      }})
+        })
+        .catch((err) => {
+          if (err.message == "Network Error") {
+            alert("Check network Connectivity");
+          }
+        });
       setLoading(false);
     } catch (error) {
       SetPassword("");
@@ -76,9 +75,6 @@ function Index() {
       setLoading(false);
     }
   };
-
-
-
 
   return (
     <>
@@ -132,54 +128,6 @@ function Index() {
             </Link>
             <ToastContainer />
           </div>
-        </div>
-        <div>
-          <h1>Sign in</h1>
-        </div>
-        <div className={Style.carddetails}>
-          <input
-            type="email"
-            placeholder="Enter your name"
-            value={Email}
-            onChange={EmailHandler}
-            required
-          />
-          <i className="fa fa-envelope" />
-        </div>
-        <div className={Style.carddetails}>
-          <input
-            type={passwordShown ? "text" : "password"}
-            id="password-input"
-            placeholder="Enter your password"
-            onChange={PasswordHandler}
-            value={Password}
-            required
-          />
-          <i className="fa fa-lock" />
-          <span>
-            <small
-              className="fa fa-eye-slash passcode"
-              onClick={togglePassword}
-            />
-          </span>
-        </div>
-        <div>
-          <Button
-            name={loading ? "loading..." : `Login`}
-            onClick={loginHandler}
-          />
-          <Link to="/ForgotPassward">
-            <span style={{ color: "#c5801a" }}>Forgot password?</span>
-          </Link>
-          <ToastContainer />
-        </div>
-        <div>
-          <p>
-            Don’t have an account?
-            <Link to="/Register">
-              <span style={{ color: "#c5801a" }}>Sign up</span>
-            </Link>
-          </p>
         </div>
       </div>
     </>
