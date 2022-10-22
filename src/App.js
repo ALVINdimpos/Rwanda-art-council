@@ -5,11 +5,11 @@ import Contactus from "./components/Pages/Contactus";
 import Gallery from "./components/Pages/Gallery";
 import Event from "./components/Pages/Events";
 import Whatwedo from "./components/Pages/Whatwedo";
-import BecomeMember from'./components/Pages/BecomeMember'
-import Login from './components/Pages/Login'
+import BecomeMember from "./components/Pages/BecomeMember";
+import Login from "./components/Pages/Login";
 import ForgotPassward from "./components/Pages/ForgotPassward";
 import PasswordResset from "./components/Pages/PasswordResset";
-import Fideration from "./components/Pages/Fideration";
+import Federation from "./components/Pages/Federation";
 export default function App() {
   return (
     <BrowserRouter>
@@ -21,7 +21,7 @@ export default function App() {
         <Route path="Gallery" element={<Gallery />} />
         <Route path="Event" element={<Event />} />
         <Route path="Whatwedo" element={<Whatwedo />} />
-        <Route path="Fideration" element={<Fideration/>} />
+        <Route path="Federation" element={<Federation />} />
         <Route path="becomeMember" element={<BecomeMember />} />
         <Route path="Login" element={<Login />} />
         <Route path="ForgotPassward" element={<ForgotPassward />} />
@@ -30,6 +30,3 @@ export default function App() {
     </BrowserRouter>
   );
 }
-
-
-

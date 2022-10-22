@@ -1,6 +1,6 @@
 import React from "react";
 import Style from "./HomeStyle.module.css";
-import NavBar from "../NavBar/Index"
+import NavBar from "../NavBar/Index";
 import Header from "../HeaderDiv/Index";
 import SectionIndicator from "../sectionIndicator/Index";
 import WhoWeAreBox from "../box/whoWeAreBox/Index";
@@ -13,7 +13,7 @@ import Footer from "../Footer/Footer";
 import EventPhot from "../../assets/photos/mainevent.jpeg";
 import EventPhot2 from "../../assets/photos/mainphoto.jpg";
 import EventPhot3 from "../../assets/photos/Event.jpeg";
-import OurTeam from "../box/ourTeam/Index"
+import OurTeam from "../box/ourTeam/Index";
 import { useNavigate } from "react-router-dom";
 function Home() {
   const navigate = useNavigate();
@@ -23,15 +23,15 @@ function Home() {
   };
   return (
     <>
-      <NavBar/>
+      <NavBar />
       <Header></Header>
       <WhoWeAreBox />
-      <SectionIndicator name="Fiderations" />
-      <div className={Style.FiderationBoxWraper}>
+      <SectionIndicator name="Federations" />
+      <div className={Style.FederationBoxWraper}>
         <FidBox />
         <FidBox />
-        <FidBox/>
-        <FidBox/>
+        <FidBox />
+        <FidBox />
       </div>
 
       <SectionIndicator name="Events" onClick={EventHandler} />
@@ -67,7 +67,7 @@ function Home() {
 
       <SectionIndicator name="Categories" />
       <Categories />
-      <OurTeam/>
+      <OurTeam />
       <Testmonial />
       <Partner />
       <Footer />
