@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Nav, NavItem } from "reactstrap";
 import { Link, useLocation } from "react-router-dom";
 
+const logo = require("../assets/images/logos/Logo.png").default;
 const navigation = [
   {
     title: "Federations",

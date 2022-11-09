@@ -13,7 +13,6 @@ import {
   Dropdown,
   Button,
 } from "reactstrap";
-// import { ReactComponent as LogoWhite } from "../assets/images/logos/Logo.png";
 import user1 from "../assets/images/users/user1.jpg";
 
 const Header = () => {
@@ -52,51 +51,29 @@ const Header = () => {
           )}
         </Button>
       </div>
-
-      <Collapse navbar isOpen={isOpen}>
-        <Nav className="me-auto" navbar>
-          <NavItem>
-            <Link to="/starter" className="nav-link">
-              Starter
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link to="/about" className="nav-link">
-              About
-            </Link>
-          </NavItem>
-          <UncontrolledDropdown inNavbar nav>
-            <DropdownToggle caret nav>
-              DD Menu
+      <div className="d-flex justify-content-end">
+        <Collapse navbar isOpen={isOpen}>
+          <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+            <DropdownToggle color="primary">
+              <img
+                src={user1}
+                alt="profile"
+                className="rounded-circle"
+                width="30"
+              ></img>
             </DropdownToggle>
-            <DropdownMenu end>
-              <DropdownItem>Option 1</DropdownItem>
-              <DropdownItem>Option 2</DropdownItem>
+            <DropdownMenu>
+              <DropdownItem header>Info</DropdownItem>
+              <DropdownItem>My Account</DropdownItem>
+              <DropdownItem>Edit Profile</DropdownItem>
               <DropdownItem divider />
-              <DropdownItem>Reset</DropdownItem>
+              <DropdownItem>My Balance</DropdownItem>
+              <DropdownItem>Inbox</DropdownItem>
+              <DropdownItem>Logout</DropdownItem>
             </DropdownMenu>
-          </UncontrolledDropdown>
-        </Nav>
-        <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-          <DropdownToggle color="primary">
-            <img
-              src={user1}
-              alt="profile"
-              className="rounded-circle"
-              width="30"
-            ></img>
-          </DropdownToggle>
-          <DropdownMenu>
-            <DropdownItem header>Info</DropdownItem>
-            <DropdownItem>My Account</DropdownItem>
-            <DropdownItem>Edit Profile</DropdownItem>
-            <DropdownItem divider />
-            <DropdownItem>My Balance</DropdownItem>
-            <DropdownItem>Inbox</DropdownItem>
-            <DropdownItem>Logout</DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
-      </Collapse>
+          </Dropdown>
+        </Collapse>
+      </div>
     </Navbar>
   );
 };
