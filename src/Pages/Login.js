@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import Style from "./LoginStyle.module.css";
-import Button from "../Button/Index";
+import Button from "../components/Button/Index";
 import { MDBIcon } from "mdbreact";
 import { Link } from "react-router-dom";
 import { useState,useEffect } from "react";
