@@ -1,9 +1,9 @@
 import React from "react";
-import NavBar from "../NavBar/Index";
-import Footer from "../Footer/Footer";
-import PageIndicator from "../PageIndicator/Index";
+import NavBar from "../components/NavBar/Index";
+import Footer from "../components/Footer/Footer";
+import PageIndicator from "../components/PageIndicator/Index";
 import Style from "./EventStyle.module.css";
-import EventCard from "../box/EventCard/Index";
+import EventCard from "../components/box/EventCard/Index";
 import { MDBInput } from "mdb-react-ui-kit";
 function Events() {
   return (

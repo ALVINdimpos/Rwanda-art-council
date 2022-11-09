@@ -1,11 +1,11 @@
 import React from "react";
-import NavBar from "../NavBar/Index";
-import Footer from "../Footer/Footer";
+import NavBar from "../components/NavBar/Index";
+import Footer from "../components/Footer/Footer";
 import Style from "./Whatwedo.module.css";
-import pic2 from "../../assets/photos/new.jpeg";
-import pic3 from "../../assets/photos/Back3.jpg";
-import pic1 from "../../assets/photos/Back2.jpg";
-import PageIndicator from "../PageIndicator/Index";
+import pic2 from "../assets/photos/new.jpeg";
+import pic3 from "../assets/photos/Back3.jpg";
+import pic1 from "../assets/photos/Back2.jpg";
+import PageIndicator from "../components/PageIndicator/Index";
 function Whatwedo() {
   return (
     <>

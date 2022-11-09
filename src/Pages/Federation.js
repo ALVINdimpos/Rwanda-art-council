@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import NavBar from "../NavBar/Index";
-import Footer from "../Footer/Footer";
-import PageIndicator from "../PageIndicator/Index";
-import FidImage from "../../assets/photos/Back3.jpg";
+import NavBar from "../components/NavBar/Index";
+import Footer from "../components/Footer/Footer";
+import PageIndicator from "../components/PageIndicator/Index";
+import FidImage from "../assets/photos/Back3.jpg";
 import { useEffect, useState } from "react";
 import "./Federation.css";
 

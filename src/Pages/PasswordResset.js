@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import Style from "./LoginStyle.module.css";
-import Button from "../Button/Index";
+import Button from "../components/Button/Index";
 import { useState } from "react";
 import axios from "axios";
 function Index() {

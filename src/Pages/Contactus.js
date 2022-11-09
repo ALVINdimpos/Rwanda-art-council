@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/iframe-has-title */
 import React from "react";
-import NavBar from "../NavBar/Index";
-import Footer from "../Footer/Footer";
+import NavBar from "../components/NavBar/Index";
+import Footer from "../components/Footer/Footer";
 import Style from "./ContactusStyle.module.css";
-import Button from "../Button/Index";
-import PageIndicator from "../PageIndicator/Index";
+import Button from "../components/Button/Index";
+import PageIndicator from "../components/PageIndicator/Index";
 import { useState,useEffect } from "react";
 import validator from "validator";
 import axios from "axios";

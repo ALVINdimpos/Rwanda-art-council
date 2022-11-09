@@ -1,15 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Pages/Home";
-import Aboutus from "./components/Pages/Aboutus";
-import Contactus from "./components/Pages/Contactus";
-import Gallery from "./components/Pages/Gallery";
-import Event from "./components/Pages/Events";
-import Whatwedo from "./components/Pages/Whatwedo";
-import BecomeMember from "./components/Pages/BecomeMember";
-import Login from "./components/Pages/Login";
-import ForgotPassward from "./components/Pages/ForgotPassward";
-import PasswordResset from "./components/Pages/PasswordResset";
-import Federation from "./components/Pages/Federation";
+import Home from "./Pages/Home";
+import Aboutus from "./Pages/Aboutus";
+import Contactus from "./Pages/Contactus";
+import Gallery from "./Pages/Gallery";
+import Event from "./Pages/Events";
+import Whatwedo from "./Pages/Whatwedo";
+import BecomeMember from "./Pages/BecomeMember";
+import Login from "./Pages/Login";
+import ForgotPassward from "./Pages/ForgotPassward";
+import PasswordResset from "./Pages/PasswordResset";
+import Federation from "./Pages/Federation";
 export default function App() {
   return (
     <BrowserRouter>
