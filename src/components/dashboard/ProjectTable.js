@@ -10,7 +10,7 @@ import {
 } from "reactstrap";
 import { useState } from "react";
 
-const ProjectTables = ({ tableData }) => {
+const ProjectTables = ({ tableData, title, tableHeaders }) => {
   // make states for multiple dropdown menus that are being mapped with dynamic data
   const [dropdownOpen, setDropdownOpen] = useState([]);
 
@@ -29,17 +29,14 @@ const ProjectTables = ({ tableData }) => {
     <div>
       <Card>
         <CardBody>
-          <CardTitle tag="h5">Federations List</CardTitle>
+          <CardTitle tag="h5">{title}</CardTitle>
 
           <Table className="no-wrap mt-3 align-middle" responsive borderless>
             <thead>
               <tr>
-                <th>Federation</th>
-                <th>TIN Number</th>
-
-                <th>Status</th>
-                <th>Email</th>
-                <th>Actions</th>
+                {tableHeaders.map((item)=>{
+                  return <th>{item.header}</th>
+                })}
               </tr>
             </thead>
             <tbody>

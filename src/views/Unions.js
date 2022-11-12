@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 const tableData = [
   {
     id: 1,
-    name: "Test federation 1",
-    email: "testfederation1@gmail.com",
+    name: "Test Unions 1",
+    email: "Unions@gmail.com",
     tinNumber: "126565836182312",
     status: "pending",
   },
   {
     id: 2,
-    name: "Test federation 2",
-    email: "testfederation2@gmail.com",
+    name: "Test Unions 2",
+    email: "Unions@gmail.com",
     tinNumber: "986842933623763",
     status: "done",
     weeks: "35",
@@ -24,7 +24,7 @@ const tableData = [
 const tableHeaders = [
   {
     key: 1,
-    header: "Federation name",
+    header: "Union name",
   },
   {
     key: 2,
@@ -44,7 +44,7 @@ const tableHeaders = [
   },
 ];
 
-const Federations = () => {
+const Unions = () => {
   return (
     <div>
       {/***Table ***/}
@@ -52,7 +52,7 @@ const Federations = () => {
         <Col lg="12">
           <ProjectTables
             tableData={tableData}
-            title={"Federations List"}
+            title={"Unions List"}
             tableHeaders={tableHeaders}
           />
         </Col>
@@ -60,9 +60,9 @@ const Federations = () => {
           <Button color="primary" className="mt-3">
             <Link
               className="text-decoration-none text-light"
-              to="/federations/registerFederation"
+              to="/registerUnion"
             >
-              Add Federation
+              Add Union
             </Link>
           </Button>
         </Col>
@@ -71,4 +71,4 @@ const Federations = () => {
   );
 };
 
-export default Federations;
+export default Unions;

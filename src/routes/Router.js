@@ -7,15 +7,15 @@ const FullLayout = lazy(() => import("../layouts/FullLayout.js"));
 /***** Pages ****/
 
 const Federation = lazy(() => import("../views/federations.js"));
+const RegisterFederation = lazy(() => import("../views/RegisterFederation"));
+const Events = lazy(() => import("../views/Events"));
+const Unions = lazy(() => import("../views/Unions"));
+const Artists = lazy(() => import("../views/Artists"));
+const RegisterUnion = lazy(() => import("../views/RegisterUnion"));
+const Grid = lazy(() => import("../views/Grid"));
+const Tables = lazy(() => import("../views/Tables"));
+const Breadcrumbs = lazy(() => import("../views/Breadcrumbs"));
 const About = lazy(() => import("../views/About.js"));
-const Forms = lazy(() => import("../views/ui/Forms"));
-const Alerts = lazy(() => import("../views/ui/Alerts"));
-const Badges = lazy(() => import("../views/ui/Badges"));
-const Buttons = lazy(() => import("../views/ui/Buttons"));
-const Cards = lazy(() => import("../views/ui/Cards"));
-const Grid = lazy(() => import("../views/ui/Grid"));
-const Tables = lazy(() => import("../views/ui/Tables"));
-const Breadcrumbs = lazy(() => import("../views/ui/Breadcrumbs"));
 
 /*****Routes******/
 
@@ -30,12 +30,15 @@ const ThemeRoutes = [
         exact: true,
         element: <Federation />,
       },
-      { path: "registerFederation", element: <Forms /> },
+      {
+        path: "/federations/registerFederation",
+        element: <RegisterFederation />,
+      },
+      { path: "/events", exact: true, element: <Events /> },
       { path: "/about", exact: true, element: <About /> },
-      { path: "/alerts", exact: true, element: <Alerts /> },
-      { path: "/badges", exact: true, element: <Badges /> },
-      { path: "/buttons", exact: true, element: <Buttons /> },
-      { path: "/cards", exact: true, element: <Cards /> },
+      { path: "/union", exact: true, element: <Unions /> },
+      { path: "/artists", exact: true, element: <Artists /> },
+      { path: "/registerUnion", exact: true, element: <RegisterUnion /> },
       { path: "/grid", exact: true, element: <Grid /> },
       { path: "/table", exact: true, element: <Tables /> },
       { path: "/breadcrumbs", exact: true, element: <Breadcrumbs /> },

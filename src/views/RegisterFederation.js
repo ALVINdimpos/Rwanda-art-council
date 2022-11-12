@@ -12,7 +12,7 @@ import {
   FormText,
 } from "reactstrap";
 
-const Forms = () => {
+const RegisterFederation = () => {
   return (
     <Row>
       <Col>
@@ -127,4 +127,4 @@ const Forms = () => {
   );
 };
 
-export default Forms;
+export default RegisterFederation;

@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "reactstrap";
 
-const Alerts = () => {
+const Events = () => {
   // For Dismiss Button with Alert
   const [visible, setVisible] = useState(true);
 
@@ -24,4 +24,4 @@ const Alerts = () => {
   );
 };
 
-export default Alerts;
+export default Events;

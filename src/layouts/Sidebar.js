@@ -1,8 +1,7 @@
 import React from "react";
 import { Button, Nav, NavItem } from "reactstrap";
 import { Link, useLocation } from "react-router-dom";
-
-const logo = require("../assets/images/logos/Logo.png").default;
+const Logo = require("../assets/images/logos/Logo.png");
 const navigation = [
   {
     title: "Federations",
@@ -10,18 +9,18 @@ const navigation = [
     icon: "bi bi-speedometer2",
   },
   {
-    title: "Events",
-    href: "/alerts",
-    icon: "bi bi-bell",
-  },
-  {
     title: "Unions",
-    href: "/badges",
+    href: "/union",
     icon: "bi bi-patch-check",
   },
   {
+    title: "Events",
+    href: "/events",
+    icon: "bi bi-bell",
+  },
+  {
     title: "Artists",
-    href: "/buttons",
+    href: "/artists",
     icon: "bi bi-hdd-stack",
   },
   // {
@@ -64,14 +63,14 @@ const Sidebar = () => {
 
   return (
     <div className="p-3">
-      <img className="d-flex ml-auto" width={100} height={100} src={logo} alt="logo" className="logo" />
       <div className="d-flex align-items-center">
+        <img width={100} height={100} src={Logo} alt="Logo" />
         <Button
           close
           size="sm"
-          className="ms-auto d-lg-none"
+          className=".d-none .d-sm-block .d-md-none"
           onClick={() => showMobilemenu()}
-        ></Button>
+        />
       </div>
       <div className="pt-4 mt-2">
         <Nav vertical className="sidebarNav">
