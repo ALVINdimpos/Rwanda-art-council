@@ -5,16 +5,24 @@ import {
   REGISTER_FEDERATION,
   REGISTER_FEDERATION_SUCCESS,
   REGISTER_FEDERATION_FAILURE,
+  GET_SINGLE_FEDERATION,
+  GET_SINGLE_FEDERATION_SUCCESS,
+  GET_SINGLE_FEDERATION_FAILURE,
 } from "../types";
 import action from "./action";
 import axios from "axios";
-import { API_URL } from "../../config";
+import { API_URL, TOKEN } from "../../utils/config";
 
 export const getAllFederation = () => async (dispatch) => {
   try {
     dispatch(action(GET_ALL_FEDERATIONS));
-    axios
-      .get(`${API_URL}/Federation/`)
+    axios({
+      method: "get",
+      url: `${API_URL}/Federation/All`,
+      headers: {
+        Authorization: `Bearer ${TOKEN}`,
+      },
+    })
       .then((response) => {
         dispatch(action(GET_ALL_FEDERATIONS_SUCCESS, response.data));
       })
@@ -23,6 +31,27 @@ export const getAllFederation = () => async (dispatch) => {
       });
   } catch (error) {
     dispatch(action(GET_ALL_FEDERATIONS_FAILURE, error));
+  }
+};
+
+export const getSingleFederation = (id) => async (dispatch) => {
+  try {
+    dispatch(action(GET_SINGLE_FEDERATION));
+    axios({
+      method: "get",
+      url: `${API_URL}/Federation/Get/${id}`,
+      headers: {
+        Authorization: `Bearer ${TOKEN}`,
+      },
+    })
+      .then((response) => {
+        dispatch(action(GET_SINGLE_FEDERATION_SUCCESS, response.data));
+      })
+      .catch((error) => {
+        dispatch(action(GET_SINGLE_FEDERATION_FAILURE, error));
+      });
+  } catch (error) {
+    dispatch(action(GET_SINGLE_FEDERATION_FAILURE, error));
   }
 };
 

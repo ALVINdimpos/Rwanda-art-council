@@ -1,6 +1,9 @@
 import { Col, Row, Button } from "reactstrap";
 import ProjectTables from "../components/dashboard/ProjectTable";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { getAllFederation } from "../redux/actions/federation";
 
 const tableData = [
   {
@@ -41,6 +44,20 @@ const tableHeaders = [
 ];
 
 const Federations = () => {
+  const [tableData, setTableData] = useState(null);
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
+  const {
+    federation: { federations },
+  } = state;
+
+  useEffect(() => {
+    dispatch(getAllFederation());
+  }, [dispatch]);
+  useEffect(() => {
+    if (federations) setTableData(federations);
+  }, [federations]);
+
   return (
     <div>
       {/***Table ***/}
@@ -48,10 +65,8 @@ const Federations = () => {
         <Col lg="12">
           <ProjectTables
             tableData={tableData}
-            title={"Federations List"}
+            action="federations"
             tableHeaders={tableHeaders}
-            viewButton="/viewFederation/"
-            editButton="/editFederation/"
           />
         </Col>
         <Col lg="12">

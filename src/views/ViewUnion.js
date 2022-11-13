@@ -1,5 +1,8 @@
 import { Row, Col, Card, CardTitle, CardBody, Button, Table } from "reactstrap";
 import { Link, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getUnion } from "../redux/actions/union";
 
 const Federation = {
   id: 1,
@@ -20,13 +23,23 @@ const Federation = {
 
 const ViewUnion = () => {
   const { id } = useParams();
-  console.log(id);
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
+  const {
+    singleUnion: { union },
+    unionArtists: { uniArtists },
+  } = state;
+
+  useEffect(() => {
+    dispatch(getUnion(id));
+  }, [dispatch, id]);
+  console.log(uniArtists, "+++++++++++++++++++++++++++");
   return (
     <Row>
       <Col sm="12">
         <Card>
           <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-            Union Name: {Federation.name}
+            Union Name: {union.name}
           </CardTitle>
           <CardBody>
             <div
@@ -37,16 +50,16 @@ const ViewUnion = () => {
               }}
             >
               <div>
-                <p>Leader first name: {Federation.leaderFName}</p>
-                <p>Leader last name: {Federation.leaderLName}</p>
-                <p>Email: {Federation.email}</p>
-                <p>Phone: {Federation.phone}</p>
-                <p>Province: {Federation.province}</p>
-                <p>District: {Federation.district}</p>
-                <p>Sector: {Federation.sector}</p>
-                <p>Cell: {Federation.cell}</p>
-                <p>Village: {Federation.village}</p>
-                <p>Union Slogan: {Federation.description}</p>
+                <p>Leader first name: {union.fname}</p>
+                <p>Leader last name: {union.lname}</p>
+                <p>Email: {union.email}</p>
+                <p>Phone: {union.phone}</p>
+                <p>Province: {union.province}</p>
+                <p>District: {union.district}</p>
+                <p>Sector: {union.sector}</p>
+                <p>Cell: {union.cell}</p>
+                <p>Village: {union.village}</p>
+                <p>Union Slogan: {union.slogan}</p>
                 <div
                   style={{
                     display: "flex",
@@ -90,33 +103,23 @@ const ViewUnion = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>123456789</td>
-                  <td>mark@gmail.com</td>
-                  <td>
-                    <Link to={`/viewArtist/1`}>
-                      <Button color="primary" className="mr-5">
-                        View Artist
-                      </Button>
-                    </Link>
-                    </td>
-                </tr>
-                <tr>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>123456789</td>
-                  <td>jacon@gmail.com</td>
-                  <td>
-                    <Link to={`/viewArtist/2`}>
-                      <Button color="primary" className="mr-5">
-                        View Artist
-                      </Button>
-                    </Link>
-                    </td>
-                </tr>
-                </tbody>  
+                {uniArtists &&
+                  uniArtists.map((artist, idx) => (
+                    <tr key={idx}>
+                      <td>{artist.fname}</td>
+                      <td>{artist.lname}</td>
+                      <td>{artist.phone}</td>
+                      <td>{artist.email}</td>
+                      <td>
+                        <Link to={`/viewArtist/${artist.id}`}>
+                          <Button color="primary" className="mr-5">
+                            View Artist
+                          </Button>
+                        </Link>
+                      </td>
+                    </tr>
+                  ))}
+              </tbody>
             </Table>
           </CardBody>
         </Card>
