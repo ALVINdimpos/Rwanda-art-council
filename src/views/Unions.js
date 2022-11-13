@@ -54,6 +54,8 @@ const Unions = () => {
             tableData={tableData}
             title={"Unions List"}
             tableHeaders={tableHeaders}
+            viewButton={"/viewUnion/"}
+            editButton={"/editUnion/"}
           />
         </Col>
         <Col lg="12">

@@ -40,8 +40,8 @@ const ProjectTables = ({
           <Table className="no-wrap mt-3 align-middle" responsive borderless>
             <thead>
               <tr>
-                {tableHeaders.map((item) => {
-                  return <th>{item.header}</th>;
+                {tableHeaders.map((item, index) => {
+                  return <th key={index} >{item.header}</th>;
                 })}
               </tr>
             </thead>
@@ -54,24 +54,22 @@ const ProjectTables = ({
                     </div>
                   </td>
                   <td>{tdata.tinNumber}</td>
-                  <td>
-                    {tdata.status}
-                  </td>
+                  <td>{tdata.status}</td>
                   <td>{tdata.email}</td>
                   <td>
                     <ButtonGroup>
                       <Link to={`${viewButton}${tdata.id}`}>
                         <Button color="primary" size="sm">
-                          <i class="bi bi-eye-fill"></i>
+                          <i className="bi bi-eye-fill"></i>
                         </Button>
                       </Link>
                       <Link to={`${editButton}${tdata.id}`}>
                         <Button color="success" size="sm">
-                          <i class="bi bi-pencil-fill"></i>
+                          <i className="bi bi-pencil-fill"></i>
                         </Button>
                       </Link>
                       <Button color="danger" size="sm">
-                        <i class="bi bi-trash-fill"></i>
+                        <i className="bi bi-trash-fill"></i>
                       </Button>
                     </ButtonGroup>
                   </td>
