@@ -213,6 +213,7 @@ const Events = () => {
                   subtitle={blg.subtitle}
                   text={blg.description}
                   color={blg.btnbg}
+                  id={index}
                 />
               </Col>
             ))}
@@ -229,6 +230,7 @@ const Events = () => {
                   subtitle={blg.subtitle}
                   text={blg.description}
                   color={blg.btnbg}
+                  id={index}
                 />
               </Col>
             ))}
@@ -245,6 +247,7 @@ const Events = () => {
                   subtitle={blg.subtitle}
                   text={blg.description}
                   color={blg.btnbg}
+                  id={index}
                 />
               </Col>
             ))}

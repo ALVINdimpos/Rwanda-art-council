@@ -32,14 +32,10 @@ const tableHeaders = [
   },
   {
     key: 3,
-    header: "Status",
-  },
-  {
-    key: 4,
     header: "Email",
   },
   {
-    key: 5,
+    key: 4,
     header: "Actions",
   },
 ];

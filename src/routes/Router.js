@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import { Navigate } from "react-router-dom";
 import EditUnion from "../views/EditUnion.js";
+import ViewEvent from "../views/ViewEvent.js";
 import ViewUnion from "../views/ViewUnion.js";
 
 /****Layouts*****/
@@ -58,11 +59,11 @@ const ThemeRoutes = [
         element: <EditUnion />,
       },
       { path: "/events", exact: true, element: <Events /> },
+      { path: "/viewEvent/:id", exact: true, element: <ViewEvent /> },
       { path: "/artists", exact: true, element: <Artists /> },
       { path: "/registerUnion", exact: true, element: <RegisterUnion /> },
       { path: "/registerEvent", exact: true, element: <RegisterEvent /> },
       { path: "/breadcrumbs", exact: true, element: <Breadcrumbs /> },
-      { path: "/about", exact: true, element: <About /> },
     ],
   },
 ];

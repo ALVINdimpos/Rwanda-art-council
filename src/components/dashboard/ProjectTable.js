@@ -54,7 +54,6 @@ const ProjectTables = ({
                     </div>
                   </td>
                   <td>{tdata.tinNumber}</td>
-                  <td>{tdata.status}</td>
                   <td>{tdata.email}</td>
                   <td>
                     <ButtonGroup>

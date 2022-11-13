@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   Card,
   CardBody,
@@ -7,7 +8,7 @@ import {
   Button,
 } from "reactstrap";
 
-const Blog = ({ image, title, subtitle, text, status }) => {
+const Blog = ({ image, title, subtitle, text, status, id }) => {
   return (
     <Card>
       <img height={180} className="h-1" alt="Card image cap" src={image} />
@@ -16,9 +17,15 @@ const Blog = ({ image, title, subtitle, text, status }) => {
         <CardSubtitle>{subtitle}</CardSubtitle>
         <CardSubtitle>Status: {status}</CardSubtitle>
         <CardText className="mt-3">{text}</CardText>
-        <Button color={"primary"}>View</Button>{" "}
-        <Button color={"info"}>Edit</Button>{" "}
-        <Button color={"danger"}>Delete</Button>
+        <Link to={`/viewEvent/${id}`}>
+          <Button color={"primary"}>View</Button>{" "}
+        </Link>
+        <Link to={`/viewEvent/${id}`}>
+          <Button color={"info"}>Edit</Button>{" "}
+        </Link>
+        <Link to={`/viewEvent/${id}`}>
+          <Button color={"danger"}>Delete</Button>
+        </Link>
       </CardBody>
     </Card>
   );
