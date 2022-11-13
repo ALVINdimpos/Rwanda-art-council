@@ -1,5 +1,9 @@
 import { Row, Col, Card, CardTitle, CardBody, Button } from "reactstrap";
 import { Link, useParams } from "react-router-dom";
+import { getSingleFederation } from "../redux/actions/federation";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getFederationUnions } from "../redux/actions/union";
 
 const Federation = {
   id: 1,
@@ -15,56 +19,69 @@ const Federation = {
 
 const ViewFederation = () => {
   const { id } = useParams();
-  console.log(id);
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
+  const {
+    singleFederation: { singleFederation },
+    fedUnions: { fedUnions },
+  } = state;
+
+  useEffect(() => {
+    dispatch(getSingleFederation(id));
+    dispatch(getFederationUnions(id));
+  }, [dispatch, id]);
+
   return (
     <Row>
       <Col sm="12">
-        <Card>
-          <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-            Federation Name: {Federation.name}
-          </CardTitle>
-          <CardBody>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-              }}
-            >
-              <div>
-                <p>Leader first name: {Federation.leaderFName}</p>
-                <p>Leader last name: {Federation.leaderLName}</p>
-                <p>TIN Number: {Federation.tin}</p>
-                <p>Email: {Federation.email}</p>
-                <p>Phone: {Federation.phone}</p>
-                <p>Description: {Federation.description}</p>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <Link to={`/editFederation/${id}`}>
-                    <Button color="primary" className="mr-5">
-                      Edit
-                    </Button>
-                  </Link>
-                  <Button color="danger">Delete</Button>
+        {singleFederation && (
+          <Card>
+            <CardTitle tag="h6" className="border-bottom p-3 mb-0">
+              Federation Name: {singleFederation.fed_name}
+            </CardTitle>
+            <CardBody>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
+              >
+                <div>
+                  <p>Leader first name: {singleFederation.fname}</p>
+                  <p>Leader last name: {Federation.leaderLName}</p>
+                  <p>TIN Number: {singleFederation.fed_no}</p>
+                  <p>Email: {singleFederation.email}</p>
+                  <p>Phone: {singleFederation.phone}</p>
+                  <p>Description: {singleFederation.description}</p>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <Link to={`/editFederation/${id}`}>
+                      <Button color="primary" className="mr-5">
+                        Edit
+                      </Button>
+                    </Link>
+                    <Button color="danger">Delete</Button>
+                  </div>
+                </div>
+                <div>
+                  <img
+                    width={200}
+                    height={200}
+                    src={
+                      "https://pbs.twimg.com/media/Dfd9sHtXUAEhTzm?format=jpg&name=large"
+                    }
+                  />
                 </div>
               </div>
-              <div>
-                <img
-                  width={200}
-                  height={200}
-                  src={
-                    "https://pbs.twimg.com/media/Dfd9sHtXUAEhTzm?format=jpg&name=large"
-                  }
-                />
-              </div>
-            </div>
-          </CardBody>
-        </Card>
+            </CardBody>
+          </Card>
+        )}
         <Card>
           <div
             style={{
@@ -88,36 +105,29 @@ const ViewFederation = () => {
                 flexWrap: "wrap",
               }}
             >
-              {[
-                { name: "Union 1", id: 1 },
-                { name: "Union 2", id: 2 },
-                { name: "Union 3", id: 3 },
-                { name: "Union 4", id: 4 },
-                { name: "Union 5", id: 5 },
-                { name: "Union 6", id: 6 },
-                { name: "Union 7", id: 7 },
-              ].map((item, index) => {
-                return (
-                  <Card key={item.id}>
-                    <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-                      {item.name}
-                    </CardTitle>
-                    <CardBody>
-                      <p
-                        style={{
-                          textAlign: "center",
-                          width: "20vw",
-                        }}
-                      >
-                        Description of the union in few words
-                      </p>
-                      <Link to={`/viewUnion/${item.id}`}>
-                        <Button color="primary">View details</Button>
-                      </Link>
-                    </CardBody>
-                  </Card>
-                );
-              })}
+              {fedUnions &&
+                fedUnions.map((union, index) => {
+                  return (
+                    <Card key={union.id}>
+                      <CardTitle tag="h6" className="border-bottom p-3 mb-0">
+                        {union.name}
+                      </CardTitle>
+                      <CardBody>
+                        <p
+                          style={{
+                            textAlign: "center",
+                            width: "20vw",
+                          }}
+                        >
+                          {union.slogan}
+                        </p>
+                        <Link to={`/viewUnion/${union.id}`}>
+                          <Button color="primary">View details</Button>
+                        </Link>
+                      </CardBody>
+                    </Card>
+                  );
+                })}
             </div>
           </CardBody>
         </Card>
