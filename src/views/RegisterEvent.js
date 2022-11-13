@@ -65,9 +65,7 @@ const RegisterEvent = () => {
               <FormGroup>
                 <Label for="imageFile">Upload image</Label>
                 <Input id="imageFile" name="imageFile" type="file" />
-                <FormText>
-                  Upload an image of the event
-                </FormText>
+                <FormText>Upload an image of the event</FormText>
               </FormGroup>
               <Button>Submit</Button>
             </Form>

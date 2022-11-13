@@ -3,12 +3,11 @@ import {
   CardBody,
   CardTitle,
   Table,
-  ButtonDropdown,
-  DropdownToggle,
-  DropdownItem,
-  DropdownMenu,
+  ButtonGroup,
+  Button,
 } from "reactstrap";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ProjectTables = ({ tableData, title, tableHeaders }) => {
   // make states for multiple dropdown menus that are being mapped with dynamic data
@@ -34,8 +33,8 @@ const ProjectTables = ({ tableData, title, tableHeaders }) => {
           <Table className="no-wrap mt-3 align-middle" responsive borderless>
             <thead>
               <tr>
-                {tableHeaders.map((item)=>{
-                  return <th>{item.header}</th>
+                {tableHeaders.map((item) => {
+                  return <th>{item.header}</th>;
                 })}
               </tr>
             </thead>
@@ -59,25 +58,19 @@ const ProjectTables = ({ tableData, title, tableHeaders }) => {
                   </td>
                   <td>{tdata.email}</td>
                   <td>
-                    <ButtonDropdown
-                      data-toggle="dropdown"
-                      key={index}
-                      isOpen={dropdownOpen[index]}
-                      toggle={() => toggle(index)}
-                    >
-                      <DropdownToggle
-                        className="btn btn-primary btn-sm"
-                        caret
-                        color="primary"
-                      >
-                        Actions
-                      </DropdownToggle>
-                      <DropdownMenu>
-                        <DropdownItem>View</DropdownItem>
-                        <DropdownItem>Edit</DropdownItem>
-                        <DropdownItem>Delete</DropdownItem>
-                      </DropdownMenu>
-                    </ButtonDropdown>
+                    <ButtonGroup>
+                      <Link to={`/viewFederation/federationId=${tdata.id}`}>
+                        <Button color="primary" size="sm">
+                          <i class="bi bi-eye-fill"></i>
+                        </Button>
+                      </Link>
+                      <Button color="success" size="sm">
+                        <i class="bi bi-pencil-fill"></i>
+                      </Button>
+                      <Button color="danger" size="sm">
+                        <i class="bi bi-trash-fill"></i>
+                      </Button>
+                    </ButtonGroup>
                   </td>
                 </tr>
               ))}

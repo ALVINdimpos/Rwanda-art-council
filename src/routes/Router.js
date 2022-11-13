@@ -13,7 +13,7 @@ const Unions = lazy(() => import("../views/Unions"));
 const Artists = lazy(() => import("../views/Artists"));
 const RegisterUnion = lazy(() => import("../views/RegisterUnion"));
 const RegisterEvent = lazy(() => import("../views/RegisterEvent"));
-const Tables = lazy(() => import("../views/Tables"));
+const ViewFederation = lazy(() => import("../views/ViewFederation"));
 const Breadcrumbs = lazy(() => import("../views/Breadcrumbs"));
 const About = lazy(() => import("../views/About.js"));
 
@@ -31,6 +31,11 @@ const ThemeRoutes = [
         element: <Federation />,
       },
       {
+        path: "/viewFederation/federationId=:id",
+        exact: true,
+        element: <ViewFederation />,
+      },
+      {
         path: "/federations/registerFederation",
         element: <RegisterFederation />,
       },
@@ -40,7 +45,6 @@ const ThemeRoutes = [
       { path: "/artists", exact: true, element: <Artists /> },
       { path: "/registerUnion", exact: true, element: <RegisterUnion /> },
       { path: "/registerEvent", exact: true, element: <RegisterEvent /> },
-      { path: "/table", exact: true, element: <Tables /> },
       { path: "/breadcrumbs", exact: true, element: <Breadcrumbs /> },
     ],
   },
