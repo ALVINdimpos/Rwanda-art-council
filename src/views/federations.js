@@ -54,6 +54,8 @@ const Federations = () => {
             tableData={tableData}
             title={"Federations List"}
             tableHeaders={tableHeaders}
+            viewButton="/viewFederation/"
+            editButton="/editFederation/"
           />
         </Col>
         <Col lg="12">

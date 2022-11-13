@@ -11,7 +11,7 @@ import {
 const Blog = ({image, title, subtitle, text, status}) => {
   return (
     <Card>
-      <CardImg className="h-1" alt="Card image cap" src={image} />
+      <img height={180} className="h-1" alt="Card image cap" src={image} />
       <CardBody className="p-2">
         <CardTitle tag="h5">{title}</CardTitle>
         <CardSubtitle>{subtitle}</CardSubtitle>

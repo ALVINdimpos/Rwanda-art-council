@@ -8,6 +8,7 @@ const FullLayout = lazy(() => import("../layouts/FullLayout.js"));
 
 const Federation = lazy(() => import("../views/federations.js"));
 const RegisterFederation = lazy(() => import("../views/RegisterFederation"));
+const EditFederation = lazy(() => import("../views/EditFederation"));
 const Events = lazy(() => import("../views/Events"));
 const Unions = lazy(() => import("../views/Unions"));
 const Artists = lazy(() => import("../views/Artists"));
@@ -31,13 +32,17 @@ const ThemeRoutes = [
         element: <Federation />,
       },
       {
-        path: "/viewFederation/federationId=:id",
+        path: "/viewFederation/:id",
         exact: true,
         element: <ViewFederation />,
       },
       {
         path: "/federations/registerFederation",
         element: <RegisterFederation />,
+      },
+      {
+        path: "/editFederation/:id",
+        element: <EditFederation />,
       },
       { path: "/events", exact: true, element: <Events /> },
       { path: "/about", exact: true, element: <About /> },

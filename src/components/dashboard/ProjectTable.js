@@ -9,7 +9,14 @@ import {
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ProjectTables = ({ tableData, title, tableHeaders }) => {
+const ProjectTables = ({
+  tableData,
+  title,
+  tableHeaders,
+  viewButton,
+  editButton,
+  deleteButton,
+}) => {
   // make states for multiple dropdown menus that are being mapped with dynamic data
   const [dropdownOpen, setDropdownOpen] = useState([]);
 
@@ -48,25 +55,21 @@ const ProjectTables = ({ tableData, title, tableHeaders }) => {
                   </td>
                   <td>{tdata.tinNumber}</td>
                   <td>
-                    {tdata.status === "pending" ? (
-                      <span className="p-2 bg-danger rounded-circle d-inline-block ms-3"></span>
-                    ) : tdata.status === "holt" ? (
-                      <span className="p-2 bg-warning rounded-circle d-inline-block ms-3"></span>
-                    ) : (
-                      <span className="p-2 bg-success rounded-circle d-inline-block ms-3"></span>
-                    )}
+                    {tdata.status}
                   </td>
                   <td>{tdata.email}</td>
                   <td>
                     <ButtonGroup>
-                      <Link to={`/viewFederation/federationId=${tdata.id}`}>
+                      <Link to={`${viewButton}${tdata.id}`}>
                         <Button color="primary" size="sm">
                           <i class="bi bi-eye-fill"></i>
                         </Button>
                       </Link>
-                      <Button color="success" size="sm">
-                        <i class="bi bi-pencil-fill"></i>
-                      </Button>
+                      <Link to={`${editButton}${tdata.id}`}>
+                        <Button color="success" size="sm">
+                          <i class="bi bi-pencil-fill"></i>
+                        </Button>
+                      </Link>
                       <Button color="danger" size="sm">
                         <i class="bi bi-trash-fill"></i>
                       </Button>
