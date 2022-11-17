@@ -56,7 +56,7 @@ const ProjectTables = ({
                   <td>{tdata.tinNumber}</td>
                   <td>{tdata.email}</td>
                   <td>
-                    <ButtonGroup>
+                    <ButtonGroup className="g-1">
                       <Link to={`${viewButton}${tdata.id}`}>
                         <Button color="primary" size="sm">
                           <i className="bi bi-eye-fill"></i>

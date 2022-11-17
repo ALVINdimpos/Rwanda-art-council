@@ -43,7 +43,6 @@ const tableHeaders = [
 const Unions = () => {
   return (
     <div>
-      {/***Table ***/}
       <Row>
         <Col lg="12">
           <ProjectTables

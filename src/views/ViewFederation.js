@@ -66,9 +66,19 @@ const ViewFederation = () => {
           </CardBody>
         </Card>
         <Card>
-          <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-            Unions in the federation
-          </CardTitle>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+            className="border-bottom p-3 mb-0"
+          >
+            <h6>Unions in the federation</h6>
+            <Link to={`/addUnion/${id}`}>
+              <Button color="primary">Add Union</Button>
+            </Link>
+          </div>
           <CardBody>
             <div
               style={{

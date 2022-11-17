@@ -75,9 +75,22 @@ const ViewUnion = () => {
           </CardBody>
         </Card>
         <Card>
-          <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-            Artists List
-          </CardTitle>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+            className="border-bottom p-3 mb-0"
+          >
+            <h6>Artists List</h6>
+            <Link to={`/addArtist/${id}`}>
+              <Button color="primary" className="mr-5">
+                Add Artist
+              </Button>
+            </Link>
+          </div>
           <CardBody>
             <Table responsive>
               <thead>
@@ -101,7 +114,7 @@ const ViewUnion = () => {
                         View Artist
                       </Button>
                     </Link>
-                    </td>
+                  </td>
                 </tr>
                 <tr>
                   <td>Jacob</td>
@@ -114,9 +127,9 @@ const ViewUnion = () => {
                         View Artist
                       </Button>
                     </Link>
-                    </td>
+                  </td>
                 </tr>
-                </tbody>  
+              </tbody>
             </Table>
           </CardBody>
         </Card>

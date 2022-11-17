@@ -8,7 +8,7 @@ import {
   Button,
 } from "reactstrap";
 
-const Blog = ({ image, title, subtitle, text, status, id }) => {
+const Event = ({ image, title, subtitle, text, status, id }) => {
   return (
     <Card>
       <img height={180} className="h-1" alt="Card image cap" src={image} />
@@ -20,15 +20,13 @@ const Blog = ({ image, title, subtitle, text, status, id }) => {
         <Link to={`/viewEvent/${id}`}>
           <Button color={"primary"}>View</Button>{" "}
         </Link>
-        <Link to={`/viewEvent/${id}`}>
+        <Link to={`/editEvent/${id}`}>
           <Button color={"info"}>Edit</Button>{" "}
         </Link>
-        <Link to={`/viewEvent/${id}`}>
-          <Button color={"danger"}>Delete</Button>
-        </Link>
+        <Button color={"danger"}>Delete</Button>
       </CardBody>
     </Card>
   );
 };
 
-export default Blog;
+export default Event;

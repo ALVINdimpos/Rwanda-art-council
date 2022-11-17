@@ -12,16 +12,13 @@ import {
   FormText,
 } from "reactstrap";
 
-const RegisterEvent = () => {
+const EditEvent = () => {
   return (
     <Row>
       <Col>
-        {/* --------------------------------------------------------------------------------*/}
-        {/* Card-1*/}
-        {/* --------------------------------------------------------------------------------*/}
         <Card>
           <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-            Register a new event
+            Edit event
           </CardTitle>
           <CardBody>
             <Form>
@@ -75,4 +72,4 @@ const RegisterEvent = () => {
   );
 };
 
-export default RegisterEvent;
+export default EditEvent;

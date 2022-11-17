@@ -1,17 +1,24 @@
 import { lazy } from "react";
 import { Navigate } from "react-router-dom";
-import EditUnion from "../views/EditUnion.js";
-import ViewEvent from "../views/ViewEvent.js";
-import ViewUnion from "../views/ViewUnion.js";
 
 /****Layouts*****/
 const FullLayout = lazy(() => import("../layouts/FullLayout.js"));
 
 /***** Pages ****/
 
+const EditTestimonial = lazy(() => import("../views/EditTestimonial.js"));
+const EditUnion = lazy(() => import("../views/EditUnion.js"));
+const ViewEvent = lazy(() => import("../views/ViewEvent.js"));
+const ViewUnion = lazy(() => import("../views/ViewUnion.js"));
+const AddToGallery = lazy(() => import("../views/AddToGallery.js"));
 const Federation = lazy(() => import("../views/federations.js"));
+const Testimonials = lazy(() => import("../views/Testimonials.js"));
+const Gallery = lazy(() => import("../views/Gallery.js"));
+const TeamMembers = lazy(() => import("../views/TeamMembers.js"));
 const RegisterFederation = lazy(() => import("../views/RegisterFederation"));
 const EditFederation = lazy(() => import("../views/EditFederation"));
+const EditEvent = lazy(() => import("../views/EditEvent.js"));
+const AddTestimonial = lazy(() => import("../views/AddTestimonial.js"));
 const Events = lazy(() => import("../views/Events"));
 const Unions = lazy(() => import("../views/Unions"));
 const Artists = lazy(() => import("../views/Artists"));
@@ -60,10 +67,41 @@ const ThemeRoutes = [
       },
       { path: "/events", exact: true, element: <Events /> },
       { path: "/viewEvent/:id", exact: true, element: <ViewEvent /> },
+      { path: "/editEvent/:id", exact: true, element: <EditEvent /> },
       { path: "/artists", exact: true, element: <Artists /> },
       { path: "/registerUnion", exact: true, element: <RegisterUnion /> },
       { path: "/registerEvent", exact: true, element: <RegisterEvent /> },
       { path: "/breadcrumbs", exact: true, element: <Breadcrumbs /> },
+      {
+        path: "/testimonials",
+        exact: true,
+        element: <Testimonials />,
+      },
+      {
+        path: "/addTestimonial",
+        exact: true,
+        element: <AddTestimonial />,
+      },
+      {
+        path: "/editTestimonial/:id",
+        exact: true,
+        element: <EditTestimonial />,
+      },
+      {
+        path: "/teammembers",
+        exact: true,
+        element: <TeamMembers />,
+      },
+      {
+        path: "/gallery",
+        exact: true,
+        element: <Gallery />,
+      },
+      {
+        path: "/addToGallery",
+        exact: true,
+        element: <AddToGallery />,
+      },
     ],
   },
 ];

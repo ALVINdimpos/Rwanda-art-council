@@ -23,21 +23,21 @@ const navigation = [
     href: "/artists",
     icon: "bi bi-hdd-stack",
   },
-  // {
-  //   title: "Cards",
-  //   href: "/cards",
-  //   icon: "bi bi-card-text",
-  // },
-  // {
-  //   title: "Grid",
-  //   href: "/grid",
-  //   icon: "bi bi-columns",
-  // },
-  // {
-  //   title: "Table",
-  //   href: "/table",
-  //   icon: "bi bi-layout-split",
-  // },
+  {
+    title: "Testimonials",
+    href: "/testimonials",
+    icon: "bi bi-card-text",
+  },
+  {
+    title: "Gallery",
+    href: "/gallery",
+    icon: "bi bi-columns",
+  },
+  {
+    title: "Team Members",
+    href: "/teammembers",
+    icon: "bi bi-layout-split",
+  },
   // {
   //   title: "Forms",
   //   href: "/forms",
