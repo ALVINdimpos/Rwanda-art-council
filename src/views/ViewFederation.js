@@ -131,6 +131,94 @@ const ViewFederation = () => {
             </div>
           </CardBody>
         </Card>
+        <Card>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+            className="border-bottom p-3 mb-0"
+          >
+            <h6>Teams in the federation</h6>
+            <Link to={`/addFederationTeam`}>
+              <Button color="primary">Add Team</Button>
+            </Link>
+          </div>
+          <CardBody>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                flexWrap: "wrap",
+              }}
+            >
+              {[
+                {
+                  name: "Team 1",
+                  id: 1,
+                  image:
+                    "https://www.incimages.com/uploaded_files/image/1920x1080/getty_504271344_205161.jpg",
+                },
+                {
+                  name: "Team 2",
+                  id: 2,
+                  image:
+                    "https://img.freepik.com/free-photo/successful-happy-business-team_53876-74892.jpg?w=2000",
+                },
+                {
+                  name: "Team 3",
+                  id: 3,
+                  image:
+                    "https://www.incimages.com/uploaded_files/image/1920x1080/getty_504271344_205161.jpg",
+                },
+                {
+                  name: "Team 4",
+                  id: 4,
+                  image:
+                    "https://www.incimages.com/uploaded_files/image/1920x1080/getty_504271344_205161.jpg",
+                },
+                {
+                  name: "Team 5",
+                  id: 5,
+                  image:
+                    "https://www.incimages.com/uploaded_files/image/1920x1080/getty_504271344_205161.jpg",
+                },
+                {
+                  name: "Team 6",
+                  id: 6,
+                  image:
+                    "https://www.betterup.com/hubfs/Blog%20Images/developing-teams-team-collaborating.jpg",
+                },
+                {
+                  name: "Team 7",
+                  id: 7,
+                  image:
+                    "https://biz30.timedoctor.com/images/2017/07/Great-team-member.jpg",
+                },
+              ].map((item, index) => {
+                return (
+                  <Card className="mr-5" key={item.id}>
+                    <img
+                      width={300}
+                      height={200}
+                      className="p-2"
+                      src={item.image}
+                    />
+                    <CardBody>
+                      <CardTitle tag="h6" className="border-bottom pb-2 mb-0">
+                        {item.name}
+                      </CardTitle>
+                      <Link to={`/viewFederationTeam/${item.id}`}>
+                        <Button color="primary">View details</Button>
+                      </Link>
+                    </CardBody>
+                  </Card>
+                );
+              })}
+            </div>
+          </CardBody>
+        </Card>
       </Col>
     </Row>
   );

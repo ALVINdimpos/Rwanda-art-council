@@ -9,7 +9,7 @@ import {
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ProjectTables = ({
+const CustomTable = ({
   tableData,
   action = "federations" || "unions",
   tableHeaders,
@@ -111,4 +111,4 @@ const ProjectTables = ({
   );
 };
 
-export default ProjectTables;
+export default CustomTable;

@@ -6,7 +6,9 @@ const FullLayout = lazy(() => import("../layouts/FullLayout.js"));
 
 /***** Pages ****/
 
-const EditTestimonial = lazy(() => import("../views/EditTestimonial.js"));
+const ViewFederationTeam = lazy(() => import("../views/ViewFederationTeam.js"));
+const GalleryCategories = lazy(() => import("../views/GalleryCategories.js"));
+const EditFedTeamMember = lazy(() => import("../views/EditFedTeamMember.js"));
 const EditUnion = lazy(() => import("../views/EditUnion.js"));
 const ViewEvent = lazy(() => import("../views/ViewEvent.js"));
 const ViewUnion = lazy(() => import("../views/ViewUnion.js"));
@@ -14,11 +16,11 @@ const AddToGallery = lazy(() => import("../views/AddToGallery.js"));
 const Federation = lazy(() => import("../views/federations.js"));
 const Testimonials = lazy(() => import("../views/Testimonials.js"));
 const Gallery = lazy(() => import("../views/Gallery.js"));
-const TeamMembers = lazy(() => import("../views/TeamMembers.js"));
+const AboutUs = lazy(() => import("../views/AboutUs.js"));
 const RegisterFederation = lazy(() => import("../views/RegisterFederation"));
 const EditFederation = lazy(() => import("../views/EditFederation"));
 const EditEvent = lazy(() => import("../views/EditEvent.js"));
-const AddTestimonial = lazy(() => import("../views/AddTestimonial.js"));
+const AddFedTeamMember = lazy(() => import("../views/AddFedTeamMember.js"));
 const Events = lazy(() => import("../views/Events"));
 const Unions = lazy(() => import("../views/Unions"));
 const Artists = lazy(() => import("../views/Artists"));
@@ -78,24 +80,34 @@ const ThemeRoutes = [
         element: <Testimonials />,
       },
       {
-        path: "/addTestimonial",
+        path: "/addFederationTeam",
         exact: true,
-        element: <AddTestimonial />,
+        element: <AddFedTeamMember />,
       },
       {
-        path: "/editTestimonial/:id",
+        path: "/EditFedTeamMember/:id",
         exact: true,
-        element: <EditTestimonial />,
+        element: <EditFedTeamMember />,
       },
       {
-        path: "/teammembers",
+        path: "/viewFederationTeam/:id",
         exact: true,
-        element: <TeamMembers />,
+        element: <ViewFederationTeam />,
+      },
+      {
+        path: "/aboutUs",
+        exact: true,
+        element: <AboutUs />,
       },
       {
         path: "/gallery",
         exact: true,
         element: <Gallery />,
+      },
+      {
+        path: "/galleryCategories",
+        exact: true,
+        element: <GalleryCategories />,
       },
       {
         path: "/addToGallery",

@@ -26,6 +26,14 @@ const AddToGallery = () => {
           <CardBody>
             <Form>
               <FormGroup>
+                <Label for="exampleEmail">Category</Label>
+                <Input type="select" name="select" id="exampleSelect">
+                  <option>Painting</option>
+                  <option>Photography</option>
+                  <option>Other</option>
+                </Input>
+              </FormGroup>
+              <FormGroup>
                 <Label for="imageFile">Upload image/video</Label>
                 <Input id="imageFile" name="imageFile" type="file" />
                 <FormText>

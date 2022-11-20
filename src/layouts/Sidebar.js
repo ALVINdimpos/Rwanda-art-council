@@ -34,8 +34,8 @@ const navigation = [
     icon: "bi bi-columns",
   },
   {
-    title: "Team Members",
-    href: "/teammembers",
+    title: "About",
+    href: "/aboutUs",
     icon: "bi bi-layout-split",
   },
   // {
@@ -72,13 +72,13 @@ const Sidebar = () => {
           }
           alt="Logo"
         />
-        <Button
-          close
-          size="sm"
-          className=".d-none .d-sm-block .d-md-none"
-          onClick={() => showMobilemenu()}
-        />
       </div>
+      <Button
+        close
+        size="sm"
+        className=".d-none .d-sm-block .d-md-none"
+        onClick={() => showMobilemenu()}
+      />
       <div className="pt-4 mt-2">
         <Nav vertical className="sidebarNav">
           {navigation.map((navi, index) => (

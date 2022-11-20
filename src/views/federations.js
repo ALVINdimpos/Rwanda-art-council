@@ -1,5 +1,5 @@
 import { Col, Row, Button } from "reactstrap";
-import ProjectTables from "../components/dashboard/ProjectTable";
+import CustomTable from "../components/dashboard/CustomTable";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
@@ -63,7 +63,7 @@ const Federations = () => {
       {/***Table ***/}
       <Row>
         <Col lg="12">
-          <ProjectTables
+          <CustomTable
             tableData={tableData}
             action="federations"
             tableHeaders={tableHeaders}
