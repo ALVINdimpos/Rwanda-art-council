@@ -16,7 +16,7 @@ const AddToGallery = lazy(() => import("../views/AddToGallery.js"));
 const Federation = lazy(() => import("../views/federations.js"));
 const Testimonials = lazy(() => import("../views/Testimonials.js"));
 const Gallery = lazy(() => import("../views/Gallery.js"));
-const AboutUs = lazy(() => import("../views/AboutUs.js"));
+const TeamMembers = lazy(() => import("../views/TeamMembers.js"));
 const RegisterFederation = lazy(() => import("../views/RegisterFederation"));
 const EditFederation = lazy(() => import("../views/EditFederation"));
 const EditEvent = lazy(() => import("../views/EditEvent.js"));
@@ -28,7 +28,7 @@ const RegisterUnion = lazy(() => import("../views/RegisterUnion"));
 const RegisterEvent = lazy(() => import("../views/RegisterEvent"));
 const ViewFederation = lazy(() => import("../views/ViewFederation"));
 const Breadcrumbs = lazy(() => import("../views/Breadcrumbs"));
-const About = lazy(() => import("../views/About.js"));
+const ViewArtist = lazy(() => import("../views/ViewArtist"));
 
 /*****Routes******/
 
@@ -71,6 +71,16 @@ const ThemeRoutes = [
       { path: "/viewEvent/:id", exact: true, element: <ViewEvent /> },
       { path: "/editEvent/:id", exact: true, element: <EditEvent /> },
       { path: "/artists", exact: true, element: <Artists /> },
+      {
+        path: "/viewArtist/:id",
+        exact: true,
+        element: <ViewArtist />,
+      },
+      {
+        path: "/viewEvent/:id",
+        exact: true,
+        element: <ViewEvent />,
+      },
       { path: "/registerUnion", exact: true, element: <RegisterUnion /> },
       { path: "/registerEvent", exact: true, element: <RegisterEvent /> },
       { path: "/breadcrumbs", exact: true, element: <Breadcrumbs /> },
@@ -95,9 +105,9 @@ const ThemeRoutes = [
         element: <ViewFederationTeam />,
       },
       {
-        path: "/aboutUs",
+        path: "/teamMembers",
         exact: true,
-        element: <AboutUs />,
+        element: <TeamMembers />,
       },
       {
         path: "/gallery",

@@ -34,8 +34,8 @@ const navigation = [
     icon: "bi bi-columns",
   },
   {
-    title: "About",
-    href: "/aboutUs",
+    title: "Team members",
+    href: "/teamMembers",
     icon: "bi bi-layout-split",
   },
   // {
