@@ -9,6 +9,14 @@ import {
   unionArtistsReducers,
   unionsReducers,
 } from "./union";
+import {
+  allEventsReducer,
+  singleEventReducer,
+  registerEventReducer,
+  updateEventReducer,
+  publishEventReducer,
+  deleteEventReducer,
+} from "./events";
 
 export default combineReducers({
   federation: federationReducers,
@@ -17,4 +25,10 @@ export default combineReducers({
   fedUnions: fedUnionsReducers,
   singleUnion: singleUnionReducers,
   unionArtists: unionArtistsReducers,
+  events: allEventsReducer,
+  singleEvent: singleEventReducer,
+  registerEvent: registerEventReducer,
+  updateEvent: updateEventReducer,
+  publishEvent: publishEventReducer,
+  deleteEvent: deleteEventReducer,
 });
