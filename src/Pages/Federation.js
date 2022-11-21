@@ -53,7 +53,7 @@ const Federation = () => {
               </p>
               <p>
                 He is currently the founder of Dvorak Media. Previously, Andrey
-                was a product designer at Dropbox.
+                was a product designer at Mega.
               </p>
             </div>
           </div>
