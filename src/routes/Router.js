@@ -1,4 +1,3 @@
-import Home from "../Pages/Home";
 import Aboutus from "../Pages/Aboutus";
 import Contactus from "../Pages/Contactus";
 import Gallery from "../Pages/Gallery";
@@ -17,6 +16,7 @@ const FullLayout = lazy(() => import("../layouts/FullLayout.js"));
 
 /***** Pages ****/
 
+const Home = lazy(() => import("../Pages/Home"));
 const ViewFederationTeam = lazy(() => import("../views/ViewFederationTeam.js"));
 const GalleryCategories = lazy(() => import("../views/GalleryCategories.js"));
 const EditFedTeamMember = lazy(() => import("../views/EditFedTeamMember.js"));
@@ -24,9 +24,8 @@ const EditUnion = lazy(() => import("../views/EditUnion.js"));
 const ViewEvent = lazy(() => import("../views/ViewEvent.js"));
 const ViewUnion = lazy(() => import("../views/ViewUnion.js"));
 const AddToGallery = lazy(() => import("../views/AddToGallery.js"));
-const Federation = lazy(() => import("../views/federations.js"));
 const Testimonials = lazy(() => import("../views/Testimonials.js"));
-const Gallery = lazy(() => import("../views/Gallery.js"));
+const DashboardGallery = lazy(() => import("../views/Gallery.js"));
 const TeamMembers = lazy(() => import("../views/TeamMembers.js"));
 const RegisterFederation = lazy(() => import("../views/RegisterFederation"));
 const EditFederation = lazy(() => import("../views/EditFederation"));
@@ -53,99 +52,10 @@ const Tables = lazy(() => import("../views/ui/Tables"));
 /*****Routes******/
 
 const ThemeRoutes = [
-  // {
-  //   path: "/",
-  //   element: <FullLayout />,
-  //   children: [
-  //     { path: "/", element: <Navigate to="/federations" /> },
-  //     {
-  //       path: "/federations",
-  //       exact: true,
-  //       element: <Federation />,
-  //     },
-  //     {
-  //       path: "/viewFederation/:id",
-  //       exact: true,
-  //       element: <ViewFederation />,
-  //     },
-  //     {
-  //       path: "/federations/registerFederation",
-  //       element: <RegisterFederation />,
-  //     },
-  //     {
-  //       path: "/editFederation/:id",
-  //       element: <EditFederation />,
-  //     },
-  //     { path: "/union", exact: true, element: <Unions /> },
-  //     {
-  //       path: "/viewUnion/:id",
-  //       exact: true,
-  //       element: <ViewUnion />,
-  //     },
-  //     {
-  //       path: "/editUnion/:id",
-  //       exact: true,
-  //       element: <EditUnion />,
-  //     },
-  //     { path: "/events", exact: true, element: <Events /> },
-  //     { path: "/viewEvent/:id", exact: true, element: <ViewEvent /> },
-  //     { path: "/editEvent/:id", exact: true, element: <EditEvent /> },
-  //     { path: "/artists", exact: true, element: <Artists /> },
-  //     {
-  //       path: "/viewArtist/:id",
-  //       exact: true,
-  //       element: <ViewArtist />,
-  //     },
-  //     {
-  //       path: "/viewEvent/:id",
-  //       exact: true,
-  //       element: <ViewEvent />,
-  //     },
-  //     { path: "/registerUnion", exact: true, element: <RegisterUnion /> },
-  //     { path: "/registerEvent", exact: true, element: <RegisterEvent /> },
-  //     { path: "/breadcrumbs", exact: true, element: <Breadcrumbs /> },
-  //     {
-  //       path: "/testimonials",
-  //       exact: true,
-  //       element: <Testimonials />,
-  //     },
-  //     {
-  //       path: "/addFederationTeam",
-  //       exact: true,
-  //       element: <AddFedTeamMember />,
-  //     },
-  //     {
-  //       path: "/EditFedTeamMember/:id",
-  //       exact: true,
-  //       element: <EditFedTeamMember />,
-  //     },
-  //     {
-  //       path: "/viewFederationTeam/:id",
-  //       exact: true,
-  //       element: <ViewFederationTeam />,
-  //     },
-  //     {
-  //       path: "/teamMembers",
-  //       exact: true,
-  //       element: <TeamMembers />,
-  //     },
-  //     {
-  //       path: "/gallery",
-  //       exact: true,
-  //       element: <Gallery />,
-  //     },
-  //     {
-  //       path: "/galleryCategories",
-  //       exact: true,
-  //       element: <GalleryCategories />,
-  //     },
-  //     {
-  //       path: "/addToGallery",
-  //       exact: true,
-  //       element: <AddToGallery />,
-  //     },
-  //   element: <Navigate to="/home" />,
-  // },
+  {
+    path: "/",
+    element: <Navigate to="/home" />,
+  },
   {
     path: "/home",
     element: <Home />,
@@ -194,21 +104,105 @@ const ThemeRoutes = [
     path: "/dashboard",
     element: <FullLayout />,
     children: [
-      { path: "/dashboard/", element: <Navigate to="/federations" /> },
+      {
+        path: "/dashboard",
+        exact: true,
+        element: <Navigate to="/dashboard/federations" />,
+      },
       {
         path: "/dashboard/federations",
         exact: true,
         element: <FederationDashboard />,
       },
-      { path: "/dashboard/registerFederation", element: <Forms /> },
-      { path: "/dashboard/about", exact: true, element: <About /> },
-      { path: "/dashboard/alerts", exact: true, element: <Alerts /> },
-      { path: "/dashboard/badges", exact: true, element: <Badges /> },
-      { path: "/dashboard/buttons", exact: true, element: <Buttons /> },
-      { path: "/dashboard/cards", exact: true, element: <Cards /> },
-      { path: "/dashboard/grid", exact: true, element: <Grid /> },
-      { path: "/dashboard/table", exact: true, element: <Tables /> },
+      {
+        path: "/dashboard/viewFederation/:id",
+        exact: true,
+        element: <ViewFederation />,
+      },
+      {
+        path: "/dashboard/registerFederation",
+        element: <RegisterFederation />,
+      },
+      {
+        path: "/dashboard/editFederation/:id",
+        element: <EditFederation />,
+      },
+      { path: "/dashboard/union", exact: true, element: <Unions /> },
+      {
+        path: "/dashboard/viewUnion/:id",
+        exact: true,
+        element: <ViewUnion />,
+      },
+      {
+        path: "/dashboard/editUnion/:id",
+        exact: true,
+        element: <EditUnion />,
+      },
+      { path: "/dashboard/events", exact: true, element: <Events /> },
+      { path: "/dashboard/viewEvent/:id", exact: true, element: <ViewEvent /> },
+      { path: "/dashboard/editEvent/:id", exact: true, element: <EditEvent /> },
+      { path: "/dashboard/artists", exact: true, element: <Artists /> },
+      {
+        path: "/dashboard/viewArtist/:id",
+        exact: true,
+        element: <ViewArtist />,
+      },
+      {
+        path: "/dashboard/viewEvent/:id",
+        exact: true,
+        element: <ViewEvent />,
+      },
+      {
+        path: "/dashboard/registerUnion",
+        exact: true,
+        element: <RegisterUnion />,
+      },
+      {
+        path: "/dashboard/registerEvent",
+        exact: true,
+        element: <RegisterEvent />,
+      },
       { path: "/dashboard/breadcrumbs", exact: true, element: <Breadcrumbs /> },
+      {
+        path: "/dashboard/testimonials",
+        exact: true,
+        element: <Testimonials />,
+      },
+      {
+        path: "/dashboard/addFederationTeam",
+        exact: true,
+        element: <AddFedTeamMember />,
+      },
+      {
+        path: "/dashboard/EditFedTeamMember/:id",
+        exact: true,
+        element: <EditFedTeamMember />,
+      },
+      {
+        path: "/dashboard/viewFederationTeam/:id",
+        exact: true,
+        element: <ViewFederationTeam />,
+      },
+      {
+        path: "/dashboard/teamMembers",
+        exact: true,
+        element: <TeamMembers />,
+      },
+      {
+        path: "/dashboard/gallery",
+        exact: true,
+        element: <DashboardGallery />,
+      },
+      {
+        path: "/dashboard/galleryCategories",
+        exact: true,
+        element: <GalleryCategories />,
+      },
+      {
+        path: "/dashboard/addToGallery",
+        exact: true,
+        element: <AddToGallery />,
+      },
     ],
   },
 ];

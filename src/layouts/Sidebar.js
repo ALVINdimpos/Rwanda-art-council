@@ -6,37 +6,37 @@ const logo = require("../assets/images/logos/Logo.png").default;
 const navigation = [
   {
     title: "Federations",
-    href: "/federations",
+    href: "/dashboard/federations",
     icon: "bi bi-speedometer2",
   },
   {
     title: "Unions",
-    href: "/union",
+    href: "/dashboard/union",
     icon: "bi bi-patch-check",
   },
   {
     title: "Events",
-    href: "/events",
+    href: "/dashboard/events",
     icon: "bi bi-bell",
   },
   {
     title: "Artists",
-    href: "/artists",
+    href: "/dashboard/artists",
     icon: "bi bi-hdd-stack",
   },
   {
     title: "Testimonials",
-    href: "/testimonials",
+    href: "/dashboard/testimonials",
     icon: "bi bi-card-text",
   },
   {
     title: "Gallery",
-    href: "/gallery",
+    href: "/dashboard/gallery",
     icon: "bi bi-columns",
   },
   {
     title: "Team members",
-    href: "/teamMembers",
+    href: "/dashboard/teamMembers",
     icon: "bi bi-layout-split",
   },
   // {
@@ -86,10 +86,13 @@ const Sidebar = () => {
             <NavItem key={index} className="sidenav-bg">
               <Link
                 to={navi.href}
+                style={{
+                  color: location.pathname === navi.href ? "#C5801A" : "#000",
+                }}
                 className={
                   location.pathname === navi.href
-                    ? "text-primary nav-link py-3"
-                    : "nav-link text-secondary py-3"
+                    ? " nav-link py-3"
+                    : "nav-link  py-3"
                 }
               >
                 <i className={navi.icon}></i>

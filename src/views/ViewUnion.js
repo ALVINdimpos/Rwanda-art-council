@@ -68,7 +68,12 @@ const ViewUnion = () => {
                   }}
                 >
                   <Link to={`/editUnion/${id}`}>
-                    <Button color="primary" className="mr-5">
+                    <Button
+                      style={{
+                        backgroundColor: "#C5801A",
+                      }}
+                      className="mr-5"
+                    >
                       Edit Union
                     </Button>
                   </Link>
@@ -99,7 +104,12 @@ const ViewUnion = () => {
           >
             <h6>Artists List</h6>
             <Link to={`/addArtist/${id}`}>
-              <Button color="primary" className="mr-5">
+              <Button
+                style={{
+                  backgroundColor: "#C5801A",
+                }}
+                className="mr-5"
+              >
                 Add Artist
               </Button>
             </Link>
@@ -125,7 +135,12 @@ const ViewUnion = () => {
                       <td>{artist.email}</td>
                       <td>
                         <Link to={`/viewArtist/${artist.id}`}>
-                          <Button color="primary" className="mr-5">
+                          <Button
+                            style={{
+                              backgroundColor: "#C5801A",
+                            }}
+                            className="mr-5"
+                          >
                             View Artist
                           </Button>
                         </Link>

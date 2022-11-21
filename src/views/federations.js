@@ -5,25 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getAllFederation } from "../redux/actions/federation";
 
-const tableData = [
-  {
-    id: 1,
-    name: "Test federation 1",
-    email: "testfederation1@gmail.com",
-    tinNumber: "126565836182312",
-    status: "pending",
-  },
-  {
-    id: 2,
-    name: "Test federation 2",
-    email: "testfederation2@gmail.com",
-    tinNumber: "986842933623763",
-    status: "done",
-    weeks: "35",
-    budget: "95K",
-  },
-];
-
 const tableHeaders = [
   {
     key: 1,
@@ -43,7 +24,7 @@ const tableHeaders = [
   },
 ];
 
-const Federations = () => {
+const FederationDashboard = () => {
   const [tableData, setTableData] = useState(null);
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
@@ -60,7 +41,6 @@ const Federations = () => {
 
   return (
     <div>
-      {/***Table ***/}
       <Row>
         <Col lg="12">
           <CustomTable
@@ -70,10 +50,15 @@ const Federations = () => {
           />
         </Col>
         <Col lg="12">
-          <Button color="primary" className="mt-3">
+          <Button
+            style={{
+              backgroundColor: "#C5801A",
+            }}
+            className="mt-3"
+          >
             <Link
               className="text-decoration-none text-light"
-              to="/federations/registerFederation"
+              to="/dashboard/registerFederation"
             >
               Add Federation
             </Link>
@@ -84,4 +69,4 @@ const Federations = () => {
   );
 };
 
-export default Federations;
+export default FederationDashboard;

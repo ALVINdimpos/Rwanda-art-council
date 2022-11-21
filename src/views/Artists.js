@@ -26,8 +26,13 @@ const Artists = () => {
               <td>123456789</td>
               <td>mark@gmail.com</td>
               <td>
-                <Link to={`/viewArtist/1`}>
-                  <Button color="primary" className="mr-5">
+                <Link to={`/dashboard/viewArtist/1`}>
+                  <Button
+                    style={{
+                      backgroundColor: "#C5801A",
+                    }}
+                    className="mr-5"
+                  >
                     View Artist
                   </Button>
                 </Link>
@@ -39,8 +44,13 @@ const Artists = () => {
               <td>123456789</td>
               <td>peter@gmail.com</td>
               <td>
-                <Link to={`/viewArtist/1`}>
-                  <Button color="primary" className="mr-5">
+                <Link to={`/dashboard/viewArtist/1`}>
+                  <Button
+                    style={{
+                      backgroundColor: "#C5801A",
+                    }}
+                    className="mr-5"
+                  >
                     View Artist
                   </Button>
                 </Link>
@@ -52,8 +62,13 @@ const Artists = () => {
               <td>123456789</td>
               <td>james@gmail.com</td>
               <td>
-                <Link to={`/viewArtist/1`}>
-                  <Button color="primary" className="mr-5">
+                <Link to={`/dashboard/viewArtist/1`}>
+                  <Button
+                    style={{
+                      backgroundColor: "#C5801A",
+                    }}
+                    className="mr-5"
+                  >
                     View Artist
                   </Button>
                 </Link>
@@ -65,8 +80,13 @@ const Artists = () => {
               <td>123456789</td>
               <td>jacques@gmail.com</td>
               <td>
-                <Link to={`/viewArtist/1`}>
-                  <Button color="primary" className="mr-5">
+                <Link to={`/dashboard/viewArtist/1`}>
+                  <Button
+                    style={{
+                      backgroundColor: "#C5801A",
+                    }}
+                    className="mr-5"
+                  >
                     View Artist
                   </Button>
                 </Link>
@@ -78,8 +98,13 @@ const Artists = () => {
               <td>123456789</td>
               <td>jacon@gmail.com</td>
               <td>
-                <Link to={`/viewArtist/2`}>
-                  <Button color="primary" className="mr-5">
+                <Link to={`/dashboard/viewArtist/1`}>
+                  <Button
+                    style={{
+                      backgroundColor: "#C5801A",
+                    }}
+                    className="mr-5"
+                  >
                     View Artist
                   </Button>
                 </Link>

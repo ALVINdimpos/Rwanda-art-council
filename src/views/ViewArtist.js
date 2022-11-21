@@ -56,7 +56,12 @@ const ViewArtist = () => {
                   }}
                 >
                   <Link to={`/editArtist/${id}`}>
-                    <Button color="primary" className="mr-5">
+                    <Button
+                      style={{
+                        backgroundColor: "#C5801A",
+                      }}
+                      className="mr-5"
+                    >
                       Edit Artist
                     </Button>
                   </Link>

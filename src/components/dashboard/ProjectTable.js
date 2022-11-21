@@ -68,11 +68,7 @@ const ProjectTables = ({ tableData }) => {
                       isOpen={dropdownOpen[index]}
                       toggle={() => toggle(index)}
                     >
-                      <DropdownToggle
-                        className="btn btn-primary btn-sm"
-                        caret
-                        color="primary"
-                      >
+                      <DropdownToggle className="btn btn-primary btn-sm" caret>
                         Actions
                       </DropdownToggle>
                       <DropdownMenu>

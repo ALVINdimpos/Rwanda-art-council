@@ -61,8 +61,15 @@ const TestMembers = () => {
             </NavLink>
           </NavItem>
         </Nav>
-        <Button color="primary">
-          <Link className="text-decoration-none text-light" to="/registerEvent">
+        <Button
+          style={{
+            backgroundColor: "#C5801A",
+          }}
+        >
+          <Link
+            className="text-decoration-none text-light"
+            to="/dashboard/registerEvent"
+          >
             Add new member
           </Link>
         </Button>

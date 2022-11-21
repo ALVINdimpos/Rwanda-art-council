@@ -107,7 +107,10 @@ const Events = () => {
               className={classnames({
                 active: currentActiveTab === "1",
               })}
-              style={{ cursor: "pointer" }}
+              style={{
+                cursor: "pointer",
+                color: currentActiveTab === "1" ? "#C5801A" : "#000",
+              }}
               onClick={() => {
                 toggle("1");
               }}
@@ -120,7 +123,10 @@ const Events = () => {
               className={classnames({
                 active: currentActiveTab === "2",
               })}
-              style={{ cursor: "pointer" }}
+              style={{
+                cursor: "pointer",
+                color: currentActiveTab === "2" ? "#C5801A" : "#000",
+              }}
               onClick={() => {
                 toggle("2");
               }}
@@ -133,7 +139,10 @@ const Events = () => {
               className={classnames({
                 active: currentActiveTab === "3",
               })}
-              style={{ cursor: "pointer" }}
+              style={{
+                cursor: "pointer",
+                color: currentActiveTab === "3" ? "#C5801A" : "#000",
+              }}
               onClick={() => {
                 toggle("3");
               }}
@@ -142,8 +151,15 @@ const Events = () => {
             </NavLink>
           </NavItem>
         </Nav>
-        <Button color="primary">
-          <Link className="text-decoration-none text-light" to="/registerEvent">
+        <Button
+          style={{
+            backgroundColor: "#C5801A",
+          }}
+        >
+          <Link
+            className="text-decoration-none text-light"
+            to="/dashboard/registerEvent"
+          >
             Add new Event
           </Link>
         </Button>

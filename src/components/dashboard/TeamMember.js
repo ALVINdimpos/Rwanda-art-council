@@ -12,7 +12,14 @@ const TeamMember = ({ image, text, id, position }) => {
       <CardBody className="p-2">
         <CardText className="mt-3">{text}</CardText>
         <CardText className="mt-3">Position: {position}</CardText>
-        <Button color={"primary"}>View</Button>{" "}
+        <Button
+          style={{
+            backgroundColor: "#C5801A",
+          }}
+          color={"#C5801A"}
+        >
+          View
+        </Button>{" "}
         <Button color={"info"}>Edit</Button>{" "}
         <Button color={"danger"}>Delete</Button>
       </CardBody>

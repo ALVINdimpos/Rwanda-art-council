@@ -59,7 +59,7 @@ const CustomTable = ({
                       <td>
                         <ButtonGroup>
                           <Link to={`/viewFederation/${tdata.id}`}>
-                            <Button color="primary" size="sm">
+                            <Button color="#C5801A" size="sm">
                               <i className="bi bi-eye-fill"></i>
                             </Button>
                           </Link>
@@ -86,7 +86,12 @@ const CustomTable = ({
                       <td>
                         <ButtonGroup>
                           <Link to={`/viewUnion/${tdata.id}`}>
-                            <Button color="primary" size="sm">
+                            <Button
+                              style={{
+                                backgroundColor: "#C5801A",
+                              }}
+                              size="sm"
+                            >
                               <i className="bi bi-eye-fill"></i>
                             </Button>
                           </Link>

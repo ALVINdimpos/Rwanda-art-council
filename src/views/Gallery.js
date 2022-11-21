@@ -83,7 +83,13 @@ const Gallery = () => {
       >
         <h5>Gallery</h5>
         <Link to="/galleryCategories">
-          <Button color="primary">Delete or add categories</Button>
+          <Button
+            style={{
+              backgroundColor: "#C5801A",
+            }}
+          >
+            Delete or add categories
+          </Button>
         </Link>
       </div>
       <div
@@ -99,7 +105,10 @@ const Gallery = () => {
               className={classnames({
                 active: currentActiveTab === "1",
               })}
-              style={{ cursor: "pointer" }}
+              style={{
+                cursor: "pointer",
+                color: currentActiveTab === "1" ? "#C5801A" : "#000",
+              }}
               onClick={() => {
                 toggle("1");
               }}
@@ -112,7 +121,10 @@ const Gallery = () => {
               className={classnames({
                 active: currentActiveTab === "2",
               })}
-              style={{ cursor: "pointer" }}
+              style={{
+                cursor: "pointer",
+                color: currentActiveTab === "2" ? "#C5801A" : "#000",
+              }}
               onClick={() => {
                 toggle("2");
               }}
@@ -125,7 +137,10 @@ const Gallery = () => {
               className={classnames({
                 active: currentActiveTab === "3",
               })}
-              style={{ cursor: "pointer" }}
+              style={{
+                cursor: "pointer",
+                color: currentActiveTab === "3" ? "#C5801A" : "#000",
+              }}
               onClick={() => {
                 toggle("3");
               }}
@@ -134,8 +149,14 @@ const Gallery = () => {
             </NavLink>
           </NavItem>
         </Nav>
-        <Link to="/addToGallery">
-          <Button color="primary">Add to Gallery</Button>
+        <Link to="/dashboard/addToGallery">
+          <Button
+            style={{
+              backgroundColor: "#C5801A",
+            }}
+          >
+            Add to Gallery
+          </Button>
         </Link>
       </div>
 

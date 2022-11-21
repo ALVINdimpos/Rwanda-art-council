@@ -62,7 +62,12 @@ const ViewFederation = () => {
                     }}
                   >
                     <Link to={`/editFederation/${id}`}>
-                      <Button color="primary" className="mr-5">
+                      <Button
+                        style={{
+                          backgroundColor: "#C5801A",
+                        }}
+                        className="mr-5"
+                      >
                         Edit
                       </Button>
                     </Link>
@@ -92,8 +97,14 @@ const ViewFederation = () => {
             className="border-bottom p-3 mb-0"
           >
             <h6>Unions in the federation</h6>
-            <Link to={`/addUnion/${id}`}>
-              <Button color="primary">Add Union</Button>
+            <Link to={`/dashboard/addUnion/${id}`}>
+              <Button
+                style={{
+                  backgroundColor: "#C5801A",
+                }}
+              >
+                Add Union
+              </Button>
             </Link>
           </div>
           <CardBody>
@@ -122,7 +133,13 @@ const ViewFederation = () => {
                           {union.slogan}
                         </p>
                         <Link to={`/viewUnion/${union.id}`}>
-                          <Button color="primary">View details</Button>
+                          <Button
+                            style={{
+                              backgroundColor: "#C5801A",
+                            }}
+                          >
+                            View details
+                          </Button>
                         </Link>
                       </CardBody>
                     </Card>
@@ -142,7 +159,13 @@ const ViewFederation = () => {
           >
             <h6>Teams in the federation</h6>
             <Link to={`/addFederationTeam`}>
-              <Button color="primary">Add Team</Button>
+              <Button
+                style={{
+                  backgroundColor: "#C5801A",
+                }}
+              >
+                Add Team
+              </Button>
             </Link>
           </div>
           <CardBody>
@@ -210,7 +233,13 @@ const ViewFederation = () => {
                         {item.name}
                       </CardTitle>
                       <Link to={`/viewFederationTeam/${item.id}`}>
-                        <Button color="primary">View details</Button>
+                        <Button
+                          style={{
+                            backgroundColor: "#C5801A",
+                          }}
+                        >
+                          View details
+                        </Button>
                       </Link>
                     </CardBody>
                   </Card>

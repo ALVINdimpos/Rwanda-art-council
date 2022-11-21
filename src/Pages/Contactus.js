@@ -6,63 +6,62 @@ import Footer from "../components/Footer/Footer";
 import Style from "./ContactusStyle.module.css";
 import Button from "../components/Button/Index";
 import PageIndicator from "../components/PageIndicator/Index";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import validator from "validator";
 import axios from "axios";
 import { MDBIcon } from "mdbreact";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 import { MDBInput, MDBTextArea } from "mdb-react-ui-kit";
 function Index() {
-  const [email,setEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
-  const [message,setMessage] = useState("");
-  const [emailValid,setEmailValid] = useState("");
-  const [subjectValid,setSubjectValid] = useState("");
-  const [messageValid,setMessageValid] = useState("");
+  const [message, setMessage] = useState("");
+  const [emailValid, setEmailValid] = useState("");
+  const [subjectValid, setSubjectValid] = useState("");
+  const [messageValid, setMessageValid] = useState("");
   const [loading, setLoading] = useState(false);
-  const data={
+  const data = {
     email,
     subject,
-    message
-  }
-  const subjectHandler=(e)=>{
+    message,
+  };
+  const subjectHandler = (e) => {
     setSubject(e.target.value);
-  }
-  const emailHandler=(e)=>{
+  };
+  const emailHandler = (e) => {
     setEmail(e.target.value);
-  }
-  const messageHandler=(e)=>{
+  };
+  const messageHandler = (e) => {
     setMessage(e.target.value);
-  }
-  const submitHandler= async(e)=>{
-    e.preventDefault();
-    if(validator.isEmail(email)){
+  };
+  const submitHandler = async (e) => {
+    // e.preventDefault();
+    if (validator.isEmail(email)) {
       setEmailValid("");
-    }else{
+    } else {
       setEmailValid("Please enter a valid email");
     }
-    if(subject.length<5){
+    if (subject.length < 5) {
       setSubjectValid("Subject must be 5 characters long");
-    }else{
+    } else {
       setSubjectValid("");
     }
-    if(message.length<10){
+    if (message.length < 10) {
       setMessageValid("Message must be 10 characters long");
-    }else{
+    } else {
       setMessageValid("");
     }
     setLoading(true);
     try {
-    const res=  await axios.post(
+      const res = await axios.post(
         "https://rwanda-art-api.herokuapp.com/api/contact-us",
         data
       );
-      if (res.status === 200) {
-        toast.success("Message sent successfully");
-        console.log(res); 
-      }
-
+      // if (res.status === 200) {
+      //   toast.success("Message sent successfully");
+      //   console.log(res);
+      // }
     } catch (error) {
       console.log(error);
       setLoading(false);
@@ -73,10 +72,10 @@ function Index() {
     setEmailValid("");
     setSubjectValid("");
     setMessageValid("");
-  }
-	useEffect(()=>{
-  submitHandler();
-	},[])
+  };
+  // useEffect(() => {
+  //   submitHandler();
+  // }, []);
   return (
     <>
       <NavBar />
@@ -86,6 +85,8 @@ function Index() {
           <div className="gmap_canvas">
             <iframe
               id="gmap_canvas"
+              width="600"
+              height="450"
               src="https://maps.google.com/maps?q=Rwanda%20art%20council&t=&z=13&ie=UTF8&iwloc=&output=embed"
               frameBorder={0}
               scrolling="no"
@@ -116,7 +117,7 @@ function Index() {
               value={email}
             />
           </div>
-    {emailValid && <div className={Style.error}>{emailValid}</div>}
+          {emailValid && <div className={Style.error}>{emailValid}</div>}
           <div>
             <MDBInput
               id="typeText"
@@ -126,19 +127,26 @@ function Index() {
               value={subject}
             />
           </div>
-          
-    {subjectValid && <div className={Style.error}>{subjectValid}</div>}
+
+          {subjectValid && <div className={Style.error}>{subjectValid}</div>}
           <div>
-            <MDBTextArea id="textAreaExample" rows={4} onChange={messageHandler}
-            value={message} />
+            <MDBTextArea
+              id="textAreaExample"
+              rows={4}
+              onChange={messageHandler}
+              value={message}
+            />
           </div>
-    {messageValid && <div className={Style.error}>{messageValid}</div>}
+          {messageValid && <div className={Style.error}>{messageValid}</div>}
           <div>
-            <Button name={loading ? "loading..." : `Send email`} onClick={submitHandler}/>
+            <Button
+              name={loading ? "loading..." : `Send email`}
+              onClick={submitHandler}
+            />
           </div>
         </div>
       </div>
-      <ToastContainer/>
+      {/* <ToastContainer/> */}
       <Footer />
     </>
   );

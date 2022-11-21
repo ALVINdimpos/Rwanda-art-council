@@ -119,7 +119,13 @@ const Cards = () => {
       <Row>
         <h5 className="mb-3 mt-3">Colored Card</h5>
         <Col md="6" lg="3">
-          <Card body color="primary" inverse>
+          <Card
+            style={{
+              backgroundColor: "#C5801A",
+            }}
+            body
+            inverse
+          >
             <CardTitle tag="h5">Special Title Treatment</CardTitle>
             <CardText>
               With supporting text below as a natural lead-in to additional

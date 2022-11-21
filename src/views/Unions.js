@@ -68,10 +68,15 @@ const Unions = () => {
           />
         </Col>
         <Col lg="12">
-          <Button color="primary" className="mt-3">
+          <Button
+            style={{
+              backgroundColor: "#C5801A",
+            }}
+            className="mt-3"
+          >
             <Link
               className="text-decoration-none text-light"
-              to="/registerUnion"
+              to="/dashboard/registerUnion"
             >
               Add Union
             </Link>

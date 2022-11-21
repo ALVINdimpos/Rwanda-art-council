@@ -17,10 +17,17 @@ const Event = ({ image, title, subtitle, text, status, id }) => {
         <CardSubtitle>{subtitle}</CardSubtitle>
         <CardSubtitle>Status: {status}</CardSubtitle>
         <CardText className="mt-3">{text}</CardText>
-        <Link to={`/viewEvent/${id}`}>
-          <Button color={"primary"}>View</Button>{" "}
+        <Link to={`/dashboard/viewEvent/${id}`}>
+          <Button
+            style={{
+              backgroundColor: "#C5801A",
+            }}
+            color={"primary"}
+          >
+            View
+          </Button>{" "}
         </Link>
-        <Link to={`/editEvent/${id}`}>
+        <Link to={`/dashboard/editEvent/${id}`}>
           <Button color={"info"}>Edit</Button>{" "}
         </Link>
         <Button color={"danger"}>Delete</Button>

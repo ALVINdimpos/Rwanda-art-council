@@ -54,7 +54,13 @@ const ViewFederationTeam = () => {
                 }}
               >
                 <Link to={`/EditFedTeamMember/${id}`}>
-                  <Button color="primary">Edit Federation Team</Button>{" "}
+                  <Button
+                    style={{
+                      backgroundColor: "#C5801A",
+                    }}
+                  >
+                    Edit Federation Team
+                  </Button>{" "}
                 </Link>
                 <Button color="danger">Delete Federation Team</Button>
               </div>

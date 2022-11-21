@@ -8,10 +8,9 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <div className="dark">{routing}</div>;
+      <div>{routing}</div>;
     </Provider>
   );
 };
 
-
-
+export default App;

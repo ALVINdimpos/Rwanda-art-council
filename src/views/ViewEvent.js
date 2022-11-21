@@ -50,7 +50,12 @@ const ViewEvent = () => {
                     }}
                   >
                     <Link to={`/editFederation/${eventId}`}>
-                      <Button color="primary" className="mr-5">
+                      <Button
+                        style={{
+                          backgroundColor: "#C5801A",
+                        }}
+                        className="mr-5"
+                      >
                         Edit
                       </Button>
                     </Link>

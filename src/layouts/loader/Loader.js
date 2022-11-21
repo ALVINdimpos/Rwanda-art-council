@@ -5,7 +5,11 @@ import { Spinner } from "reactstrap";
 const Loader = () => (
   <div className="fallback-spinner">
     <div className="loading">
-      <Spinner color="primary" />
+      <Spinner
+        style={{
+          color: "#C5801A",
+        }}
+      />
     </div>
   </div>
 );
