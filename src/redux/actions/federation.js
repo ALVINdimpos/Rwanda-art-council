@@ -8,6 +8,12 @@ import {
   GET_SINGLE_FEDERATION,
   GET_SINGLE_FEDERATION_SUCCESS,
   GET_SINGLE_FEDERATION_FAILURE,
+  UPDATE_FEDERATION,
+  UPDATE_FEDERATION_SUCCESS,
+  UPDATE_FEDERATION_FAILURE,
+  DELETE_FEDERATION,
+  DELETE_FEDERATION_SUCCESS,
+  DELETE_FEDERATION_FAILURE,
 } from "../types";
 import action from "./action";
 import axios from "axios";
@@ -68,5 +74,37 @@ export const registerFederation = (data) => async (dispatch) => {
       });
   } catch (error) {
     dispatch(action(REGISTER_FEDERATION_FAILURE, error));
+  }
+};
+
+export const updateFederation = (id, data) => async (dispatch) => {
+  try {
+    dispatch(action(UPDATE_FEDERATION));
+    axios
+      .put(`${API_URL}/Fed/Update/${id}`, data)
+      .then((response) => {
+        dispatch(action(UPDATE_FEDERATION_SUCCESS, response.data));
+      })
+      .catch((error) => {
+        dispatch(action(UPDATE_FEDERATION_FAILURE, error));
+      });
+  } catch (error) {
+    dispatch(action(UPDATE_FEDERATION_FAILURE, error));
+  }
+};
+
+export const deleteFederation = (id) => async (dispatch) => {
+  try {
+    dispatch(action(DELETE_FEDERATION));
+    axios
+      .delete(`${API_URL}/Federation/Delete/${id}`)
+      .then((response) => {
+        dispatch(action(DELETE_FEDERATION_SUCCESS, response.data));
+      })
+      .catch((error) => {
+        dispatch(action(DELETE_FEDERATION_FAILURE, error));
+      });
+  } catch (error) {
+    dispatch(action(DELETE_FEDERATION_FAILURE, error));
   }
 };

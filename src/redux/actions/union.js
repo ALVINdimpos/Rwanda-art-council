@@ -1,6 +1,9 @@
 import axios from "axios";
 import { API_URL, TOKEN } from "../../utils/config";
 import {
+  CREATE_ARTIST,
+  CREATE_ARTIST_FAILURE,
+  CREATE_ARTIST_SUCCESS,
   GET_ALL_UNIONS,
   GET_ALL_UNIONS_FAILURE,
   GET_ALL_UNIONS_SUCCESS,
@@ -13,6 +16,12 @@ import {
   GET_UNION_BY_FEDERATION,
   GET_UNION_BY_FEDERATION_FAILURE,
   GET_UNION_BY_FEDERATION_SUCCESS,
+  REGISTER_UNION,
+  REGISTER_UNION_FAILED,
+  REGISTER_UNION_SUCCESS,
+  UPDATE_UNION,
+  UPDATE_UNION_FAILED,
+  UPDATE_UNION_SUCCESS,
 } from "../types";
 import action from "./action";
 
@@ -79,6 +88,50 @@ export const getUnion = (id) => async (dispatch) => {
   }
 };
 
+export const registerUnion = (data) => async (dispatch) => {
+  try {
+    dispatch(action(REGISTER_UNION));
+    axios({
+      method: "post",
+      url: `${API_URL}/Union/Register`,
+      headers: {
+        Authorization: `Bearer ${TOKEN}`,
+      },
+      data,
+    })
+      .then((response) => {
+        dispatch(action(REGISTER_UNION_SUCCESS, response.data));
+      })
+      .catch((error) => {
+        dispatch(action(REGISTER_UNION_FAILED, error));
+      });
+  } catch (error) {
+    dispatch(action(REGISTER_UNION_FAILED, error));
+  }
+};
+
+export const updateUnion = (id, data) => async (dispatch) => {
+  try {
+    dispatch(action(UPDATE_UNION));
+    axios({
+      method: "post",
+      url: `${API_URL}/Uni/Update/${id}`,
+      headers: {
+        Authorization: `Bearer ${TOKEN}`,
+      },
+      data,
+    })
+      .then((response) => {
+        dispatch(action(UPDATE_UNION_SUCCESS, response.data));
+      })
+      .catch((error) => {
+        dispatch(action(UPDATE_UNION_FAILED, error));
+      });
+  } catch (error) {
+    dispatch(action(UPDATE_UNION_FAILED, error));
+  }
+};
+
 export const getArtistInUnion = (id) => async (dispatch) => {
   try {
     dispatch(action(GET_ARTISTS_IN_UNION));
@@ -97,5 +150,27 @@ export const getArtistInUnion = (id) => async (dispatch) => {
       });
   } catch (error) {
     dispatch(action(GET_ARTISTS_IN_UNION_FAILURE, error));
+  }
+};
+
+export const createArtistInUnion = (data) => async (dispatch) => {
+  try {
+    dispatch(action(CREATE_ARTIST));
+    axios({
+      method: "post",
+      url: `${API_URL}/Artist/Register`,
+      headers: {
+        Authorization: `Bearer ${TOKEN}`,
+      },
+      data,
+    })
+      .then((response) => {
+        dispatch(action(CREATE_ARTIST_SUCCESS, response.data));
+      })
+      .catch((error) => {
+        dispatch(action(CREATE_ARTIST_FAILURE, error));
+      });
+  } catch (error) {
+    dispatch(action(CREATE_ARTIST_FAILURE, error));
   }
 };

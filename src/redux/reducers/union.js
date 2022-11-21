@@ -1,14 +1,26 @@
 import { initialState } from "../../utils/config";
 import {
+  CREATE_ARTIST,
+  CREATE_ARTIST_FAILURE,
+  CREATE_ARTIST_SUCCESS,
   GET_ALL_UNIONS,
   GET_ALL_UNIONS_FAILURE,
   GET_ALL_UNIONS_SUCCESS,
+  GET_ARTISTS_IN_UNION,
+  GET_ARTISTS_IN_UNION_FAILURE,
+  GET_ARTISTS_IN_UNION_SUCCESS,
   GET_SINGLE_FEDERATION_SUCCESS,
   GET_SINGLE_UNION,
   GET_SINGLE_UNION_FAILURE,
   GET_UNION_BY_FEDERATION,
   GET_UNION_BY_FEDERATION_FAILURE,
   GET_UNION_BY_FEDERATION_SUCCESS,
+  REGISTER_UNION,
+  REGISTER_UNION_FAILED,
+  REGISTER_UNION_SUCCESS,
+  UPDATE_UNION,
+  UPDATE_UNION_FAILED,
+  UPDATE_UNION_SUCCESS,
 } from "../types";
 
 export const unionsReducers = (
@@ -113,6 +125,90 @@ export const unionArtistsReducers = (
         success: true,
       };
     case GET_SINGLE_UNION_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export const registerUnionReducers = (
+  state = { ...initialState, union: {} },
+  action
+) => {
+  switch (action.type) {
+    case REGISTER_UNION:
+      return {
+        ...state,
+        loading: true,
+      };
+    case REGISTER_UNION_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        union: action.payload.info,
+        success: true,
+      };
+    case REGISTER_UNION_FAILED:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export const updateUnionReducers = (
+  state = { ...initialState, message: "" },
+  action
+) => {
+  switch (action.type) {
+    case UPDATE_UNION:
+      return {
+        ...state,
+        loading: true,
+      };
+    case UPDATE_UNION_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        message: "Union updated successfully",
+        success: true,
+      };
+    case UPDATE_UNION_FAILED:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export const createArtistReducers = (
+  state = { ...initialState, artist: {} },
+  action
+) => {
+  switch (action.type) {
+    case CREATE_ARTIST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case CREATE_ARTIST_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        artist: action.payload.info,
+        success: true,
+      };
+    case CREATE_ARTIST_FAILURE:
       return {
         ...state,
         loading: false,
