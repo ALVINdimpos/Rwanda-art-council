@@ -1,4 +1,6 @@
+import axios from "axios";
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
   Navbar,
@@ -14,10 +16,17 @@ import {
   Button,
 } from "reactstrap";
 import user1 from "../assets/images/users/user1.jpg";
+import { logoutUser } from "../redux/actions";
+import { API_URL } from "../utils/config";
 
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
+  const state = useSelector((state) => state);
+  const {
+    logout: { success },
+  } = state;
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   const Handletoggle = () => {
@@ -25,6 +34,21 @@ const Header = () => {
   };
   const showMobilemenu = () => {
     document.getElementById("sidebarArea").classList.toggle("showSidebar");
+  };
+  const logout = async () => {
+    console.log("test");
+    try {
+      const res = await axios.get(`${API_URL}/User/Logout`);
+      console.log(res.status);
+      if (res.status === 200 && res.data) {
+        localStorage.removeItem("user");
+        console.log(res);
+        window.location.href = "/";
+      }
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
   };
   return (
     <Navbar
@@ -78,7 +102,7 @@ const Header = () => {
               <DropdownItem divider />
               <DropdownItem>My Balance</DropdownItem>
               <DropdownItem>Inbox</DropdownItem>
-              <DropdownItem>Logout</DropdownItem>
+              <DropdownItem onClick={logout}>Logout</DropdownItem>
             </DropdownMenu>
           </Dropdown>
         </Collapse>

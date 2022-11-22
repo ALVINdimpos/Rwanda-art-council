@@ -5,127 +5,116 @@ import Button from "../components/Button/Index";
 import { MDBIcon } from "mdbreact";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
 import validator from "validator";
 import axios from "axios";
-function Index() {
+import { useForm } from "react-hook-form";
+import { useSelector } from "react-redux";
+import { loginUser } from "../redux/actions";
+import { API_URL, TOKEN } from "../utils/config";
+
+function Login() {
   const navigation = useNavigate();
-  const [Email, SetEmail] = useState("");
-  const [Password, SetPassword] = useState("");
-  const [emaiValid, setEmailValid] = useState("");
-  const [passwordValid, setPasswordValid] = useState("");
   const [loading, setLoading] = useState(false);
   const [passwordShown, setPasswordShown] = useState(false);
+
+  // const state = useSelector((state) => state);
+  // const {
+  //   login: { success, error },
+  // } = state;
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
   };
-  const EmailHandler = (e) => {
-    SetEmail(e.target.value);
-  };
-  const PasswordHandler = (e) => {
-    SetPassword(e.target.value);
-  };
-  const loginData = {
-    email: Email,
-    password: Password,
-  };
-  const loginHandler = async (e) => {
-    if (validator.isEmail(Email)) {
-      setEmailValid("");
-    } else {
-      setEmailValid("Please enter a valid email");
-    }
-    if (Password.length < 8) {
-      setPasswordValid("Password must be 8 characters long");
-    } else {
-      setPasswordValid("");
-    }
+  // useEffect(() => {
+  //   if (success) {
+  //   }
+  // }, []);
 
-    setLoading(true);
+  const loginHandler = async (data) => {
+    console.log(data);
     try {
-      const res = await axios.post(
-        "https://rwanda-art-api.herokuapp.com/api/login",
-        loginData
-      );
-      // if (res.status === 200) {
-      //   toast.success("Login successful");
+      await axios
+        .post(`${API_URL}/User/Login`, data)
+        .then((res) => {
+          localStorage.setItem("user", JSON.stringify(res.data));
+
+          navigation("/dashboard");
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+      // console.log(res.status);
+      // if (res.status === 200 && res.data) {
       //   console.log(res);
       // }
     } catch (error) {
       console.log(error);
       setLoading(false);
     }
-    SetEmail("");
-    SetPassword("");
-    setEmailValid("");
-    setPasswordValid("");
-    setLoading(false);
   };
-  // useEffect(() => {
-  //   loginHandler();
-  // }, []);
   return (
-    <>
-      <div className={Style.loginMainWraper}>
-        <div className={Style.loginWraper}>
-          <form>
-            <div>
-              <div>
-                <Link to="/Home">
-                  <h4 style={{ color: "#c5801a" }}>
-                    <MDBIcon fas icon="angle-left" /> Home
-                  </h4>
-                </Link>
-              </div>
-            </div>
-            <div>
-              <h1>Sign in</h1>
-            </div>
-            <div className={Style.carddetails}>
-              <input
-                type="email"
-                placeholder="Enter your name"
-                onChange={EmailHandler}
-              />
-              <i className="fa fa-envelope" />
-            </div>
-            {emaiValid && <p style={{ color: "red" }}>{emaiValid}</p>}
-            <div className={Style.carddetails}>
-              <input
-                type={passwordShown ? "text" : "password"}
-                id="password-input"
-                placeholder="Enter your password"
-                onChange={PasswordHandler}
-                value={Password}
-              />
-              <i className="fa fa-lock" />
-              <span>
-                <small
-                  className="fa fa-eye-slash passcode"
-                  onClick={togglePassword}
-                />
-              </span>
-            </div>
-            {passwordValid && <p style={{ color: "red" }}>{passwordValid}</p>}
-            <div className={Style.loginForgot}>
-              <Button
-                name={loading ? "loading..." : `Login`}
-                onClick={() => {
-                  navigation("/dashboard");
-                }}
-              />
-              <Link to="/ForgotPassward">
-                <span style={{ color: "#c5801a" }}>Forgot password?</span>
-              </Link>
-              {/* <ToastContainer /> */}
-            </div>
-            <div></div>
-          </form>
+    <div className={Style.loginMainWraper}>
+      <div className={Style.loginWraper}>
+        <div>
+          <div>
+            <Link to="/Home">
+              <h4 style={{ color: "#c5801a" }}>
+                <MDBIcon fas icon="angle-left" /> Home
+              </h4>
+            </Link>
+          </div>
         </div>
+        <div>
+          <h1>Sign in</h1>
+        </div>
+        <form onSubmit={handleSubmit(loginHandler)}>
+          <div className={Style.carddetails}>
+            <input
+              placeholder="Enter your email"
+              {...register("email", { required: true })}
+            />
+            <i className="fa fa-envelope" />
+          </div>
+          {errors.email && <p style={{ color: "red" }}>Email is required</p>}
+          <div className={Style.carddetails}>
+            <input
+              type={passwordShown ? "text" : "password"}
+              placeholder="Enter your password"
+              {...register("password", { required: true })}
+            />
+            <i className="fa fa-lock" />
+            <span>
+              <small
+                className="fa fa-eye-slash passcode"
+                onClick={togglePassword}
+              />
+            </span>
+          </div>
+          {errors.password && (
+            <p style={{ color: "red" }}>Password is required</p>
+          )}
+          <div className={Style.loginForgot}>
+            <Button
+              name={loading ? "loading..." : `Login`}
+              onClick={loginHandler}
+            />
+          </div>
+          {/* <button type="submit" className={Style.loginBtn}>
+            LOGIN
+          </button> */}
+        </form>
+        <Link to="/ForgotPassward">
+          <span style={{ color: "#c5801a" }}>Forgot password?</span>
+        </Link>
       </div>
-    </>
+    </div>
   );
 }
 
-export default Index;
+export default Login;
