@@ -1,3 +1,10 @@
+.CardWraper{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 90%;
+  gap: 2rem;
+  margin: 1rem auto;
+}
   .EventButton{
     top: 4px;
     left: 4px;

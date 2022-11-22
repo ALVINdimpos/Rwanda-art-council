@@ -10,9 +10,10 @@ import { useState, useEffect } from "react";
 import validator from "validator";
 import axios from "axios";
 import { MDBIcon } from "mdbreact";
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { MDBInput, MDBTextArea } from "mdb-react-ui-kit";
+
 function Index() {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -55,14 +56,16 @@ function Index() {
     setLoading(true);
     try {
       const res = await axios.post(
-        "https://rwanda-art-api.herokuapp.com/api/contact-us",
+        "http://art-council.herokuapp.com/api/Contact/Createaa",
         data
       );
-      // if (res.status === 200) {
-      //   toast.success("Message sent successfully");
-      //   console.log(res);
-      // }
+      if (res.status === 200) {
+        // toast.success("Message sent successfully");
+        alert("Message sent successfully");
+        console.log(res);
+      }
     } catch (error) {
+      alert("Message not sent");
       console.log(error);
       setLoading(false);
     }
@@ -73,9 +76,7 @@ function Index() {
     setSubjectValid("");
     setMessageValid("");
   };
-  // useEffect(() => {
-  //   submitHandler();
-  // }, []);
+
   return (
     <>
       <NavBar />
@@ -85,8 +86,8 @@ function Index() {
           <div className="gmap_canvas">
             <iframe
               id="gmap_canvas"
-              width="600"
-              height="450"
+              height={450}
+              width={600}
               src="https://maps.google.com/maps?q=Rwanda%20art%20council&t=&z=13&ie=UTF8&iwloc=&output=embed"
               frameBorder={0}
               scrolling="no"
@@ -146,7 +147,7 @@ function Index() {
           </div>
         </div>
       </div>
-      {/* <ToastContainer/> */}
+      {/* <ToastContainer /> */}
       <Footer />
     </>
   );

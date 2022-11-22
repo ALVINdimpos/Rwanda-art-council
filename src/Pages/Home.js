@@ -10,59 +10,62 @@ import Categories from "../components/categories/Index";
 import Testmonial from "../components/box/testmonial/Index";
 import Partner from "../components/box/partners/Index";
 import Footer from "../components/Footer/Footer";
-import EventPhot from "../assets/photos/mainevent.jpeg";
-import EventPhot2 from "../assets/photos/mainphoto.jpg";
-import EventPhot3 from "../assets/photos/Event.jpeg";
+import { useState, useEffect } from "react";
 import OurTeam from "../components/box/ourTeam/Index";
 import { useNavigate } from "react-router-dom";
+
 function Home() {
   const navigate = useNavigate();
+  const [Event, setEvent] = useState([]);
+  const fetchEvents = () => {
+    fetch("http://art-council.herokuapp.com/api/Event/All", {
+      params: {
+        _limit: 3,
+      },
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        return response.json();
+      })
 
+      .then((data) => {
+        setEvent(data);
+      });
+  };
   const EventHandler = (e) => {
     navigate("/Event");
   };
+  const FiderationsHandler = (e) => {
+    navigate("/Fiderations");
+  };
+  useEffect(() => {
+    fetchEvents();
+  }, []);
+
   return (
     <>
       <NavBar />
       <Header></Header>
       <WhoWeAreBox />
-      <SectionIndicator name="Federations" />
+      <SectionIndicator name="Federations" onClick={FiderationsHandler} />
       <div className={Style.FederationBoxWraper}>
-        <FidBox />
-        <FidBox />
-        <FidBox />
         <FidBox />
       </div>
 
       <SectionIndicator name="Events" onClick={EventHandler} />
       <div className={Style.eventBoxWraper}>
-        <EventBox
-          title="Donec Sit Amet Nibh"
-          date="by Nick Roach | May 9, 2014 | Location"
-          description="Donec eu consectetur purus. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Sed rhoncus iaculis mauris eu mattis. Donec vel
-            odio pellentesque, tristique massa sit amet, pharetra metus. Nam
-            rutrum nulla vel blandit dignissim. Nulla turpis metus, malesuada in"
-          img={EventPhot}
-        />
-        <EventBox
-          title="Donec Sit Amet Nibh"
-          date="by Nick Roach | May 9, 2014 | Location"
-          description="Donec eu consectetur purus. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Sed rhoncus iaculis mauris eu mattis. Donec vel
-            odio pellentesque, tristique massa sit amet, pharetra metus. Nam
-            rutrum nulla vel blandit dignissim. Nulla turpis metus, malesuada in"
-          img={EventPhot2}
-        />
-        <EventBox
-          title="Donec Sit Amet Nibh"
-          date="by Nick Roach | May 9, 2014 | Location"
-          description="Donec eu consectetur purus. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Sed rhoncus iaculis mauris eu mattis. Donec vel
-            odio pellentesque, tristique massa sit amet, pharetra metus. Nam
-            rutrum nulla vel blandit dignissim. Nulla turpis metus, malesuada in"
-          img={EventPhot3}
-        />
+        {Event.event?.map((event, id) => (
+          <EventBox
+            key={id}
+            title={event.title}
+            date={event.date}
+            description={event.description}
+            img={event.ev_image}
+          />
+        ))}
       </div>
 
       <SectionIndicator name="Categories" />

@@ -5,35 +5,49 @@ import PageIndicator from "../components/PageIndicator/Index";
 import Style from "./EventStyle.module.css";
 import EventCard from "../components/box/EventCard/Index";
 import { MDBInput } from "mdb-react-ui-kit";
+import { MDBIcon } from "mdbreact";
+
 function Events() {
   return (
     <>
-    <NavBar />
+      <NavBar />
       <PageIndicator name="Events" />
-      <div className={Style.EventSearchWraper}>
-        <div>
-          <h1><span><i className="fas fa-angle-double-right mr-1" /></span>Upcoming event</h1>
-        </div>
-        <div className={Style.EventSearchBox}>
-          <div>
-            <MDBInput
-              id="typeText"
-              type="text"
-              placeholder="Search by category"
-            />
-          </div>
-          <div>
-            <MDBInput id="typeText" type="text" placeholder="Search by date" />
-          </div>
-        </div>
+      <div>
+        <h1 className={Style.heading}>
+          <span>
+            <MDBIcon fas icon="angle-double-right" />
+          </span>
+          Upcoming events
+        </h1>
       </div>
-      <div className={Style.EventsWraper}>
-      <EventCard />
+      <div className={Style.eventBoxWraper}>
+        <EventCard />
       </div>
-      <h1 className={Style.heading}><span><i className="fas fa-angle-double-right mr-1" /></span>Previus Events</h1>
+      <h1 className={Style.heading}>
+        <span>
+          <MDBIcon className="mr-1" fas icon="angle-double-right" />
+        </span>
+        Previus Events
+      </h1>
       <div className={Style.PreviusEvent}>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/C_uoiUtqD00" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/C_uoiUtqD00" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/C_uoiUtqD00"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/C_uoiUtqD00"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </div>
       <Footer />
     </>

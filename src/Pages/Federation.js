@@ -6,28 +6,18 @@ import Footer from "../components/Footer/Footer";
 import PageIndicator from "../components/PageIndicator/Index";
 import FidImage from "../assets/photos/Back3.jpg";
 import { useEffect, useState } from "react";
+import { useLocation, useParams } from "react-router-dom";
 import "./Federation.css";
 
 const Federation = () => {
-  const [Fid, setFid] = useState(null);
-  useEffect(() => {
-    fetch(`https://rwanda-art-api.herokuapp.com/api/ViewUser/1`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setFid(data);
-        console.log(data);
-      });
-  }, []);
+  const { state } = useLocation();
+  console.log(state.data, "state");
+  const [Fid, setFid] = useState(state?.data);
+  console.log(Fid, "This is federation data");
   return (
     <>
       <NavBar />
-      <PageIndicator name="Federation name" />
+      <PageIndicator name={Fid.fed_name} />
       <div className="">
         <div className="">
           <div className="main-row">
@@ -36,7 +26,7 @@ const Federation = () => {
             </div>
 
             <div className="">
-              <h1>Federation</h1>
+              <h1>Federation name: {Fid.fed_name}</h1>
               <h2>Union </h2>
               <h2>Member </h2>
               <p>
@@ -53,7 +43,7 @@ const Federation = () => {
               </p>
               <p>
                 He is currently the founder of Dvorak Media. Previously, Andrey
-                was a product designer at Mega.
+                was a product designer at Dropbox.
               </p>
             </div>
           </div>
