@@ -6,11 +6,7 @@ import { store } from "./redux/store";
 const App = () => {
   const routing = useRoutes(Themeroutes);
 
-  return (
-    <Provider store={store}>
-      <div>{routing}</div>;
-    </Provider>
-  );
+  return <Provider store={store}>{routing}</Provider>;
 };
 
 export default App;

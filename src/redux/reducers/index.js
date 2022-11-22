@@ -17,8 +17,11 @@ import {
   publishEventReducer,
   deleteEventReducer,
 } from "./events";
+import { loginReducers, logoutReducers } from "./auth";
 
 export default combineReducers({
+  login: loginReducers,
+  logout: logoutReducers,
   federation: federationReducers,
   singleFederation: singleFederationReducers,
   unions: unionsReducers,

@@ -11,7 +11,7 @@ const Index = () => {
   const navigate = useNavigate();
   const loginHandler = (event) => {
     event.preventDefault();
-    navigate("/Login");
+    navigate("/login");
   };
   return (
     <div>

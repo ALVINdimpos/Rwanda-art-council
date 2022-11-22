@@ -22,19 +22,21 @@ import { API_URL, TOKEN } from "../../utils/config";
 export const getAllFederation = () => async (dispatch) => {
   try {
     dispatch(action(GET_ALL_FEDERATIONS));
-    axios({
-      method: "get",
-      url: `${API_URL}/Federation/All`,
-      headers: {
-        Authorization: `Bearer ${TOKEN}`,
-      },
-    })
-      .then((response) => {
-        dispatch(action(GET_ALL_FEDERATIONS_SUCCESS, response.data));
+    if (TOKEN) {
+      await axios({
+        method: "get",
+        url: `${API_URL}/Federation/All`,
+        headers: {
+          Authorization: `Bearer ${TOKEN}`,
+        },
       })
-      .catch((error) => {
-        dispatch(action(GET_ALL_FEDERATIONS_FAILURE, error));
-      });
+        .then((response) => {
+          dispatch(action(GET_ALL_FEDERATIONS_SUCCESS, response.data));
+        })
+        .catch((error) => {
+          dispatch(action(GET_ALL_FEDERATIONS_FAILURE, error));
+        });
+    }
   } catch (error) {
     dispatch(action(GET_ALL_FEDERATIONS_FAILURE, error));
   }
