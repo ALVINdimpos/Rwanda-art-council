@@ -1,35 +1,36 @@
-import React from 'react'
-import Style from"./Style.module.css"
-import Photo from "../../../assets/photos/Back1.jpg"
-import Photo1 from "../../../assets/photos/Back2.jpg"
-import Photo2 from "../../../assets/photos/Back3.jpg"
-import Photo3 from "../../../assets/photos/Back1.jpg"
-const photos = [
-    {
-      src:Photo ,
-      category: "Painting",
-    },
-    {
-      src:Photo1 ,
-      category: "Painting",
-    },
-    {
-      src:Photo2 ,
-      category: "Painting",
-    },
-    {
-        src:Photo3 ,
-        category: "Painting",
-      }
-]
+import React, { useEffect, useState } from "react";
+import Style from "./Style.module.css";
 const Index = () => {
-  return (
-    <><div className={Style.PhotoAlbum}>
-    {photos.map((photo) => (
-      <img src={photo.src} photo={photo} alt=""/>
-    ))}
-  </div></>
-  )
-}
+  const [Painting, setPainting] = useState([]);
 
-export default Index
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const fetchEvents = () => {
+    fetch("http://art-council.herokuapp.com/api/v1/gallery/getById/1", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        return response.json();
+      })
+
+      .then((data) => {
+        setPainting(data);
+      });
+  };
+  useEffect(() => {
+    fetchEvents();
+  }, [fetchEvents]);
+  return (
+    <>
+      <div className={Style.PhotoAlbum}>
+        {Painting.gallery?.map((gallery, id) => (
+          <img src={gallery.image} alt="" key={id} />
+        ))}
+      </div>
+    </>
+  );
+};
+
+export default Index;

@@ -16,7 +16,7 @@ function Index() {
         <MDBIcon fas icon="circle" />
       </div>
       <div className={Style.testWraper}>
-      <div className={Style.testmonial}>
+        <div className={Style.testmonial}>
           <img src={Testmo1} alt="description of pic" />
         </div>
         <div className={Style.testmonial}>

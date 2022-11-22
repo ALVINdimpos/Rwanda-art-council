@@ -40,14 +40,6 @@ const ViewFederation = lazy(() => import("../views/ViewFederation"));
 const Breadcrumbs = lazy(() => import("../views/Breadcrumbs"));
 const ViewArtist = lazy(() => import("../views/ViewArtist"));
 const FederationDashboard = lazy(() => import("../views/federations.js"));
-const About = lazy(() => import("../views/About.js"));
-const Forms = lazy(() => import("../views/ui/Forms"));
-const Alerts = lazy(() => import("../views/ui/Alerts"));
-const Badges = lazy(() => import("../views/ui/Badges"));
-const Buttons = lazy(() => import("../views/ui/Buttons"));
-const Cards = lazy(() => import("../views/ui/Cards"));
-const Grid = lazy(() => import("../views/ui/Grid"));
-const Tables = lazy(() => import("../views/ui/Tables"));
 
 /*****Routes******/
 

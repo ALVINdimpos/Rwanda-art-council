@@ -12,24 +12,6 @@
   width: 100%;
   object-fit: fill;
 }
-.People1 {
-  position: absolute;
-  left: 100px;
-  top: 30px;
-}
-.People1 img {
-  height: 76px;
-  width: 76px;
-  border-radius: 50%;
-}
-.People1 p {
-  font-family: "Lato";
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 14px;
-  height: 97px;
-  width: 230px;
-}
 .dot {
   text-align: center;
   width: 90%;
@@ -43,4 +25,15 @@
 }
 .dot1 {
   color: #c5801a;
+}
+@media (max-width:500px) {
+  .testWraper {
+   display: flex;
+   flex-direction: column;
+  }
+  .testmonial img {
+    width: 100%;
+    object-fit: fill;
+    width: 350px;
+  }
 }

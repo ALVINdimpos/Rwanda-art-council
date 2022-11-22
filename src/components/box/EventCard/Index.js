@@ -13,7 +13,7 @@ function Index() {
   const [Event, setEvent] = useState([]);
   const Token = localStorage.getItem("token");
   const fetchEvents = () => {
-    fetch("https://rwanda-art-api.herokuapp.com/api/events/create", {
+    fetch("http://art-council.herokuapp.com/api/Event/All", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -38,7 +38,7 @@ function Index() {
           <div className={Style.Card} key={id}>
             <div className={Style.overFlow}>
               <img
-                src={Picture1}
+                src={event.ev_image}
                 alt="description"
                 className={Style.CardImgTop}
               />
@@ -71,3 +71,4 @@ function Index() {
 }
 
 export default Index;
+

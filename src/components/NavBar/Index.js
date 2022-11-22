@@ -1,49 +1,49 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React from "react";
+import "./style.css";
 import Button from "../Button/Index";
-import NavStyle from "./Style.module.css";
-import Logo from "../../assets/photos/Logo.png";
-import { Link, NavLink } from "react-router-dom";
-import { route } from "../../utils/header";
+import { NavLink, Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { MDBIcon } from "mdbreact";
-
-function Index() {
+import Logo from "../../assets/photos/Logo.png";
+import { route } from "../../utils/header";
+const Index = () => {
   const navigate = useNavigate();
   const loginHandler = (event) => {
     event.preventDefault();
     navigate("/Login");
   };
   return (
-    <header className={NavStyle.headerStyle}>
-      <Link to="/Home">
-        <img
-          src={Logo}
-          className={NavStyle.mainLogo}
-          alt="description of photo"
-        />
-      </Link>
-
-      <div>
-        <ul className={NavStyle.NavBar}>
+    <div>
+      <nav>
+        <div className="logo">
+          <img
+            src={Logo}
+            alt="logo"
+            onClick={() => {
+              navigate("/");
+            }}
+            style={{ cursor: "pointer" }}
+          />
+        </div>
+        <input type="checkbox" id="click" />
+        <label htmlFor="click" className="menu-btn">
+          <i className="fas fa-bars" />
+        </label>
+        <ul>
           {route?.map((element, index) => (
             <li key={index}>
-              <NavLink
-                to={element.link}
-                className={NavStyle.items}
-              >
-                {element.name}
-              </NavLink>
+              <NavLink to={element.link}>{element.name}</NavLink>
             </li>
           ))}
+          <div className="navbutton">
+            <Button name="Login" onClick={loginHandler} />
+          </div>
         </ul>
-      </div>
-      <div className={NavStyle.Button }> <Button name="Login" onClick={loginHandler} /></div>
-     
-      <MDBIcon fas icon="bars" className={NavStyle.hamburger} />
-    </header>
+        <Outlet />
+      </nav>
+    </div>
   );
-}
+};
 
 export default Index;
