@@ -57,10 +57,18 @@ export const getSingleFederation = (id) => async (dispatch) => {
 };
 
 export const registerFederation = (data) => async (dispatch) => {
+  console.log(data);
   try {
     dispatch(action(REGISTER_FEDERATION));
-    http
-      .post(`/Federation/Register`, data)
+    axios({
+      method: "post",
+      url: `${API_URL}/Federation/Register`,
+      headers: {
+        Authorization: `Bearer ${TOKEN}`,
+        "Content-Type": "multipart/form-data",
+      },
+      data,
+    })
       .then((response) => {
         dispatch(action(REGISTER_FEDERATION_SUCCESS, response.data));
       })
