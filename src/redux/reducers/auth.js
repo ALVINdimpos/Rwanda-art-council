@@ -22,7 +22,7 @@ export const loginReducers = (
       return {
         ...state,
         loading: false,
-        user: action.payload.info,
+        user: action.payload,
         success: true,
       };
     case LOGIN_FAILED:

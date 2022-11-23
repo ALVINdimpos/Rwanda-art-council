@@ -10,8 +10,7 @@ import {
   LOGOUT_SUCCESS,
 } from "../types";
 
-export const loginUser = (data) => async (dispatch) => {
-  console.log(data, "-----------------------------");
+export const loginUser = (data) => (dispatch) => {
   try {
     dispatch(action(LOGIN));
     axios({
@@ -31,20 +30,19 @@ export const loginUser = (data) => async (dispatch) => {
 };
 
 export const logoutUser = () => async (dispatch) => {
-  console.log("test");
-  // try {
-  //   dispatch(action(LOGOUT));
-  //   axios({
-  //     method: "post",
-  //     url: `${API_URL}/User/Logout`,
-  //   })
-  //     .then((response) => {
-  //       dispatch(action(LOGIN_SUCCESS, response.data));
-  //     })
-  //     .catch((error) => {
-  //       dispatch(action(LOGIN_FAILED, error));
-  //     });
-  // } catch (error) {
-  //   dispatch(action(LOGIN_FAILED, error));
-  // }
+  try {
+    dispatch(action(LOGOUT));
+    axios({
+      method: "get",
+      url: `${API_URL}/User/Logout`,
+    })
+      .then((response) => {
+        dispatch(action(LOGOUT_SUCCESS, response.data));
+      })
+      .catch((error) => {
+        dispatch(action(LOGOUT_FAILED, error));
+      });
+  } catch (error) {
+    dispatch(action(LOGOUT_FAILED, error));
+  }
 };
