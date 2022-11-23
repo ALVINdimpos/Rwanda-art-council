@@ -8,19 +8,31 @@ import { useState, useEffect } from "react";
 import validator from "validator";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../redux/actions";
 import { API_URL, TOKEN } from "../utils/config";
 
-function Login() {
+function Login(props) {
   const navigation = useNavigate();
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   const [passwordShown, setPasswordShown] = useState(false);
 
-  // const state = useSelector((state) => state);
-  // const {
-  //   login: { success, error },
-  // } = state;
+  const state = useSelector((state) => state);
+  const {
+    login: { success, user },
+  } = state;
+  const adminRedirect = window.location.search
+    ? window.location.search.split("=")[1]
+    : "#/dashboard/federations";
+
+  const fedRedirect = window.location.search
+    ? window.location.search.split("=")[1]
+    : "#/dashboard/union";
+
+  const redirect = window.location.search
+    ? window.location.search.split("=")[1]
+    : "#/dashboard/artists";
 
   const {
     register,
@@ -31,33 +43,21 @@ function Login() {
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
   };
-  // useEffect(() => {
-  //   if (success) {
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (user !== null && success) {
+      setLoading(false);
+      localStorage.setItem("user", JSON.stringify(user));
+      if (user.role === "admin") window.location.href = adminRedirect;
+      if (user.role === "federation") window.location.href = fedRedirect;
+      if (user.role === "union") window.location.href = redirect;
+    }
+  }, [user, success]);
 
   const loginHandler = async (data) => {
-    console.log(data);
-    try {
-      await axios
-        .post(`${API_URL}/User/Login`, data)
-        .then((res) => {
-          localStorage.setItem("user", JSON.stringify(res.data));
-
-          navigation("/dashboard");
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-      // console.log(res.status);
-      // if (res.status === 200 && res.data) {
-      //   console.log(res);
-      // }
-    } catch (error) {
-      console.log(error);
-      setLoading(false);
-    }
+    setLoading(true);
+    dispatch(loginUser(data));
   };
+
   return (
     <div className={Style.loginMainWraper}>
       <div className={Style.loginWraper}>

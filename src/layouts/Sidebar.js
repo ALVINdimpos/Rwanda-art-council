@@ -1,18 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Nav, NavItem } from "reactstrap";
 import { Link, useLocation } from "react-router-dom";
+import { USER, userData } from "../utils/config";
+import { useSelector } from "react-redux";
 
 const logo = require("../assets/images/logos/Logo.png").default;
 const navigation = [
   {
-    title: "Federations",
-    href: "/dashboard/federations",
-    icon: "bi bi-speedometer2",
-  },
-  {
-    title: "Unions",
-    href: "/dashboard/union",
-    icon: "bi bi-patch-check",
+    title: "Artists",
+    href: "/dashboard/artists",
+    icon: "bi bi-hdd-stack",
   },
   {
     title: "Events",
@@ -20,24 +17,9 @@ const navigation = [
     icon: "bi bi-bell",
   },
   {
-    title: "Artists",
-    href: "/dashboard/artists",
-    icon: "bi bi-hdd-stack",
-  },
-  {
     title: "Testimonials",
     href: "/dashboard/testimonials",
     icon: "bi bi-card-text",
-  },
-  {
-    title: "Gallery",
-    href: "/dashboard/gallery",
-    icon: "bi bi-columns",
-  },
-  {
-    title: "Team members",
-    href: "/dashboard/teamMembers",
-    icon: "bi bi-layout-split",
   },
   // {
   //   title: "Forms",
@@ -55,13 +37,78 @@ const navigation = [
   //   icon: "bi bi-people",
   // },
 ];
+const adminNavigation = [
+  {
+    title: "Federations",
+    href: "/dashboard/federations",
+    icon: "bi bi-speedometer2",
+  },
+  {
+    title: "Events",
+    href: "/dashboard/events",
+    icon: "bi bi-bell",
+  },
+  {
+    title: "Testimonials",
+    href: "/dashboard/testimonials",
+    icon: "bi bi-card-text",
+  },
+  {
+    title: "Gallery",
+    href: "/dashboard/gallery",
+    icon: "bi bi-columns",
+  },
+  {
+    title: "Team members",
+    href: "/dashboard/teamMembers",
+    icon: "bi bi-layout-split",
+  },
+];
+const fedNavigation = [
+  {
+    title: "Unions",
+    href: "/dashboard/union",
+    icon: "bi bi-patch-check",
+  },
+  {
+    title: "Events",
+    href: "/dashboard/events",
+    icon: "bi bi-bell",
+  },
+  {
+    title: "Testimonials",
+    href: "/dashboard/testimonials",
+    icon: "bi bi-card-text",
+  },
+  {
+    title: "Gallery",
+    href: "/dashboard/gallery",
+    icon: "bi bi-columns",
+  },
+];
 
 const Sidebar = () => {
+  const [userRole, setUserRole] = React.useState(userData);
   const showMobilemenu = () => {
     document.getElementById("sidebarArea").classList.toggle("showSidebar");
   };
   let location = useLocation();
+  const state = useSelector((state) => state);
+  const {
+    login: { success, user },
+  } = state;
+  useEffect(() => {
+    if (user !== {}) {
+      setUserRole(user.role);
+    }
+  }, [user]);
+  useEffect(() => {
+    if (userData) {
+      setUserRole(userData.role);
+    }
+  }, []);
 
+  console.log(userRole);
   return (
     <div className="p-3">
       <div className="d-flex align-items-center">
@@ -82,24 +129,65 @@ const Sidebar = () => {
       />
       <div className="pt-4 mt-2">
         <Nav vertical className="sidebarNav">
-          {navigation.map((navi, index) => (
-            <NavItem key={index} className="sidenav-bg">
-              <Link
-                to={navi.href}
-                style={{
-                  color: location.pathname === navi.href ? "#C5801A" : "#000",
-                }}
-                className={
-                  location.pathname === navi.href
-                    ? " nav-link py-3"
-                    : "nav-link  py-3"
-                }
-              >
-                <i className={navi.icon}></i>
-                <span className="ms-3 d-inline-block">{navi.title}</span>
-              </Link>
-            </NavItem>
-          ))}
+          {userRole === "admin"
+            ? adminNavigation.map((navi, index) => (
+                <NavItem key={index} className="sidenav-bg">
+                  <Link
+                    to={navi.href}
+                    style={{
+                      color:
+                        location.pathname === navi.href ? "#C5801A" : "#000",
+                    }}
+                    className={
+                      location.pathname === navi.href
+                        ? " nav-link py-3"
+                        : "nav-link  py-3"
+                    }
+                  >
+                    <i className={navi.icon}></i>
+                    <span className="ms-3 d-inline-block">{navi.title}</span>
+                  </Link>
+                </NavItem>
+              ))
+            : userRole === "federation"
+            ? fedNavigation.map((navi, index) => (
+                <NavItem key={index} className="sidenav-bg">
+                  <Link
+                    to={navi.href}
+                    style={{
+                      color:
+                        location.pathname === navi.href ? "#C5801A" : "#000",
+                    }}
+                    className={
+                      location.pathname === navi.href
+                        ? " nav-link py-3"
+                        : "nav-link  py-3"
+                    }
+                  >
+                    <i className={navi.icon}></i>
+                    <span className="ms-3 d-inline-block">{navi.title}</span>
+                  </Link>
+                </NavItem>
+              ))
+            : navigation.map((navi, index) => (
+                <NavItem key={index} className="sidenav-bg">
+                  <Link
+                    to={navi.href}
+                    style={{
+                      color:
+                        location.pathname === navi.href ? "#C5801A" : "#000",
+                    }}
+                    className={
+                      location.pathname === navi.href
+                        ? " nav-link py-3"
+                        : "nav-link  py-3"
+                    }
+                  >
+                    <i className={navi.icon}></i>
+                    <span className="ms-3 d-inline-block">{navi.title}</span>
+                  </Link>
+                </NavItem>
+              ))}
         </Nav>
       </div>
     </div>

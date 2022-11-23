@@ -1,6 +1,6 @@
 import axios from "axios";
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
   Navbar,
@@ -20,6 +20,7 @@ import { logoutUser } from "../redux/actions";
 import { API_URL } from "../utils/config";
 
 const Header = () => {
+  const dispatch = useDispatch();
   const [isOpen, setIsOpen] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
@@ -36,20 +37,16 @@ const Header = () => {
     document.getElementById("sidebarArea").classList.toggle("showSidebar");
   };
   const logout = async () => {
-    console.log("test");
-    try {
-      const res = await axios.get(`${API_URL}/User/Logout`);
-      console.log(res.status);
-      if (res.status === 200 && res.data) {
-        localStorage.removeItem("user");
-        console.log(res);
-        window.location.href = "/";
-      }
-    } catch (error) {
-      console.log(error);
-      setLoading(false);
-    }
+    setLoading(true);
+    dispatch(logoutUser());
   };
+  useEffect(() => {
+    if (success) {
+      setLoading(false);
+      localStorage.removeItem("user");
+      window.location.href = "/";
+    }
+  }, [success]);
   return (
     <Navbar
       style={{

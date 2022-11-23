@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const API_URL = "http://art-council.herokuapp.com/api";
 export const initialState = {
   loading: false,
@@ -5,5 +7,17 @@ export const initialState = {
   success: false,
 };
 const userData = JSON.parse(localStorage.getItem("user"));
-export const TOKEN = userData ? userData.access_token : "";
-export const USER = userData ? userData.info : "";
+let TOKEN;
+let USER;
+if (userData) {
+  axios.defaults.headers.common["Authorization"] = `Bearer ${userData.token}`;
+  TOKEN = userData.access_token;
+  USER = userData.info;
+}
+export { TOKEN, USER, userData };
+export const http = axios.create({
+  baseURL: `http://art-council.herokuapp.com/api`,
+  headers: {
+    Authorization: `Bearer ${TOKEN}`,
+  },
+});
