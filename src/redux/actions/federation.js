@@ -59,8 +59,8 @@ export const getSingleFederation = (id) => async (dispatch) => {
 export const registerFederation = (data) => async (dispatch) => {
   try {
     dispatch(action(REGISTER_FEDERATION));
-    axios
-      .post(`${API_URL}/Federation/Register`, data)
+    http
+      .post(`/Federation/Register`, data)
       .then((response) => {
         dispatch(action(REGISTER_FEDERATION_SUCCESS, response.data));
       })
@@ -75,8 +75,8 @@ export const registerFederation = (data) => async (dispatch) => {
 export const updateFederation = (id, data) => async (dispatch) => {
   try {
     dispatch(action(UPDATE_FEDERATION));
-    axios
-      .put(`${API_URL}/Fed/Update/${id}`, data)
+    http
+      .post(`/Fed/Update/${id}`, data)
       .then((response) => {
         dispatch(action(UPDATE_FEDERATION_SUCCESS, response.data));
       })
@@ -91,8 +91,8 @@ export const updateFederation = (id, data) => async (dispatch) => {
 export const deleteFederation = (id) => async (dispatch) => {
   try {
     dispatch(action(DELETE_FEDERATION));
-    axios
-      .delete(`${API_URL}/Federation/Delete/${id}`)
+    http
+      .delete(`/Federation/Delete/${id}`)
       .then((response) => {
         dispatch(action(DELETE_FEDERATION_SUCCESS, response.data));
       })
