@@ -1,0 +1,62 @@
+.eventBoxWraper {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 1rem auto;
+}
+.eventBox {
+  border-radius: 4px;
+  box-shadow: 0px 1px 1px 0px #00000040;
+  background-color: white;
+  height: 100%;
+  width: 320px;
+}
+.eventBox:hover{
+  box-shadow: 5px 10px 20px 1px #00000040;
+}
+.eventBox img {
+height: 250px;
+width: 100%;
+}
+.eventBox Button {
+  float: inline-end;
+  margin: 1rem;
+  
+  }
+  .CardImgTop{
+    transform: scale(1);
+    transition: transform 0.5s ease;
+  }
+  .CardImgTop:hover{
+    transform: scale(1.8);
+  }
+  .overFlow{
+    overflow: hidden;
+  }
+.eventBox p {
+  font-family: 'EB Garamond';
+  margin: 1rem;
+}
+.eventBox h4{
+  margin: 1rem;
+  font-family: 'Raleway';
+  font-size: 22px;
+  font-weight: 400;
+}
+.eventBox h5{
+  margin: 1rem;
+  font-family: 'Raleway';
+  font-size: 18px;
+  font-weight: 400; 
+}
+@media(max-width: 482px) {
+
+  .eventBox {
+   flex-direction: column;
+   justify-content: space-between;
+}
+.eventBoxWraper{
+  flex-direction: column;
+ 
+}
+}

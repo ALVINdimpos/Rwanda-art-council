@@ -1,0 +1,66 @@
+.MainHeader {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-size: cover;
+  animation: animate 20s ease-in-out infinite;
+  height: 95vh;
+  width: 100%;
+}
+@keyframes animate {
+  0% {
+    background-image: url("../../assets/photos/mainphoto.jpg");
+  }
+  50% {
+    background-image: url("../../assets/photos/Back2.jpg");
+  }
+  75% {
+    background-image: url("../../assets/photos/Back3.jpg");
+  }
+  100% {
+    background-image: url("../../assets/photos/Back1.jpg");
+  }
+}
+  
+.WlcText {
+  font-family: "Montserrat", sans-serif;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: white;
+  align-self: flex-start;
+}
+.WlcText1 {
+  font-family: "Montserrat";
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  color: white;
+}
+.Button {
+  align-self: flex-end;
+  display: flex;
+  gap: 1rem;
+  border-color: white;
+}
+.MainContent {
+  width: 500px;
+  margin: 0 0 0 2rem;
+}
+@media (max-width:550px) {
+  .MainContent {
+    width: 100%;
+    margin: 0rem auto;
+    padding: 1rem;
+    
+  }
+  .WlcText {
+    font-size: 36px;
+    text-align: center;
+
+    
+  }
+}

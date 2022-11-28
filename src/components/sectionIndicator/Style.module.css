@@ -1,0 +1,26 @@
+.sectionIndicatorStyle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  margin: 1rem auto;
+
+}
+.viewAllButton {
+  height: 32px;
+  width: 106px;
+  border-radius: 4px;
+  color: #c5801a;
+  border-color: #c5801a;
+  background: white;
+}
+.SEction {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 90%;
+  
+}
+.SEction p{
+  font-weight: bold;
+}

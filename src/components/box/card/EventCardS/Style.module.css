@@ -1,0 +1,81 @@
+.CardWraper{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 90%;
+  gap: 2rem;
+  margin: 1rem auto;
+}
+  .EventButton{
+    top: 4px;
+    left: 4px;
+    position: absolute;
+  }
+  .CardImgTop{
+    transform: scale(1);
+    transition: transform 0.5s ease;
+  }
+  .CardImgTop:hover{
+    transform: scale(1.8);
+  }
+  .overFlow{
+    overflow: hidden;
+  }
+ 
+  .Card {
+    position: relative;
+    background-color: white;
+    height: 420px;
+    width: 320px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border-radius: 4px;
+  }
+  .Card:hover{
+    box-shadow: 5px 10px 20px 1px #00000040;
+  }
+  .Card Button {
+   float: right;
+  
+  }
+  .Card h4 {
+    font-family: "Raleway";
+    font-size: 22px;
+    font-weight: 300;
+    padding-top: 1rem;
+    text-align: center;
+  }
+  .DateCardWraper {
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .DateCardWraper p {
+    font-family: "EB Garamond";
+    padding: 1rem;
+  }
+  .DateCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 139px;
+    width: 76px;
+    background:whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0.5px 5px 5px 0.5px rgb(70, 69, 69);
+  }
+  .DateCard h5 {
+    padding: 0.5rem;
+    color: black;
+    font-size: 16px;
+  }
+  .Card img {
+    height: 190px;
+    width: 100%;
+  }
+  @media (max-width:550px){
+    .CardWraper{
+      display: grid;
+      grid-template-columns: auto;
+      margin: 0 auto;  
+      }
+
+  }

@@ -1,0 +1,26 @@
+.eventBoxWraper {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 90%;
+  gap: 2rem;
+  margin: 1rem auto;
+}
+.FederationBoxWraper {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  width: 90%;
+  gap: 1rem;
+  margin: 1rem auto;
+}
+@media (max-width: 550px) {
+  .FederationBoxWraper {
+    display: grid;
+    grid-template-columns: auto;
+  }
+}
+@media (max-width: 550px) {
+  .eventBoxWraper {
+    grid-template-columns: auto;
+    justify-content: space-between;
+  }
+}

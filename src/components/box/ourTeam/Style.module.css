@@ -1,0 +1,11 @@
+  .ActiveTab{
+    display: flex;
+    align-items: center;
+  }
+  .ActiveTab h3{
+    text-align: center;
+     margin: 0 auto;
+     cursor: pointer;
+     color: #C5801A;
+  }
+  

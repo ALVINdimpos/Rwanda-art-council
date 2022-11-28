@@ -1,0 +1,26 @@
+.PageIndicator {
+    display: flex;
+    background-image: url("../../assets/photos/mainphoto.jpg");
+    background-size: cover;
+    align-items: center;
+    height: 75vh;
+    width: 100%;
+  }
+  .Gallery {
+    display: flex;
+    font-family: "Rubik Moonrocks";
+    color: white;
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 36px;
+    margin: 1rem auto;
+    
+  }
+  @media (max-width:550px) {
+    .Gallery {
+      line-height: 80px;
+      text-align: center;
+      font-size: 66px;
+    }
+
+  }

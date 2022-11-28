@@ -1,0 +1,39 @@
+.testWraper {
+  display: flex;
+  width: 90%;
+  position: relative;
+  margin: 0 auto;
+  gap: 2rem;
+}
+.testmonial {
+  width: 30%;
+}
+.testmonial img {
+  width: 100%;
+  object-fit: fill;
+}
+.dot {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+.dot h1 {
+  margin-top: 2rem;
+  font-family: "Raleway";
+  font-size: 36px;
+  font-weight: 400;
+}
+.dot1 {
+  color: #c5801a;
+}
+@media (max-width:500px) {
+  .testWraper {
+   display: flex;
+   flex-direction: column;
+  }
+  .testmonial img {
+    width: 100%;
+    object-fit: fill;
+    width: 350px;
+  }
+}
