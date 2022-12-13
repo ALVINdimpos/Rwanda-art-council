@@ -6,9 +6,8 @@ import { useNavigate } from "react-router-dom";
 function Index(props) {
   const navigate = useNavigate();
   const onClickHandler = () => {
-    navigate(`/EventRm`, {state: {data: props.data}});
+    navigate(`/EventRm`, {state: {data: props}});
   };
-  console.log(props.data);
   return (
     <div>
       <div className={Style.eventBoxWraper}>

@@ -11,7 +11,7 @@ function Index() {
 
   return (
    <>
-    <h1 className={Style.heading}> Our partner</h1>
+    <h1 className={Style.heading}> Our partners</h1>
     <div className={Style.container}>
       <div className={Style.section1}>
          <div><h1>We work with the best partner</h1></div>

@@ -3,9 +3,10 @@ import Style from "./Style.module.css";
 import whoWeArePhoto from '../../../assets/photos/Back3.jpg'
 import Button from "../../Button/Index";
 import { useNavigate } from "react-router-dom";
+
 function Index() {
  const navigate =useNavigate();
-  const whoHandler=(e)=>{
+ const whoHandler=(e)=>{
  e.preventDefault();
  navigate('/Aboutus')
 
@@ -27,7 +28,7 @@ function Index() {
         </div>
         <div className={Style.whoWeArePhoto}>
 
-       <img src={whoWeArePhoto }alt="Loading..."/>
+       <img src={whoWeArePhoto} alt="Loading..."/>
         </div>
       </div>
     </div>

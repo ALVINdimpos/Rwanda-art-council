@@ -18,9 +18,6 @@ function Home() {
 const [Event, setEvent] = useState([]);
 const fetchEvents = () => {
   fetch("http://art-council.herokuapp.com/api/Event/All",{
-    params: {
-      _limit:3,
-     },
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
@@ -77,5 +74,4 @@ const fetchEvents = () => {
     </>
   );
 }
-
 export default Home;

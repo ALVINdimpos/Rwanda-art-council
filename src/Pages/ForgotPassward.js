@@ -47,9 +47,10 @@ if (validator.isEmail(email)) {
       <div className="row">
         <div className="col-md col-md-offset-4">
           <div className="panel panel-default">
-            <div className="panel-body">
+            <div className="panel-body ">
               <div
-                className="text-center"
+              class="text-center"
+               className={Style.textCenter}
                 style={{
                   minHeight: "50vh",
                   paddingTop: "5rem",
@@ -58,7 +59,7 @@ if (validator.isEmail(email)) {
                   boxShadow: " 0px 4px 4px 0px #00000040",
                   padding: "2em",
                   width: "40%",
-                 margin:" 1rem auto"
+                 margin:" 1rem auto",
                 }}
               >
                 <h3>

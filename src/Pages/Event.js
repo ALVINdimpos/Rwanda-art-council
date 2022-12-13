@@ -7,11 +7,10 @@ import { useLocation } from "react-router-dom";
 function Events() {
   const {state} = useLocation();
   const [Event, setEvent] = useState(state.data);
-  console.log(Event);
   return (
     <>
     <NavBar />
-      <PageIndicator name="Event title"/>
+      <PageIndicator name={Event.title}/>
       <Footer />
     </>
   );
