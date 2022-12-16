@@ -17,7 +17,7 @@ function Home() {
   const navigate = useNavigate();
 const [Event, setEvent] = useState([]);
 const fetchEvents = () => {
-  fetch("http://art-council.herokuapp.com/api/Event/All",{
+  fetch("https://api.rwandaartscouncil.rw/api/Event/All",{
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",

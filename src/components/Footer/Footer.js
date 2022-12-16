@@ -12,7 +12,7 @@ const EmailHandler = (e) => {
 };
 const subscribeHandler = (e) => {
   e.preventDefault();
-  fetch("http://art-council.herokuapp.com/api/Subscriber/create",{
+  fetch("https://api.rwandaartscouncil.rw/api/Subscriber/create",{
     method: "POST",
     headers: {
       "Content-Type": "application/json", 

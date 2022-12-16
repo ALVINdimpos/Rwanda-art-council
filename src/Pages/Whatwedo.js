@@ -7,7 +7,7 @@ import Partners from "../components/box/partners/Index"
 function Whatwedo() {
   const [services, setServices] =useState("");
   const fentchData=()=>{
-    fetch("http://art-council.herokuapp.com/api/service/all")
+    fetch("https://api.rwandaartscouncil.rw/api/service/all")
     .then((res)=>res.json())
     .then((data)=>{
       setServices(data)

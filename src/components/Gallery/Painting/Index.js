@@ -6,7 +6,7 @@ const [Painting,setPainting]= useState([]);
 
 // eslint-disable-next-line react-hooks/exhaustive-deps
 const fetchEvents = () => {
-  fetch("http://art-council.herokuapp.com/api/v1/gallery/getById/1", {
+  fetch("https://api.rwandaartscouncil.rw/api/v1/gallery/getById/1", {
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",

@@ -12,7 +12,7 @@ function Index() {
   const [Event, setEvent] = useState([]);
   const Token = localStorage.getItem("token");
   const fetchEvents = () => {
-    fetch("http://art-council.herokuapp.com/api/Event/All", {
+    fetch("https://api.rwandaartscouncil.rw/api/Event/All", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

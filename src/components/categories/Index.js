@@ -1,11 +1,11 @@
 import React from "react";
 import Style from "./Style.module.css";
-import pic from "../../assets/photos/palastic.png";
-import Pic1 from "../../assets/photos/Fashion.png";
-import Pic2 from "../../assets/photos/Cinema.png";
-import Pic3 from "../../assets/photos/dance.png";
-import Pic4 from "../../assets/photos/acting.png";
-import Pic5 from "../../assets/photos/literature.png";
+import pic from "../../assets/photos/drow.jpeg";
+import Pic1 from "../../assets/photos/dance1.jpeg";
+import Pic2 from "../../assets/photos/cinema.jpeg";
+import Pic3 from "../../assets/photos/music.jpeg";
+import Pic4 from "../../assets/photos/tools.jpeg";
+import Pic5 from "../../assets/photos/literature.jpeg";
 
 function Index() {
   return (
@@ -15,10 +15,10 @@ function Index() {
         <img src={pic}alt="description of pic"/>
         <img src={Pic1}alt="description of pic"/>
         </div>
-        <div>
-         <img src={Pic2}alt="description of pic"/>
+        <div className={Style.column_photo}>
+         <img src={Pic2} alt="description of pic"/>
                 </div>
-         <div>
+         <div className={Style.column_photo}>
         <img src={Pic3}alt="description of pic"/>
         </div>
         <div className={Style.CategoriesColumn}>

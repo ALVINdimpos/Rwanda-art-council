@@ -7,7 +7,7 @@ import "./Style.css";
 function Index(props) {
   const [Fiderations, setFideration] = useState([]);
   useEffect(() => {
-    fetch(`http://art-council.herokuapp.com/api/Federation/Pub`, {
+    fetch(`https://api.rwandaartscouncil.rw/api/Federation/Pub`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

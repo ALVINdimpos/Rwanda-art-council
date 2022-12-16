@@ -5,7 +5,7 @@ import Style from "./Style.module.css";
 const Index = () => {
   const [ExcutiveTeam, setExcutive] = useState([]);
   useEffect(() => {
-    fetch(`http://art-council.herokuapp.com/api/TeamExecutive`, {
+    fetch(`https://api.rwandaartscouncil.rw/api/TeamExecutive`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

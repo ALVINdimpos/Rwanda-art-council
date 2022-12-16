@@ -45,7 +45,7 @@ function Index() {
     setLoading(true);
     try {
     const res=  await axios.post(
-        "http://art-council.herokuapp.com/api/User/Login",
+        "https://api.rwandaartscouncil.rw/api/User/Login",
         loginData
       );
       if (res.status === 200) {

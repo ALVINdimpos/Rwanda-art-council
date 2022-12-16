@@ -4,7 +4,7 @@ const Index = () => {
 
 const [Music,setMusic]= useState([]);
 const fetchEvents = () => {
-  fetch("http://art-council.herokuapp.com/api/v1/gallery/getById/6", {
+  fetch("https://api.rwandaartscouncil.rw/api/v1/gallery/getById/6", {
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",

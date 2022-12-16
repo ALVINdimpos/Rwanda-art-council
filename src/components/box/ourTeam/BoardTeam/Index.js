@@ -6,7 +6,7 @@ import Style from "./Style.module.css";
 const Index = () => {
   const [BoardTeam, setBoardTeam] = useState([]);
   useEffect(() => {
-    fetch(`http://art-council.herokuapp.com/api/TeamBoard`, {
+    fetch(`https://api.rwandaartscouncil.rw/api/TeamBoard`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
