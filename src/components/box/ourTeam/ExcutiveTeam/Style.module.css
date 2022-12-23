@@ -1,8 +1,4 @@
 .main{
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin: 5rem auto;
   
 }
@@ -32,6 +28,7 @@
   height: 161px;
   width: 163px;
   margin: 0rem auto;
+  object-fit: fill;
 }
 .caption{
   text-align: center;

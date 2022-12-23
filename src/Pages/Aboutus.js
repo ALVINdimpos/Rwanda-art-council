@@ -3,9 +3,9 @@ import NavBar from "../components/NavBar/Index";
 import Footer from "../components/Footer/Footer";
 import PageIndicator from "../components/PageIndicator/Index";
 import Style from "./About.module.css";
-import Service1 from "../assets/photos/Service1.png";
-import Service2 from "../assets/photos/Service2.png";
-import Service3 from "../assets/photos/Service3.png";
+import Service1 from "../assets/photos/dance1.jpeg";
+import Service2 from "../assets/photos/music.jpeg";
+import Service3 from "../assets/photos/cinema.jpeg";
 import ServiceCard from "../components/box/OurServiceCard/Index";
 import OurTeam from "../components/box/ourTeam/Index";
 function Aboutus() {

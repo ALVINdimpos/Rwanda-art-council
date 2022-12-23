@@ -79,7 +79,7 @@ const subscribeHandler = (e) => {
                 <span>Follow us</span>
                 <a href="https://web.facebook.com/rwanda.parliament/posts/rwanda-arts-council-rac-the-umbrella-organisation-that-groups-together-local-art/2271656552930801/?_rdc=1&_rdr"><i className="fab fa-facebook-f facebook-bg" /></a>
                 <a href="https://twitter.com/rwandartcouncil"><i className="fab fa-twitter twitter-bg" /></a>
-                <a href="https://google.com/rwandartcouncil"><i className="fab fa-google-plus-g google-bg" /></a>
+                <a href="https://google.com/rwandartcouncil"><i className="fab fa-instagram google-bg" /></a>
               </div>
             </div>
           </div>

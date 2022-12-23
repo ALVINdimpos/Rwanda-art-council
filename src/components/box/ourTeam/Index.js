@@ -22,8 +22,8 @@ export default function LabTabs() {
             <Tab label="Excutive team" value="2" />
           </TabList>
         </Box>
-        <TabPanel value="1"><BoardTeam/></TabPanel>
-        <TabPanel value="2"><ExcutiveTeam/></TabPanel>
+        <TabPanel value="1" className='d-flex d-sm-flex'><BoardTeam /></TabPanel>
+        <TabPanel value="2" className='d-flex d-sm-flex'><ExcutiveTeam/></TabPanel>
        
       </TabContext>
     </Box>

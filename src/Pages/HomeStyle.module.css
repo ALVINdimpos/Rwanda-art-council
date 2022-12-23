@@ -7,9 +7,9 @@
 }
 .FederationBoxWraper {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto;
   width: 90%;
-  gap: 1rem;
+  gap: 3rem;
   margin: 1rem auto;
 }
 @media (max-width: 550px) {

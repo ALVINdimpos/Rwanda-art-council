@@ -7,14 +7,14 @@
     justify-content: space-between;
     cursor: pointer;
     transition: transform 200ms ease-in;
-    height: 200px;
-    width: 250px;
+    height:200px;
+    width:340px;
   }
   .card_wrapper{
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    width: 90%;
-    gap: 1rem;
+    grid-template-columns: auto auto auto ;
+    width: 100%;
+    gap: 3rem;
     margin: 1rem auto;
   }
 .card__image {
