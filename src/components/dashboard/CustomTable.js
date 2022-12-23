@@ -58,12 +58,12 @@ const CustomTable = ({
                       <td>{tdata.email}</td>
                       <td>
                         <ButtonGroup>
-                          <Link to={`/viewFederation/${tdata.id}`}>
+                          <Link to={`/dashboard/viewFederation/${tdata.id}`}>
                             <Button color="#C5801A" size="sm">
                               <i className="bi bi-eye-fill"></i>
                             </Button>
                           </Link>
-                          <Link to={`/editFederation/${tdata.id}`}>
+                          <Link to={`/dashboard/editFederation/${tdata.id}`}>
                             <Button color="success" size="sm">
                               <i className="bi bi-pencil-fill"></i>
                             </Button>
@@ -85,7 +85,7 @@ const CustomTable = ({
                       <td>{tdata.email}</td>
                       <td>
                         <ButtonGroup>
-                          <Link to={`/viewUnion/${tdata.id}`}>
+                          <Link to={`/dashboard/viewUnion/${tdata.id}`}>
                             <Button
                               style={{
                                 backgroundColor: "#C5801A",
@@ -95,7 +95,7 @@ const CustomTable = ({
                               <i className="bi bi-eye-fill"></i>
                             </Button>
                           </Link>
-                          <Link to={`/editUnion/${tdata.id}`}>
+                          <Link to={`/dashboard/editUnion/${tdata.id}`}>
                             <Button color="success" size="sm">
                               <i className="bi bi-pencil-fill"></i>
                             </Button>

@@ -67,7 +67,7 @@ const ViewUnion = () => {
                     justifyContent: "space-between",
                   }}
                 >
-                  <Link to={`/editUnion/${id}`}>
+                  <Link to={`/dashboard/editUnion/${id}`}>
                     <Button
                       style={{
                         backgroundColor: "#C5801A",
@@ -103,7 +103,7 @@ const ViewUnion = () => {
             className="border-bottom p-3 mb-0"
           >
             <h6>Artists List</h6>
-            <Link to={`/addArtist/${id}`}>
+            <Link to={`/dashboard/addArtist/${id}`}>
               <Button
                 style={{
                   backgroundColor: "#C5801A",
@@ -134,7 +134,7 @@ const ViewUnion = () => {
                       <td>{artist.phone}</td>
                       <td>{artist.email}</td>
                       <td>
-                        <Link to={`/viewArtist/${artist.id}`}>
+                        <Link to={`/dashboard/viewArtist/${artist.id}`}>
                           <Button
                             style={{
                               backgroundColor: "#C5801A",

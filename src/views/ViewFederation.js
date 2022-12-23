@@ -61,7 +61,7 @@ const ViewFederation = () => {
                       justifyContent: "space-between",
                     }}
                   >
-                    <Link to={`/editFederation/${id}`}>
+                    <Link to={`/dashboard/editFederation/${id}`}>
                       <Button
                         style={{
                           backgroundColor: "#C5801A",
@@ -132,7 +132,7 @@ const ViewFederation = () => {
                         >
                           {union.slogan}
                         </p>
-                        <Link to={`/viewUnion/${union.id}`}>
+                        <Link to={`/dashboard/viewUnion/${union.id}`}>
                           <Button
                             style={{
                               backgroundColor: "#C5801A",
@@ -158,7 +158,7 @@ const ViewFederation = () => {
             className="border-bottom p-3 mb-0"
           >
             <h6>Teams in the federation</h6>
-            <Link to={`/addFederationTeam`}>
+            <Link to={`/dashboard/addFederationTeam`}>
               <Button
                 style={{
                   backgroundColor: "#C5801A",
@@ -232,7 +232,7 @@ const ViewFederation = () => {
                       <CardTitle tag="h6" className="border-bottom pb-2 mb-0">
                         {item.name}
                       </CardTitle>
-                      <Link to={`/viewFederationTeam/${item.id}`}>
+                      <Link to={`/dashboard/viewFederationTeam/${item.id}`}>
                         <Button
                           style={{
                             backgroundColor: "#C5801A",

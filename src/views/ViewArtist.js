@@ -39,7 +39,8 @@ const ViewArtist = () => {
               <div>
                 <p>First name: {Federation.leaderFName}</p>
                 <p>Last name: {Federation.leaderLName}</p>
-                <p>Date of birth: {Federation.id}</p>
+                <p>Date of birth: 11/11/1970</p>
+                <p>Artist code: 1970</p>
                 <p>Email: {Federation.email}</p>
                 <p>Phone: {Federation.phone}</p>
                 <p>Country: {Federation.province}</p>
@@ -55,7 +56,7 @@ const ViewArtist = () => {
                     justifyContent: "space-between",
                   }}
                 >
-                  <Link to={`/editArtist/${id}`}>
+                  <Link to={`/dashboard/editArtist/${id}`}>
                     <Button
                       style={{
                         backgroundColor: "#C5801A",
