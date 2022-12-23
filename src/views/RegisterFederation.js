@@ -75,7 +75,7 @@ const RegisterFederation = () => {
           </CardTitle>
           <CardBody>
             <Form onSubmit={handleSubmit(registerFed)}>
-              {/* <FormGroup>
+              <FormGroup>
                 <Label for="federationName">Federation name</Label>
                 <input
                   style={{
@@ -296,8 +296,8 @@ const RegisterFederation = () => {
                 {errors.federationName && (
                   <p style={{ color: "red" }}>confirm your Password</p>
                 )}
-              </FormGroup> */}
-              <FormGroup {...getRootProps}>
+              </FormGroup>
+              {/* <FormGroup {...getRootProps}>
                 <Label for="imageFile">Upload image</Label>
                 <input
                   style={{
@@ -324,7 +324,7 @@ const RegisterFederation = () => {
                 <FormText>
                   To Upload an image of your federation's logo or headquartes
                 </FormText>
-              </FormGroup>
+              </FormGroup> */}
               <Button>Submit</Button>
             </Form>
           </CardBody>

@@ -49,7 +49,7 @@ const ViewEvent = () => {
                       justifyContent: "space-between",
                     }}
                   >
-                    <Link to={`/editFederation/${eventId}`}>
+                    <Link to={`/dashboard/editFederation/${eventId}`}>
                       <Button
                         style={{
                           backgroundColor: "#C5801A",

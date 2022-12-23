@@ -53,7 +53,7 @@ const ViewFederationTeam = () => {
                   gap: "10px",
                 }}
               >
-                <Link to={`/EditFedTeamMember/${id}`}>
+                <Link to={`/dashboard/EditFedTeamMember/${id}`}>
                   <Button
                     style={{
                       backgroundColor: "#C5801A",

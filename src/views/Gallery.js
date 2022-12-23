@@ -82,7 +82,7 @@ const Gallery = () => {
         }}
       >
         <h5>Gallery</h5>
-        <Link to="/galleryCategories">
+        <Link to="/dashboard/galleryCategories">
           <Button
             style={{
               backgroundColor: "#C5801A",
