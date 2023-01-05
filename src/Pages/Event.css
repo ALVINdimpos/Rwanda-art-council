@@ -12,6 +12,7 @@
     font-weight: 600;
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 .Event_container p{
     font-size: 1.2rem;

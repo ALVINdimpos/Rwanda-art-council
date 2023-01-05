@@ -41,7 +41,7 @@
   color:#C5801A;
   font-size:18px;
 }
-@media (min-width: 375px) {
+@media screen and (max-width: 550px) {
   .carddetails {
     width: auto;
   }
