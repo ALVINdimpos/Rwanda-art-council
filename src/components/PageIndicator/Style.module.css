@@ -13,14 +13,17 @@
     font-size: 96px;
     font-weight: 400;
     line-height: 36px;
-    margin: 1rem auto;
     
   }
   @media (max-width:550px) {
-    .Gallery {
-      line-height: 80px;
-      text-align: center;
-      font-size: 66px;
+    .PageIndicator {
+      height: 25vh;
+    }
+    .Gallery{
+      margin-left: 4rem;
+      margin-top: 3rem;
+      font-size: 36px;
+      background-color: aqua;
     }
 
   }
