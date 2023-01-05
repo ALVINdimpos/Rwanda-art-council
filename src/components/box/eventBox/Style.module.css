@@ -1,6 +1,8 @@
 .eventBoxWraper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 2rem;
   margin: 1rem auto;
 }
@@ -9,14 +11,15 @@
   box-shadow: 0px 1px 1px 0px #00000040;
   background-color: white;
   height: 100%;
-  width: 320px;
+  width: 100%;
 }
 .eventBox:hover{
   box-shadow: 5px 10px 20px 1px #00000040;
 }
 .eventBox img {
 height: 250px;
-width: 100%;
+width: 100%; ;
+
 }
 .eventBox Button {
   float: inline-end;
@@ -48,15 +51,4 @@ width: 100%;
   font-family: 'Raleway';
   font-size: 18px;
   font-weight: 400; 
-}
-@media(max-width: 482px) {
-
-  .eventBox {
-   flex-direction: column;
-   justify-content: space-between;
-}
-.eventBoxWraper{
-  flex-direction: column;
- 
-}
 }

@@ -6,6 +6,7 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import BoardTeam from '../ourTeam/BoardTeam/Index'
 import ExcutiveTeam from '../ourTeam/ExcutiveTeam/Index'
+import './style.css'
 export default function LabTabs() {
   const [value, setValue] = React.useState('1');
 
@@ -22,8 +23,8 @@ export default function LabTabs() {
             <Tab label="Excutive team" value="2" />
           </TabList>
         </Box>
-        <TabPanel value="1" className='d-flex d-sm-flex'><BoardTeam /></TabPanel>
-        <TabPanel value="2" className='d-flex d-sm-flex'><ExcutiveTeam/></TabPanel>
+        <TabPanel value="1" className='team'><BoardTeam /></TabPanel>
+        <TabPanel value="2" className='team'><ExcutiveTeam/></TabPanel>
        
       </TabContext>
     </Box>

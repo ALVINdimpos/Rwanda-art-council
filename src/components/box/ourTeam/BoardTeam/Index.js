@@ -28,6 +28,7 @@ const Index = () => {
            </div>
            <div className={Style.caption}>
              <h3>{team.name}</h3>
+
              <p>{team.position}</p>
              <div className={Style.social_links}>
                <a href={team.facebook}>
