@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import "./Style.css"
 import Logo from "../../assets/photos/Logo.png"
+import { NavLink } from 'react-router-dom';
 
 function Footer() {
 const d = new Date();
@@ -89,16 +90,14 @@ const subscribeHandler = (e) => {
                 <h3>Useful Links</h3>
               </div>
               <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">about</a></li>
-                <li><a href="#">services</a></li>
-                <li><a href="#">portfolio</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Our Services</a></li>
-                <li><a href="#">Expert Team</a></li>
-                <li><a href="#">Contact us</a></li>
-                <li><a href="#">Latest News</a></li>
+                <li><NavLink to="/home" >Home</NavLink></li>
+                <li><NavLink to="/Aboutus">About</NavLink></li>
+                <li><NavLink to="/Whatwedo">Services</NavLink></li>
+                <li><NavLink to="/Gallery">Gallery</NavLink></li>
+                <li><NavLink to="/Contactus">Contact</NavLink></li>
+                <li><NavLink to="/Event">Events</NavLink></li>
+                <li><NavLink to="/home">Excutive team</NavLink></li>
+                <li><NavLink to="/home">Board team</NavLink></li>
               </ul>
             </div>
           </div>
