@@ -41,8 +41,13 @@
   color:#C5801A;
   font-size:18px;
 }
-@media (min-width: 300px) {
+@media (min-width: 375px) {
   .carddetails {
     width: auto;
   }
+  .BookWraper {
+    width: 90%;
+    margin-top: 1rem;
+  }
+ 
 }

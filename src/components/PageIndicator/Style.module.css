@@ -20,9 +20,11 @@
       height: 25vh;
     }
     .Gallery{
-      margin-left: 4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 50px;
       margin-top: 3rem;
-      font-size: 36px;
     }
 
   }
