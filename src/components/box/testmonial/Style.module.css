@@ -26,14 +26,15 @@
 .dot1 {
   color: #c5801a;
 }
-@media (max-width:500px) {
+@media (max-width:550px) {
   .testWraper {
    display: flex;
    flex-direction: column;
+   margin: 0 auto;
   }
   .testmonial img {
-    width: 100%;
     object-fit: fill;
     width: 350px;
+    
   }
 }
