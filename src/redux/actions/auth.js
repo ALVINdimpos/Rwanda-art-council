@@ -10,16 +10,20 @@ import {
   LOGOUT_SUCCESS,
 } from "../types";
 
-export const loginUser = (data) => (dispatch) => {
+export const loginUser = (data) => async (dispatch) => {
   try {
     dispatch(action(LOGIN));
-    axios({
+    await axios({
       method: "post",
       url: `${API_URL}/User/Login`,
       data,
     })
       .then((response) => {
-        dispatch(action(LOGIN_SUCCESS, response.data));
+        Promise.resolve(
+          localStorage.setItem("user", JSON.stringify(response.data))
+        ).then(() => {
+          dispatch(action(LOGIN_SUCCESS, response.data));
+        });
       })
       .catch((error) => {
         dispatch(action(LOGIN_FAILED, error));
@@ -32,7 +36,7 @@ export const loginUser = (data) => (dispatch) => {
 export const logoutUser = () => async (dispatch) => {
   try {
     dispatch(action(LOGOUT));
-    axios({
+    await axios({
       method: "get",
       url: `${API_URL}/User/Logout`,
     })

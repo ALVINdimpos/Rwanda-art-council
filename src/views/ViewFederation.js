@@ -75,13 +75,7 @@ const ViewFederation = () => {
                   </div>
                 </div>
                 <div>
-                  <img
-                    width={200}
-                    height={200}
-                    src={
-                      "https://pbs.twimg.com/media/Dfd9sHtXUAEhTzm?format=jpg&name=large"
-                    }
-                  />
+                  <img width={200} height={200} src={singleFederation.logo} />
                 </div>
               </div>
             </CardBody>
@@ -89,15 +83,15 @@ const ViewFederation = () => {
         )}
         <Card>
           <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-            }}
+            // style={{
+            //   display: "flex",
+            //   flexDirection: "row",
+            //   justifyContent: "space-between",
+            // }}
             className="border-bottom p-3 mb-0"
           >
             <h6>Unions in the federation</h6>
-            <Link to={`/dashboard/addUnion/${id}`}>
+            {/* <Link to={`/dashboard/registerUnion`}>
               <Button
                 style={{
                   backgroundColor: "#C5801A",
@@ -105,7 +99,7 @@ const ViewFederation = () => {
               >
                 Add Union
               </Button>
-            </Link>
+            </Link> */}
           </div>
           <CardBody>
             <div

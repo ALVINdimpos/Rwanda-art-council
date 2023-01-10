@@ -30,11 +30,14 @@ const FederationDashboard = () => {
   const state = useSelector((state) => state);
   const {
     federation: { federations },
+    login: { user },
   } = state;
 
   useEffect(() => {
-    dispatch(getAllFederation());
-  }, [dispatch]);
+    if (user) {
+      dispatch(getAllFederation());
+    }
+  }, [dispatch, user]);
   useEffect(() => {
     if (federations) setTableData(federations);
   }, [federations]);

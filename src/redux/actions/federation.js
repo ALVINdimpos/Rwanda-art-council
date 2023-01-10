@@ -17,14 +17,20 @@ import {
 } from "../types";
 import action from "./action";
 import axios from "axios";
-import { API_URL, http, TOKEN } from "../../utils/config";
+import { API_URL, http, TOKEN, userData } from "../../utils/config";
 
 export const getAllFederation = () => async (dispatch) => {
   try {
     dispatch(action(GET_ALL_FEDERATIONS));
-    http
-      .get("/Federation/All")
+    await axios({
+      method: "get",
+      url: `${API_URL}/Federation/All`,
+      headers: {
+        Authorization: `Bearer ${userData.access_token}`,
+      },
+    })
       .then((response) => {
+        console.log(response.data);
         dispatch(action(GET_ALL_FEDERATIONS_SUCCESS, response.data));
       })
       .catch((error) => {
@@ -38,7 +44,7 @@ export const getAllFederation = () => async (dispatch) => {
 export const getSingleFederation = (id) => async (dispatch) => {
   try {
     dispatch(action(GET_SINGLE_FEDERATION));
-    axios({
+    await axios({
       method: "get",
       url: `${API_URL}/Federation/Get/${id}`,
       headers: {

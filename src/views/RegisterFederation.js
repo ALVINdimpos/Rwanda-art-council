@@ -1,5 +1,5 @@
-import React, { useCallback } from "react";
-import { useForm } from "react-hook-form";
+import React from "react";
+// import { useForm } from "react-hook-form";
 import Style from "./style.module.css";
 import {
   Card,
@@ -16,52 +16,44 @@ import {
 } from "reactstrap";
 import { registerFederation } from "../redux/actions";
 import { useDispatch } from "react-redux";
-import { useDropzone } from "react-dropzone";
+// import { useDropzone } from "react-dropzone";
+
+const createFormData = (body) => {
+  const data = new FormData();
+  // data.append("email", body);
+  for (const [key, value] of Object.entries(body)) {
+    data.append(key, value);
+  }
+
+  return data;
+};
 
 const RegisterFederation = () => {
   const [passwordShown, setPasswordShown] = React.useState(false);
-  const [image, setImage] = React.useState();
-  // const dispatch = useDispatch();
-  const onDrop = useCallback((acceptedFiles) => {
-    acceptedFiles.forEach((file) => {
-      const reader = new FileReader();
+  const [fedData, setFedData] = React.useState([]);
+  const dispatch = useDispatch();
+  const handlerChange = (key, value) => {
+    setFedData((prevCred) => ({ ...prevCred, [key]: value }));
+  };
+  // const onDrop = useCallback((acceptedFiles) => {
+  //   acceptedFiles.forEach((file) => {
+  //     const reader = new FileReader();
 
-      reader.onabort = () => console.log("file reading was aborted");
-      reader.onerror = () => console.log("file reading has failed");
-      reader.onload = () => {
-        // Do whatever you want with the file contents
-        const binaryStr = reader.result;
-        console.log(binaryStr);
-      };
-      reader.readAsArrayBuffer(file);
-    });
-    // acceptedFiles.map((file) => {
-    //   setImage(file);
-    // });
-  }, []);
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+  //     reader.onabort = () => console.log("file reading was aborted");
+  //     reader.onerror = () => console.log("file reading has failed");
+  //     reader.onload = () => {
+  //       // Do whatever you want with the file contents
+  //       const binaryStr = reader.result;
+  //       console.log(binaryStr);
+  //     };
+  //     reader.readAsArrayBuffer(file);
+  //   });
+  // }, []);
+  // const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
-  console.log(image);
-
-  const registerFed = (data) => {
-    let loginData;
-    if (data.logo && data.logo.length !== 0) {
-      console.log(data);
-      // const logourl = URL.createObjectURL(data.logo[0]);
-      // console.log(logourl);
-      // const logo = new FileReader();
-      // logo.readAsDataURL(logourl);
-      // // logo.append("logo", data.logo);
-      // // logo.append("Content-Type", "image/*");
-      // loginData = { ...data, logo: logo };
-      // console.log(loginData);
-      // dispatch(registerFederation(loginData));
-    }
+  const registerFed = () => {
+    const data = createFormData(fedData);
+    dispatch(registerFederation(data));
   };
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
@@ -74,189 +66,178 @@ const RegisterFederation = () => {
             Register a new federation
           </CardTitle>
           <CardBody>
-            <Form onSubmit={handleSubmit(registerFed)}>
+            <Form onSubmit={() => {}}>
               <FormGroup>
                 <Label for="federationName">Federation name</Label>
-                <input
-                  style={{
-                    width: "100%",
-                    padding: "5px 10px",
-                    borderColor: "whitesmoke",
-                    borderWidth: "1px",
-                    borderRadius: "5px",
-                  }}
+                <Input
                   id="federationName"
                   name="federationName"
                   placeholder="Name of the federation"
                   type="text"
-                  {...register("fed_name", { required: true })}
+                  onChange={({ target: { value } }) => {
+                    handlerChange("fed_name", value);
+                  }}
                 />
-                {errors.federationName && (
-                  <p style={{ color: "red" }}>Federation name is required</p>
-                )}
               </FormGroup>
               <FormGroup>
                 <Label for="federationLeaderFirstName">
                   Federation leader first name
                 </Label>
-                <input
-                  style={{
-                    width: "100%",
-                    padding: "5px 10px",
-                    borderColor: "whitesmoke",
-                    borderWidth: "1px",
-                    borderRadius: "5px",
-                  }}
+                <Input
                   id="federationLeaderFirstName"
                   name="federationLeaderFirstName"
                   placeholder="Federation leader first name"
                   type="text"
-                  {...register("fname", { required: true })}
+                  onChange={({ target: { value } }) => {
+                    handlerChange("fname", value);
+                  }}
                 />
-                {errors.federationName && (
-                  <p style={{ color: "red" }}>Federation name is required</p>
-                )}
               </FormGroup>
               <FormGroup>
                 <Label for="federationLeaderLastName">
                   Federation leader last name
                 </Label>
-                <input
-                  style={{
-                    width: "100%",
-                    padding: "5px 10px",
-                    borderColor: "whitesmoke",
-                    borderWidth: "1px",
-                    borderRadius: "5px",
-                  }}
+                <Input
                   id="federationLeaderLastName"
                   name="federationLeaderLastName"
                   placeholder="Federation leader last name"
                   type="text"
-                  {...register("lname", { required: true })}
+                  onChange={({ target: { value } }) => {
+                    handlerChange("lname", value);
+                  }}
                 />
-                {errors.federationName && (
-                  <p style={{ color: "red" }}>Federation name is required</p>
-                )}
               </FormGroup>
               <FormGroup>
                 <Label for="phoneNumber">Phone number</Label>
-                <input
-                  style={{
-                    width: "100%",
-                    padding: "5px 10px",
-                    borderColor: "whitesmoke",
-                    borderWidth: "1px",
-                    borderRadius: "5px",
-                  }}
+                <Input
                   id="phoneNumber"
                   name="phoneNumber"
                   placeholder="Phone number"
                   type="text"
-                  {...register("phone", { required: true })}
+                  onChange={({ target: { value } }) => {
+                    handlerChange("phone", value);
+                  }}
                 />
-                {errors.federationName && (
-                  <p style={{ color: "red" }}>Federation name is required</p>
-                )}
               </FormGroup>
               <FormGroup>
-                <Label for="email">Email Address</Label>
-                <input
-                  style={{
-                    width: "100%",
-                    padding: "5px 10px",
-                    borderColor: "whitesmoke",
-                    borderWidth: "1px",
-                    borderRadius: "5px",
-                  }}
+                <Label for="emailAddress">Email Address</Label>
+                <Input
                   id="emailAddress"
-                  name="email"
+                  name="emailAddress"
                   placeholder="Email Address"
-                  type="text"
-                  {...register("email", { required: true })}
-                />
-                {errors.federationName && (
-                  <p style={{ color: "red" }}>Email is required</p>
-                )}
-              </FormGroup>
-              <FormGroup>
-                <Label for="tinNumber">Tin Number</Label>
-                <input
-                  style={{
-                    width: "100%",
-                    padding: "5px 10px",
-                    borderColor: "whitesmoke",
-                    borderWidth: "1px",
-                    borderRadius: "5px",
+                  type="email"
+                  onChange={({ target: { value } }) => {
+                    handlerChange("email", value);
                   }}
-                  id="tinNumber"
-                  name="tinNumber"
-                  placeholder="Tin Number"
-                  type="number"
-                  {...register("tinNumber", { required: true })}
                 />
-                {errors.federationName && (
-                  <p style={{ color: "red" }}>Email is required</p>
-                )}
               </FormGroup>
               <FormGroup>
                 <Label for="numberOfUnions">Number of unions</Label>
-                <input
-                  style={{
-                    width: "100%",
-                    padding: "5px 10px",
-                    borderColor: "whitesmoke",
-                    borderWidth: "1px",
-                    borderRadius: "5px",
-                  }}
+                <Input
                   id="numberOfUnions"
                   name="numberOfUnions"
                   placeholder="Number of unions under the federation"
                   type="number"
-                  {...register("union", { required: true })}
+                  onChange={({ target: { value } }) => {
+                    handlerChange("union", value);
+                  }}
                 />
-                {errors.federationName && (
-                  <p style={{ color: "red" }}>Number Of unions is required</p>
-                )}
+              </FormGroup>
+              <FormGroup>
+                <Label for="tinNumber">Tin number</Label>
+                <Input
+                  id="tinNumber"
+                  name="tinNumber"
+                  placeholder="Tin number for the federation"
+                  type="number"
+                  onChange={({ target: { value } }) => {
+                    handlerChange("tinNumber", value);
+                  }}
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label for="province">Province</Label>
+                <Input
+                  id="province"
+                  name="province"
+                  placeholder="Province where the federation is located"
+                  type="text"
+                  onChange={({ target: { value } }) => {
+                    handlerChange("province", value);
+                  }}
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label for="district">District</Label>
+                <Input
+                  id="district"
+                  name="district"
+                  placeholder="District where the federation is located"
+                  type="text"
+                  onChange={({ target: { value } }) => {
+                    handlerChange("district", value);
+                  }}
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label for="sector">Sector</Label>
+                <Input
+                  id="sector"
+                  name="sector"
+                  placeholder="Sector where the federation is located"
+                  type="text"
+                  onChange={({ target: { value } }) => {
+                    handlerChange("sector", value);
+                  }}
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label for="cell">Cell</Label>
+                <Input
+                  id="cell"
+                  name="cell"
+                  placeholder="Cell where the federation is located"
+                  type="text"
+                  onChange={({ target: { value } }) => {
+                    handlerChange("cell", value);
+                  }}
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label for="village">Village</Label>
+                <Input
+                  id="village"
+                  name="village"
+                  placeholder="Village where the federation is located"
+                  type="text"
+                  onChange={({ target: { value } }) => {
+                    handlerChange("village", value);
+                  }}
+                />
               </FormGroup>
               <FormGroup>
                 <Label for="description">Decription</Label>
-                <input
-                  style={{
-                    width: "100%",
-                    padding: "5px 10px",
-                    borderColor: "whitesmoke",
-                    borderWidth: "1px",
-                    borderRadius: "5px",
-                  }}
+                <Input
                   id="description"
                   name="description"
                   placeholder="Enter description of the federation"
                   type="textarea"
-                  {...register("description", { required: true })}
+                  onChange={({ target: { value } }) => {
+                    handlerChange("description", value);
+                  }}
                 />
-                {errors.federationName && (
-                  <p style={{ color: "red" }}>Description is required</p>
-                )}
               </FormGroup>
               <FormGroup>
                 <Label for="password">Password</Label>
                 <div className={Style.carddetails}>
-                  <input
-                    style={{
-                      width: "100%",
-                      padding: "5px 10px",
-                      borderColor: "whitesmoke",
-                      borderWidth: "1px",
-                      borderRadius: "5px",
-                    }}
+                  <Input
                     id="password"
                     name="password"
-                    placeholder="Enter password"
+                    placeholder="********"
                     type={passwordShown ? "text" : "password"}
-                    {...register("password", {
-                      required: true,
-                    })}
+                    onChange={({ target: { value } }) => {
+                      handlerChange("password", value);
+                    }}
                   />
                   <span>
                     <small
@@ -265,26 +246,18 @@ const RegisterFederation = () => {
                     />
                   </span>
                 </div>
-                {errors.federationName && (
-                  <p style={{ color: "red" }}>Password is required</p>
-                )}
               </FormGroup>
               <FormGroup>
                 <Label for="confirmPassword">Confirm Password</Label>
                 <div className={Style.carddetails}>
-                  <input
-                    style={{
-                      width: "100%",
-                      padding: "5px 10px",
-                      borderColor: "whitesmoke",
-                      borderWidth: "1px",
-                      borderRadius: "5px",
-                    }}
+                  <Input
                     id="confirmPassword"
                     name="confirmPassword"
-                    placeholder="Confirm password"
+                    placeholder="*********"
                     type={passwordShown ? "text" : "password"}
-                    {...register("password_confirmation", { required: true })}
+                    onChange={({ target: { value } }) => {
+                      handlerChange("password_confirmation", value);
+                    }}
                   />
                   <span>
                     <small
@@ -293,39 +266,23 @@ const RegisterFederation = () => {
                     />
                   </span>
                 </div>
-                {errors.federationName && (
-                  <p style={{ color: "red" }}>confirm your Password</p>
-                )}
               </FormGroup>
-              {/* <FormGroup {...getRootProps}>
+              <FormGroup>
                 <Label for="imageFile">Upload image</Label>
-                <input
-                  style={{
-                    width: "100%",
-                    padding: "5px 10px",
-                    borderColor: "whitesmoke",
-                    borderWidth: "1px",
-                    borderRadius: "5px",
-                  }}
+                <Input
                   id="imageFile"
                   name="imageFile"
                   type="file"
-                  {...getInputProps()}
-                  // {...register("logo", { required: true })}
+                  onChange={({ target: { value } }) => {
+                    console.log(value);
+                    handlerChange("logo", value);
+                  }}
                 />
-                {isDragActive ? (
-                  <p>Drop the files here ...</p>
-                ) : (
-                  <p>Drag 'n' drop some files here, or click to select files</p>
-                )}
-                {errors.federationName && (
-                  <p style={{ color: "red" }}>Image is required</p>
-                )}
                 <FormText>
-                  To Upload an image of your federation's logo or headquartes
+                  TUpload an image of your federation's logo or headquartes
                 </FormText>
-              </FormGroup> */}
-              <Button>Submit</Button>
+              </FormGroup>
+              <Button onClick={registerFed}>Submit</Button>
             </Form>
           </CardBody>
         </Card>

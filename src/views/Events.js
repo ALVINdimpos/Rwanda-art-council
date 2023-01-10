@@ -87,6 +87,7 @@ const Events = () => {
   useEffect(() => {
     dispatch(getAllEvents());
   }, [dispatch]);
+  console.log(events);
 
   return (
     <div
@@ -202,19 +203,23 @@ const Events = () => {
         </TabPane>
         <TabPane tabId="3" className="pt-3">
           <Row>
-            {ourEvents.map((blg, index) => (
-              <Col sm="6" lg="6" xl="3" key={index}>
-                <Event
-                  image={blg.image}
-                  title={blg.title}
-                  status={blg.status}
-                  subtitle={blg.subtitle}
-                  text={blg.description}
-                  color={blg.btnbg}
-                  id={index}
-                />
-              </Col>
-            ))}
+            {events &&
+              events.map((event, index) => {
+                if (event.user_role === "federation") {
+                  return (
+                    <Col sm="6" lg="6" xl="3" key={index}>
+                      <Event
+                        image={event.ev_image}
+                        title={event.title}
+                        status={event.status}
+                        subtitle={event.subtitle}
+                        text={event.description}
+                        id={event.id}
+                      />
+                    </Col>
+                  );
+                }
+              })}
           </Row>
         </TabPane>
       </TabContent>

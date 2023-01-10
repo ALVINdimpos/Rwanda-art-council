@@ -15,7 +15,9 @@ const Event = ({ image, title, subtitle, text, status, id }) => {
       <CardBody className="p-2">
         <CardTitle tag="h5">{title}</CardTitle>
         <CardSubtitle>{subtitle}</CardSubtitle>
-        <CardSubtitle>Status: {status}</CardSubtitle>
+        <CardSubtitle>
+          Status: {status === "0" ? "Pending" : "accepted"}
+        </CardSubtitle>
         <CardText className="mt-3">{text}</CardText>
         <Link to={`/dashboard/viewEvent/${id}`}>
           <Button

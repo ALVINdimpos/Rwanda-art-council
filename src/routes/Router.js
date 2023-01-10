@@ -46,7 +46,8 @@ const FederationDashboard = lazy(() => import("../views/federations.js"));
 const ThemeRoutes = [
   {
     path: "/",
-    element: <Navigate to="/home" />,
+    // element: <Navigate to="/home" />,
+    element: <Home />,
   },
   {
     path: "/home",

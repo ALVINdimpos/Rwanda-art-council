@@ -10,7 +10,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../redux/actions";
-import { API_URL, TOKEN } from "../utils/config";
+import { API_URL, TOKEN, userData } from "../utils/config";
 
 function Login(props) {
   const navigation = useNavigate();
@@ -44,18 +44,25 @@ function Login(props) {
     setPasswordShown(!passwordShown);
   };
   useEffect(() => {
-    if (user !== null && success) {
-      setLoading(false);
-      localStorage.setItem("user", JSON.stringify(user));
+    if (success && user.info?.fname && user.role) {
+      // setLoading(false);
+      // localStorage.setItem("user", JSON.stringify(user));
       if (user.role === "admin") window.location.href = adminRedirect;
       if (user.role === "federation") window.location.href = fedRedirect;
       if (user.role === "union") window.location.href = redirect;
     }
-  }, [user, success]);
+  }, [user]);
+  useEffect(() => {
+    if (userData) {
+      console.log(userData);
+    }
+  }, [userData]);
 
   const loginHandler = async (data) => {
     setLoading(true);
-    dispatch(loginUser(data));
+    Promise.resolve(dispatch(loginUser(data))).then((res) => {
+      console.log(res);
+    });
   };
 
   return (

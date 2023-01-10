@@ -8,6 +8,7 @@ import {
 } from "reactstrap";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Loader from "../../layouts/loader/Loader";
 
 const CustomTable = ({
   tableData,
@@ -45,7 +46,7 @@ const CustomTable = ({
               </tr>
             </thead>
             <tbody>
-              {tableData &&
+              {tableData ? (
                 tableData.map((tdata, index) =>
                   action === "federations" ? (
                     <tr key={index} className="border-top">
@@ -107,7 +108,10 @@ const CustomTable = ({
                       </td>
                     </tr>
                   )
-                )}
+                )
+              ) : (
+                <Loader />
+              )}
             </tbody>
           </Table>
         </CardBody>

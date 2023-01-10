@@ -13,13 +13,30 @@ import {
   Input,
   FormText,
 } from "reactstrap";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { registerEvent } from "../redux/actions";
+
+const createFormData = (body) => {
+  const data = new FormData();
+  for (const [key, value] of Object.entries(body)) {
+    data.append(key, value);
+  }
+
+  return data;
+};
 
 const RegisterEvent = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const dispatch = useDispatch();
+  const [eventData, setEventData] = React.useState();
+
+  const handlerChange = (key, value) => {
+    setEventData((prevCred) => ({ ...prevCred, [key]: value }));
+  };
+  const eventRegistration = () => {
+    const data = createFormData(eventData);
+    dispatch(registerEvent(data));
+  };
   return (
     <Row>
       <Col>
@@ -31,46 +48,50 @@ const RegisterEvent = () => {
             <Form>
               <FormGroup>
                 <Label for="eventTitle">Event title</Label>
-                <input
+                <Input
                   id="eventTitle"
                   name="eventTitle"
-                  placeholder="Name of the event"
-                  className={Style.inputText}
+                  placeholder="Event title"
                   type="text"
-                  {...register("title", { required: true })}
+                  onChange={({ target: { value } }) => {
+                    handlerChange("title", value);
+                  }}
                 />
               </FormGroup>
               <FormGroup>
                 <Label for="eventLocation">Event Location</Label>
-                <input
+                <Input
                   id="eventLocation"
                   name="eventLocation"
-                  className={Style.inputText}
-                  placeholder="Enter where the event will take place"
+                  placeholder="Event location"
                   type="text"
-                  {...register("location", { required: true })}
+                  onChange={({ target: { value } }) => {
+                    handlerChange("location", value);
+                  }}
                 />
               </FormGroup>
               <FormGroup>
                 <Label for="eventDateAndTime">Event date and time</Label>
-                <input
+                <Input
                   id="eventDateAndTime"
                   name="eventDateAndTime"
-                  placeholder="Enter the time and date of the event"
-                  className={Style.inputText}
-                  type="text"
-                  {...register("at", { required: true })}
+                  placeholder="Event date and time"
+                  type="date"
+                  onChange={({ target: { value } }) => {
+                    handlerChange("at", value);
+                  }}
                 />
               </FormGroup>
               <FormGroup>
                 <Label for="description">Decription</Label>
-                <input
+                <Input
                   id="description"
                   name="description"
-                  placeholder="Enter description of the event"
-                  className={Style.inputText}
-                  type="textarea"
-                  {...register("description", { required: true })}
+                  placeholder="Event descrition"
+                  type="text"
+                  onChange={({ target: { value } }) => {
+                    handlerChange("description", value);
+                  }}
                 />
               </FormGroup>
               <FormGroup>
@@ -80,11 +101,13 @@ const RegisterEvent = () => {
                   name="imageFile"
                   className={Style.inputText}
                   type="file"
-                  {...register("ev_image", { required: true })}
+                  onChange={({ target: { value } }) => {
+                    handlerChange("ev_image", value);
+                  }}
                 />
                 <FormText>Upload an image of the event</FormText>
               </FormGroup>
-              <Button>Submit</Button>
+              <Button onClick={eventRegistration}>Submit</Button>
             </Form>
           </CardBody>
         </Card>

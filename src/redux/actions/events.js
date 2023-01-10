@@ -27,7 +27,7 @@ export const getAllEvents = () => async (dispatch) => {
     dispatch(action(GET_ALL_EVENTS));
     axios({
       method: "get",
-      url: `${API_URL}/Event`,
+      url: `${API_URL}/Event/All/Fed`,
       headers: {
         Authorization: `Bearer ${TOKEN}`,
       },
