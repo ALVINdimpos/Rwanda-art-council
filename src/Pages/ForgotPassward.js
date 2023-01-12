@@ -19,7 +19,7 @@ if (validator.isEmail(email)) {
       setLoading(true);
       try {
         const res = await axios.post(
-          "https://rwanda-art-api.herokuapp.com/api/password-reset",
+          "https://api.rwandaartscouncil.rw/api/password-reset",
           { email }
         );
         console.log(res);

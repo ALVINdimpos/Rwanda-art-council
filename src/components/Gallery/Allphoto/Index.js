@@ -4,7 +4,7 @@ import Style from "./Style.module.css";
 function Gallery() {
   const [AllPhoto,setAllPhoto]= useState([]);
 const fetchEvents = () => {
-  fetch("https://api.rwandaartscouncil.rw/api/v1/gallery/all", {
+  fetch("https://api.rwandaartscouncil.rw/api/gallery/all", {
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",

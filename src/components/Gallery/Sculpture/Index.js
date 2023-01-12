@@ -4,7 +4,7 @@ const Index = () => {
 
 const [Sculpture,setSculpture]= useState([]);
 const fetchEvents = () => {
-  fetch("https://api.rwandaartscouncil.rw/api/v1/gallery/getById/2", {
+  fetch("https://api.rwandaartscouncil.rw/api/gallery/getById/2", {
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",

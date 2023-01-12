@@ -11,13 +11,14 @@ function Index() {
   return (
     <div>
       <div className={Style.CategoriesContainer}>
-          <div className={Style.CategoriesColumn}>
+        <div className={Style.CategoriesColumn}>
         <img src={pic}alt="description of pic"/>
         <img src={Pic1}alt="description of pic"/>
         </div>
         <div className={Style.column_photo}>
          <img src={Pic2} alt="description of pic"/>
-                </div>
+
+          </div>
          <div className={Style.column_photo}>
         <img src={Pic3}alt="description of pic"/>
         </div>

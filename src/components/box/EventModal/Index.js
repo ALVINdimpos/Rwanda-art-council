@@ -25,7 +25,7 @@ function Index() {
     setLoading(true);
     try {
       const res = await axios({
-        url: "https://rwanda-art-api.herokuapp.com/api/booking/create/{event_id}",
+        url: "https://api.rwandaartscouncil.rw/api/booking/create/{event_id}",
         data: { email, Phone_number },
         method: "POST",
       });

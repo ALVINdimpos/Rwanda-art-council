@@ -4,7 +4,7 @@ const Index = () => {
 
 const [Literature,setLiterature]= useState([]);
 const fetchEvents = () => {
-  fetch("https://api.rwandaartscouncil.rw/api/v1/gallery/getById/3", {
+  fetch("https://api.rwandaartscouncil.rw/api/gallery/getById/3", {
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
