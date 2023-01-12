@@ -19,9 +19,10 @@ function Aboutus() {
         </div>
         <div>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an
+          Rwanda Arts Council is None Profit Organization 
+          established by the artists purposly to bringing together 
+          all the artists to advocate for them, and creating broad lines 
+          that help them make profit through their Art.
           </p>
         </div>
       </div>
@@ -29,26 +30,27 @@ function Aboutus() {
         <ServiceCard
           header="Mission"
           img={Service1}
-          subheader="Lorem Ipsum is simply"
-          description="Lorem ipsum dolor sit amen, consectetur advising elit. Cursus nibh
-            maurist, nec turpis Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Cursus nibh mauris, nec turpisLorem"
+          subheader="Socially and economically"
+          description="To promote a socially and economically 
+          vibrant sector by creating an enabling environment for 
+          cultural and creative industries."
         />
         <ServiceCard
           header="Vision"
           img={Service2}
-          subheader="Lorem Ipsum is simply"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
-            mauris, nec turpis Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Cursus nibh mauris, nec turpisLorem"
+          subheader="Professional and sustainable "
+          description=" A pioneer of a dynamic, 
+          professional and sustainable cultural 
+          and creative arts sector in  Rwanda."
         />
         <ServiceCard
           header="Our value"
           img={Service3}
-          subheader="Lorem Ipsum is simply"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
-            mauris, nec turpis Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Cursus nibh mauris, nec turpisLorem"
+          subheader="Foundation of success"
+          description="Creative diversity, professionalism, 
+          originality, productivity, transparency, integrity, 
+          sustainability, transformation, and self-identity
+           combine to form the foundation of success."
         />
       </div>
       <OurTeam/>

@@ -18,11 +18,10 @@ function Index() {
           <h1>WHO WE ARE</h1>
           <h2>We Help To Get Solutions</h2>
           <p>
-            Lorem Ipsum is simply dummy text of the printing andtypesetting
-            industry. Lorem Ipsum has been theindustry's standard dummy text
-            ever since the 1500s, Lorem Ipsum is simply dummy text of the
-            printing andtypesetting industry. Lorem Ipsum has been theindustry's
-            standard dummy text ever since the 1500s
+          Rwanda Arts Council is None Profit Organization 
+          established by the artists purposly to bringing 
+          together all the artists to advocate for them, and 
+          creating broad lines that help them make profit through their Art.
           </p>
           <Button name="Read more" onClick={whoHandler}/>
         </div>

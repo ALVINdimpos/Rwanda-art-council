@@ -41,7 +41,7 @@ const subscribeHandler = (e) => {
               <i className="fas fa-map-marker-alt" />
               <div className="cta-text">
                 <h4>Find us</h4>
-                <span>21 KG 7 Ave, Kigali</span>
+                <span>Gasabo, Kacyiri, C/O Ministry of Youth </span>
               </div>
             </div>
           </div>
@@ -50,7 +50,7 @@ const subscribeHandler = (e) => {
               <i className="fas fa-phone" />
               <div className="cta-text">
                 <h4>Call us</h4>
-                <span> +250 785 655 755</span>
+                <span> +250 788 352 342</span>
               </div>
             </div>
           </div>
@@ -73,8 +73,10 @@ const subscribeHandler = (e) => {
                 <a href="index.html"><img src={Logo} className="img-fluid" alt="Loading..." /></a>
               </div>
               <div className="footer-text">
-                <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
-                  elit,Lorem ipsum dolor sit amet.</p>
+                <p>Rwanda Arts Council is None Profit Organization 
+                  established by the artists purposly to bringing together
+                   all the artists to advocate for them, and creating broad 
+                   lines that help them make profit through their Art.</p>
               </div>
               <div className="footer-social-icon">
                 <span>Follow us</span>

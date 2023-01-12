@@ -16,12 +16,12 @@ function Index() {
       <div className={Style.section1}>
          <div><h1>We work with the best partner</h1></div>
          <div className={Style.description} >
-            <p>Lorem ipsum dolor sit amet, consectetur 
-            adipiscing elit. Donec dignissim orci imperdiet
-             tincidunt egestas. Maecenas dictum eros ut tortor
-              bibendum convallis et non purus. Fusce sit amet 
-              aliquam ex. Phasellus eu neque fringilla ligula 
-        facilisis euismod</p></div>
+               We partner with artists, galleries, museums, and other
+                organizations to bring together a diverse range of art
+                 experiences. Our goal is to make these experiences
+                  accessible to everyone, from professionals to those
+                   just starting to explore the world of art.
+               </div>
          <div><Button name="Read more"/></div>
 
       </div>

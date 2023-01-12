@@ -17,8 +17,9 @@ function Index() {
             Art is beautiful, Art is life,expole Arts
           </p>
           <p className={HeaderStyle.WlcText1}>
-            Browse our collection to find the masterpiece that you desire or
-            Join us today to start selling.
+          Art is a powerful expression of life that 
+          allows us to explore our creativity and discover 
+          beauty in our world.
           </p>
           <div className={HeaderStyle.Button}>
             <Button name="Explore Artworks" />
