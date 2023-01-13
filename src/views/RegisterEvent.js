@@ -12,9 +12,10 @@ import {
   Label,
   Input,
   FormText,
+  Alert,
 } from "reactstrap";
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { registerEvent } from "../redux/actions";
 
 const createFormData = (body) => {
@@ -29,6 +30,7 @@ const createFormData = (body) => {
 const RegisterEvent = () => {
   const dispatch = useDispatch();
   const [eventData, setEventData] = React.useState();
+  const { success } = useSelector((state) => state.registerEvent);
 
   const handlerChange = (key, value) => {
     setEventData((prevCred) => ({ ...prevCred, [key]: value }));
@@ -37,6 +39,13 @@ const RegisterEvent = () => {
     const data = createFormData(eventData);
     dispatch(registerEvent(data));
   };
+  if (success) {
+    setTimeout(() => {
+      window.location.href = "#/dashboard/events";
+      window.location.reload(true);
+    }, 2000);
+  }
+
   return (
     <Row>
       <Col>
@@ -45,6 +54,7 @@ const RegisterEvent = () => {
             Register a new event
           </CardTitle>
           <CardBody>
+            {success && <Alert>Event Registered</Alert>}
             <Form>
               <FormGroup>
                 <Label for="eventTitle">Event title</Label>

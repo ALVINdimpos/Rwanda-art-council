@@ -11,7 +11,7 @@ import validator from "validator";
 import axios from "axios";
 import { MDBIcon } from "mdbreact";
 // import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import "react-toastify/dist/ReactToastify.css";
 import { MDBInput, MDBTextArea } from "mdb-react-ui-kit";
 
 function Index() {

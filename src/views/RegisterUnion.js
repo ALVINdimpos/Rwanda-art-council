@@ -12,9 +12,10 @@ import {
   Label,
   Input,
   FormText,
+  Alert,
 } from "reactstrap";
 import { registerUnion } from "../redux/actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const createFormData = (body) => {
   const data = new FormData();
@@ -29,6 +30,7 @@ const RegisterUnion = () => {
   const dispatch = useDispatch();
   const [passwordShown, setPasswordShown] = useState(false);
   const [unionData, setUnionData] = useState([]);
+  const { success } = useSelector((state) => state.registerFederation);
 
   const handlerChange = (key, value) => {
     setUnionData((prevCred) => ({ ...prevCred, [key]: value }));
@@ -40,6 +42,13 @@ const RegisterUnion = () => {
     const data = createFormData(unionData);
     dispatch(registerUnion(data));
   };
+
+  if (success) {
+    setTimeout(() => {
+      window.location.href = "#/dashboard/union";
+      window.location.reload(true);
+    }, 2000);
+  }
   return (
     <Row>
       <Col>
@@ -48,6 +57,7 @@ const RegisterUnion = () => {
             Register a new union
           </CardTitle>
           <CardBody>
+            {success && <Alert>Union Registered</Alert>}
             <Form>
               <FormGroup>
                 <Label for="unionName">Union name</Label>

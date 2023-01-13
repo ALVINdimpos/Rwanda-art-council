@@ -1,10 +1,12 @@
 import { combineReducers } from "redux";
 import {
   federationReducers,
+  registerFederationReducers,
   singleFederationReducers,
 } from "./federationReducer";
 import {
   fedUnionsReducers,
+  registerUnionReducers,
   singleUnionReducers,
   unionArtistsReducers,
   unionsReducers,
@@ -24,9 +26,11 @@ export default combineReducers({
   logout: logoutReducers,
   federation: federationReducers,
   singleFederation: singleFederationReducers,
+  registerFederation: registerFederationReducers,
   unions: unionsReducers,
   fedUnions: fedUnionsReducers,
   singleUnion: singleUnionReducers,
+  registerUnion: registerUnionReducers,
   unionArtists: unionArtistsReducers,
   events: allEventsReducer,
   singleEvent: singleEventReducer,

@@ -47,9 +47,18 @@ function Login(props) {
     if (success && user.info?.fname && user.role) {
       // setLoading(false);
       // localStorage.setItem("user", JSON.stringify(user));
-      if (user.role === "admin") window.location.href = adminRedirect;
-      if (user.role === "federation") window.location.href = fedRedirect;
-      if (user.role === "union") window.location.href = redirect;
+      if (user.role === "admin") {
+        window.location.href = adminRedirect;
+        window.location.reload(true);
+      }
+      if (user.role === "federation") {
+        window.location.href = fedRedirect;
+        window.location.reload(true);
+      }
+      if (user.role === "union") {
+        window.location.href = redirect;
+        window.location.reload(true);
+      }
     }
   }, [user]);
   useEffect(() => {

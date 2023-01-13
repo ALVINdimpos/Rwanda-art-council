@@ -30,9 +30,8 @@
     "react-photo-album": "^1.16.1",
     "react-redux": "^7.2.8",
     "react-responsive-carousel": "^3.2.23",
-    "react-router-dom": "^6.0.0-beta.8",
+    "react-router-dom": "^6.6.2",
     "react-scripts": "^4.0.3",
-    "react-toastify": "^9.0.8",
     "reactstrap": "9.0.0",
     "redux": "^4.2.0",
     "redux-logger": "^3.0.6",
@@ -66,8 +65,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "react-router-dom": "^6.3.0"
   }
 }

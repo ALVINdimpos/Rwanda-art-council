@@ -46,52 +46,11 @@ const FederationDashboard = lazy(() => import("../views/federations.js"));
 const ThemeRoutes = [
   {
     path: "/",
-    // element: <Navigate to="/home" />,
-    element: <Home />,
-  },
-  {
-    path: "/home",
-    element: <Home />,
-  },
-  {
-    path: "/aboutus",
-    element: <Aboutus />,
-  },
-  {
-    path: "/contactus",
-    element: <Contactus />,
-  },
-  {
-    path: "/gallery",
-    element: <Gallery />,
-  },
-  {
-    path: "/event",
-    element: <Event />,
-  },
-  {
-    path: "/whatwedo",
-    element: <Whatwedo />,
-  },
-  {
-    path: "/becomemember",
-    element: <BecomeMember />,
+    element: <Navigate to="/login" />,
   },
   {
     path: "/login",
     element: <Login />,
-  },
-  {
-    path: "/forgotpassward",
-    element: <ForgotPassward />,
-  },
-  {
-    path: "/passwordresset",
-    element: <PasswordResset />,
-  },
-  {
-    path: "/federation",
-    element: <Federation />,
   },
   {
     path: "/dashboard",

@@ -13,9 +13,10 @@ import {
   Label,
   Input,
   FormText,
+  Alert,
 } from "reactstrap";
 import { registerFederation } from "../redux/actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // import { useDropzone } from "react-dropzone";
 
 const createFormData = (body) => {
@@ -30,6 +31,7 @@ const createFormData = (body) => {
 
 const RegisterFederation = () => {
   const [passwordShown, setPasswordShown] = React.useState(false);
+  const { success } = useSelector((state) => state.registerFederation);
   const [fedData, setFedData] = React.useState([]);
   const dispatch = useDispatch();
   const handlerChange = (key, value) => {
@@ -58,6 +60,14 @@ const RegisterFederation = () => {
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
   };
+
+  if (success) {
+    setTimeout(() => {
+      window.location.href = "#/dashboard/federations";
+      window.location.reload(true);
+    }, 2000);
+  }
+
   return (
     <Row>
       <Col>
@@ -66,6 +76,7 @@ const RegisterFederation = () => {
             Register a new federation
           </CardTitle>
           <CardBody>
+            {success && <Alert>Federation Registered</Alert>}
             <Form onSubmit={() => {}}>
               <FormGroup>
                 <Label for="federationName">Federation name</Label>
