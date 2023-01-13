@@ -1,16 +1,25 @@
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} 
 nav{
-
+  display: flex;
+  height: 60px;
+  width: 100%;
+  background: white;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
   padding: 0 50px 0 12px;
   flex-wrap: wrap;
-  background-color: #fff; 
-  width: 100%;
   position: fixed;
   z-index: 900;
   margin: 0;
   top: 0px;
-  
 }
 nav .logo{
   color: #fff;
@@ -36,7 +45,7 @@ nav ul li a{
   color: black;
   text-decoration: none;
   font-size: 18px;
-  font-weight:bold;
+  font-weight: 500;
   padding: 8px 15px;
   border-radius: 5px;
   letter-spacing: 1px;
