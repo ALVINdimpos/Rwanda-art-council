@@ -1,21 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import './Style.css'
-import Button from "../Button/Index";
 import { NavLink ,Outlet } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import Logo from "../../assets/photos/Logo.png";
 import { route } from "../../utils/header";
 const Index = () => {
   const navigate = useNavigate();
-  const loginHandler = (event) => {
-    event.preventDefault();
-    navigate("/Login");
-  };
   return (
     <div>
       <nav>
-    <div className="logo">
+     <div className="logo">
       <img src={Logo} alt="logo" onClick={()=>{navigate("/")}} style={{cursor:"pointer"}}/>
     </div>
     <input type="checkbox" id="click" />
@@ -32,7 +27,6 @@ const Index = () => {
               </NavLink>
             </li>
           ))}
-      <div className='navbutton'><Button name="Login" onClick={loginHandler} /></div>
       </ul>
     <Outlet />
   </nav>
