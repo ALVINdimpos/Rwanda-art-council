@@ -4,10 +4,11 @@ header {
   position: fixed;
   width: 100%;
   z-index: 999;
+  height: 80px;
 }
 .main-nav {
-  height: 80px;
   box-shadow: 0px 1px 1px 0px #00000040;
+  height: 80px;
 }
 .logo  img{
 width: 100px;
@@ -76,8 +77,10 @@ li a.active:hover {
     height: 100vh;
     text-align: center;
     transition: all 0.5s;
-    right: -100%;
     background: #222831;
+  }
+  .main-nav{
+    width: 100%;
   }
 
   .navlinks li {

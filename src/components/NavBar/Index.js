@@ -12,10 +12,10 @@ const Index = () => {
       <header>
       <nav className="main-nav">
         <input type="checkbox" id="check" />
-        <label for="check" class="menu-btn">
+        <label for="check" className="menu-btn">
           <i className="fas fa-bars"></i>
         </label>
-        <a href="index.html" class="logo">
+        <a class="logo">
         <img src={Logo} alt="logo" onClick={()=>{navigate("/")}} style={{cursor:"pointer"}}/>
         </a>
         <ul className="navlinks">
