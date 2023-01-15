@@ -78,15 +78,6 @@ function Login(props) {
     <div className={Style.loginMainWraper}>
       <div className={Style.loginWraper}>
         <div>
-          <div>
-            <Link to="/Home">
-              <h4 style={{ color: "#c5801a" }}>
-                <MDBIcon fas icon="angle-left" /> Home
-              </h4>
-            </Link>
-          </div>
-        </div>
-        <div>
           <h1>Sign in</h1>
         </div>
         <form onSubmit={handleSubmit(loginHandler)}>
