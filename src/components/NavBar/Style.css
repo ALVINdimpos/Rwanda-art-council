@@ -1,19 +1,19 @@
 header {
+  top: 0;
   background-color: white;
   position: fixed;
   width: 100%;
   z-index: 999;
 }
-
 .main-nav {
-  height: 90px;
+  height: 80px;
+  box-shadow: 0px 1px 1px 0px #00000040;
 }
 .logo  img{
 width: 100px;
 height: 100px;
 margin-left: 20px;
 }
-
 .navlinks {
   list-style: none;
   float: right;
@@ -21,12 +21,10 @@ margin-left: 20px;
   margin: 0;
   padding: 0;
 }
-
 .navlinks li {
   display: inline-block;
   margin: 0px 20px;
 }
-
 .navlinks li a {
   color: black;
   text-decoration: none;
@@ -49,8 +47,8 @@ li a.active {
   border-radius: 50px;
   transition: all 0.3s ease 0s;
   border-bottom: none;
+  color: white;
 }
-
 li a.active:hover {
   background-color: #c5801a;
   color: white;
@@ -88,6 +86,7 @@ li a.active:hover {
 
   .navlinks li a {
     font-size: 20px;
+    color: white;
   }
 
   .navlinks li a:hover {

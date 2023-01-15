@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import './Style.css'
-import { NavLink ,Outlet } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import Logo from "../../assets/photos/Logo.png";
 import { route } from "../../utils/header";
