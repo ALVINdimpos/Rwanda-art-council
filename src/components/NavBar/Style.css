@@ -1,115 +1,119 @@
+header {
+  background-color: white;
+  position: fixed;
+  width: 100%;
+}
 
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-*{
+.main-nav {
+  height: 90px;
+}
+.logo  img{
+width: 100px;
+height: 100px;
+margin-left: 20px;
+}
+
+.navlinks {
+  list-style: none;
+  float: right;
+  line-height: 90px;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-} 
-nav{
-  display: flex;
-  height: 60px;
-  width: 100%;
-  background: white;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-  padding: 0 50px 0 12px;
-  flex-wrap: wrap;
-  position: fixed;
-  z-index: 900;
-  margin: 0;
-  top: 0px;
 }
-nav .logo{
-  color: #fff;
-  font-size: 25px;
-  font-weight: 600;
-}
-.logo img{
-  width: 108px !important;
-  height: 70px !important;
 
+.navlinks li {
+  display: inline-block;
+  margin: 0px 20px;
 }
-nav ul{
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin-left: 274px;
-  margin-top: -77px;
-}
-nav ul li{
-  margin-left:-2px;
-}
-nav ul li a{
+
+.navlinks li a {
   color: black;
   text-decoration: none;
+  font-weight: 600;
   font-size: 18px;
-  font-weight: 500;
-  padding: 8px 15px;
-  border-radius: 5px;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
+  transition: all 0.3s linear 0s;
+  z-index: 999;
+  text-transform: uppercase;
 }
-.navbutton{
-  margin-left: 136px;
-  margin-top: -9px;
+
+.navlinks li a:hover {
+  color: #c5801a;
+  padding-bottom: 7px;
+  border-bottom: 2px solid #c5801a;
 }
-nav ul li a.active,
-nav ul li a:hover{
-  color: #111;
-  background: #C5801A;
+
+li a.active {
+  background-color: #c5801a;
+  padding: 9px 20px;
+  border-radius: 50px;
+  transition: all 0.3s ease 0s;
+  border-bottom: none;
 }
-nav .menu-btn i{
-  color: #fff;
-  font-size: 22px;
+
+li a.active:hover {
+  background-color: #c5801a;
+  color: white;
+  border-bottom: none;
+}
+
+#check {
+  display: none;
+}
+
+.menu-btn {
+  font-size: 25px;
+  color: black;
+  float: right;
+  line-height: 90px;
+  margin-right: 40px;
+  display: none;
   cursor: pointer;
-  display: none;
 }
-input[type="checkbox"]{
-  display: none;
-}
-@media (max-width: 920px) {
-  nav .menu-btn i{
-    display: block;
-    color: white;
-  }
-  #click:checked ~ .menu-btn i:before{
-    content: "\f00d";
-    color: white;
-  }
-  nav ul{
+
+@media (max-width: 800px) {
+  .navlinks {
     position: fixed;
-    top: 61px;
-    left: -100%;
-    background: #111;
+    width: 100%;
     height: 100vh;
-    width: 100%;
     text-align: center;
+    transition: all 0.5s;
+    right: -100%;
+    background: #222831;
+  }
+
+  .navlinks li {
     display: block;
-    transition: all 0.3s ease;
   }
-  #click:checked ~ ul{
-    left: 0;
-  }
-  nav ul li{
-    width: 100%;
-    margin: 40px 0;
-  }
-  nav ul li a{
-    width: 100%;
-    margin-left: -100%;
-    display: block;
+
+  .navlinks li a {
     font-size: 20px;
-    color: #fff;
-    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
-  #click:checked ~ ul li a{
-    margin-left: 0px;
+
+  .navlinks li a:hover {
+    border-bottom: none;
   }
-  nav ul li a.active,
-  nav ul li a:hover{
-    background: none;
-    color: #C5801A;
+
+  .menu-btn {
+    display: block;
+  }
+
+  #check:checked ~ .navlinks {
+    right: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .logo {
+    margin-left: 10px;
+    font-size: 25px;
+  }
+
+  .menu-btn {
+    margin-right: 10px;
+    font-size: 25px;
+  }
+
+  .menu-btn:focus {
+    color: blue;
   }
 }

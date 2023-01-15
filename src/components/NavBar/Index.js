@@ -9,16 +9,17 @@ const Index = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <nav>
-     <div className="logo">
-      <img src={Logo} alt="logo" onClick={()=>{navigate("/")}} style={{cursor:"pointer"}}/>
-    </div>
-    <input type="checkbox" id="click" />
-    <label htmlFor="click" className="menu-btn">
-      <i className="fas fa-bars" />
-    </label>
-    <ul>
-    {route?.map((element, index) => (
+      <header>
+      <nav className="main-nav">
+        <input type="checkbox" id="check" />
+        <label for="check" class="menu-btn">
+          <i className="fas fa-bars"></i>
+        </label>
+        <a href="index.html" class="logo">
+        <img src={Logo} alt="logo" onClick={()=>{navigate("/")}} style={{cursor:"pointer"}}/>
+        </a>
+        <ul className="navlinks">
+        {route?.map((element, index) => (
             <li key={index}>
               <NavLink
                 to={element.link}
@@ -27,9 +28,9 @@ const Index = () => {
               </NavLink>
             </li>
           ))}
-      </ul>
-    <Outlet />
-  </nav>
+        </ul>
+      </nav>
+    </header>
     </div>
   )
 }
