@@ -44,7 +44,7 @@ export const unionsReducers = (
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        errors: action.payload,
       };
     default:
       return state;
@@ -72,7 +72,7 @@ export const fedUnionsReducers = (
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        errors: action.payload,
       };
     default:
       return state;
@@ -100,7 +100,7 @@ export const singleUnionReducers = (
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        errors: action.payload,
       };
     default:
       return state;
@@ -128,7 +128,7 @@ export const unionArtistsReducers = (
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        errors: action.payload,
       };
     default:
       return state;
@@ -156,7 +156,7 @@ export const registerUnionReducers = (
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        errors: action.payload,
       };
     default:
       return state;
@@ -184,7 +184,7 @@ export const updateUnionReducers = (
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        errors: action.payload,
       };
     default:
       return state;
@@ -212,7 +212,7 @@ export const createArtistReducers = (
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        errors: action.payload,
       };
     default:
       return state;

@@ -29,7 +29,7 @@ export const loginReducers = (
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        errors: action.payload,
       };
     default:
       return state;
@@ -57,7 +57,7 @@ export const logoutReducers = (
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        errors: action.payload,
       };
     default:
       return state;

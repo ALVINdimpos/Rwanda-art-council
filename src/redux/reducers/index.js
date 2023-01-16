@@ -18,6 +18,8 @@ import {
   updateEventReducer,
   publishEventReducer,
   deleteEventReducer,
+  pendingEventsReducer,
+  publishedEventsReducer,
 } from "./events";
 import { loginReducers, logoutReducers } from "./auth";
 
@@ -33,6 +35,8 @@ export default combineReducers({
   registerUnion: registerUnionReducers,
   unionArtists: unionArtistsReducers,
   events: allEventsReducer,
+  pendingEvents: pendingEventsReducer,
+  publishedEvents: publishedEventsReducer,
   singleEvent: singleEventReducer,
   registerEvent: registerEventReducer,
   updateEvent: updateEventReducer,

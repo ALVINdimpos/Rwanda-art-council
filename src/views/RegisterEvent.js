@@ -23,19 +23,43 @@ const createFormData = (body) => {
   for (const [key, value] of Object.entries(body)) {
     data.append(key, value);
   }
-
   return data;
 };
 
 const RegisterEvent = () => {
   const dispatch = useDispatch();
-  const [eventData, setEventData] = React.useState();
+  const [eventData, setEventData] = React.useState([]);
   const { success } = useSelector((state) => state.registerEvent);
+  const [error, setError] = React.useState("");
 
   const handlerChange = (key, value) => {
+    setError("");
     setEventData((prevCred) => ({ ...prevCred, [key]: value }));
   };
+
   const eventRegistration = () => {
+    console.log(eventData);
+    if (!eventData.title) {
+      setError("Fill in event title");
+      return;
+    }
+    if (!eventData.location) {
+      setError("Fill in event location");
+      return;
+    }
+    if (!eventData.at) {
+      setError("Fill in event date and time");
+      return;
+    }
+    if (!eventData.description) {
+      setError("Fill in event description");
+      return;
+    }
+    if (!eventData.ev_image) {
+      setError("Fill in event image");
+      return;
+    }
+
     const data = createFormData(eventData);
     dispatch(registerEvent(data));
   };
@@ -54,7 +78,6 @@ const RegisterEvent = () => {
             Register a new event
           </CardTitle>
           <CardBody>
-            {success && <Alert>Event Registered</Alert>}
             <Form>
               <FormGroup>
                 <Label for="eventTitle">Event title</Label>
@@ -117,6 +140,8 @@ const RegisterEvent = () => {
                 />
                 <FormText>Upload an image of the event</FormText>
               </FormGroup>
+              {success && <Alert>Event Registered</Alert>}
+              {error && <Alert color="danger">{error}</Alert>}
               <Button onClick={eventRegistration}>Submit</Button>
             </Form>
           </CardBody>

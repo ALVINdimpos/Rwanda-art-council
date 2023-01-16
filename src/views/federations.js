@@ -12,7 +12,7 @@ const tableHeaders = [
   },
   {
     key: 2,
-    header: "TIN Number",
+    header: "RAC Number",
   },
   {
     key: 3,

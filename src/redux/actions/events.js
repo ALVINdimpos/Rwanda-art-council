@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_URL, TOKEN } from "../../utils/config";
+import { API_URL, TOKEN, userData } from "../../utils/config";
 import {
   GET_ALL_EVENTS,
   GET_ALL_EVENTS_FAILED,
@@ -19,28 +19,65 @@ import {
   DELETE_EVENT,
   DELETE_EVENT_FAILED,
   DELETE_EVENT_SUCCESS,
+  GET_PENDING_EVENTS,
+  GET_PENDING_EVENTS_FAILED,
+  GET_PENDING_EVENTS_SUCCESS,
+  GET_PUBLISHED_EVENTS,
+  GET_PUBLISHED_EVENTS_FAILED,
+  GET_PUBLISHED_EVENTS_SUCCESS,
 } from "../types";
 import action from "./action";
 
 export const getAllEvents = () => async (dispatch) => {
-  try {
-    dispatch(action(GET_ALL_EVENTS));
-    axios({
-      method: "get",
-      url: `${API_URL}/Event/All/Fed`,
-      headers: {
-        Authorization: `Bearer ${TOKEN}`,
-      },
+  dispatch(action(GET_ALL_EVENTS));
+  axios({
+    method: "get",
+    url: `${API_URL}/Event/All/Fed`,
+    headers: {
+      Authorization: `Bearer ${userData.access_token}`,
+    },
+  })
+    .then((response) => {
+      dispatch(action(GET_ALL_EVENTS_SUCCESS, response.data));
     })
-      .then((response) => {
-        dispatch(action(GET_ALL_EVENTS_SUCCESS, response.data));
-      })
-      .catch((error) => {
-        dispatch(action(GET_ALL_EVENTS_FAILED, error));
-      });
-  } catch (error) {
-    dispatch(action(GET_ALL_EVENTS_FAILED, error));
-  }
+    .catch((error) => {
+      dispatch(action(GET_ALL_EVENTS_FAILED, error));
+    });
+};
+
+export const getPendingEvents = () => async (dispatch) => {
+  dispatch(action(GET_PENDING_EVENTS));
+  axios({
+    method: "get",
+    url: `${API_URL}/Event/Pending`,
+    headers: {
+      Authorization: `Bearer ${userData.access_token}`,
+    },
+  })
+    .then((response) => {
+      console.log(response.data);
+      dispatch(action(GET_PENDING_EVENTS_SUCCESS, response.data));
+    })
+    .catch((error) => {
+      dispatch(action(GET_PENDING_EVENTS_FAILED, error));
+    });
+};
+
+export const getPublishedEvents = () => async (dispatch) => {
+  dispatch(action(GET_PUBLISHED_EVENTS));
+  axios({
+    method: "get",
+    url: `${API_URL}/Event`,
+    headers: {
+      Authorization: `Bearer ${userData.access_token}`,
+    },
+  })
+    .then((response) => {
+      dispatch(action(GET_PUBLISHED_EVENTS_SUCCESS, response.data));
+    })
+    .catch((error) => {
+      dispatch(action(GET_PUBLISHED_EVENTS_FAILED, error));
+    });
 };
 
 export const getSingleEvent = (id) => async (dispatch) => {

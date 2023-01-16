@@ -17,6 +17,12 @@ import {
   DELETE_EVENT,
   DELETE_EVENT_FAILED,
   DELETE_EVENT_SUCCESS,
+  GET_PENDING_EVENTS,
+  GET_PENDING_EVENTS_FAILED,
+  GET_PENDING_EVENTS_SUCCESS,
+  GET_PUBLISHED_EVENTS,
+  GET_PUBLISHED_EVENTS_FAILED,
+  GET_PUBLISHED_EVENTS_SUCCESS,
 } from "../types";
 import { initialState } from "../../utils/config";
 
@@ -41,7 +47,63 @@ export const allEventsReducer = (
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        errors: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export const pendingEventsReducer = (
+  state = { ...initialState, pendingEvents: [] },
+  action
+) => {
+  switch (action.type) {
+    case GET_PENDING_EVENTS:
+      return {
+        ...state,
+        loading: true,
+      };
+    case GET_PENDING_EVENTS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        pendingEvents: action.payload.event,
+        success: true,
+      };
+    case GET_PENDING_EVENTS_FAILED:
+      return {
+        ...state,
+        loading: false,
+        errors: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export const publishedEventsReducer = (
+  state = { ...initialState, publishedEvents: [] },
+  action
+) => {
+  switch (action.type) {
+    case GET_PUBLISHED_EVENTS:
+      return {
+        ...state,
+        loading: true,
+      };
+    case GET_PUBLISHED_EVENTS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        publishedEvents: action.payload.event,
+        success: true,
+      };
+    case GET_PUBLISHED_EVENTS_FAILED:
+      return {
+        ...state,
+        loading: false,
+        errors: action.payload,
       };
     default:
       return state;
@@ -69,7 +131,7 @@ export const singleEventReducer = (
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        errors: action.payload,
       };
     default:
       return state;
@@ -97,7 +159,7 @@ export const registerEventReducer = (
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        errors: action.payload,
       };
     default:
       return state;
@@ -125,7 +187,7 @@ export const updateEventReducer = (
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        errors: action.payload,
       };
     default:
       return state;
@@ -153,7 +215,7 @@ export const publishEventReducer = (
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        errors: action.payload,
       };
     default:
       return state;
@@ -181,7 +243,7 @@ export const deleteEventReducer = (
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        errors: action.payload,
       };
     default:
       return state;

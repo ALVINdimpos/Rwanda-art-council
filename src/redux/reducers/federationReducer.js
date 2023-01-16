@@ -38,7 +38,7 @@ export const federationReducers = (
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        errors: action.payload,
       };
     default:
       return state;
@@ -66,7 +66,7 @@ export const singleFederationReducers = (
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        errors: action.payload,
       };
     default:
       return state;
@@ -94,7 +94,7 @@ export const registerFederationReducers = (
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        errors: action.payload,
       };
     default:
       return state;
@@ -122,7 +122,7 @@ export const updateFederationReducers = (
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        errors: action.payload,
       };
     default:
       return state;
@@ -150,7 +150,7 @@ export const deleteFederationReducers = (
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        errors: action.payload,
       };
     default:
       return state;
