@@ -9,28 +9,28 @@
 }
 @keyframes animate {
   0% {
-    background-image: url("../../assets/photos/Landing1.JPG");
+    background-image: url("../../assets/photos/Landing1.jpg");
   }
   16.6% {
-    background-image: url("../../assets/photos/Landing2.JPG");
+    background-image: url("../../assets/photos/Landing2.jpg");
   }
   33.2% {
-    background-image: url("../../assets/photos/Landing3.JPG");
+    background-image: url("../../assets/photos/Landing3.jpg");
   }
   49.8% {
-    background-image: url("../../assets/photos/Landing4.JPG");
+    background-image: url("../../assets/photos/Landing4.jpg");
   }
   66.4% {
-    background-image: url("../../assets/photos/Landing5.JPG");
+    background-image: url("../../assets/photos/Landing5.jpg");
   }
   83% {
-    background-image: url("../../assets/photos/Landing6.JPG");
+    background-image: url("../../assets/photos/Landing6.jpg");
   }
   90% {
-    background-image: url("../../assets/photos/Landing6.JPG");
+    background-image: url("../../assets/photos/Landing6.jpg");
   }
   100% {
-    background-image: url("../../assets/photos/Landing7.JPG");
+    background-image: url("../../assets/photos/Landing7.jpg");
   }
 }
   
