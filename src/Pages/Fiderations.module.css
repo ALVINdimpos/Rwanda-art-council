@@ -1,2 +1,8 @@
-
+.FederationBoxWraper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 12px;
+    
+}
  

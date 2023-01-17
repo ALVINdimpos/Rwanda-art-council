@@ -72,10 +72,8 @@ const fetchEvents = () => {
           id={federation.id}
         />
       ))}
-    </div><div className={Style.FederationBoxWraper}>
+    </div>
         
-      </div>
-
       <SectionIndicator name="Events" onClick={EventHandler} />
       <div className={Style.eventBoxWraper}>
         {Event.event?.slice(0,3).map((event, id) => (
