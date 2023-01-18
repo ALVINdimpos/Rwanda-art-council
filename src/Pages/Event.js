@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import NavBar from "../components/NavBar/Index";
 import Footer from "../components/Footer/Footer";
 import PageIndicator from "../components/PageIndicator/Index";
+import Button from "../components/Button/Index";
 import { useLocation } from "react-router-dom";
 import "./Event.css";
 function Events() {
