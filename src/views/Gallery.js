@@ -10,8 +10,12 @@ import {
   TabContent,
 } from "reactstrap";
 import GalleryCard from "../components/dashboard/Gallery";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import classnames from "classnames";
+import { useDispatch } from "react-redux";
+import { getAllGallery } from "../redux/actions/gallery";
+import { getAllCategories } from "../redux/actions/categories";
+import { useSelector } from "react-redux";
 
 const data = [
   {
@@ -62,10 +66,25 @@ const data = [
 ];
 
 const Gallery = () => {
+  const dispatch = useDispatch();
   const [currentActiveTab, setCurrentActiveTab] = useState("1");
+
+  const {
+    getGallery: { gallery },
+    getCategories: { categories },
+  } = useSelector((state) => state);
+
   const toggle = (tab) => {
     if (currentActiveTab !== tab) setCurrentActiveTab(tab);
   };
+
+  const galleriesCat = new Set(gallery.map((item) => item.cat_id));
+  useEffect(() => {
+    dispatch(getAllGallery());
+    dispatch(getAllCategories());
+  }, [dispatch]);
+  console.log(galleriesCat);
+  console.log(categories.filter((cat) => galleriesCat.has(cat.id)));
   return (
     <div
       style={{
@@ -100,54 +119,26 @@ const Gallery = () => {
         }}
       >
         <Nav tabs>
-          <NavItem>
-            <NavLink
-              className={classnames({
-                active: currentActiveTab === "1",
-              })}
-              style={{
-                cursor: "pointer",
-                color: currentActiveTab === "1" ? "#C5801A" : "#000",
-              }}
-              onClick={() => {
-                toggle("1");
-              }}
-            >
-              Ubugeni
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink
-              className={classnames({
-                active: currentActiveTab === "2",
-              })}
-              style={{
-                cursor: "pointer",
-                color: currentActiveTab === "2" ? "#C5801A" : "#000",
-              }}
-              onClick={() => {
-                toggle("2");
-              }}
-            >
-              Ibihangano
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink
-              className={classnames({
-                active: currentActiveTab === "3",
-              })}
-              style={{
-                cursor: "pointer",
-                color: currentActiveTab === "3" ? "#C5801A" : "#000",
-              }}
-              onClick={() => {
-                toggle("3");
-              }}
-            >
-              Ubukorikori
-            </NavLink>
-          </NavItem>
+          {categories
+            .filter((cat) => galleriesCat.has(cat.id))
+            .map((item, idx) => (
+              <NavItem key={item.id}>
+                <NavLink
+                  className={classnames({
+                    active: currentActiveTab === item.id,
+                  })}
+                  style={{
+                    cursor: "pointer",
+                    color: currentActiveTab === item.id ? "#C5801A" : "#000",
+                  }}
+                  onClick={() => {
+                    toggle(item.id);
+                  }}
+                >
+                  {item.name}
+                </NavLink>
+              </NavItem>
+            ))}
         </Nav>
         <Link to="/dashboard/addToGallery">
           <Button
@@ -161,7 +152,7 @@ const Gallery = () => {
       </div>
 
       <TabContent activeTab={currentActiveTab}>
-        <TabPane tabId="1" className="pt-3">
+        <TabPane tabId={currentActiveTab} className="pt-3">
           <div
             style={{
               display: "flex",
@@ -169,41 +160,13 @@ const Gallery = () => {
               gap: "1rem",
             }}
           >
-            {data.map((item) => {
-              return (
-                <GalleryCard key={item.id} image={item.image} id={item.id} />
-              );
-            })}
-          </div>
-        </TabPane>
-        <TabPane tabId="2" className="pt-3">
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "1rem",
-            }}
-          >
-            {data.map((item) => {
-              return (
-                <GalleryCard key={item.id} image={item.image} id={item.id} />
-              );
-            })}
-          </div>
-        </TabPane>
-        <TabPane tabId="3" className="pt-3">
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "1rem",
-            }}
-          >
-            {data.map((item) => {
-              return (
-                <GalleryCard key={item.id} image={item.image} id={item.id} />
-              );
-            })}
+            {gallery
+              .filter((item) => item.cat_id === currentActiveTab)
+              .map((item) => {
+                return (
+                  <GalleryCard key={item.id} image={item.image} id={item.id} />
+                );
+              })}
           </div>
         </TabPane>
       </TabContent>

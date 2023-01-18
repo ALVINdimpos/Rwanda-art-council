@@ -21,6 +21,18 @@ import {
   pendingEventsReducer,
   publishedEventsReducer,
 } from "./events";
+import {
+  getGalleryReducers,
+  createOneGalleryReducers,
+  deleteOneGalleryReducers,
+} from "./gallery";
+import {
+  getCategoriesReducers,
+  getCategoryReducers,
+  createCategoryReducers,
+  updateCategoryReducers,
+  deleteCategoryReducers,
+} from "./categories";
 import { loginReducers, logoutReducers } from "./auth";
 
 export default combineReducers({
@@ -42,4 +54,12 @@ export default combineReducers({
   updateEvent: updateEventReducer,
   publishEvent: publishEventReducer,
   deleteEvent: deleteEventReducer,
+  getGallery: getGalleryReducers,
+  createOneInGallery: createOneGalleryReducers,
+  deleteOneInGallery: deleteOneGalleryReducers,
+  getCategories: getCategoriesReducers,
+  getCategory: getCategoryReducers,
+  createCategory: createCategoryReducers,
+  updateCategory: updateCategoryReducers,
+  deleteCategory: deleteCategoryReducers,
 });
