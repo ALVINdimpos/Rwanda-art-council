@@ -26,6 +26,7 @@ export const loginUser = (data) => async (dispatch) => {
         });
       })
       .catch((error) => {
+        alert(error.response.data.message)
         dispatch(action(LOGIN_FAILED, error));
       });
   } catch (error) {

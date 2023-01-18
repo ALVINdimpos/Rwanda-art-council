@@ -69,9 +69,15 @@ function Login(props) {
 
   const loginHandler = async (data) => {
     setLoading(true);
-    Promise.resolve(dispatch(loginUser(data))).then((res) => {
-      console.log(res);
-    });
+    Promise.resolve(dispatch(loginUser(data)))
+      .then((res) => {
+        console.log(res);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+      });
   };
 
   return (
