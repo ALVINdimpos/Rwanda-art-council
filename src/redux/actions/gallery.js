@@ -42,6 +42,7 @@ export const createNewGallery = (data) => async (dispatch) => {
       url: `${API_URL}/gallery/create`,
       headers: {
         Authorization: `Bearer ${TOKEN}`,
+        "Content-Type": "multipart/form-data",
       },
       data,
     })

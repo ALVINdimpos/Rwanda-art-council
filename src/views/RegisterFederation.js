@@ -21,7 +21,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 const createFormData = (body) => {
   const data = new FormData();
-  // data.append("email", body);
   for (const [key, value] of Object.entries(body)) {
     data.append(key, value);
   }
