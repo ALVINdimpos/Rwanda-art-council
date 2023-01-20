@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./Style.css";
 function Index(props) {
-  const [Fiderations, setFideration] = useState([]);
+  const [Federations, setFederation] = useState([]);
   useEffect(() => {
     fetch(`https://api.rwandaartscouncil.rw/api/Federation/Pub`, {
       method: "GET",
@@ -16,19 +16,18 @@ function Index(props) {
     })
       .then((res) => res.json())
       .then((data) => {
-        setFideration(data);
+        setFederation(data);
       });
   }, []);
   return (
     <div className="card_wrapper">
-      {Fiderations.info?.map((federations, id) => (
+      {Federations.info?.map((federations, id) => (
         <Card
           key={id}
           data={federations}
           img={federations.logo}
           title={federations.fed_name}
-          description={federations.description
-          }
+          description={federations.description}
           id={federations.id}
         />
       ))}
@@ -38,7 +37,7 @@ function Index(props) {
 function Card(props) {
   const navigate = useNavigate();
   const onClickHandler = () => {
-    navigate(`/Federation`, {state: {data: props.data}});
+    navigate(`/Federation`, { state: { data: props.data } });
   };
   return (
     <div className="card">

@@ -1,33 +1,31 @@
 .PageIndicator {
-    display: flex;
-    background-image: url("../../assets/photos/Landing1.jpg");
-    background-size: cover;
-    align-items: center;
-    height: 75vh;
-    width: 100%;
+  display: flex;
+  background-image: url("../../assets/photos/Landing1.JPG");
+  background-size: cover;
+  align-items: center;
+  height: 75vh;
+  width: 100%;
+}
+.Gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Rubik Moonrocks";
+  color: white;
+  font-size: 96px;
+  font-weight: 400;
+  line-height: 40px;
+  margin: 0 auto;
+}
+@media (max-width: 550px) {
+  .PageIndicator {
+    height: 25vh;
   }
   .Gallery {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Rubik Moonrocks";
-    color: white;
-    font-size: 96px;
-    font-weight: 400;
-    line-height: 40px;
-    margin: 0 auto;
-    
+    font-size: 50px;
+    margin-top: 3rem;
   }
-  @media (max-width:550px) {
-    .PageIndicator {
-      height: 25vh;
-    }
-    .Gallery{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 50px;
-      margin-top: 3rem;
-    }
-
-  }
+}

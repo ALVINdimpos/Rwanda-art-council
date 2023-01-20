@@ -6,6 +6,29 @@
   margin: 0 auto;
   width: 90%;
 }
+.carouselContainer {
+  width: 35%;
+}
+
+.eventsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.whoWeAreTitle {
+  color: #c5801a;
+  margin-bottom: 5%;
+  font-weight: bold;
+}
+
+.eventsDescription {
+  width: 60%;
+  margin-left: 3%;
+}
+
 @media (max-width: 920px) {
   .eventBoxWraper {
     display: flex;
@@ -13,5 +36,25 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+  }
+  .carouselContainer {
+    width: 100%;
+  }
+
+  .eventsContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .whoWeAreTitle {
+    color: #c5801a;
+    margin-bottom: 5%;
+    font-size: large;
+    font-weight: bold;
+  }
+
+  .eventsDescription {
+    width: 100%;
+    margin-left: 3%;
   }
 }
