@@ -80,7 +80,7 @@ function Home() {
         <div className={Style.eventsDescription}>
           <div className={Style.whoWeAreContent}>
             <h2 className={Style.whoWeAreTitle}>
-              Description about Rwanda Arts Council Events
+            Rwanda Arts Council Events
             </h2>
             <p>
               Contrary to popular belief, Lorem Ipsum is not simply random text.
