@@ -1,0 +1,93 @@
+.OurserviceHeader {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 1rem auto;
+}
+.OurserviceHeader h1 {
+  font-size: 52px;
+  font-weight: 400;
+  
+}
+.ServicesBoxWraper {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 80%;
+  margin: 1rem auto;
+}
+.ServicesBox {
+  text-align: center;
+  background-color: white;
+  border-radius: 4px;
+  width:100%;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+.ServicesBox:hover{
+  box-shadow: 5px 10px 20px 1px #00000040;
+}
+.ServicesBox img {
+  height: 200px;
+  width: 100%;
+}
+.CardImgTop{
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+.CardImgTop:hover{
+  transform: scale(1.8);
+}
+.overFlow{
+  overflow: hidden;
+}
+.ServicesBox p{
+  font-family: 'EB Garamond';
+  align-self: flex-start;
+  padding: 1rem;
+}
+.ServicesBox h3{
+  font-size: 20px;
+  margin: 9px auto;
+}
+@media(max-width:1050px) {
+
+  .ServicesBox {
+   flex-direction: column;
+}
+.ServicesBox img {
+  height: 200px;
+  width: 100%;
+}
+.ServicesBoxWraper{
+  flex-direction: column;
+ 
+}
+}
+@media(max-width:700px) {
+
+  .ServicesBox {
+   flex-direction: column;
+}
+.ServicesBox img {
+  height: 200px;
+ 
+}
+.ServicesBoxWraper{
+  flex-direction: column;
+ 
+}
+}
+@media(max-width:550px) {
+
+  .ServicesBox {
+   flex-direction: column;
+}
+.ServicesBox img {
+  height: 200px;
+
+}
+.ServicesBoxWraper{
+  flex-direction: column;
+ 
+}
+}

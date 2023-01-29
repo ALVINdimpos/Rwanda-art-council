@@ -1,0 +1,33 @@
+.searchBox {
+  display: flex;
+  height: 87px;
+  width: 753px;
+  background-color:white;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 0 1rem;
+  box-shadow: 0px 1px 1px 0px #00000040;
+
+}
+.select {
+  height: 39px;
+  width: 219.24px;
+}
+@media(max-width: 482px) {
+  .searchBox {
+    display: flex;
+    height: 87px;
+    width: 100%;
+    background-color:white;
+    gap: 1rem;
+    margin: 1rem auto;
+
+  }
+  .select {
+    height: 39px;
+    width: 219.24px;
+  }
+
+}

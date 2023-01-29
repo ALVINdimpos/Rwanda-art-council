@@ -1,0 +1,84 @@
+.EventSearchWraper {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  margin: 2rem auto;
+}
+.PreviusEvent{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0rem auto;
+  gap: 1rem;
+}
+.PreviusEvent iframe{
+  box-shadow: 0px 1px 1px 0px rgb(70, 69, 69);
+}
+.heading{
+  font-family: "Raleway";
+  font-size: 25px;
+  font-weight: bolder;
+  line-height: 70px; 
+  margin-left: 4rem;
+  margin-bottom: 2rem;
+}
+.EventSearchBox {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.EventSearchBox input {
+  height:max-content;
+  width: max-content;
+  box-shadow: 0px 1px 1px 0px rgb(70, 69, 69);
+}
+.EventSearchWraper h1 {
+  font-family: "Raleway";
+  font-size: 25px;
+  font-weight: bolder;
+  line-height: 70px;
+}
+.EventSearchBox ::placeholder {
+  font-size: small;
+}
+.EventsWraper {
+  display: grid;
+  grid-template-columns: auto auto ;
+  width: 90%;
+  margin: 2rem auto;
+  gap: 3rem;
+}
+@media (max-width:700px){
+  .PreviusEvent{
+    display: grid;
+      grid-template-columns: auto;
+      margin: 0 auto; 
+    }
+    .PreviusEvent iframe{
+      width: 100%;
+    }
+    .EventSearchBox {
+      display: flex;
+   flex-direction: column;
+    }
+    .EventSearchWraper{
+      flex-direction: column;
+    }
+}
+@media (max-width:550px){
+  .PreviusEvent{
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0 auto;  
+    }
+    .PreviusEvent iframe{
+      width: 100%;
+    }
+    .EventSearchBox {
+      display: flex;
+   flex-direction: column;
+    }
+    .EventSearchWraper{
+      flex-direction: column;
+    }
+}
