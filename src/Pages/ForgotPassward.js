@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/no-redundant-roles */
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Style from "./RestPassward.module.css";
 import validator from "validator";
 import axios from "axios";
@@ -8,14 +8,14 @@ import axios from "axios";
 function PasswordResset() {
   const [email, SetEmail] = useState("");
   const [loading, setLoading] = useState(false);
-const [valid, setValid] = useState("");
+  const [valid, setValid] = useState("");
   const EmailHandler = (e) => {
     e.preventDefault();
     SetEmail(e.target.value);
   };
   const submitHandler = async (e) => {
     e.preventDefault();
-if (validator.isEmail(email)) {
+    if (validator.isEmail(email)) {
       setLoading(true);
       try {
         const res = await axios.post(
@@ -34,9 +34,9 @@ if (validator.isEmail(email)) {
     SetEmail("");
     setValid("");
   };
-  useEffect(()=>{
-   submitHandler();
-  },[])
+  useEffect(() => {
+    submitHandler();
+  }, []);
   return (
     <div
       className="container"
@@ -49,8 +49,8 @@ if (validator.isEmail(email)) {
           <div className="panel panel-default">
             <div className="panel-body ">
               <div
-              class="text-center"
-               className={Style.textCenter}
+                class="text-center"
+                className={Style.textCenter}
                 style={{
                   minHeight: "50vh",
                   paddingTop: "5rem",
@@ -59,7 +59,7 @@ if (validator.isEmail(email)) {
                   boxShadow: " 0px 4px 4px 0px #00000040",
                   padding: "2em",
                   width: "40%",
-                 margin:" 1rem auto",
+                  margin: " 1rem auto",
                 }}
               >
                 <h3>
@@ -95,7 +95,7 @@ if (validator.isEmail(email)) {
                         onClick={submitHandler}
                         type="submit"
                         value={loading ? "loading..." : `Reset password`}
-                        style={{ backgroundColor:"#C5801A", color:"white" }}
+                        style={{ backgroundColor: "#C5801A", color: "white" }}
                       />
                     </div>
                     <input

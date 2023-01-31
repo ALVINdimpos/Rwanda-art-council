@@ -10,8 +10,8 @@ import ServiceCard from "../components/box/OurServiceCard/Index";
 import OurTeam from "../components/box/ourTeam/Index";
 function Aboutus() {
   return (
-    <> 
-    <NavBar />
+    <>
+      <NavBar />
       <PageIndicator name="About us" />
       <div className={Style.ContactHeader}>
         <div>
@@ -19,10 +19,10 @@ function Aboutus() {
         </div>
         <div>
           <p>
-          Rwanda Arts Council is None Profit Organization 
-          established by the artists purposly to bringing together 
-          all the artists to advocate for them, and creating broad lines 
-          that help them make profit through their Art.
+            Rwanda Arts Council is None Profit Organization established by the
+            artists purposly to bringing together all the artists to advocate
+            for them, and creating broad lines that help them make profit
+            through their Art.
           </p>
         </div>
       </div>
@@ -53,7 +53,7 @@ function Aboutus() {
            combine to form the foundation of success."
         />
       </div>
-      <OurTeam/>
+      <OurTeam />
       <Footer />
     </>
   );

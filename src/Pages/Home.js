@@ -10,12 +10,16 @@ import EventBox from "../components/box/eventBox/Index";
 import Categories from "../components/categories/Index";
 import Testmonial from "../components/box/testmonial/Index";
 import Partner from "../components/box/partners/Index";
+import Button from "../components/Button/Index"
 import Footer from "../components/Footer/Footer";
+import Model from '../components/box/AddTestmonial/Index'
 import OurTeam from "../components/box/ourTeam/Index";
 import { useNavigate } from "react-router-dom";
 import Carousel from "framer-motion-carousel";
-
+import { MDBModal } from "mdb-react-ui-kit";
 function Home() {
+  const [basicModal, setBasicModal] = useState(false);
+  const toggleShow = () => setBasicModal(!basicModal);
   const navigate = useNavigate();
   const [Event, setEvent] = useState([]);
   const [Federation, setFederation] = useState([]);
@@ -79,9 +83,7 @@ function Home() {
       <div className={Style.eventsContainer}>
         <div className={Style.eventsDescription}>
           <div className={Style.whoWeAreContent}>
-            <h2 className={Style.whoWeAreTitle}>
-            Rwanda Arts Council Events
-            </h2>
+            <h2 className={Style.whoWeAreTitle}>Rwanda Arts Council Events</h2>
             <p>
               Contrary to popular belief, Lorem Ipsum is not simply random text.
               It has roots in a piece of classical Latin literature from 45 BC,
@@ -97,9 +99,6 @@ function Home() {
               ipsum dolor sit amet..", comes from a line in section 1.10.32. The
               standard chunk of Lorem Ipsum used since the 1500s is reproduced
               below for those interested. Sections 1.10.32 and 1.10.33 from "de
-              Finibus Bonorum et Malorum" by Cicero are also reproduced in their
-              exact original form, accompanied by English versions from the 1914
-              translation by H. Rackham.
             </p>
           </div>
         </div>
@@ -126,6 +125,10 @@ function Home() {
       <Categories />
       <OurTeam />
       <Testmonial />
+      <Button name="Add testmonial" onClick={toggleShow} />
+      <MDBModal show={basicModal} setShow={setBasicModal} tabIndex="-1" class="float-end">
+        <Model />
+      </MDBModal>
       <Partner />
       <Footer />
     </>

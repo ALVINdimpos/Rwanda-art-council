@@ -5,4 +5,5 @@ export const route = [
   { name: "Gallery", link: "/Gallery" },
   { name: "Events", link: "/Event" },
   { name: "Contact us", link: "/Contactus" },
+  { name: "login", link: "/Login" },
 ];

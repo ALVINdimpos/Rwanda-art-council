@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./Pages/Home";
-import Aboutus from "./Pages/Aboutus";
+import Aboutus  from "./Pages/Aboutus";
 import Contactus from "./Pages/Contactus";
 import Gallery from "./Pages/Gallery";
 import Event from "./Pages/Events";

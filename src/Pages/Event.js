@@ -7,13 +7,13 @@ import Button from "../components/Button/Index";
 import { useLocation } from "react-router-dom";
 import "./Event.css";
 function Events() {
-  const {state} = useLocation();
+  const { state } = useLocation();
   const [Event, setEvent] = useState(state.data);
   console.log(Event);
   return (
     <>
-    <NavBar />
-      <PageIndicator name={Event.title}/>
+      <NavBar />
+      <PageIndicator name={Event.title} />
       <div className="Event_container">
         <div className="row">
           <div className="col-md-6">
@@ -31,11 +31,11 @@ function Events() {
             <p>
               <span>Event location:</span> {Event.location}
             </p>
-            <button >Book now</button>
-              </div>
-            </div>
+            <button>Book now</button>
           </div>
-       
+        </div>
+      </div>
+
       <Footer />
     </>
   );

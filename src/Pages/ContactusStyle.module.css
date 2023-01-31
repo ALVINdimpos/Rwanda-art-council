@@ -14,9 +14,8 @@
   background-color: white;
   padding: 2em;
   margin-top: -120px;
-  
 }
-.error{
+.error {
   color: red;
   font-size: 12px;
   margin-top: 0px;
@@ -26,10 +25,10 @@
   box-shadow: 0px 1px 1px 0px #00000040;
   margin: 3rem auto;
 }
-iframe{
+iframe {
   width: 700px;
 }
-@media (max-width:550px) {
+@media (max-width: 550px) {
   .loginMainWrapper {
     display: flex;
     flex-direction: column-reverse;
@@ -37,8 +36,7 @@ iframe{
   .loginWrapper {
     width: 100%;
   }
- iframe{
+  iframe {
     width: 100%;
   }
 }
-

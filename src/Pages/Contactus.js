@@ -55,7 +55,7 @@ function Index() {
     setLoading(true);
     try {
     const res=  await axios.post(
-        "https://api.rwandaartscouncil.rw/api/Contact/Createaa",
+        "https://api.rwandaartscouncil.rw/api/Contact/Create",
         data
       );
       if (res.status === 200) {
@@ -104,7 +104,7 @@ function Index() {
             </div>
           </div>
           <div>
-            <h1>Get In Touch</h1>
+            <h3>Get In Touch</h3>
           </div>
           <div>
             <p>We are here for you! How can we help you?</p>
