@@ -60,5 +60,6 @@
 }
 .align_right {
   text-align: right;
+  margin-right:4rem;
   border: 0;
 }
