@@ -122,7 +122,7 @@ function Home() {
       <Categories />
       <OurTeam />
       <Testmonial />
-      <div className={Style.align-right}>
+      <div className={Style.align_right}>
       <Button name="Add testmonial" onClick={toggleShow} />
       </div>
       
