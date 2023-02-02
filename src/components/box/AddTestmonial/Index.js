@@ -8,7 +8,7 @@ const Index = () => {
           <div className="form active">
             <p className="form__subtitle">Personal info</p>
             <div className="form__input">
-              <input type="text" placeholder="Name" />
+              <input type="file" placeholder="Name" />
             </div>
             <div className="form__input">
               <input type="email" placeholder="email" />
