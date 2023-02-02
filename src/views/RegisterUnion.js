@@ -31,7 +31,7 @@ const RegisterUnion = () => {
   const [passwordShown, setPasswordShown] = useState(false);
   const [unionData, setUnionData] = useState([]);
   const [error, setError] = useState("");
-  const { success } = useSelector((state) => state.registerFederation);
+  const { success } = useSelector((state) => state.registerUnion);
 
   const handlerChange = (key, value) => {
     setError("");
@@ -384,8 +384,8 @@ const RegisterUnion = () => {
                   id="imageFile"
                   name="imageFile"
                   type="file"
-                  onChange={({ target: { value } }) => {
-                    handlerChange("logo", value);
+                  onChange={({ target: { files } }) => {
+                    handlerChange("logo", files[0]);
                   }}
                 />
                 <FormText>Upload an image of your union's logo</FormText>

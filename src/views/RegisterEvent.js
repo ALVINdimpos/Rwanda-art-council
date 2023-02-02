@@ -134,8 +134,8 @@ const RegisterEvent = () => {
                   name="imageFile"
                   className={Style.inputText}
                   type="file"
-                  onChange={({ target: { value } }) => {
-                    handlerChange("ev_image", value);
+                  onChange={({ target: { files } }) => {
+                    handlerChange("ev_image", files[0]);
                   }}
                 />
                 <FormText>Upload an image of the event</FormText>

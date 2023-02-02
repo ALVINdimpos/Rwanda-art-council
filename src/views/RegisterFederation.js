@@ -17,7 +17,6 @@ import {
 } from "reactstrap";
 import { registerFederation } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-// import { useDropzone } from "react-dropzone";
 
 const createFormData = (body) => {
   const data = new FormData();
@@ -37,25 +36,8 @@ const RegisterFederation = () => {
     setError("");
     setFedData((prevCred) => ({ ...prevCred, [key]: value }));
   };
-  // const onDrop = useCallback((acceptedFiles) => {
-  //   acceptedFiles.forEach((file) => {
-  //     const reader = new FileReader();
-
-  //     reader.onabort = () => console.log("file reading was aborted");
-  //     reader.onerror = () => console.log("file reading has failed");
-  //     reader.onload = () => {
-  //       // Do whatever you want with the file contents
-  //       const binaryStr = reader.result;
-  //       console.log(binaryStr);
-  //     };
-  //     reader.readAsArrayBuffer(file);
-  //   });
-  // }, []);
-  // const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
   const registerFed = () => {
-    //validate fedData
-    console.log(fedData);
     if (!fedData.fed_name) {
       setError("Federation name is required");
       return;
@@ -215,7 +197,7 @@ const RegisterFederation = () => {
                   flexWrap: "wrap",
                 }}
               >
-                <FormGroup style={{ minWidth: "45%" }}>
+                <FormGroup style={{ marginRight: "5%", minWidth: "45%" }}>
                   <Label for="federationLeaderLastName">
                     Federation leader last name
                   </Label>
@@ -229,7 +211,7 @@ const RegisterFederation = () => {
                     }}
                   />
                 </FormGroup>
-                <FormGroup style={{ marginLeft: "5%", minWidth: "45%" }}>
+                <FormGroup style={{ minWidth: "45%" }}>
                   <Label for="phoneNumber">Phone number</Label>
                   <Input
                     id="phoneNumber"
@@ -249,7 +231,7 @@ const RegisterFederation = () => {
                   flexWrap: "wrap",
                 }}
               >
-                <FormGroup style={{ minWidth: "45%" }}>
+                <FormGroup style={{ marginRight: "5%", minWidth: "45%" }}>
                   <Label for="emailAddress">Email Address</Label>
                   <Input
                     id="emailAddress"
@@ -261,7 +243,7 @@ const RegisterFederation = () => {
                     }}
                   />
                 </FormGroup>
-                <FormGroup style={{ marginLeft: "5%", minWidth: "45%" }}>
+                <FormGroup style={{ minWidth: "45%" }}>
                   <Label for="numberOfUnions">Number of unions</Label>
                   <Input
                     id="numberOfUnions"
@@ -281,7 +263,7 @@ const RegisterFederation = () => {
                   flexWrap: "wrap",
                 }}
               >
-                <FormGroup style={{ minWidth: "45%" }}>
+                <FormGroup style={{ marginRight: "5%", minWidth: "45%" }}>
                   <Label for="tinNumber">Tin number</Label>
                   <Input
                     id="tinNumber"
@@ -293,7 +275,7 @@ const RegisterFederation = () => {
                     }}
                   />
                 </FormGroup>
-                <FormGroup style={{ marginLeft: "5%", minWidth: "45%" }}>
+                <FormGroup style={{ minWidth: "45%" }}>
                   <Label for="province">Province</Label>
                   <Input
                     id="province"
@@ -313,7 +295,7 @@ const RegisterFederation = () => {
                   flexWrap: "wrap",
                 }}
               >
-                <FormGroup style={{ minWidth: "45%" }}>
+                <FormGroup style={{ marginRight: "5%", minWidth: "45%" }}>
                   <Label for="district">District</Label>
                   <Input
                     id="district"
@@ -325,7 +307,7 @@ const RegisterFederation = () => {
                     }}
                   />
                 </FormGroup>
-                <FormGroup style={{ marginLeft: "5%", minWidth: "45%" }}>
+                <FormGroup style={{ minWidth: "45%" }}>
                   <Label for="sector">Sector</Label>
                   <Input
                     id="sector"
@@ -345,7 +327,7 @@ const RegisterFederation = () => {
                   flexWrap: "wrap",
                 }}
               >
-                <FormGroup style={{ minWidth: "45%" }}>
+                <FormGroup style={{ marginRight: "5%", minWidth: "45%" }}>
                   <Label for="cell">Cell</Label>
                   <Input
                     id="cell"
@@ -357,7 +339,7 @@ const RegisterFederation = () => {
                     }}
                   />
                 </FormGroup>
-                <FormGroup style={{ marginLeft: "5%", minWidth: "45%" }}>
+                <FormGroup style={{ minWidth: "45%" }}>
                   <Label for="village">Village</Label>
                   <Input
                     id="village"
@@ -389,7 +371,7 @@ const RegisterFederation = () => {
                   flexWrap: "wrap",
                 }}
               >
-                <FormGroup style={{ minWidth: "45%" }}>
+                <FormGroup style={{ marginRight: "5%", minWidth: "45%" }}>
                   <Label for="password">Password</Label>
                   <div className={Style.carddetails}>
                     <Input
@@ -409,7 +391,7 @@ const RegisterFederation = () => {
                     </span>
                   </div>
                 </FormGroup>
-                <FormGroup style={{ marginLeft: "5%", minWidth: "45%" }}>
+                <FormGroup style={{ minWidth: "45%" }}>
                   <Label for="confirmPassword">Confirm Password</Label>
                   <div className={Style.carddetails}>
                     <Input
@@ -436,16 +418,14 @@ const RegisterFederation = () => {
                   id="imageFile"
                   name="imageFile"
                   type="file"
-                  onChange={({ target: { value } }) => {
-                    console.log(value);
-                    handlerChange("logo", value);
+                  onChange={({ target: { files } }) => {
+                    handlerChange("logo", files[0]);
                   }}
                 />
                 <FormText>
                   Upload an image of your federation's logo or headquartes
                 </FormText>
               </FormGroup>
-              {console.log(errors)}
               {Object.keys(errors).length > 0 && (
                 <Alert color="danger">
                   {Object.keys(errors).map((key) => {

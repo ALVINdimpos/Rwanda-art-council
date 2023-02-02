@@ -87,7 +87,7 @@ export const registerFederationReducers = (
       return {
         ...state,
         loading: false,
-        fed: action.payload.info[0],
+        fed: action.payload.info,
         success: true,
       };
     case REGISTER_FEDERATION_FAILURE:

@@ -19,9 +19,11 @@ import { createNewGallery } from "../redux/actions/gallery";
 
 const createFormData = (body) => {
   const data = new FormData();
+  console.log(body.image);
   for (const [key, value] of Object.entries(body)) {
     data.append(key, value);
   }
+  console.log(data);
   return data;
 };
 
@@ -54,12 +56,12 @@ const AddToGallery = () => {
     dispatch(createNewGallery(data));
   };
 
-  // if (success) {
-  //   setTimeout(() => {
-  //     window.location.href = "#/dashboard/gallery";
-  //     window.location.reload(true);
-  //   }, 2000);
-  // }
+  if (success) {
+    setTimeout(() => {
+      window.location.href = "#/dashboard/gallery";
+      window.location.reload(true);
+    }, 2000);
+  }
 
   return (
     <Row>
@@ -98,9 +100,9 @@ const AddToGallery = () => {
                   id="imageFile"
                   name="imageFile"
                   type="file"
-                  onChange={({ target: { value } }) => {
+                  onChange={({ target: { value, files } }) => {
                     // console.log(value);
-                    handlerChange("image", value);
+                    handlerChange("image", files[0]);
                   }}
                 />
                 <FormText>
