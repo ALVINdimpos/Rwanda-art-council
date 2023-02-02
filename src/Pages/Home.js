@@ -10,9 +10,9 @@ import EventBox from "../components/box/eventBox/Index";
 import Categories from "../components/categories/Index";
 import Testmonial from "../components/box/testmonial/Index";
 import Partner from "../components/box/partners/Index";
-import Button from "../components/Button/Index"
+import Button from "../components/Button/Index";
 import Footer from "../components/Footer/Footer";
-import Model from '../components/box/AddTestmonial/Index'
+import Model from "../components/box/AddTestmonial/Index";
 import OurTeam from "../components/box/ourTeam/Index";
 import { useNavigate } from "react-router-dom";
 import Carousel from "framer-motion-carousel";
@@ -85,20 +85,17 @@ function Home() {
           <div className={Style.whoWeAreContent}>
             <h2 className={Style.whoWeAreTitle}>Rwanda Arts Council Events</h2>
             <p>
-              Contrary to popular belief, Lorem Ipsum is not simply random text.
-              It has roots in a piece of classical Latin literature from 45 BC,
-              making it over 2000 years old. Richard McClintock, a Latin
-              professor at Hampden-Sydney College in Virginia, looked up one of
-              the more obscure Latin words, consectetur, from a Lorem Ipsum
-              passage, and going through the cites of the word in classical
-              literature, discovered the undoubtable source. Lorem Ipsum comes
-              from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
-              Malorum" (The Extremes of Good and Evil) by Cicero, written in 45
-              BC. This book is a treatise on the theory of ethics, very popular
-              during the Renaissance. The first line of Lorem Ipsum, "Lorem
-              ipsum dolor sit amet..", comes from a line in section 1.10.32. The
-              standard chunk of Lorem Ipsum used since the 1500s is reproduced
-              below for those interested. Sections 1.10.32 and 1.10.33 from "de
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              massa sapien, aliquet sit amet dui id, volutpat cursus ligula.
+              Pellentesque diam eros, ornare sed dignissim ac, sagittis ut mi.
+              Vivamus nec libero eu elit egestas porta et sed metus. Mauris
+              tincidunt tortor vel eleifend pellentesque. Aliquam erat volutpat.
+              Sed blandit orci eu purus hendrerit, id vehicula tellus sagittis.
+              Cras eget consequat arcu. Curabitur a purus leo. Sed ultrices
+              molestie nulla, id ornare dui sollicitudin quis. Suspendisse non
+              luctus magna, vitae auctor tortor. Suspendisse volutpat vitae
+              nulla vitae lobortis. Curabitur cursus magna ut nisl dapibus
+              scelerisque.
             </p>
           </div>
         </div>
@@ -125,8 +122,16 @@ function Home() {
       <Categories />
       <OurTeam />
       <Testmonial />
+      <div className={Style.align-right}>
       <Button name="Add testmonial" onClick={toggleShow} />
-      <MDBModal show={basicModal} setShow={setBasicModal} tabIndex="-1" class="float-end">
+      </div>
+      
+      <MDBModal
+        show={basicModal}
+        setShow={setBasicModal}
+        tabIndex="-1"
+        class="float-end"
+      >
         <Model />
       </MDBModal>
       <Partner />

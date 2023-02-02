@@ -1,32 +1,62 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from "react";
-import Style from "./Style.module.css";
-import Testmo1 from "../../../assets/photos/ish.svg";
-import Testmo2 from "../../../assets/photos/kenny.svg";
-import Testmo3 from "../../../assets/photos/juno.svg";
-
-import { MDBIcon } from "mdbreact";
-
+import  "./Style.css";
+import Test from "../../../assets/photos/Test.JPG"
+import Test1 from "../../../assets/photos/Test1.jpg"
+import Test3 from "../../../assets/photos/Test3.jpg"
 function Index() {
   return (
-    <div>
-      <div className={Style.dot}>
-        <h1>Our success stories</h1>
-        <MDBIcon fas icon="circle" className={Style.dot1} />
-        <MDBIcon fas icon="circle" />
-        <MDBIcon fas icon="circle" />
+    <div className="testimonials">
+  <div className="testimonial-inner">
+    <h1>Testimonial</h1>
+    <div className="border" />
+    <div className="row">
+      <div className="col">
+        <div className="testimonial">
+          <img src={Test} alt="" />
+          <div className="name">Lorem ipsum</div>
+          <div className="stars">
+            <i className="fas fa-star" />
+            <i className="fas fa-star" />
+            <i className="fas fa-star" />
+            <i className="fas fa-star" />
+            <i className="fas fa-star" />
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque repellat aspernatur temporibus assumenda sint odio minima. Voluptate alias possimus aspernatur voluptates excepturi placeat iusto cupiditate.</p>
+        </div>
       </div>
-      <div className={Style.testWraper}>
-      <div className={Style.testmonial}>
-          <img src={Testmo1} alt="Loading..." />
+      <div className="col">
+        <div className="testimonial">
+          <img src={Test1} alt="" />
+          <div className="name">Lorem ipsum</div>
+          <div className="stars">
+            <i className="fas fa-star" />
+            <i className="fas fa-star" />
+            <i className="fas fa-star" />
+            <i className="fas fa-star" />
+            <i className="far fa-star" />
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque repellat aspernatur temporibus assumenda sint odio minima. Voluptate alias possimus aspernatur voluptates excepturi placeat iusto cupiditate.</p>
         </div>
-        <div className={Style.testmonial}>
-          <img src={Testmo2} alt="Loading..." />
-        </div>
-        <div className={Style.testmonial}>
-          <img src={Testmo3} alt="Loading..." />
+      </div>
+      <div className="col">
+        <div className="testimonial">
+          <img src={Test3} alt="" />
+          <div className="name">Lorem ipsum</div>
+          <div className="stars">
+            <i className="fas fa-star" />
+            <i className="fas fa-star" />
+            <i className="fas fa-star" />
+            <i className="fas fa-star" />
+            <i className="fas fa-star" />
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque repellat aspernatur temporibus assumenda sint odio minima. Voluptate alias possimus aspernatur voluptates excepturi placeat iusto cupiditate!</p>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
   );
 }
 
