@@ -1,26 +1,28 @@
 import { useParams } from "react-router-dom";
 import { Row, Col, Card, CardTitle, CardBody, Button } from "reactstrap";
 import { Link } from "react-router-dom";
-
-const Federation = {
-  id: 1,
-  leaderFName: "Bishobokeruwizeye",
-  leaderLName: "Aka bisho",
-  email: "federation@gmail.com",
-  phone: "123456789",
-  province: "Kigali City",
-  district: "Kicukiro",
-  sector: "Gatenga",
-  cell: "Nyanza",
-  village: "Cyeza",
-  tin: "567887543876",
-  description:
-    "This is a description This is a description This is a description This is a description This is a description This is a description ",
-};
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getSingleArtist } from "../redux/actions/artists";
 
 const ViewArtist = () => {
+  const [artist, setArtist] = useState({});
+  const dispatch = useDispatch();
   const { id } = useParams();
-  console.log(id);
+
+  useEffect(() => {
+    dispatch(getSingleArtist(id));
+  }, [id]);
+
+  const { singleArtist } = useSelector((state) => state.singleArtist);
+
+  useEffect(() => {
+    if (singleArtist.length > 0) {
+      setArtist(singleArtist[0]);
+    }
+  }, [singleArtist]);
+
+  console.log(artist);
   return (
     <Row>
       <Col sm="12">
@@ -37,18 +39,18 @@ const ViewArtist = () => {
               }}
             >
               <div>
-                <p>First name: {Federation.leaderFName}</p>
-                <p>Last name: {Federation.leaderLName}</p>
-                <p>Date of birth: 11/11/1970</p>
-                <p>Artist code: 1970</p>
-                <p>Email: {Federation.email}</p>
-                <p>Phone: {Federation.phone}</p>
-                <p>Country: {Federation.province}</p>
-                <p>Province: {Federation.province}</p>
-                <p>District: {Federation.district}</p>
-                <p>Sector: {Federation.sector}</p>
-                <p>Cell: {Federation.cell}</p>
-                <p>Village: {Federation.village}</p>
+                <p>First name: {artist.fname}</p>
+                <p>Last name: {artist.lname}</p>
+                <p>Date of birth: {artist.dob}</p>
+                <p>Artist number: {artist.artist_no}</p>
+                <p>Email: {artist.email}</p>
+                <p>Phone: {artist.phone}</p>
+                <p>Country: {artist.country}</p>
+                <p>Province: {artist.province}</p>
+                <p>District: {artist.district}</p>
+                <p>Sector: {artist.sector}</p>
+                <p>Cell: {artist.cell}</p>
+                <p>Village: {artist.village}</p>
                 <div
                   style={{
                     display: "flex",
@@ -75,21 +77,13 @@ const ViewArtist = () => {
                   gap: "10px",
                 }}
               >
-                <img
-                  width={200}
-                  height={200}
-                  src={
-                    "https://pbs.twimg.com/media/Dfd9sHtXUAEhTzm?format=jpg&name=large"
-                  }
-                />
-                <p>QR Code</p>
-                <img
-                  width={200}
-                  height={200}
-                  src={
-                    "https://chart.apis.google.com/chart?cht=qr&chl=Artist%20Number%3A%08010030%0AFirst%20Name%3A%20Izihirwe%0ALast%20Name%3A%20Perfect%20Gift%0AEmail%3A%20perfectgiftizihire@gmail.com%0APhone%20number%3A%200727648416%0ACountry%3A%20Rwanda%0AProvince%3A%20Kigali%20City%0ADistrict%3A%20Kigali%0ASector%3A%20Gatenga%0ACell%3A%20Nyanza%0AVillage%3A%20Cyeza%0ADate%20of%20birth%3A%202023-01-29&chs=248"
-                  }
-                />
+                <img width={200} height={200} src={artist.profile} />
+                {artist.status == 2 ? (
+                  <>
+                    <p>QR Code</p>
+                    <img width={200} height={200} src={artist.qrcode} />
+                  </>
+                ) : null}
               </div>
             </div>
           </CardBody>

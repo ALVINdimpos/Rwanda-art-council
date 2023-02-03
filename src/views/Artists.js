@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Table, Card, CardTitle, CardBody, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import { getArtist } from "../redux/actions/artists";
+import { ThreeDots } from "react-loader-spinner";
 
 const Artists = () => {
   const dispatch = useDispatch();
@@ -10,7 +11,7 @@ const Artists = () => {
     dispatch(getArtist());
   }, []);
 
-  const { artists } = useSelector((state) => state.getArtist);
+  const { artists, loading } = useSelector((state) => state.getArtist);
 
   console.log(artists);
 
@@ -32,6 +33,18 @@ const Artists = () => {
             </tr>
           </thead>
           <tbody>
+            {loading && (
+              <ThreeDots
+                height="80"
+                width="80"
+                radius="9"
+                color="#C5801A"
+                ariaLabel="three-dots-loading"
+                wrapperStyle={{}}
+                wrapperClassName=""
+                visible={true}
+              />
+            )}
             {artists?.map((artist) => (
               <tr>
                 <td>{artist.artist_no}</td>
@@ -53,24 +66,6 @@ const Artists = () => {
                 </td>
               </tr>
             ))}
-            {/* <tr>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>123456789</td>
-              <td>mark@gmail.com</td>
-              <td>
-                <Link to={`/dashboard/viewArtist/1`}>
-                  <Button
-                    style={{
-                      backgroundColor: "#C5801A",
-                    }}
-                    className="mr-5"
-                  >
-                    View Artist
-                  </Button>
-                </Link>
-              </td>
-            </tr> */}
           </tbody>
         </Table>
         <Button

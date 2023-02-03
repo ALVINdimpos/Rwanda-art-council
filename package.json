@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "homepage": ".",
   "private": true,
-  "proxy": "http://localhost:8080",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -28,6 +27,7 @@
     "react-dropzone": "^14.2.3",
     "react-flow-renderer": "^10.3.17",
     "react-hook-form": "^7.39.5",
+    "react-loader-spinner": "^5.3.4",
     "react-photo-album": "^1.16.1",
     "react-redux": "^7.2.8",
     "react-responsive-carousel": "^3.2.23",

@@ -1,6 +1,8 @@
 import React from "react";
 // import { useForm } from "react-hook-form";
 import Style from "./style.module.css";
+import { ThreeDots } from "react-loader-spinner";
+
 import {
   Card,
   Row,
@@ -27,7 +29,9 @@ const createFormData = (body) => {
 };
 
 const RegisterArtist = () => {
-  const { success, errors } = useSelector((state) => state.registerArtist);
+  const { success, errors, loading } = useSelector(
+    (state) => state.registerArtist
+  );
   const [error, setError] = React.useState("");
   const [artistData, setartistData] = React.useState([]);
   const dispatch = useDispatch();
@@ -110,12 +114,12 @@ const RegisterArtist = () => {
     dispatch(registerArtist(data));
   };
 
-  // if (success) {
-  //   setTimeout(() => {
-  //     window.location.href = "#/dashboard/artists";
-  //     window.location.reload(true);
-  //   }, 2000);
-  // }
+  if (success) {
+    setTimeout(() => {
+      window.location.href = "#/dashboard/artists";
+      window.location.reload(true);
+    }, 2000);
+  }
 
   return (
     <Row>
@@ -343,7 +347,20 @@ const RegisterArtist = () => {
               )}
               {success && <Alert>Artist Registered Successfuly</Alert>}
               {error && <Alert color="danger">{error}</Alert>}
-              <Button onClick={registerFed}>Submit</Button>
+              {loading && (
+                <ThreeDots
+                  height="60"
+                  width="80"
+                  color="#C5801A"
+                  ariaLabel="bars-loading"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                  visible={true}
+                />
+              )}
+              <Button onClick={registerFed}>
+                {loading ? "Submiting..." : "Submit"}
+              </Button>
             </Form>
           </CardBody>
         </Card>
