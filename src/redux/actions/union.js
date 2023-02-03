@@ -4,6 +4,9 @@ import {
   CREATE_ARTIST,
   CREATE_ARTIST_FAILURE,
   CREATE_ARTIST_SUCCESS,
+  DELETE_ARTIST,
+  DELETE_ARTIST_FAILED,
+  DELETE_ARTIST_SUCCESS,
   DELETE_CATEGORY_SUCCESS,
   DELETE_EVENT,
   DELETE_UNION,
@@ -198,5 +201,26 @@ export const deleteUnion = (id) => async (dispatch) => {
       });
   } catch (error) {
     dispatch(action(DELETE_UNION_FAILED, error));
+  }
+};
+
+export const deleteArtist = (id) => async (dispatch) => {
+  try {
+    dispatch(action(DELETE_ARTIST));
+    axios({
+      method: "delete",
+      url: `${API_URL}/Union/Delete/${id}`,
+      headers: {
+        Authorization: `Bearer ${TOKEN}`,
+      },
+    })
+      .then((response) => {
+        dispatch(action(DELETE_ARTIST_SUCCESS, response.data));
+      })
+      .catch((error) => {
+        dispatch(action(DELETE_ARTIST_FAILED, error));
+      });
+  } catch (error) {
+    dispatch(action(DELETE_ARTIST_FAILED, error));
   }
 };
