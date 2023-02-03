@@ -3,9 +3,10 @@
   background-image: url("../../assets/photos/Landing1.JPG");
   background-size: cover;
   align-items: center;
-  height: 75vh;
+  height: 70vh;
   width: 100%;
 }
+
 .Gallery {
   display: flex;
   justify-content: center;
@@ -17,6 +18,7 @@
   line-height: 40px;
   margin: 0 auto;
 }
+
 @media (max-width: 550px) {
   .PageIndicator {
     height: 25vh;
