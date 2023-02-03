@@ -9,6 +9,11 @@ function Index() {
     e.preventDefault();
     navigate("/BecomeMember");
   };
+  const exploreHandler = (e) => {
+    e.preventDefault();
+    navigate("/Gallery");
+  };
+
   return (
     <div>
       <div className={HeaderStyle.MainHeader}>
@@ -23,7 +28,7 @@ function Index() {
             their Arts.
           </p>
           <div className={HeaderStyle.Button}>
-            <Button name="Explore Artworks" />
+            <Button name="Explore Artworks" onClick={exploreHandler} />
             <Button name="Be a member" onClick={getStartedHandler} />
           </div>
         </div>

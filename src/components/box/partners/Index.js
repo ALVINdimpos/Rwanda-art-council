@@ -6,9 +6,14 @@ import Partner2 from '../../../assets/photos/PartnerTwo.png'
 import Partner3 from '../../../assets/photos/partnerr.png'
 import Partner4 from '../../../assets/photos/PartnerFour.png'
 import Klablogo from "../../../assets/photos/Klablogo.png"
+import { useNavigate } from 'react-router-dom';
 
 function Index() {
-
+  const navigate = useNavigate();
+  const moreHandler = (e) => {
+    e.preventDefault();
+    navigate('/Aboutus')
+  }
   return (
    <>
     <h1 className={Style.heading}> Our partners</h1>
@@ -22,7 +27,7 @@ function Index() {
                   accessible to everyone, from professionals to those
                    just starting to explore the world of art.
                </div>
-         <div><Button name="Read more"/></div>
+         <div><Button name="Read more" onClick={moreHandler}/></div>
 
       </div>
       <div className={Style.section2}>
