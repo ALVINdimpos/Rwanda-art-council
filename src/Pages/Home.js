@@ -13,7 +13,6 @@ import Partner from "../components/box/partners/Index";
 import Button from "../components/Button/Index";
 import Footer from "../components/Footer/Footer";
 import Model from "../components/box/AddTestmonial/Index";
-import OurTeam from "../components/box/ourTeam/Index";
 import { useNavigate } from "react-router-dom";
 import Carousel from "framer-motion-carousel";
 import { MDBModal } from "mdb-react-ui-kit";
@@ -63,7 +62,7 @@ function Home() {
   return (
     <>
       <NavBar />
-      <Header></Header>
+      <Header />
       <WhoWeAreBox />
       <SectionIndicator name="Federations" onClick={FederationsHandler} />
       <div className="card_wrapper">
@@ -85,17 +84,12 @@ function Home() {
           <div className={Style.whoWeAreContent}>
             <h2 className={Style.whoWeAreTitle}>Rwanda Arts Council Events</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-              massa sapien, aliquet sit amet dui id, volutpat cursus ligula.
-              Pellentesque diam eros, ornare sed dignissim ac, sagittis ut mi.
-              Vivamus nec libero eu elit egestas porta et sed metus. Mauris
-              tincidunt tortor vel eleifend pellentesque. Aliquam erat volutpat.
-              Sed blandit orci eu purus hendrerit, id vehicula tellus sagittis.
-              Cras eget consequat arcu. Curabitur a purus leo. Sed ultrices
-              molestie nulla, id ornare dui sollicitudin quis. Suspendisse non
-              luctus magna, vitae auctor tortor. Suspendisse volutpat vitae
-              nulla vitae lobortis. Curabitur cursus magna ut nisl dapibus
-              scelerisque.
+              The Rwanda Arts Council (R.A.C) established as a unique council
+              which is charged with spearheading council’s sustainable
+              development by ensuring the creativity in cultural arts is
+              actively well positioned and professionally represented with
+              dedication and expertise, in order to contribute in social
+              economic development of Rwanda
             </p>
           </div>
         </div>
@@ -120,12 +114,12 @@ function Home() {
 
       <SectionIndicator name="Categories" />
       <Categories />
-      <OurTeam />
+      
       <Testmonial />
       <div className={Style.align_right}>
-      <Button name="Add testmonial" onClick={toggleShow} />
+        <Button name="Add testmonial" onClick={toggleShow} />
       </div>
-      
+
       <MDBModal
         show={basicModal}
         setShow={setBasicModal}

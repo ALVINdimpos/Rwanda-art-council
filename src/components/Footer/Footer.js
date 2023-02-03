@@ -98,8 +98,8 @@ const subscribeHandler = (e) => {
                 <li><NavLink to="/Gallery">Gallery</NavLink></li>
                 <li><NavLink to="/Contactus">Contact</NavLink></li>
                 <li><NavLink to="/Event">Events</NavLink></li>
-                <li><NavLink to="/home">Excutive team</NavLink></li>
-                <li><NavLink to="/home">Board team</NavLink></li>
+                <li><a to="/home">Excutive team</a></li>
+                <li><a to="/home">Board team</a></li>
               </ul>
             </div>
           </div>

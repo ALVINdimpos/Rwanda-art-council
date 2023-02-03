@@ -17,9 +17,10 @@ function Index() {
             Art is beautiful, Art is life,expole Arts
           </p>
           <p className={HeaderStyle.WlcText1}>
-          Art is a powerful expression of life that 
-          allows us to explore our creativity and discover 
-          beauty in our world.
+            Rwanda Arts Council is a Non Profit Organization established by the
+            artists purposely to bring together all the artists to advocate for
+            them, and create broad lines that help them make profit through
+            their Arts.
           </p>
           <div className={HeaderStyle.Button}>
             <Button name="Explore Artworks" />
