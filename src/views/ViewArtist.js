@@ -66,7 +66,6 @@ const ViewArtist = () => {
                       Edit Artist
                     </Button>
                   </Link>
-                  <Button color="danger">Delete Artist</Button>
                 </div>
               </div>
               <div
@@ -88,7 +87,7 @@ const ViewArtist = () => {
                   width={200}
                   height={200}
                   src={
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png"
+                    "https://chart.apis.google.com/chart?cht=qr&chl=Artist%20Number%3A%08010030%0AFirst%20Name%3A%20Izihirwe%0ALast%20Name%3A%20Perfect%20Gift%0AEmail%3A%20perfectgiftizihire@gmail.com%0APhone%20number%3A%200727648416%0ACountry%3A%20Rwanda%0AProvince%3A%20Kigali%20City%0ADistrict%3A%20Kigali%0ASector%3A%20Gatenga%0ACell%3A%20Nyanza%0AVillage%3A%20Cyeza%0ADate%20of%20birth%3A%202023-01-29&chs=248"
                   }
                 />
               </div>

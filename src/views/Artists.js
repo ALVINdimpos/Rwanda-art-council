@@ -1,8 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Table, Card, CardTitle, CardBody, Button } from "reactstrap";
 import { Link } from "react-router-dom";
+import { getArtist } from "../redux/actions/artists";
 
 const Artists = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getArtist());
+  }, []);
+
+  const { artists } = useSelector((state) => state.getArtist);
+
+  console.log(artists);
+
   return (
     <Card>
       <CardTitle tag="h6" className="border-bottom p-3 mb-0">
@@ -12,6 +23,7 @@ const Artists = () => {
         <Table responsive>
           <thead>
             <tr>
+              <th>RAC number</th>
               <th>First Name</th>
               <th>Last Name</th>
               <th>Phone</th>
@@ -20,7 +32,28 @@ const Artists = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
+            {artists?.map((artist) => (
+              <tr>
+                <td>{artist.artist_no}</td>
+                <td>{artist.fname}</td>
+                <td>{artist.lname}</td>
+                <td>{artist.phone}</td>
+                <td>{artist.email}</td>
+                <td>
+                  <Link to={`/dashboard/viewArtist/${artist.id}`}>
+                    <Button
+                      style={{
+                        backgroundColor: "#C5801A",
+                      }}
+                      className="mr-5"
+                    >
+                      View Artist
+                    </Button>
+                  </Link>
+                </td>
+              </tr>
+            ))}
+            {/* <tr>
               <td>Mark</td>
               <td>Otto</td>
               <td>123456789</td>
@@ -37,81 +70,22 @@ const Artists = () => {
                   </Button>
                 </Link>
               </td>
-            </tr>
-            <tr>
-              <td>Peter</td>
-              <td>John</td>
-              <td>123456789</td>
-              <td>peter@gmail.com</td>
-              <td>
-                <Link to={`/dashboard/viewArtist/1`}>
-                  <Button
-                    style={{
-                      backgroundColor: "#C5801A",
-                    }}
-                    className="mr-5"
-                  >
-                    View Artist
-                  </Button>
-                </Link>
-              </td>
-            </tr>
-            <tr>
-              <td>James</td>
-              <td>Okoye</td>
-              <td>123456789</td>
-              <td>james@gmail.com</td>
-              <td>
-                <Link to={`/dashboard/viewArtist/1`}>
-                  <Button
-                    style={{
-                      backgroundColor: "#C5801A",
-                    }}
-                    className="mr-5"
-                  >
-                    View Artist
-                  </Button>
-                </Link>
-              </td>
-            </tr>
-            <tr>
-              <td>Jacques</td>
-              <td>McDaniel</td>
-              <td>123456789</td>
-              <td>jacques@gmail.com</td>
-              <td>
-                <Link to={`/dashboard/viewArtist/1`}>
-                  <Button
-                    style={{
-                      backgroundColor: "#C5801A",
-                    }}
-                    className="mr-5"
-                  >
-                    View Artist
-                  </Button>
-                </Link>
-              </td>
-            </tr>
-            <tr>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>123456789</td>
-              <td>jacon@gmail.com</td>
-              <td>
-                <Link to={`/dashboard/viewArtist/1`}>
-                  <Button
-                    style={{
-                      backgroundColor: "#C5801A",
-                    }}
-                    className="mr-5"
-                  >
-                    View Artist
-                  </Button>
-                </Link>
-              </td>
-            </tr>
+            </tr> */}
           </tbody>
         </Table>
+        <Button
+          style={{
+            backgroundColor: "#C5801A",
+          }}
+          className="mt-3"
+        >
+          <Link
+            className="text-decoration-none text-light"
+            to="/dashboard/registerArtist"
+          >
+            Add a new artist
+          </Link>
+        </Button>
       </CardBody>
     </Card>
   );

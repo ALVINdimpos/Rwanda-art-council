@@ -40,6 +40,7 @@ const ViewFederation = lazy(() => import("../views/ViewFederation"));
 const Breadcrumbs = lazy(() => import("../views/Breadcrumbs"));
 const ViewArtist = lazy(() => import("../views/ViewArtist"));
 const FederationDashboard = lazy(() => import("../views/federations.js"));
+const RegisterArtist = lazy(() => import("../views/RegisterArtist"));
 
 /*****Routes******/
 
@@ -98,6 +99,11 @@ const ThemeRoutes = [
         path: "/dashboard/viewArtist/:id",
         exact: true,
         element: <ViewArtist />,
+      },
+      {
+        path: "/dashboard/registerArtist",
+        exact: true,
+        element: <RegisterArtist />,
       },
       {
         path: "/dashboard/viewEvent/:id",

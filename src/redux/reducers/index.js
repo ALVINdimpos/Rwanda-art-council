@@ -35,6 +35,8 @@ import {
 } from "./categories";
 import { loginReducers, logoutReducers } from "./auth";
 
+import { registerArtistReducer, getArtistReducer } from "./artists";
+
 export default combineReducers({
   login: loginReducers,
   logout: logoutReducers,
@@ -62,4 +64,6 @@ export default combineReducers({
   createCategory: createCategoryReducers,
   updateCategory: updateCategoryReducers,
   deleteCategory: deleteCategoryReducers,
+  registerArtist: registerArtistReducer,
+  getArtist: getArtistReducer,
 });
