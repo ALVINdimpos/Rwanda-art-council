@@ -11,16 +11,16 @@ const navigation = [
     href: "/dashboard/artists",
     icon: "bi bi-hdd-stack",
   },
-  {
-    title: "Events",
-    href: "/dashboard/events",
-    icon: "bi bi-bell",
-  },
-  {
-    title: "Testimonials",
-    href: "/dashboard/testimonials",
-    icon: "bi bi-card-text",
-  },
+  // {
+  //   title: "Events",
+  //   href: "/dashboard/events",
+  //   icon: "bi bi-bell",
+  // },
+  // {
+  //   title: "Testimonials",
+  //   href: "/dashboard/testimonials",
+  //   icon: "bi bi-card-text",
+  // },
   // {
   //   title: "Forms",
   //   href: "/forms",
@@ -48,21 +48,21 @@ const adminNavigation = [
     href: "/dashboard/events",
     icon: "bi bi-bell",
   },
-  {
-    title: "Testimonials",
-    href: "/dashboard/testimonials",
-    icon: "bi bi-card-text",
-  },
+  // {
+  //   title: "Testimonials",
+  //   href: "/dashboard/testimonials",
+  //   icon: "bi bi-card-text",
+  // },
   {
     title: "Gallery",
     href: "/dashboard/gallery",
     icon: "bi bi-columns",
   },
-  {
-    title: "Team members",
-    href: "/dashboard/teamMembers",
-    icon: "bi bi-layout-split",
-  },
+  // {
+  //   title: "Team members",
+  //   href: "/dashboard/teamMembers",
+  //   icon: "bi bi-layout-split",
+  // },
 ];
 const fedNavigation = [
   {
@@ -75,16 +75,16 @@ const fedNavigation = [
     href: "/dashboard/events",
     icon: "bi bi-bell",
   },
-  {
-    title: "Testimonials",
-    href: "/dashboard/testimonials",
-    icon: "bi bi-card-text",
-  },
-  {
-    title: "Gallery",
-    href: "/dashboard/gallery",
-    icon: "bi bi-columns",
-  },
+  // {
+  //   title: "Testimonials",
+  //   href: "/dashboard/testimonials",
+  //   icon: "bi bi-card-text",
+  // },
+  // {
+  //   title: "Gallery",
+  //   href: "/dashboard/gallery",
+  //   icon: "bi bi-columns",
+  // },
 ];
 
 const Sidebar = () => {

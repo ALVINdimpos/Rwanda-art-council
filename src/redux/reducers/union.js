@@ -3,6 +3,9 @@ import {
   CREATE_ARTIST,
   CREATE_ARTIST_FAILURE,
   CREATE_ARTIST_SUCCESS,
+  DELETE_UNION,
+  DELETE_UNION_FAILED,
+  DELETE_UNION_SUCCESS,
   GET_ALL_UNIONS,
   GET_ALL_UNIONS_FAILURE,
   GET_ALL_UNIONS_SUCCESS,
@@ -209,6 +212,34 @@ export const createArtistReducers = (
         success: true,
       };
     case CREATE_ARTIST_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        errors: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export const deleteUnionReducers = (
+  state = { ...initialState, message: "" },
+  action
+) => {
+  switch (action.type) {
+    case DELETE_UNION:
+      return {
+        ...state,
+        loading: true,
+      };
+    case DELETE_UNION_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        message: "Union deleted successfully",
+        success: true,
+      };
+    case DELETE_UNION_FAILED:
       return {
         ...state,
         loading: false,

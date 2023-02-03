@@ -337,7 +337,7 @@ const RegisterUnion = () => {
                   flexWrap: "wrap",
                 }}
               >
-                <FormGroup style={{ minWidth: "45%" }}>
+                <FormGroup style={{ marginRight: "5%", minWidth: "45%" }}>
                   <Label for="password">Password</Label>
                   <div className={Style.carddetails}>
                     <Input
@@ -357,7 +357,7 @@ const RegisterUnion = () => {
                     </span>
                   </div>
                 </FormGroup>
-                <FormGroup style={{ marginLeft: "5%", minWidth: "45%" }}>
+                <FormGroup style={{ minWidth: "45%" }}>
                   <Label for="confirmPassword">Confirm Password</Label>
                   <div className={Style.carddetails}>
                     <Input

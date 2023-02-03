@@ -1,10 +1,12 @@
 import { combineReducers } from "redux";
 import {
+  deleteFederationReducers,
   federationReducers,
   registerFederationReducers,
   singleFederationReducers,
 } from "./federationReducer";
 import {
+  deleteUnionReducers,
   fedUnionsReducers,
   registerUnionReducers,
   singleUnionReducers,
@@ -35,7 +37,11 @@ import {
 } from "./categories";
 import { loginReducers, logoutReducers } from "./auth";
 
-import { registerArtistReducer, getArtistReducer, singleArtistReducer } from "./artists";
+import {
+  registerArtistReducer,
+  getArtistReducer,
+  singleArtistReducer,
+} from "./artists";
 
 export default combineReducers({
   login: loginReducers,
@@ -67,4 +73,6 @@ export default combineReducers({
   registerArtist: registerArtistReducer,
   getArtist: getArtistReducer,
   singleArtist: singleArtistReducer,
+  deleteFederation: deleteFederationReducers,
+  deleteUnion: deleteUnionReducers,
 });

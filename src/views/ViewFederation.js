@@ -1,4 +1,4 @@
-import { Row, Col, Card, CardTitle, CardBody, Button } from "reactstrap";
+import { Row, Col, Card, CardTitle, CardBody, Button, Alert } from "reactstrap";
 import { Link, useParams } from "react-router-dom";
 import { getSingleFederation } from "../redux/actions/federation";
 import { useDispatch, useSelector } from "react-redux";
@@ -54,7 +54,7 @@ const ViewFederation = () => {
                   <p>Email: {singleFederation.email}</p>
                   <p>Phone: {singleFederation.phone}</p>
                   <p>Description: {singleFederation.description}</p>
-                  <div
+                  {/* <div
                     style={{
                       display: "flex",
                       flexDirection: "row",
@@ -72,7 +72,7 @@ const ViewFederation = () => {
                       </Button>
                     </Link>
                     <Button color="danger">Delete</Button>
-                  </div>
+                  </div> */}
                 </div>
                 <div>
                   <img width={200} height={200} src={singleFederation.logo} />
@@ -110,7 +110,7 @@ const ViewFederation = () => {
                 flexWrap: "wrap",
               }}
             >
-              {fedUnions &&
+              {fedUnions ? (
                 fedUnions.map((union, index) => {
                   return (
                     <Card key={union.id}>
@@ -138,11 +138,14 @@ const ViewFederation = () => {
                       </CardBody>
                     </Card>
                   );
-                })}
+                })
+              ) : (
+                <Alert>No unions yet</Alert>
+              )}
             </div>
           </CardBody>
         </Card>
-        <Card>
+        {/* <Card>
           <div
             style={{
               display: "flex",
@@ -241,7 +244,7 @@ const ViewFederation = () => {
               })}
             </div>
           </CardBody>
-        </Card>
+        </Card> */}
       </Col>
     </Row>
   );

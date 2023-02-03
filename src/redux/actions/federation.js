@@ -79,8 +79,8 @@ export const registerFederation = (data) => async (dispatch) => {
         dispatch(action(REGISTER_FEDERATION_SUCCESS, response.data));
       })
       .catch((error) => {
-        console.log(error.response.data);
-        dispatch(action(REGISTER_FEDERATION_FAILURE, error.response.data));
+        console.log(error.response);
+        dispatch(action(REGISTER_FEDERATION_FAILURE, error.response));
       });
   } catch (error) {
     dispatch(action(REGISTER_FEDERATION_FAILURE, error));

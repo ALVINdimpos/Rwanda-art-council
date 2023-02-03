@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_URL } from "../../utils/config";
+import { API_URL, TOKEN } from "../../utils/config";
 import action from "./action";
 import {
   LOGIN,
@@ -8,7 +8,11 @@ import {
   LOGOUT,
   LOGOUT_FAILED,
   LOGOUT_SUCCESS,
+  VALIDATE_TOKEN,
+  VALIDATE_TOKEN_FAILED,
+  VALIDATE_TOKEN_SUCCESS,
 } from "../types";
+import jwtDecode from "jwt-decode";
 
 export const loginUser = (data) => async (dispatch) => {
   try {
@@ -26,7 +30,7 @@ export const loginUser = (data) => async (dispatch) => {
         });
       })
       .catch((error) => {
-        alert(error.response.data.message)
+        alert(error.response.data.message);
         dispatch(action(LOGIN_FAILED, error));
       });
   } catch (error) {
@@ -49,5 +53,15 @@ export const logoutUser = () => async (dispatch) => {
       });
   } catch (error) {
     dispatch(action(LOGOUT_FAILED, error));
+  }
+};
+
+export const validateToken = () => async (dispatch) => {
+  try {
+    dispatch(action(VALIDATE_TOKEN));
+    let decoded = jwtDecode(TOKEN);
+    dispatch(action(VALIDATE_TOKEN_SUCCESS, decoded));
+  } catch (error) {
+    dispatch(action(VALIDATE_TOKEN_FAILED));
   }
 };

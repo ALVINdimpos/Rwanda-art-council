@@ -84,9 +84,8 @@ const ViewUnion = () => {
                 <img
                   width={200}
                   height={200}
-                  src={
-                    "https://pbs.twimg.com/media/Dfd9sHtXUAEhTzm?format=jpg&name=large"
-                  }
+                  src={union.logo}
+                  alt="Union logo"
                 />
               </div>
             </div>

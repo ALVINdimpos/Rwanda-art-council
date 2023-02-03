@@ -5,18 +5,35 @@ import {
   Table,
   ButtonGroup,
   Button,
+  Alert,
 } from "reactstrap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Loader from "../../layouts/loader/Loader";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  deleteFederation,
+  getAllFederation,
+} from "../../redux/actions/federation";
+import { deleteUnion, getAllUnions } from "../../redux/actions";
 
 const CustomTable = ({
   tableData,
   action = "federations" || "unions",
   tableHeaders,
 }) => {
+  const dispatch = useDispatch();
   // make states for multiple dropdown menus that are being mapped with dynamic data
   const [dropdownOpen, setDropdownOpen] = useState([]);
+  const [message, setMessage] = useState("");
+  const {
+    deleteFederation: { loading, success, errors },
+    deleteUnion: {
+      loading: unionLoading,
+      success: unionSuccess,
+      errors: unionErrors,
+    },
+  } = useSelector((state) => state);
 
   // toggle function for dropdown
   const toggle = (index) => {
@@ -28,7 +45,24 @@ const CustomTable = ({
     });
     setDropdownOpen(newArray);
   };
+  useEffect(() => {
+    if (success) {
+      dispatch(getAllFederation());
+      setMessage("Federation deleted");
+    }
+  }, [dispatch, success]);
 
+  useEffect(() => {
+    if (unionSuccess) {
+      dispatch(getAllUnions());
+      setMessage("Union deleted");
+    }
+  }, [dispatch, unionSuccess]);
+  if (success || unionSuccess) {
+    setTimeout(() => {
+      setMessage("");
+    }, 2000);
+  }
   return (
     <div>
       <Card>
@@ -36,6 +70,8 @@ const CustomTable = ({
           <CardTitle tag="h5">
             {action === "federations" ? "Federations List" : "Union Lists"}
           </CardTitle>
+          {message !== "" && <Alert>{message}</Alert>}
+          {/* {errors && <Alert color="danger">{errors}</Alert>} */}
 
           <Table className="no-wrap mt-3 align-middle" responsive borderless>
             <thead>
@@ -69,7 +105,13 @@ const CustomTable = ({
                               <i className="bi bi-pencil-fill"></i>
                             </Button>
                           </Link>
-                          <Button color="danger" size="sm">
+                          <Button
+                            color="danger"
+                            size="sm"
+                            onClick={() => {
+                              dispatch(deleteFederation(tdata.id));
+                            }}
+                          >
                             <i className="bi bi-trash-fill"></i>
                           </Button>
                         </ButtonGroup>
@@ -101,7 +143,13 @@ const CustomTable = ({
                               <i className="bi bi-pencil-fill"></i>
                             </Button>
                           </Link>
-                          <Button color="danger" size="sm">
+                          <Button
+                            color="danger"
+                            size="sm"
+                            onClick={() => {
+                              dispatch(deleteUnion(tdata.id));
+                            }}
+                          >
                             <i className="bi bi-trash-fill"></i>
                           </Button>
                         </ButtonGroup>

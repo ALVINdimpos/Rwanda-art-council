@@ -4,6 +4,11 @@ import {
   CREATE_ARTIST,
   CREATE_ARTIST_FAILURE,
   CREATE_ARTIST_SUCCESS,
+  DELETE_CATEGORY_SUCCESS,
+  DELETE_EVENT,
+  DELETE_UNION,
+  DELETE_UNION_FAILED,
+  DELETE_UNION_SUCCESS,
   GET_ALL_UNIONS,
   GET_ALL_UNIONS_FAILURE,
   GET_ALL_UNIONS_SUCCESS,
@@ -172,5 +177,26 @@ export const createArtistInUnion = (data) => async (dispatch) => {
       });
   } catch (error) {
     dispatch(action(CREATE_ARTIST_FAILURE, error));
+  }
+};
+
+export const deleteUnion = (id) => async (dispatch) => {
+  try {
+    dispatch(action(DELETE_UNION));
+    axios({
+      method: "delete",
+      url: `${API_URL}/Union/Delete/${id}`,
+      headers: {
+        Authorization: `Bearer ${TOKEN}`,
+      },
+    })
+      .then((response) => {
+        dispatch(action(DELETE_UNION_SUCCESS, response.data));
+      })
+      .catch((error) => {
+        dispatch(action(DELETE_UNION_FAILED, error));
+      });
+  } catch (error) {
+    dispatch(action(DELETE_UNION_FAILED, error));
   }
 };
