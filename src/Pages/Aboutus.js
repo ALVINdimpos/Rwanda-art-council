@@ -8,6 +8,7 @@ import Service2 from "../assets/photos/music.jpeg";
 import Service3 from "../assets/photos/cinema.jpeg";
 import ServiceCard from "../components/box/OurServiceCard/Index";
 import OurTeam from "../components/box/ourTeam/Index";
+
 function Aboutus() {
   return (
     <>

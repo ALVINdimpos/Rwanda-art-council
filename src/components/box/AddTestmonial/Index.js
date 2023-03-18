@@ -1,6 +1,7 @@
 import React from "react";
 import "./Style.css"
 import axios from "axios";
+
 const Index = () => {
   const [image, setImage] = React.useState("");
   const [name, setName] = React.useState("");

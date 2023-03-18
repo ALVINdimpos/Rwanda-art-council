@@ -6,4 +6,5 @@ export const route = [
   { name: "Events", link: "/Event" },
   { name: "Contact us", link: "/Contactus" },
   // { name: "login", link: "/Login" },
+  // { name: "Register", link: "/Register" },
 ];
